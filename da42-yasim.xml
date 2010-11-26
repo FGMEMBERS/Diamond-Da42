@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Diamond Da 42 - 2010 - Emmanuel BARANGER 
+
+  source        : http://en.wikipedia.org/wiki/Diamond_DA42
+
+  Wingspan      : 13.42 m    (   44 ft 0 in )
+  lenght        :  8.56 m    (   28 ft 1 in )
+  height        :  2.49 m    (    8 ft 2 in )
+  Empty mass    :  1251 kg   ( 2761 lb      )
+  Engine        : 2 Austro Engine AE 300 (170 hp each) 
+  Maximum speed :   356 km/h ( 200 kts )
+-->
+
+<airplane mass="2761">
+
+  <!-- Approach configuration -->
+  <approach speed="50" aoa="6" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <cruise speed="190" alt="0" fuel="1">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.75"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="1.541" y="0.222" z="0.462"/>
+
+  <fuselage ax="4.275" ay="0" az="-0.181" bx="-3.512" by="0" bz="-0.064" width="1.051" taper="0.4" midpoint="0.3"/>
+
+  <mstab x="1" y="0" z="-0.426"
+        chord="1.848"
+        length="2.210"
+        taper="0.70"
+        dihedral="5"
+        camber="0.002"
+        sweep="3.5">
+        <stall aoa="18" width="1.0" peak="1.5"/>
+        <flap0 start="0.05" end="0.68" lift="1.4" drag="1.5"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+<!--
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="5"/>
+-->
+  </mstab>
+
+  <wing x="0.862" y="2.210" z="-0.234"
+        chord="1.294"
+        length="4.363"
+        taper="0.70"
+        dihedral="5"
+        camber="0.002">
+        <stall aoa="18" width="1.0" peak="1.5"/>
+        <flap0 start="0.05" end="0.68" lift="1.4" drag="1.5"/>
+        <flap1 start="0.68" end="0.96" lift="1.2" drag="1.1"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0" invert="true"/>
+
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/> 
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP1" transition-time="0.01"/>
+        <control-speed control="FLAP0" transition-time="5"/>
+  </wing>
+
+  <vstab x="0.755" y="6.590" z="0.162"
+         chord="0.5"
+         length="0.9" 
+         taper="0.40"
+         dihedral="86"
+         sweep="30">
+  </vstab>
+
+  <vstab x="0.755" y="-6.590" z="0.162"
+         chord="0.5"
+         length="0.9" 
+         taper="0.40"
+         dihedral="94"
+         sweep="30">
+  </vstab>
+
+  <hstab x="-3.762" y="0" z="1.170"
+         chord="0.892"
+         length="1.458"
+         taper="0.50"
+         incidence="0"
+         sweep="5">
+         <stall aoa="20" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="2.0" drag="1.1"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.885" y="1.456" z="1.170"
+         chord="0.45"
+         length="0.35" 
+         taper="0.25"
+         dihedral="-41"
+         sweep="45">
+  </vstab>
+
+  <vstab x="-3.885" y="-1.456" z="1.170"
+         chord="0.45"
+         length="0.35" 
+         taper="0.25"
+         dihedral="221"
+         sweep="45">
+  </vstab>
+
+  <vstab x="-3.440" y="0" z="-0.106"
+         chord="1.385"
+         length="1.189" 
+         taper="0.65"
+         sweep="18">
+         <stall aoa="18" width="2" peak="1.5"/>
+         <flap0 start="0" end="0.935" lift="1.6" drag="1.3"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!--  Austro Engine E4
+                 source       : http://en.wikipedia.org/wiki/Austro_Engine_AE_300
+
+                 type         : Four-cylinder, four-stroke diesel aircraft engine
+                 power        : 170 hp
+                 weight       : 185 kg  ( 408 lb )
+                 Displacement : 1991 cm3 (121 cu in)
+                 Compression  : 8.5:1
+  -->
+  <propeller x="2.144" y="1.740" z="0.021" 
+             mass="408" 
+             radius="0.85"
+             moment="10"
+             cruise-speed="190" 
+             cruise-rpm="2300"
+             cruise-alt="0" 
+             cruise-power="165"
+             takeoff-power="170" 
+             takeoff-rpm="2800">
+             <piston-engine eng-rpm="2800" 
+                            alt="0000" 
+                            eng-power="170" 
+                            displacement="121"/>
+             <actionpt x="2.627" y="1.740" z="0.021"  />
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
+             <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+             <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+             <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+             <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+  </propeller>
+
+  <propeller x="2.144" y="-1.740" z="0.021" 
+             mass="408" 
+             radius="0.85"
+             moment="10"
+             cruise-speed="190" 
+             cruise-rpm="2300"
+             cruise-alt="0" 
+             cruise-power="165"
+             takeoff-power="170" 
+             takeoff-rpm="2800">
+             <piston-engine eng-rpm="2800" 
+                            alt="0000" 
+                            eng-power="170" 
+                            displacement="121"/>
+             <actionpt x="2.627" y="-1.740" z="0.021"  />
+             <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>
+             <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+             <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
+             <control-input axis="/controls/engines/engine[1]/magnetos" control="MAGNETOS"/>
+             <control-input axis="/controls/engines/engine[1]/mixture" control="MIXTURE"/>
+  </propeller>
+
+  <gear x="2.578" y="0" z="-1.223" 
+        compression="0.15" 
+        spring="0.6">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+   </gear>
+
+  <!-- 0.820 -->
+  <gear x="1.147" y="1.358" z="-1.231" 
+        compression="0.10" 
+        spring="0.6">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
+  </gear>
+
+  <gear x="1.147" y="-1.358" z="-1.231" 
+        compression="0.10" 
+        spring="0.6">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- Fuel  -->
+  <tank x="1.420" y=" 1.323" z="-0.272" capacity="200" />
+  <tank x="1.420" y="-1.323" z="-0.272" capacity="200" />
+
+  <!-- CG placement -->
+  <ballast x="2" y="0" z="-3" mass="200"/>
+  <ballast x="-2" y="0" z="3" mass="-200"/>
+
+</airplane>

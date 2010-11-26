@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>inttourverriere</object-name>
+    <object-name>inttourporte</object-name>
+    <object-name>intintverriere</object-name>
+    <object-name>intporte</object-name>
+    <object-name>sieges</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intverriere</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intverriere</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intverriere</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -1.650 </x-m>
+      <y-m> -0.300 </y-m>
+      <z-m> -0.040 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -1.981 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.097 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Int Canopy -->
+  <animation>
+    <name>IntCanopeTotale</name>
+    <object-name>intverriere</object-name>
+    <object-name>inttourverriere</object-name>
+    <object-name>intintverriere</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntCanopeTotale</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> 45 </factor>
+    <center>
+      <x-m> -2.337 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.324 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteTotale</name>
+    <object-name>intporte</object-name>
+    <object-name>inttourporte</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteTotale</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+    <factor> -95 </factor>
+    <axis>
+      <x1-m> -0.796 </x1-m>
+      <y1-m> -0.112 </y1-m>
+      <z1-m>  0.727 </z1-m>
+      <x2-m> -0.481 </x2-m>
+      <y2-m> -0.112 </y2-m>
+      <z2-m>  0.698 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
+

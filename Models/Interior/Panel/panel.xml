@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+    <object-name>fusibles</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/zkv1000/mfd.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.110 </y-m>
+      <z-m> 0.139 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/zkv1000/pfd.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.249 </y-m>
+      <z-m>  0.139 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.019 </x-m>
+      <y-m> -0.116 </y-m>
+      <z-m>  0.315 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m>  0.018 </x-m>
+      <y-m> -0.011 </y-m>
+      <z-m>  0.315 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> 0.019 </x-m>
+      <y-m> 0.096 </y-m>
+      <z-m> 0.315 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off.xml</path>
+    <offsets>
+      <x-m>  0.022 </x-m>
+      <y-m> -0.224 </y-m>
+      <z-m>  0.295 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off.xml</path>
+    <offsets>
+      <x-m>  0.022 </x-m>
+      <y-m> -0.247 </y-m>
+      <z-m>  0.295 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off.xml</path>
+    <offsets>
+      <x-m>  0.022 </x-m>
+      <y-m> -0.270 </y-m>
+      <z-m>  0.295 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off.xml</path>
+    <offsets>
+      <x-m>  0.022 </x-m>
+      <y-m> -0.293 </y-m>
+      <z-m>  0.295 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.169 </y-m>
+      <z-m>  0.010 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.379 </y-m>
+      <z-m>  0.010 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/on-off-R.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.200 </y-m>
+      <z-m>  0.006 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+

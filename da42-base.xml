@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Diamond-Da42/da42-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Diamond-Da42/Sounds/da42-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Diamond-Da42/Models/da42.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <flaps>
+      <setting> 0.000 </setting>
+      <setting> 0.375 </setting>
+      <setting> 1.000 </setting> <!-- 20 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>da42</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>d</name>
+        <desc>Open/Close door</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/da42-menu.xml"/>
+
+  </sim>
+ 
+  <controls>
+    <gear>
+      <brake-parking type="double">1</brake-parking>
+    </gear>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/da42-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/Diamond-Da42/Nasal/doors.nas</file>
+    </doors>
+    <da42>
+      <file>Aircraft/Diamond-Da42/Nasal/light.nas</file>
+      <file>Aircraft/Diamond-Da42/Nasal/liveries.nas</file>
+      <file>Aircraft/Diamond-Da42/Nasal/immat.nas</file>
+    </da42>
+    <!--
+         Le zkv100 de Zakharov disponible pour mises à jour ici : http://gitorious.org/zakharov/zkv1000 
+         En attendant son arrivée dans Aircraft/Instruments-3D il est placé à la raçine du dossier de l'avion
+         pour garder la même arborescence.
+    -->
+    <zkv1000>
+      <file>Aircraft/Diamond-Da42/zkv1000/zkv1000.nas</file>
+    </zkv1000>
+  </nasal>
+   
+</PropertyList>
+
