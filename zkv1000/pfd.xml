@@ -205,9 +205,8 @@
     <object-name>asi.cursor.010</object-name>
     <object-name>asi.cursor.100</object-name>
     <object-name>asi.tape</object-name>
-
-    <object-name>body.pfd</object-name>
 <!--
+    <object-name>body.pfd</object-name>
     <object-name>body.enlighted</object-name>
 -->
     <object-name>hsi.arc</object-name>
@@ -246,7 +245,61 @@
     </emission>
   </animation>
 
-  <animation> 
+	<animation>
+		<type>material</type>
+		<object-name>body.pfd</object-name>
+		<object-name>softkey.NAV.swap</object-name>
+		<object-name>softkey.COMM.swap</object-name>
+		<object-name>knob.NAV.small</object-name>
+		<object-name>knob.NAV.large</object-name>
+		<object-name>knob.COMM.small</object-name>
+		<object-name>knob.COMM.large</object-name>
+		<object-name>knob.HDG</object-name>
+		<object-name>knob.CRS</object-name>
+		<object-name>knob.BARO</object-name>
+		<object-name>knob.RANGE.push</object-name>
+		<object-name>knob.RANGE.left</object-name>
+		<object-name>knob.RANGE.right</object-name>
+		<object-name>knob.RANGE.up</object-name>
+		<object-name>knob.RANGE.down</object-name>
+		<object-name>knob.ALT.small</object-name>
+		<object-name>knob.ALT.large</object-name>
+		<object-name>knob.FMS.small</object-name>
+		<object-name>knob.FMS.large</object-name>
+		<object-name>off.power</object-name>
+		<object-name>softkey.01</object-name>
+		<object-name>softkey.02</object-name>
+		<object-name>softkey.03</object-name>
+		<object-name>softkey.04</object-name>
+		<object-name>softkey.05</object-name>
+		<object-name>softkey.06</object-name>
+		<object-name>softkey.07</object-name>
+		<object-name>softkey.08</object-name>
+		<object-name>softkey.09</object-name>
+		<object-name>softkey.10</object-name>
+		<object-name>softkey.11</object-name>
+		<object-name>softkey.12</object-name>
+		<object-name>softkey.D</object-name>
+		<object-name>softkey.MENU</object-name>
+		<object-name>softkey.FPL</object-name>
+		<object-name>softkey.PROC</object-name>
+		<object-name>softkey.CLR</object-name>
+		<object-name>softkey.ENT</object-name>
+		<emission>
+			<blue>  0.2 </blue>
+			<red>   0.2 </red>
+			<green> 0.2 </green>
+			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/flood-lights</property>
+				<value>0</value>
+			</greater-than>	
+		</condition>
+	</animation>
+	
+	<animation> 
     <type>textranslate</type> 
     <object-name>body.pfd</object-name> 
     <condition>

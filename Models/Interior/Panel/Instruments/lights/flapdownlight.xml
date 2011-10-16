@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>whitelight.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>light</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+		<condition>
+			<and>
+				<less-than>
+						<property>/surface-positions/flaps-pos-norm</property>
+						<value type="double">-0.6</value>
+				</less-than>
+				<equals>
+					<property>/controls/electric/alimentation/flap</property>
+					<value>1</value>
+				</equals>
+			</and>			
+		</condition>
+	</animation>
+
+</PropertyList>

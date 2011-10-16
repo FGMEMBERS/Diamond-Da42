@@ -64,7 +64,13 @@
     <object-name>eis.bar.5</object-name>
     <object-name>eis.bar.6</object-name>
     <object-name>eis.bar.7</object-name>
-    <object-name>eis.bar.8</object-name>
+	
+	<object-name>infos.leftRPM</object-name>
+	<object-name>infos.rightRPM</object-name>
+	<object-name>infos.leftLoad</object-name>
+	<object-name>infos.rightLoad</object-name>
+	
+	
     <type>select</type>
     <condition>
       <property>/instrumentation/zkv1000/device[1]/status</property>
@@ -197,6 +203,7 @@
     <object-name>softkey.PROC</object-name>
     <object-name>softkey.CLR</object-name>
 -->
+	
     <type>select</type>
     <condition>
       <equals>
@@ -250,9 +257,8 @@
     <object-name>asi.cursor.010</object-name>
     <object-name>asi.cursor.100</object-name>
     <object-name>asi.tape</object-name>
-
-    <object-name>body.mfd</object-name>
 <!--
+    <object-name>body.mfd</object-name>
     <object-name>body.enlighted</object-name>
 -->
     <object-name>hsi.arc</object-name>
@@ -279,6 +285,10 @@
     <object-name>infos.DME</object-name>
     <object-name>infos.WIND</object-name>
     <object-name>infos.OAT</object-name>
+	<object-name>infos.leftRPM</object-name>
+	<object-name>infos.rightRPM</object-name>
+	<object-name>infos.leftLoad</object-name>
+	<object-name>infos.rightLoad</object-name>
     <object-name>infos.XPDR</object-name>
     <object-name>menu.alerts</object-name>
     <object-name>menu.main</object-name>
@@ -300,7 +310,6 @@
     <object-name>eis.bar.5</object-name>
     <object-name>eis.bar.6</object-name>
     <object-name>eis.bar.7</object-name>
-    <object-name>eis.bar.8</object-name>
     <emission>
       <blue>  1 </blue>
       <red>   1 </red>
@@ -309,6 +318,60 @@
     </emission>
   </animation>
 
+  <animation>
+		<type>material</type>
+		<object-name>body.mfd</object-name>
+		<object-name>softkey.NAV.swap</object-name>
+		<object-name>softkey.COMM.swap</object-name>
+		<object-name>knob.NAV.small</object-name>
+		<object-name>knob.NAV.large</object-name>
+		<object-name>knob.COMM.small</object-name>
+		<object-name>knob.COMM.large</object-name>
+		<object-name>knob.HDG</object-name>
+		<object-name>knob.CRS</object-name>
+		<object-name>knob.BARO</object-name>
+		<object-name>knob.RANGE.push</object-name>
+		<object-name>knob.RANGE.left</object-name>
+		<object-name>knob.RANGE.right</object-name>
+		<object-name>knob.RANGE.up</object-name>
+		<object-name>knob.RANGE.down</object-name>
+		<object-name>knob.ALT.small</object-name>
+		<object-name>knob.ALT.large</object-name>
+		<object-name>knob.FMS.small</object-name>
+		<object-name>knob.FMS.large</object-name>
+		<object-name>off.power</object-name>
+		<object-name>softkey.01</object-name>
+		<object-name>softkey.02</object-name>
+		<object-name>softkey.03</object-name>
+		<object-name>softkey.04</object-name>
+		<object-name>softkey.05</object-name>
+		<object-name>softkey.06</object-name>
+		<object-name>softkey.07</object-name>
+		<object-name>softkey.08</object-name>
+		<object-name>softkey.09</object-name>
+		<object-name>softkey.10</object-name>
+		<object-name>softkey.11</object-name>
+		<object-name>softkey.12</object-name>
+		<object-name>softkey.D</object-name>
+		<object-name>softkey.MENU</object-name>
+		<object-name>softkey.FPL</object-name>
+		<object-name>softkey.PROC</object-name>
+		<object-name>softkey.CLR</object-name>
+		<object-name>softkey.ENT</object-name>
+		<emission>
+			<blue>  0.2 </blue>
+			<red>   0.2 </red>
+			<green> 0.2 </green>
+			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/flood-lights</property>
+				<value>0</value>
+			</greater-than>	
+		</condition>
+	</animation>
+	
   <animation> 
     <type>textranslate</type> 
     <object-name>body.mfd</object-name> 
@@ -436,7 +499,7 @@
   </animation>
 
   <!-- Engine Indication System (EIS) -->
-  <animation>
+  <!--<animation>
     <object-name>eis.circle.0</object-name>
     <type>rotate</type>
     <property>/instrumentation/zkv1000/eis/circle[0]</property>
@@ -468,7 +531,7 @@
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation>
+  </animation>-->
   
   <animation>
     <object-name>eis.bar.0</object-name>
@@ -558,18 +621,6 @@
     <object-name>eis.bar.7</object-name>
     <type>translate</type>
     <property>/instrumentation/zkv1000/eis/bar[7]</property>
-    <factor>0.016</factor>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-  </animation>
-
-  <animation>
-    <object-name>eis.bar.8</object-name>
-    <type>translate</type>
-    <property>/instrumentation/zkv1000/eis/bar[8]</property>
     <factor>0.016</factor>
     <axis>
       <x>0</x>
@@ -727,6 +778,56 @@
     </axis>
   </animation>
 
+  <!-- LOAD INDICATOR -->
+  <animation>
+    <object-name>infos.leftLoad</object-name>
+    <type>textranslate</type>
+    <property>/engines/engine[0]/thrust-lbs</property>
+    <factor>0.0004</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>infos.rightLoad</object-name>
+    <type>textranslate</type>
+    <property>/engines/engine[1]/thrust-lbs</property>
+    <factor>0.0004</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <!-- RPM INDICATOR -->
+  <animation>
+    <object-name>infos.leftRPM</object-name>
+    <type>textranslate</type>
+    <property>/engines/engine[0]/rpm</property>
+    <factor>0.0000334</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>infos.rightRPM</object-name>
+    <type>textranslate</type>
+    <property>/engines/engine[1]/rpm</property>
+    <factor>0.0000334</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
   <!-- AIRSPEED INDICATOR -->
   <animation>
     <object-name>asi.tape</object-name>

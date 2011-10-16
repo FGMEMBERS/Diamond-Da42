@@ -4,8 +4,8 @@
 
   <sim include="Nasal/views.xml">
 
-    <aircraft-version>0.1</aircraft-version>
-    <status>Alpha</status>
+    <aircraft-version>0.8 du 14/09/2011</aircraft-version>
+    <status>Beta</status>
 
     <fuel-fraction>1.0</fuel-fraction>
 
@@ -13,6 +13,12 @@
       <splash-texture>Aircraft/Diamond-Da42/da42-splash.png</splash-texture>
     </startup>
 
+    <systems include="Nasal/electrical.xml"></systems>
+
+    <instrumentation>
+      <path>Aircraft/Diamond-Da42/Nasal/instrumentation.xml</path>
+    </instrumentation>
+	
     <sound>
       <path archive="y">Aircraft/Diamond-Da42/Sounds/da42-sound.xml</path>
     </sound>
@@ -33,21 +39,27 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int">0</int>  <!-- 0 immat -->
-        <int type="int">0</int>  <!-- 1 immat -->
-        <int type="int">0</int>  <!-- 2 immat -->
-        <int type="int">0</int>  <!-- 3 immat -->
-        <int type="int">0</int>  <!-- 4 immat -->
-        <int type="int">0</int>  <!-- 5 immat -->
-        <int type="bool">0</int> <!-- 6 smoke -->
-        <int type="int">0</int>  <!-- 7 color -->
+        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
-        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>  
+        <float n="3" alias="/instrumentation/doors/leftbagage/position-norm"/>  
+        <float n="4" alias="/instrumentation/doors/rightbagage/position-norm"/>  
       </generic>
     </multiplay>
 
     <help>
-      <title>da42</title>
+      <title>Diamond Da42</title>
       <key>
         <name>d</name>
         <desc>Open/Close canopy</desc>
@@ -60,17 +72,217 @@
 
     <menubar include="Dialogs/da42-menu.xml"/>
 
+    <weight n="0">
+      <name type="string">Pilot</name>
+      <min-lb type="double">120.0</min-lb>
+      <max-lb type="double">300.0</max-lb>
+      <weight-lb type="double">200</weight-lb>
+    </weight>
+
+    <weight n="1">
+      <name type="string">Co Pilot</name>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">300.0</max-lb>
+      <weight-lb type="double">0</weight-lb>
+    </weight>
+    
+    <weight n="2">
+      <name type="string">Left Passenger</name>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">300.0</max-lb>
+      <weight-lb type="double">0</weight-lb>
+    </weight>
+    
+    <weight n="3">
+      <name type="string">Right Passenger</name>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">300.0</max-lb>
+      <weight-lb type="double">0</weight-lb>
+    </weight>
+    
+    <weight n="4">
+      <name type="string">Front Baggages</name>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">66.0</max-lb>
+      <weight-lb type="double">0</weight-lb>
+    </weight>
+    
+    <weight n="5">
+      <name type="string">Rear Baggages</name>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">100.0</max-lb>
+      <weight-lb type="double">0</weight-lb>
+    </weight>
+
+    <icing>
+      <windshield type="double">1.0</windshield>
+    </icing>
+    
   </sim>
  
   <controls>
     <gear>
       <brake-parking type="double">1</brake-parking>
     </gear>
+    <fuel>
+      <tank n="0">
+        <position type="double">2</position>
+        <lock type="double">1</lock>
+      </tank>
+      <tank n="1">
+        <position type="double">2</position>
+        <lock type="double">1</lock>
+      </tank>
+    </fuel>
+    <switches>
+      <defrost-lever>0</defrost-lever>
+      <cabinheat-lever>0</cabinheat-lever>
+      <emerhoriz-lever>0</emerhoriz-lever>
+      <emerhoriz-lock>0</emerhoriz-lock>
+      <geardown>1</geardown>
+      <deice>
+        <speed>-1</speed>
+        <icelight>0</icelight>
+      </deice>
+      <flaplever-switch>0</flaplever-switch>
+      <ecu n="0">
+        <switch type="bool">1</switch>
+      </ecu>
+      <ecu n="1">
+        <switch type="bool">1</switch>
+      </ecu>
+      <doors>
+        <door n="0">
+          <locked type="bool">1</locked>
+        </door>
+        <door n="1">
+          <locked type="bool">0</locked>
+        </door>
+      </doors>
+    </switches>
+    <lighting>
+      <elt type="bool">0</elt>
+      <antiicelight type="bool">0</antiicelight>
+      <nav-lights type="bool">0</nav-lights>
+      <strobe type="bool">0</strobe>
+      <taxi-light type="bool">0</taxi-light>
+      <flood-lights type="bool">0</flood-lights>
+      <landing-lights type="bool">0</landing-lights>
+      <instr-lights type="bool">0</instr-lights>
+      <gearwrn type="bool">0</gearwrn>
+    </lighting>
+    <deice>
+      <mode type="int">-1</mode>
+    </deice>
+    <electric>
+      <circuitbreaker>
+        <com1>0</com1>
+        <gpsnav1>0</gpsnav1>
+        <xpcom>0</xpcom>
+        <enginstr>0</enginstr>
+        <pitot>0</pitot>
+        <deice>1</deice>
+        <taxilight>1</taxilight>
+        <oxy>1</oxy>
+        <pfd>0</pfd>
+        <adc>0</adc>
+        <ahrs>0</ahrs>
+        <gearwrn>1</gearwrn>
+        <gearctrl>1</gearctrl>
+        <mfd>0</mfd>
+        <ah>1</ah>
+        <stallwrn>1</stallwrn>
+        <flap>1</flap>
+        <landinglight>1</landinglight>
+        <instlight>1</instlight>
+        <fans>0</fans>
+        <avionicbus>1</avionicbus>
+        <avionicctrl>0</avionicctrl>
+        <com2>0</com2>
+        <gpsnav2>0</gpsnav2>
+        <audio>0</audio>
+        <autopilot>0</autopilot>
+        <datalink>0</datalink>
+        <wx500>0</wx500>
+        <adf>0</adf>
+        <dme>0</dme>
+        <wxrdr>0</wxrdr>
+        <leftecubus>1</leftecubus>
+        <leftecub>1</leftecub>
+        <leftecua>1</leftecua>
+        <leftalt>1</leftalt>
+        <leftbat>1</leftbat>
+        <rightbat>1</rightbat>
+        <rightalt>1</rightalt>
+        <rightecubus>1</rightecubus>
+        <rightecub>1</rightecub>
+        <rightecua>1</rightecua>
+      </circuitbreaker>
+      <alimentation>
+        <gear type="bool">0</gear>
+        <flap type="bool">0</flap>
+        <stallwrn type="bool">0</stallwrn>
+        <deice type="bool">0</deice>
+        <engines>
+          <engine n="0">
+          <starter type="bool">0</starter>
+          <ecus>
+            <ecu n="0">
+              <serviceable type="bool">0</serviceable>
+              <selected type="bool">0</selected>
+            </ecu>
+            <ecu n="1">
+              <serviceable type="bool">0</serviceable>
+              <selected type="bool">0</selected>
+            </ecu>
+          </ecus>
+          </engine>
+            <engine n="1">
+            <starter type="bool">0</starter>
+            <ecus>
+              <ecu n="0">
+                <serviceable type="bool">0</serviceable>
+                <selected type="bool">0</selected>
+              </ecu>
+              <ecu n="1">
+                <serviceable type="bool">0</serviceable>
+                <selected type="bool">0</selected>
+              </ecu>
+            </ecus>
+          </engine>
+        </engines>
+      </alimentation>
+    </electric>
   </controls>
 
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <name>Left wing</name>
+        <selected type="bool">true</selected>
+      </tank>
+      <tank n="1">
+        <name>Right wing</name>
+        <selected type="bool">true</selected>
+      </tank>
+    </fuel>
+    <!--1 unite par seconde en mode normal = 2h30, 2.5 en mode high = 1h00, et en max 5 done 30mn-->
+    <deice type="double">9000.0</deice>
+  </consumables>
+  
   <input>
     <keyboard include="Nasal/da42-keyboard.xml"/>
   </input>
+
+  <!--placement instruments -->
+  <!-- -->
+  <mymodel>
+    <x> 0.007 </x>
+    <y> 0.318 </y>
+    <z> 0.184 </z>
+  </mymodel>
+  <!-- -->
+  <!--placement instruments -->
  
   <nasal>
     <doors>
@@ -80,6 +292,8 @@
       <file>Aircraft/Diamond-Da42/Nasal/light.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/liveries.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/immat.nas</file>
+      <file>Aircraft/Diamond-Da42/Nasal/tools.nas</file>
+      <file>Aircraft/Diamond-Da42/Nasal/electrical.nas</file>
     </da42>
     <!--
          Le zkv100 de Zakharov disponible pour mises à jour ici : http://gitorious.org/zakharov/zkv1000 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-
+  <!--
   <key n="68">
     <name>D</name>
     <desc>Passenger door</desc>
@@ -19,6 +19,64 @@
       <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
+  -->
+
+  <!--tip placement instruments-->
+  <!-- -->
+  <key n="357">
+    <name>up</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/z</property>
+      <step>0.001</step>
+    </binding>
+  </key>
+
+  <key n="359">
+    <name>down</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/z</property>
+      <step>-0.001</step>
+    </binding>
+  </key>
+
+  <key n="356">
+    <name>left</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/y</property>
+      <step>-0.001</step>
+    </binding>
+  </key>
+
+  <key n="358">
+    <name>right</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/y</property>
+      <step>0.001</step>
+    </binding>
+  </key>
+
+  <key n="360">
+    <name>fwd</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/x</property>
+      <step>-0.001</step>
+    </binding>
+  </key>
+
+  <key n="361">
+    <name>backwd</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/x</property>
+      <step>0.001</step>
+    </binding>
+  </key>
+  <!-- -->
+  <!--tip placement instruments-->
 
 </PropertyList>
-

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!-- ELT
+-->
+<PropertyList>
+
+    <path>elt.ac</path>
+    
+	<animation>
+		<type>rotate</type>
+		<object-name>ELT.switchUp</object-name>
+		<object-name>ELT.switchDn</object-name>
+		<property>/controls/switches/elt</property>
+		<factor>30</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>ELT.switchUp</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/switches/elt</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/lighting/elt</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>/sim/sound/switch</property>
+			</binding>
+		</action>
+	</animation>	
+	<animation>
+		<type>pick</type>
+		<object-name>ELT.switchDn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/switches/elt</property>
+				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/lighting/elt</property>
+				<value>0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>ELT.led</object-name>
+		<emission>
+			<red>1.0</red>
+			<green>0.0</green>
+			<blue>0.0</blue>
+		</emission>
+		<condition>
+			<or>
+				<equals>
+					<property>/controls/lighting/elt</property>
+					<value>0</value>
+				</equals>
+				<and>
+					<property>/sim/model/lights/elt/state</property>
+					<equals>
+						<property>/controls/lighting/elt</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</or>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>support</object-name>
+		<object-name>ELT.vis1</object-name>
+		<object-name>ELT.vis2</object-name>
+		<object-name>ELT.vis3</object-name>
+		<object-name>ELT.vis4</object-name>
+		<object-name>protect.1</object-name>
+		<object-name>protect.2</object-name>
+		<object-name>button.support</object-name>
+		<object-name>ELT.switchDn</object-name>
+		<object-name>ELT.switchUp</object-name>
+		<emission>
+			<red>   0.2 </red>
+			<green> 0.2 </green>
+			<blue>  0.2 </blue>
+			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+	</animation>
+	
+</PropertyList>

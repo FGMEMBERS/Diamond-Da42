@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -17,7 +17,7 @@
   <group>
     <layout>hbox</layout>
     <input>
-      <property>/sim/model/immat</property>
+      <property>/sim/multiplay/callsign</property>
       <type>STRING</type>
       <width>100</width>
     </input>

@@ -1,0 +1,81 @@
+<?xml version="1.0" ?> 
+<PropertyList> 
+	<path>ruddertrim.ac</path> 
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>trimwheel</object-name>
+		<property>/controls/flight/rudder-trim</property>
+		<factor>-180</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>trimind</object-name>
+		<property>/controls/flight/rudder-trim</property>
+		<factor>-20</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>trimleft</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/flight/rudder-trim</property>
+				<step>-0.1</step>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>trimright</object-name>
+		<visible>false</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/flight/rudder-trim</property>
+				<step>0.1</step>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>trimwheel</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>da42.mouseHandler.setX( "/controls/flight/rudder-trim", 0.01 , -1.0 , 1.0);</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>nasal</command>
+					<script>da42.mouseHandler.setX();</script>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+</PropertyList>

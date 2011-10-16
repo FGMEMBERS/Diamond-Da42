@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>emergencyhorizon.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>emerhoriz.lock.base</object-name>
+    <object-name>emerhoriz.lock.lever</object-name>
+    <object-name>emerhoriz.lever.base</object-name>
+    <object-name>emerhoriz.lever.lever</object-name>
+  </animation>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>emerhoriz.lock.lever</object-name>
+    <property>/controls/switches/emerhoriz-lock</property>
+    <factor>-90</factor>
+    <center>
+      <x-m>  0.0054 </x-m>
+      <y-m> -0.0064 </y-m>
+      <z-m>  0.0243 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>emerhoriz.lock.lever</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/emerhoriz-lock</property>
+      </binding>
+    </action>
+  </animation>
+	
+  <animation>
+    <type>rotate</type>
+    <object-name>emerhoriz.lever.lever</object-name>
+    <property>/controls/switches/emerhoriz-lever</property>
+    <factor> 60 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>emerhoriz.lever.lever</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <condition>
+          <equals>
+            <property>/controls/switches/emerhoriz-lock</property>
+            <value type="double">1</value>
+          </equals>
+        </condition>
+        <command>property-toggle</command>
+        <property>controls/switches/emerhoriz-lever</property>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+            <property>/controls/switches/emerhoriz-lock</property>
+            <value type="double">1</value>
+          </equals>
+        </condition>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+	
+</PropertyList>
+

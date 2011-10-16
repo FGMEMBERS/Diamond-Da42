@@ -4,8 +4,8 @@
 <PropertyList include="da42-yasim-cnf.xml">
 
   <sim>
-    <description>Diamond DA 20 da42</description>
-    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <description>Diamond DA 42 (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM) - JeeP Cheney (Cockpit-Systems)</author>
   </sim>
 
 </PropertyList>

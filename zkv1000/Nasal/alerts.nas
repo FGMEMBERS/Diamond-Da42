@@ -44,23 +44,23 @@ var _checkTrafficProximity = func {
 }
 
 var _gearsUp = func {
-    if (vs > vs_gearup and ias > ias_gearup) {
-        controls.gearDown(-1);
-        if (agl > agl_geardown) {
-            manageLandingGears = _gearsDown;
-            init_main_loop();
-        }
-    }
-    else
-        controls.gearDown(1);
+    #if (vs > vs_gearup and ias > ias_gearup) {
+    #   controls.gearDown(-1);
+    #    if (agl > agl_geardown) {
+    #        manageLandingGears = _gearsDown;
+    #        init_main_loop();
+    #    }
+    #}
+    #else
+    #    controls.gearDown(1);
 }
 
 var _gearsDown = func {
-    if (agl < agl_geardown and ias < ias_geardown) {
-        controls.gearDown(1);
-        manageLandingGears = _gearsUp;
-        init_main_loop();
-    }
+    #if (agl < agl_geardown and ias < ias_geardown) {
+    #   controls.gearDown(1);
+    #    manageLandingGears = _gearsUp;
+    #    init_main_loop();
+    #}
 }
 
 var AbnormalAttitudes = [

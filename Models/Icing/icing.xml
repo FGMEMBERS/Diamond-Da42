@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>icing.ac</path>
+
+  <!-- icing -->
+	<animation>
+		<type>material</type>
+		<object-name>verriere</object-name>
+		<ambient>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+			<factor-prop>/sim/icing/windshield</factor-prop>
+		</ambient>
+		<diffuse>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+			<factor-prop>/sim/icing/windshield</factor-prop>
+		</diffuse>
+		<specular>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+			<factor-prop>/sim/icing/windshield</factor-prop>
+		</specular>
+		<transparency>
+			<alpha>1</alpha>
+			<factor-prop>/sim/icing/windshield</factor-prop>
+			<offset>0.05</offset>
+		</transparency>
+	</animation>
+  
+</PropertyList>
+

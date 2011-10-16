@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  Diamond Da 42 - 2010 - Emmanuel BARANGER 
+  Diamond Da 42 - 2010 - Emmanuel BARANGER
+         Update - 2011 - Philippe BROCORENS
 
   source        : http://en.wikipedia.org/wiki/Diamond_DA42
 
@@ -13,35 +14,43 @@
   Maximum speed :   356 km/h ( 200 kts )
 -->
 
-<airplane mass="2761">
+<airplane mass="1761">
 
   <!-- Approach configuration -->
-  <approach speed="50" aoa="6" fuel="0.3">
+  <approach speed="55" aoa="4" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
-    <control-setting axis="/controls/engines/engine[1]/mixture" value="1.0"/>
-    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
   <!-- Cruise configuration -->
-  <cruise speed="190" alt="0" fuel="1">
+  <cruise speed="160" alt="5000" fuel="1">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.7"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.75"/>
     <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
-    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.7"/>
     <control-setting axis="/controls/flight/flaps" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
 
   <cockpit x="1.541" y="0.222" z="0.462"/>
 
-  <fuselage ax="4.275" ay="0" az="-0.181" bx="-3.512" by="0" bz="-0.064" width="1.051" taper="0.4" midpoint="0.3"/>
+  <fuselage ax="4.275" ay=" 0.00" az="-0.181" bx="-0.530" by=" 0.00" bz=" 0.357" width="1.2" taper="0.1" midpoint="0.6"/>
+  <fuselage ax="1.496" ay=" 0.00" az=" 0.120" bx="-3.502" by=" 0.00" bz="-0.100" width="1.2" taper="0.1" midpoint="0.0"/>
+
+  <!-- Moteur gauche -->
+  <fuselage ax="2.57"  ay=" 1.78" az="-0.175" bx=" 0.576" by=" 1.78" bz="-0.157" width="0.8" taper="0.4" midpoint="0.2"/>
+
+  <!-- Moteur droit -->
+  <fuselage ax="2.57"  ay="-1.78" az="-0.175" bx=" 0.576" by="-1.78" bz="-0.157" width="0.8" taper="0.4" midpoint="0.2"/>
+
 
   <mstab x="1" y="0" z="-0.426"
         chord="1.848"
@@ -51,14 +60,13 @@
         camber="0.002"
         sweep="3.5">
         <stall aoa="18" width="1.0" peak="1.5"/>
-        <flap0 start="0.05" end="0.68" lift="1.4" drag="1.5"/>
+        <flap0 start="0.05" end="0.68" lift="1.2" drag="1.2"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-<!--
+
         <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
 
         <control-speed control="FLAP0" transition-time="5"/>
--->
   </mstab>
 
   <wing x="0.862" y="2.210" z="-0.234"
@@ -68,19 +76,17 @@
         dihedral="5"
         camber="0.002">
         <stall aoa="18" width="1.0" peak="1.5"/>
-        <flap0 start="0.05" end="0.68" lift="1.4" drag="1.5"/>
+        <flap0 start="0.05" end="0.68" lift="1.2" drag="1.2"/>
         <flap1 start="0.68" end="0.96" lift="1.2" drag="1.1"/>
 
-        <control-input axis="/controls/flight/flaps" control="FLAP0" invert="true"/>
+        <control-input axis="/controls/flight/flaps" control="FLAP0" />
 
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
-        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/> 
-
+    
         <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
 
-        <control-speed control="FLAP1" transition-time="0.01"/>
         <control-speed control="FLAP0" transition-time="5"/>
   </wing>
 
@@ -91,6 +97,14 @@
          dihedral="86"
          sweep="30">
   </vstab>
+
+  <vstab x="-2.597" y="0" z="-0.037"
+         chord="2.5"
+         length="0.5"
+         sweep="50"
+         taper="0.5">
+       
+</vstab>
 
   <vstab x="0.755" y="-6.590" z="0.162"
          chord="0.5"
@@ -104,15 +118,16 @@
          chord="0.892"
          length="1.458"
          taper="0.50"
-         incidence="0"
+         incidence="-0.8"
          sweep="5">
-         <stall aoa="20" width="1" peak="1.5"/>
-         <flap0 start="0" end="1" lift="2.0" drag="1.1"/>
+         <stall aoa="14" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
 
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+       
   </hstab>
 
   <vstab x="-3.885" y="1.456" z="1.170"
@@ -140,7 +155,7 @@
          <flap0 start="0" end="0.935" lift="1.6" drag="1.3"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
-
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 
@@ -159,15 +174,17 @@
              moment="10"
              cruise-speed="190" 
              cruise-rpm="2300"
-             cruise-alt="0" 
-             cruise-power="165"
-             takeoff-power="170" 
+             cruise-alt="5000" 
+             cruise-power="150"
+             takeoff-power="170"
              takeoff-rpm="2800">
              <piston-engine eng-rpm="2800" 
-                            alt="0000" 
                             eng-power="170" 
-                            displacement="121"/>
-             <actionpt x="2.627" y="1.740" z="0.021"  />
+                            displacement="121"
+                            compression="8.7"
+                            gear-ratio="1.7"   
+                            alt="0"/>
+             <actionpt x="2.627" y="1.740" z="0.021"/>
              <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
              <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
              <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
@@ -181,15 +198,18 @@
              moment="10"
              cruise-speed="190" 
              cruise-rpm="2300"
-             cruise-alt="0" 
-             cruise-power="165"
+             cruise-alt="5000" 
+             cruise-power="150"
              takeoff-power="170" 
+            
              takeoff-rpm="2800">
-             <piston-engine eng-rpm="2800" 
-                            alt="0000" 
+             <piston-engine eng-rpm="2800"                            
                             eng-power="170" 
-                            displacement="121"/>
-             <actionpt x="2.627" y="-1.740" z="0.021"  />
+                            displacement="121"
+                            compression="8.7"
+                            gear-ratio="1.7" 
+                            alt="0"/>
+             <actionpt x="2.627" y="-1.740" z="0.021"/>
              <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>
              <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
              <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
@@ -213,7 +233,7 @@
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-        <control-speed control="EXTEND" transition-time="7"/>
+        <control-speed control="EXTEND" transition-time="6"/>
         <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
   </gear>
 
@@ -223,16 +243,25 @@
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-        <control-speed control="EXTEND" transition-time="7"/>
+        <control-speed control="EXTEND" transition-time="5"/>
         <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
   </gear>
 
   <!-- Fuel  -->
-  <tank x="1.420" y=" 1.323" z="-0.272" capacity="200" />
-  <tank x="1.420" y="-1.323" z="-0.272" capacity="200" />
+  <tank x="1.420" y=" 1.323" z="-0.272" capacity="150" />
+  <tank x="1.420" y="-1.323" z="-0.272" capacity="150" />
 
-  <!-- CG placement -->
-  <ballast x="2" y="0" z="-3" mass="200"/>
-  <ballast x="-2" y="0" z="3" mass="-200"/>
+  <weight x="1.68" y=" 0.18" z="-0.1750" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x="1.68" y="-0.18" z="-0.1750" mass-prop="/sim/weight[1]/weight-lb"/>
 
+  <weight x="1.00" y=" 0.18" z="-0.1750" mass-prop="/sim/weight[2]/weight-lb"/>
+  <weight x="1.00" y="-0.18" z="-0.1750" mass-prop="/sim/weight[3]/weight-lb"/>
+  <weight x="2.62" y=" 0.00" z="-0.1750" mass-prop="/sim/weight[4]/weight-lb"/>
+  <weight x="0.55" y=" 0.00" z="-0.1750" mass-prop="/sim/weight[5]/weight-lb"/>
+
+  <!--   
+  <ballast x=" 2" y="0" z="-3" mass=" 200"/>
+  <ballast x="-2" y="0" z=" 3" mass="-200"/>
+  -->
+ 
 </airplane>
