@@ -77,4 +77,3 @@ var selectMUDblock = func (dir) {
 var applyMUDcallback = func {
     MUD_content[mud.getNode("selected-block").getValue()][1]();
 }
-

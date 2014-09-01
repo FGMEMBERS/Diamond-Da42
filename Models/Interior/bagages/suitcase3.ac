@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "DefaultWhite" rgb 0.8 0.8 0.8 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 50 trans 0
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
 kids 1
 OBJECT poly
@@ -7,8 +7,9 @@ name "suitcase"
 loc 0 0 -0
 data 8
 suitcase
-texture "colors.png"
-texrep 1 1
+texture "bagages.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 72
 0.009738 0.177544 -0.037205
 0.009738 0.173285 -0.057884

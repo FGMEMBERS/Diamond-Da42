@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>panel.ac</path>
-
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>panel</object-name>
@@ -11,145 +11,151 @@
     <object-name>pedestal</object-name>
     <object-name>panelfront</object-name>
     <object-name>registration</object-name>
-
+    
     <!-- Objets transparents -->
   </animation>
-
+  
+  <!-- illumination du cockpit -->
+  <animation>
+    <type>material</type>
+    <object-name>panelfront</object-name>
+    <object-name>registration</object-name>
+    <object-name>textes</object-name>
+    <emission>
+      <red>   0.2 </red>
+      <green> 0.2 </green>
+      <blue>  0.2 </blue>
+      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+    </emission>
+    <condition>
+      <greater-than>
+        <property>/controls/lighting/flood-lights</property>
+        <value>0</value>
+      </greater-than> 
+    </condition>
+  </animation>
+  
   <model>
     <path>Aircraft/Diamond-Da42/zkv1000/mfd.xml</path>
-    <name>Mfd</name>
     <offsets>
       <x-m> 0.004 </x-m>
       <y-m> 0.118 </y-m>
       <z-m> 0.152 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/zkv1000/pfd.xml</path>
-    <name>Pfd</name>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m> -0.228 </y-m>
       <z-m>  0.152 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/asi/asi.xml</path>
-    <name>Asi</name>
     <offsets>
       <x-m>  0.026 </x-m>
       <y-m> -0.100 </y-m>
       <z-m>  0.322 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/ai/ai.xml</path>
-    <name>Ai</name>
     <offsets>
       <x-m>  0.019 </x-m>
       <y-m> -0.002 </y-m>
       <z-m>  0.322 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/alt/alt.xml</path>
-    <name>Alt</name>
     <offsets>
       <x-m> 0.019 </x-m>
       <y-m> 0.096 </y-m>
       <z-m> 0.320 </z-m>
-   </offsets>
+    </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/comp/comp.xml</path>
-    <name>Compas</name>
     <offsets>
       <x-m> 0.021 </x-m>
       <y-m> 0.18 </y-m>
       <z-m> 0.313 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/strobelight.xml</path>
-	<name>StrobeLightSwitch</name>
     <offsets>
       <x-m>  0.022 </x-m>
       <y-m> -0.197 </y-m>
       <z-m>  0.303 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/positionlight.xml</path>
-	<name>PositionLightSwitch</name>
     <offsets>
       <x-m>  0.022 </x-m>
       <y-m> -0.218 </y-m>
       <z-m>  0.303 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/taxilight.xml</path>
-	<name>TaxiLightSwitch</name>
     <offsets>
       <x-m>  0.022 </x-m>
       <y-m> -0.239 </y-m>
       <z-m>  0.303 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/landinglight.xml</path>
-	<name>LandingLightSwitch</name>
     <offsets>
       <x-m>  0.022 </x-m>
       <y-m> -0.262 </y-m>
       <z-m>  0.303 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/masteravionic.xml</path>
-	<name>MasterAvioniqueSwitch</name>
     <offsets>
-      <x-m>  0.007 </x-m>
+      <x-m>  0.009 </x-m>
       <y-m> -0.161 </y-m>
       <z-m>  0.008 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/pitotheat.xml</path>
-	<name>PitotHeatSwitch</name>
     <offsets>
-      <x-m>  0.007 </x-m>
+      <x-m>  0.009 </x-m>
       <y-m> -0.376 </y-m>
       <z-m>  0.008 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/master.xml</path>
-	<name>MasterSwitch</name>
     <offsets>
-      <x-m>  0.005 </x-m>
-	  <y-m> -0.192 </y-m>
+      <x-m>  0.009 </x-m>
+      <y-m> -0.192 </y-m>
       <z-m>  0.008 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/knobs/instrumentknob.xml</path>
-	<name>InstrumentKnob</name>
     <offsets>
-      <x-m>  0.02 </x-m>
+      <x-m>  0.020 </x-m>
       <y-m> -0.335 </y-m>
       <z-m>  0.301 </z-m>
     </offsets>
@@ -157,9 +163,8 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/knobs/floodknob.xml</path>
-	<name>FloodKnob</name>
     <offsets>
-      <x-m>  0.02 </x-m>
+      <x-m>  0.020 </x-m>
       <y-m> -0.298 </y-m>
       <z-m>  0.301 </z-m>
     </offsets>
@@ -167,17 +172,15 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/trimwheel/trimwheel.xml</path>
-	<name>TrimWheel</name>
     <offsets>
       <x-m>  0.463 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m>  -0.142 </z-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.142 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/leftecuswitch.xml</path>
-	<name>LeftEcuSwitch</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.485 </y-m>
@@ -187,7 +190,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/rightecuswitch.xml</path>
-	<name>RightEcuSwitch</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.414 </y-m>
@@ -197,27 +199,24 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/leftalternatorswitch.xml</path>
-	<name>LeftAltSwitch</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.466 </y-m>
-      <z-m>  0.06 </z-m>
+      <z-m>  0.060 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/rightalternatorswitch.xml</path>
-	<name>RightAltSwitch</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.434 </y-m>
-      <z-m>  0.06 </z-m>
+      <z-m>  0.060 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/leftmasterengineswitch.xml</path>
-	<name>LeftMasterEngineSwitch</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.336 </y-m>
@@ -227,7 +226,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/rightmasterengineswitch.xml</path>
-	<name>RightMasterEngineSwitch</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.235 </y-m>
@@ -237,7 +235,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/starter/starter.xml</path>
-	<name>Starter</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.287 </y-m>
@@ -247,27 +244,24 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/leftwheellight.xml</path>
-	<name>LeftWheelLight</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.118 </y-m>
-      <z-m>  -0.005 </z-m>
+      <z-m> -0.005 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/rightwheellight.xml</path>
-	<name>RightWheelLight</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.096 </y-m>
-      <z-m>  -0.005 </z-m>
+      <z-m> -0.005 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/frontwheellight.xml</path>
-	<name>FrontWheelLight</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.107 </y-m>
@@ -277,17 +271,15 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/transitwheellight.xml</path>
-	<name>TransitWheelLight</name>
     <offsets>
       <x-m>  0.007 </x-m>
       <y-m> -0.136 </y-m>
-      <z-m>  -0.005 </z-m>
+      <z-m> -0.005 </z-m>
     </offsets>
   </model>
   
-   <model>
+  <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/gearlever.xml</path>
-	<name>GearLever</name>
     <offsets>
       <x-m>  0.009 </x-m>
       <y-m> -0.066 </y-m>
@@ -297,9 +289,8 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/flapuplight.xml</path>
-	<name>FlapUpLight</name>
     <offsets>
-      <x-m>  0.007 </x-m>
+      <x-m> 0.007 </x-m>
       <y-m> 0.187 </y-m>
       <z-m> 0.023 </z-m>
     </offsets>
@@ -307,9 +298,8 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/flapmidlight.xml</path>
-	<name>FlapMidLight</name>
     <offsets>
-      <x-m>  0.007 </x-m>
+      <x-m> 0.007 </x-m>
       <y-m> 0.185 </y-m>
       <z-m> 0.008 </z-m>
     </offsets>
@@ -317,57 +307,51 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/lights/flapdownlight.xml</path>
-	<name>FlapDownLight</name>
     <offsets>
-      <x-m> 0.007 </x-m>
-      <y-m> 0.178 </y-m>
+      <x-m>  0.007 </x-m>
+      <y-m>  0.178 </y-m>
       <z-m> -0.004 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/flaplever.xml</path>
-	<name>FlapLever</name>
     <offsets>
-      <x-m>  0.007 </x-m>
+      <x-m> 0.007 </x-m>
       <y-m> 0.226 </y-m>
-      <z-m>  0.013 </z-m>
+      <z-m> 0.013 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/lefttestecubutton.xml</path>
-	<name>LeftTestEcuButton</name>
     <offsets>
-      <x-m> 0.007 </x-m>
+      <x-m>  0.007 </x-m>
       <y-m> -0.466 </y-m>
-      <z-m> 0.089 </z-m>
+      <z-m>  0.089 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/righttestecubutton.xml</path>
-	<name>RightTestEcuButton</name>
     <offsets>
-      <x-m> 0.007 </x-m>
+      <x-m>  0.007 </x-m>
       <y-m> -0.434 </y-m>
-      <z-m> 0.089 </z-m>
+      <z-m>  0.089 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/switches/testtransitbutton.xml</path>
-	<name>TestTransitButton</name>
     <offsets>
-      <x-m> 0.007 </x-m>
+      <x-m>  0.007 </x-m>
       <y-m> -0.136 </y-m>
-      <z-m> 0.019 </z-m>
+      <z-m>  0.019 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbcom1.xml</path>
-	<name>CbCom1</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
@@ -377,7 +361,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbgpsnav1.xml</path>
-	<name>CbGpsNav1</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -387,7 +370,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbxpcom.xml</path>
-	<name>CbXpCom</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.405 </y-m>
@@ -397,17 +379,15 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbenginstr.xml</path>
-	<name>CbEngInstr</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.425 </y-m>
       <z-m> 0.215 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbpitot.xml</path>
-	<name>CbPitot</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
@@ -417,7 +397,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbdeice.xml</path>
-	<name>CbDeInce</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -427,7 +406,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbtaxilight.xml</path>
-	<name>CbTaxiLight</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
@@ -437,7 +415,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cboxy.xml</path>
-	<name>CbOxy</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -447,27 +424,24 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbpfd.xml</path>
-	<name>CbPfd</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.305 </y-m>
-      <z-m> 0.12 </z-m>
+      <z-m> 0.120 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbadc.xml</path>
-	<name>CbAdc</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.325 </y-m>
-      <z-m> 0.12 </z-m>
+      <z-m> 0.120 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbahrs.xml</path>
-	<name>CbAhrs</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.345 </y-m>
@@ -477,17 +451,15 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbgearwrn.xml</path>
-	<name>CbGearWrn</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
-      <z-m> 0.12 </z-m>
+      <z-m> 0.120 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbgearctrl.xml</path>
-	<name>CbGearCtrl</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -497,7 +469,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbmfd.xml</path>
-	<name>CbMfd</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.305 </y-m>
@@ -507,7 +478,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbah.xml</path>
-	<name>CbAh</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.325 </y-m>
@@ -517,7 +487,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbstallwrn.xml</path>
-	<name>CbStallWrn</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.345 </y-m>
@@ -527,7 +496,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbflap.xml</path>
-	<name>CbFlap</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
@@ -537,7 +505,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cblandinglight.xml</path>
-	<name>CbLandingLight</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -547,7 +514,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbinstlight.xml</path>
-	<name>CbInstLight</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.405 </y-m>
@@ -557,7 +523,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbfans.xml</path>
-	<name>CbFans</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.425 </y-m>
@@ -567,7 +532,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbavionicbus.xml</path>
-	<name>CbAvionicBus</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.445 </y-m>
@@ -577,7 +541,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbavionicctrl.xml</path>
-	<name>CbAvionicCtrl</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.465 </y-m>
@@ -587,7 +550,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbcom2.xml</path>
-	<name>CbCom2</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.305 </y-m>
@@ -597,7 +559,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbgpsnav2.xml</path>
-	<name>CbGpsNav2</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.325 </y-m>
@@ -607,7 +568,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbaudio.xml</path>
-	<name>CbAudio</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.345 </y-m>
@@ -617,7 +577,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbautopilot.xml</path>
-	<name>CbAutoPilot</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
@@ -627,7 +586,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbdatalink.xml</path>
-	<name>CbDataLink</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -637,7 +595,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbwx500.xml</path>
-	<name>CbWx500</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.405 </y-m>
@@ -647,7 +604,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbadf.xml</path>
-	<name>CbAdf</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.425 </y-m>
@@ -657,7 +613,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbdme.xml</path>
-	<name>CbDme</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.445 </y-m>
@@ -667,7 +622,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbwxrdr.xml</path>
-	<name>CbWxRdr</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.465 </y-m>
@@ -677,7 +631,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbleftecubus.xml</path>
-	<name>CbLeftEcubus</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.305 </y-m>
@@ -687,7 +640,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbleftecub.xml</path>
-	<name>CbLeftEcuB</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.325 </y-m>
@@ -697,7 +649,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbleftecua.xml</path>
-	<name>CbLeftEcuA</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.345 </y-m>
@@ -707,7 +658,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbleftalt.xml</path>
-	<name>CbLeftAlt</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.365 </y-m>
@@ -717,7 +667,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbleftbat.xml</path>
-	<name>CbLeftBat</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.385 </y-m>
@@ -727,7 +676,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbrightbat.xml</path>
-	<name>CbRightBat</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.405 </y-m>
@@ -737,7 +685,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbrightalt.xml</path>
-	<name>CbRightAlt</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.425 </y-m>
@@ -747,7 +694,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbrightecubus.xml</path>
-	<name>CbRightEcuBus</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.445 </y-m>
@@ -757,7 +703,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbrightecub.xml</path>
-	<name>CbRightEcuB</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.465 </y-m>
@@ -767,7 +712,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/circuitbreakers/cbrightecua.xml</path>
-	<name>CbRightEcuA</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.485 </y-m>
@@ -777,17 +721,15 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/leftventilationnozzle.xml</path>
-	<name>LeftVentilationNozzle</name>
     <offsets>
-      <x-m> 0.007 </x-m>
+      <x-m>  0.007 </x-m>
       <y-m> -0.447 </y-m>
-      <z-m> 0.156 </z-m>
+      <z-m>  0.156 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/rightventilationnozzle.xml</path>
-	<name>RightVentilationNozzle</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.445 </y-m>
@@ -797,17 +739,15 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/throttle/throttle.xml</path>
-	<name>Throttle</name>
     <offsets>
-      <x-m> 0.29 </x-m>
-      <y-m> 0 </y-m>
+      <x-m>  0.29 </x-m>
+      <y-m>  0.00 </y-m>
       <z-m> -0.13 </z-m>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/fuellever/fuellever.xml</path>
-    <name>FuelLever</name>
     <offsets>
       <x-m>  0.368 </x-m>
       <y-m>  0.000 </y-m>
@@ -817,29 +757,26 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/misclever.xml</path>
-    <name>MiscLever</name>
     <offsets>
       <x-m>  0.080 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.074 </z-m>
-	  <pitch-deg> 45 </pitch-deg>
+      <pitch-deg> 45 </pitch-deg>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/ruddertrim/ruddertrim.xml</path>
-    <name>RudderTrim</name>
     <offsets>
       <x-m>  0.045 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.052 </z-m>
-	  <pitch-deg> -45 </pitch-deg>
+      <pitch-deg> -45 </pitch-deg>
     </offsets>
   </model>
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/emergencygear/emergencygear.xml</path>
-    <name>EmergencyGear</name>
     <offsets>
       <x-m> -0.054 </x-m>
       <y-m> -0.075 </y-m>
@@ -849,7 +786,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/alternateair/alternateair.xml</path>
-    <name>AlternateAir</name>
     <offsets>
       <x-m> -0.054 </x-m>
       <y-m>  0.075 </y-m>
@@ -859,7 +795,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/emergencyhorizon/emergencyhorizon.xml</path>
-    <name>EmergencyHorizon</name>
     <offsets>
       <x-m>  0.021 </x-m>
       <y-m> -0.166 </y-m>
@@ -869,7 +804,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/elt/elt.xml</path>
-    <name>Elt</name>
     <offsets>
       <x-m> 0.023 </x-m>
       <y-m> 0.306 </y-m>
@@ -877,9 +811,8 @@
     </offsets>
   </model>
   
-   <model>
+  <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/mixer/mixer.xml</path>
-    <name>Mixer</name>
     <offsets>
       <x-m>  0.006 </x-m>
       <y-m> -0.055 </y-m>
@@ -889,7 +822,6 @@
   
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/deice/deice.xml</path>
-    <name>DeIce</name>
     <offsets>
       <x-m> 0.007 </x-m>
       <y-m> 0.318 </y-m>
@@ -909,89 +841,5 @@
       </binding>
     </action>
   </animation>
-   
-  <!-- illumination du cockpit -->
-  <!-- Cette section n'a rien à faire ici. Elle devrait être dispatchée dans chaque xml d'instrument -->
-  <animation>
-    <type>material</type>
-    <!--
-    <object-name>Mfd</object-name>
-    <object-name>Pfd</object-name>
-    -->
-    <object-name>StrobeLightSwitch</object-name>
-    <object-name>PositionLightSwitch</object-name>
-    <object-name>TaxiLightSwitch</object-name>
-    <object-name>LandingLightSwitch</object-name>
-    <object-name>MasterAvioniqueSwitch</object-name>
-    <object-name>PitotHeatSwitch</object-name>
-    <object-name>MasterSwitch</object-name>
-    <object-name>LeftEcuSwitch</object-name>
-    <object-name>RightEcuSwitch</object-name>
-    <object-name>LeftAltSwitch</object-name>
-    <object-name>RightAltSwitch</object-name>
-    <object-name>LeftMasterEngineSwitch</object-name>
-    <object-name>RightMasterEngineSwitch</object-name>
-    <object-name>Starter</object-name>
-    <object-name>GearLever</object-name>
-    <object-name>FlapLever</object-name>
-    <object-name>LeftTestEcuButton</object-name>
-    <object-name>RightTestEcuButton</object-name>
-    <object-name>TestTransitButton</object-name>
-    <object-name>EmergencyHorizon</object-name>
-    <!--<object-name>Mixer</object-name>-->
-    <object-name>panelfront</object-name>
-    <object-name>registration</object-name>
-    <object-name>textes</object-name>
-    <emission>
-      <red>   0.2 </red>
-      <green> 0.2 </green>
-      <blue>  0.2 </blue>
-      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
-    </emission>
-    <condition>
-      <greater-than>
-        <property>/controls/lighting/flood-lights</property>
-        <value>0</value>
-      </greater-than>	
-    </condition>
-  </animation>
-
-  <!--deplacement placement instrument-->
-  <!-- 
-	<animation>
-		<type>translate</type>
-		<object-name>mygauge</object-name>
-		<property>/mymodel/x</property>
-		<axis>
-			<x> 1 </x>
-			<y> 0 </y>
-			<z> 0 </z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>mygauge</object-name>
-		<property>/mymodel/y</property>
-		<axis>
-			<x> 0 </x>
-			<y> 1 </y>
-			<z> 0 </z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>mygauge</object-name>
-		<property>/mymodel/z</property>
-		<axis>
-			<x> 0 </x>
-			<y> 0 </y>
-			<z> 1 </z>
-		</axis>
-	</animation>
-  -->
-	<!--deplacement placement instrument-->	
-
+  
 </PropertyList>
-

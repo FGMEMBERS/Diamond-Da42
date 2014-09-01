@@ -21,12 +21,12 @@ var pfdCursors = func {
     #setprop('/instrumentation/zkv1000/eis/circle[0]', getprop('/engines/engine/mp-osi') / 30);
     #setprop('/instrumentation/zkv1000/eis/circle[1]', getprop('/engines/engine/rpm') / 2600);
     setprop('/instrumentation/zkv1000/eis/bar[0]', getprop('/engines/engine[0]/oil-temperature-degf') / 250);
-	setprop('/instrumentation/zkv1000/eis/bar[1]', getprop('/engines/engine[1]/oil-temperature-degf') / 250);
+  setprop('/instrumentation/zkv1000/eis/bar[1]', getprop('/engines/engine[1]/oil-temperature-degf') / 250);
     setprop('/instrumentation/zkv1000/eis/bar[2]', getprop('/engines/engine[0]/egt-degf') / 80);
-	setprop('/instrumentation/zkv1000/eis/bar[3]', getprop('/engines/engine[1]/egt-degf') / 80);
+  setprop('/instrumentation/zkv1000/eis/bar[3]', getprop('/engines/engine[1]/egt-degf') / 80);
     setprop('/instrumentation/zkv1000/eis/bar[4]', getprop('/systems/electrical/bus/left-main-bus') / 32);
     setprop('/instrumentation/zkv1000/eis/bar[5]', getprop('/systems/electrical/bus/right-main-bus') / 32);
-	setprop('/instrumentation/zkv1000/eis/bar[6]', getprop('/consumables/fuel/tank/level-gal_us') / 17);
+  setprop('/instrumentation/zkv1000/eis/bar[6]', getprop('/consumables/fuel/tank/level-gal_us') / 17);
     setprop('/instrumentation/zkv1000/eis/bar[7]', getprop('/consumables/fuel/tank[1]/level-gal_us') / 17);
 }
 
@@ -67,5 +67,3 @@ var popup_selected_alt = func {
     asel_timer += 1;
     settimer(withdraw_selected_alt, 10);
 }
-
-

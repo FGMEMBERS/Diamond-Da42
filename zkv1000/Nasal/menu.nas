@@ -331,5 +331,3 @@ var menuTable = [
     '                          TRAFF  TOPO   TERR  STRM  NEXR  XMLTG          BACK',
     'ENGN           LEAN                              DECF   INCF   RSTF'
 ];
-
-

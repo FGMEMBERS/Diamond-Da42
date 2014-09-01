@@ -39,24 +39,22 @@ setprop( "/instrumentation/nav[0]/ident", 0 );
 setprop( "/instrumentation/nav[1]/ident", 0 );
 
 var calc_instrument_norm = func(){
-	var instrument_norm = getprop("/controls/switches/instrument-lights-norm");
-	var flood_norm = getprop("/controls/switches/flood-lights-norm");
-	var instrument_ctrl = getprop("/controls/lighting/instr-lights");
-	var flood_ctrl = getprop("/controls/lighting/flood-lights");
-	
-	var instrument_norm_bis = 0;
-	if(instrument_norm!=nil and instrument_ctrl!=nil and instrument_norm_bis<instrument_norm and instrument_ctrl>0){
-		instrument_norm_bis = instrument_norm;
-	}
-	if(flood_norm!=nil and flood_ctrl!=nil and instrument_norm_bis<flood_norm and flood_ctrl>0){
-		instrument_norm_bis = flood_norm;
-	}
-	setprop("/controls/switches/instrument-lights-norm-bis",instrument_norm_bis);
+  var instrument_norm = getprop("/controls/switches/instrument-lights-norm");
+  var flood_norm = getprop("/controls/switches/flood-lights-norm");
+  var instrument_ctrl = getprop("/controls/lighting/instr-lights");
+  var flood_ctrl = getprop("/controls/lighting/flood-lights");
+  
+  var instrument_norm_bis = 0;
+  if(instrument_norm!=nil and instrument_ctrl!=nil and instrument_norm_bis<instrument_norm and instrument_ctrl>0){
+    instrument_norm_bis = instrument_norm;
+  }
+  if(flood_norm!=nil and flood_ctrl!=nil and instrument_norm_bis<flood_norm and flood_ctrl>0){
+    instrument_norm_bis = flood_norm;
+  }
+  setprop("/controls/switches/instrument-lights-norm-bis",instrument_norm_bis);
 }
-
 
 setlistener( "/controls/switches/flood-lights-norm", calc_instrument_norm);
 setlistener( "/controls/switches/instrument-lights-norm", calc_instrument_norm);
 setlistener( "/controls/lighting/instr-lights", calc_instrument_norm);
 setlistener( "/controls/lighting/flood-lights", calc_instrument_norm);
-

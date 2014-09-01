@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
+  
   <name>MFD text display</name>
   <background>Aircraft/Instruments-3d/zkv500/transparent-bg.rgb</background>
   <w>217</w>
   <h>164</h>
   <instruments>
+    
     <instrument>
       <name>VS</name>
       <x>178</x>
@@ -70,7 +72,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>HDG</name>
       <x>91</x>
@@ -105,7 +107,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>HDG bug</name>
       <x>60</x>
@@ -159,7 +161,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>CRS bug</name>
       <x>120</x>
@@ -213,7 +215,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>TAS</name>
       <x>32</x>
@@ -270,7 +272,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>selected altitude</name>
       <x>149</x>
@@ -288,7 +290,7 @@
       <layers>
         <layer>
           <type>text</type>
-           <font>condensed</font>
+          <font>condensed</font>
           <point-size>4</point-size>
           <color>
             <red>0.332</red>
@@ -305,7 +307,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>BARO</name>
       <x>150</x>
@@ -316,8 +318,8 @@
       <h-base>1024</h-base>
       <condition>
         <equals>
-         <property>/instrumentation/zkv1000/device[1]/status</property>
-         <value>1</value>
+          <property>/instrumentation/zkv1000/device[1]/status</property>
+          <value>1</value>
         </equals>
       </condition>
       <layers>
@@ -340,7 +342,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>WIND</name>
       <x>42</x>
@@ -351,8 +353,8 @@
       <h-base>1024</h-base>
       <condition>
         <equals>
-         <property>/instrumentation/zkv1000/device[1]/status</property>
-         <value>1</value>
+          <property>/instrumentation/zkv1000/device[1]/status</property>
+          <value>1</value>
         </equals>
         <property>/instrumentation/zkv1000/device[1]/wind-data</property>
       </condition>
@@ -397,53 +399,53 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <!--<instrument>
-      <name>RPM</name>
-      <x>0</x>
-      <y>0</y>
-      <w>1024</w>
-      <h>1024</h>
-      <w-base>1024</w-base>
-      <h-base>1024</h-base>
-      <condition>
-        <equals>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <layers>
-        <layer>
-          <type>text</type>
-          <font>condensed</font>
-          <point-size>4</point-size>
-          <color>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-          </color>
-          <chunks>
-            <chunk>
-              <type>number-value</type>
-              <property>/engines/engine/rpm</property>
-              <format>%.0f</format>
-            </chunk>
-          </chunks>
-          <transformations>
-            <transformation>
-              <type>x-shift</type>
-              <offset>/_offset_1</offset>
-            </transformation>
-            <transformation>
-              <type>y-shift</type>
-              <offset>/_offset_2</offset>
-            </transformation>
-          </transformations>
-        </layer>
-      </layers>
+    <name>RPM</name>
+    <x>0</x>
+    <y>0</y>
+    <w>1024</w>
+    <h>1024</h>
+    <w-base>1024</w-base>
+    <h-base>1024</h-base>
+    <condition>
+    <equals>
+    <property>/instrumentation/zkv1000/device[1]/status</property>
+    <value>1</value>
+    </equals>
+    </condition>
+    <layers>
+    <layer>
+    <type>text</type>
+    <font>condensed</font>
+    <point-size>4</point-size>
+    <color>
+    <red>1</red>
+    <green>1</green>
+    <blue>1</blue>
+    </color>
+    <chunks>
+    <chunk>
+    <type>number-value</type>
+    <property>/engines/engine/rpm</property>
+    <format>%.0f</format>
+    </chunk>
+    </chunks>
+    <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>/_offset_1</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>/_offset_2</offset>
+    </transformation>
+    </transformations>
+    </layer>
+    </layers>
     </instrument>
--->
-	<instrument>
+    -->
+    <instrument>
       <name>LeftLoad</name>
       <x>1</x>
       <y>118</y>
@@ -472,14 +474,14 @@
               <type>number-value</type>
               <property>/engines/engine[0]/thrust-lbs</property>
               <format>%2.0f</format>
-			  <scale>0.4</scale>
+              <scale>0.4</scale>
             </chunk>
           </chunks>
         </layer>
       </layers>
     </instrument>
-	
-	<instrument>
+    
+    <instrument>
       <name>RightLoad</name>
       <x>21</x>
       <y>118</y>
@@ -508,14 +510,14 @@
               <type>number-value</type>
               <property>/engines/engine[1]/thrust-lbs</property>
               <format>%2.0f</format>
-			  <scale>0.4</scale>
+              <scale>0.4</scale>
             </chunk>
           </chunks>
         </layer>
       </layers>
     </instrument>
-	
-	<instrument>
+    
+    <instrument>
       <name>LeftRPM</name>
       <x>0</x>
       <y>79</y>
@@ -549,8 +551,8 @@
         </layer>
       </layers>
     </instrument>
-	
-	<instrument>
+    
+    <instrument>
       <name>RightRPM</name>
       <x>18</x>
       <y>79</y>
@@ -584,8 +586,8 @@
         </layer>
       </layers>
     </instrument>
-	
-	<instrument>
+    
+    <instrument>
       <name>LeftFuelFlow</name>
       <x>0</x>
       <y>67</y>
@@ -619,8 +621,8 @@
         </layer>
       </layers>
     </instrument>
-	
-	<instrument>
+    
+    <instrument>
       <name>RighttFuelFlow</name>
       <x>18</x>
       <y>67</y>
@@ -654,7 +656,7 @@
         </layer>
       </layers>
     </instrument>
-	
+    
     <instrument>
       <name>OAT</name>
       <x>1</x>
@@ -689,7 +691,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>XPDR and time</name>
       <x>140</x>
@@ -846,7 +848,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>menu bar</name>
       <x>1</x>
@@ -907,7 +909,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>menu alert</name>
       <x>0</x>
@@ -918,8 +920,8 @@
       <h-base>1024</h-base>
       <condition>
         <property>/instrumentation/zkv1000/device[1]/status</property>
-     </condition>
-     <layers>
+      </condition>
+      <layers>
         <layer>
           <type>text</type>
           <font>condensed</font>
@@ -969,7 +971,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>Multi-use display</name>
       <x>152</x>
@@ -1006,7 +1008,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 1</name>
           <type>text</type>
@@ -1031,7 +1033,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 2</name>
           <type>text</type>
@@ -1056,7 +1058,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 3</name>
           <type>text</type>
@@ -1081,7 +1083,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 4</name>
           <type>text</type>
@@ -1106,7 +1108,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 5</name>
           <type>text</type>
@@ -1131,7 +1133,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 6</name>
           <type>text</type>
@@ -1156,7 +1158,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 7</name>
           <type>text</type>
@@ -1181,7 +1183,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 8</name>
           <type>text</type>
@@ -1206,7 +1208,7 @@
             </transformation>
           </transformations>
         </layer>
-
+        
         <layer>
           <name>line 9</name>
           <type>text</type>
@@ -1233,7 +1235,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>NAV1</name>
       <x>0</x>
@@ -1246,7 +1248,7 @@
         <property>/instrumentation/zkv1000/device[1]/status</property>
       </condition>
       <layers>
-         <layer>
+        <layer>
           <type>text</type>
           <font>condensed</font>
           <point-size>3</point-size>
@@ -1418,7 +1420,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>NAV2</name>
       <x>0</x>
@@ -1431,7 +1433,7 @@
         <property>/instrumentation/zkv1000/device[1]/status</property>
       </condition>
       <layers>
-         <layer>
+        <layer>
           <type>text</type>
           <font>condensed</font>
           <point-size>3</point-size>
@@ -1601,7 +1603,7 @@
         </layer>
       </layers>
     </instrument>
- 
+    
     <instrument>
       <name>COMM1</name>
       <x>154</x>
@@ -1711,7 +1713,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>COMM2</name>
       <x>154</x>
@@ -1819,7 +1821,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>AFCS Roll Axis Modes</name>
       <x>67</x>
@@ -1872,7 +1874,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>AFCS Autopilot Status</name>
       <x>97</x>
@@ -1906,7 +1908,7 @@
         </layer>
       </layers>
     </instrument>
-
+    
     <instrument>
       <name>AFCS Pitch Axis Modes</name>
       <x>105</x>
@@ -1981,5 +1983,7 @@
         </layer>
       </layers>
     </instrument>
+    
   </instruments>
+  
 </PropertyList>

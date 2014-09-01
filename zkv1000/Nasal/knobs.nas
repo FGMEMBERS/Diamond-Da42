@@ -156,7 +156,6 @@ var _RANGEknob= func (dir) {
     setprop("/instrumentation/zkv1000/map/panning", panningMap);
 }
 
-
 #var _largeFMSknob = void;
 #var _smallFMSknob = void;
 #var _ENTsoftkey = void;

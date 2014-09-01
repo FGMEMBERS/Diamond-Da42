@@ -87,4 +87,3 @@ var _checkAbnormalAttitude = func {
         }
     }
 }
-

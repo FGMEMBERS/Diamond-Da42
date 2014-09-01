@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
   
   <path>Textures/pfd.ac</path>
-
+  
   <animation>
     <object-name>off.background</object-name>
     <object-name>off.power</object-name>
@@ -14,12 +14,12 @@
       </not>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>menu.alerts</object-name>
     <object-name>menu.main</object-name>
     <object-name>radios.main</object-name>
-<!--
+    <!--
     <object-name>softkey.01</object-name>
     <object-name>softkey.02</object-name>
     <object-name>softkey.03</object-name>
@@ -38,13 +38,13 @@
     <object-name>knob.COMM.small</object-name>
     <object-name>knob.FMS.large</object-name>
     <object-name>knob.FMS.small</object-name>
--->
+    -->
     <type>select</type>
     <condition>
       <property>/instrumentation/zkv1000/device[0]/status</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>ai.background</object-name>
     <object-name>ai.cursor.C</object-name>
@@ -73,7 +73,7 @@
     <object-name>asi.cursor.010</object-name>
     <object-name>asi.cursor.100</object-name>
     <object-name>asi.tape</object-name>
-<!--
+    <!--
     <object-name>body.enlighted</object-name>
     <object-name>knob.HDG</object-name>
     <object-name>knob.ALT.small</object-name>
@@ -82,7 +82,7 @@
     <object-name>knob.BARO</object-name>
     <object-name>knob.NAV.large</object-name>
     <object-name>knob.NAV.small</object-name>
--->
+    -->
     <object-name>infos.MUD</object-name>
     <object-name>infos.ALT</object-name>
     <object-name>infos.CRS</object-name>
@@ -94,7 +94,7 @@
     <object-name>infos.DME</object-name>
     <object-name>infos.WIND</object-name>
     <object-name>infos.XPDR</object-name>
-<!--
+    <!--
     <object-name>softkey.NAV.swap</object-name>
     <object-name>sofkey.NAV.swap</object-name>
     <object-name>softkey.AP</object-name>
@@ -108,7 +108,7 @@
     <object-name>softkey.NOSEUP</object-name>
     <object-name>softkey.NOSEDOWN</object-name>
     <object-name>softkey.FLC</object-name
--->
+    -->
     <type>select</type>
     <condition>
       <equals>
@@ -117,7 +117,7 @@
       </equals>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>hsi.bezel</object-name>
     <object-name>hsi.bezel.turn.left</object-name>
@@ -136,7 +136,7 @@
       <property>/instrumentation/zkv1000/device[0]/hsi-360</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>hsi.arc</object-name>
     <type>select</type>
@@ -146,21 +146,21 @@
         <property>/instrumentation/zkv1000/device[0]/hsi-360</property>
       </not>
     </condition>
-   </animation>
-
+  </animation>
+  
   <animation>
     <object-name>knob.RANGE.push</object-name>
     <object-name>knob.RANGE.up</object-name>
     <object-name>knob.RANGE.right</object-name>
     <object-name>knob.RANGE.down</object-name>
     <object-name>knob.RANGE.left</object-name>
-<!--
+    <!--
     <object-name>softkey.D</object-name>
     <object-name>softkey.MENU</object-name>
     <object-name>softkey.FPL</object-name>
     <object-name>softkey.PROC</object-name>
     <object-name>softkey.CLR</object-name>
--->
+    -->
     <type>select</type>
     <condition>
       <equals>
@@ -169,7 +169,7 @@
       </equals>
     </condition>
   </animation>
-
+  
   <animation>
     <type>material</type>
     <object-name>ai.background</object-name>
@@ -205,10 +205,10 @@
     <object-name>asi.cursor.010</object-name>
     <object-name>asi.cursor.100</object-name>
     <object-name>asi.tape</object-name>
-<!--
+    <!--
     <object-name>body.pfd</object-name>
     <object-name>body.enlighted</object-name>
--->
+    -->
     <object-name>hsi.arc</object-name>
     <object-name>hsi.bezel</object-name>
     <object-name>hsi.bezel.turn.left</object-name>
@@ -244,69 +244,69 @@
       <factor-prop>/instrumentation/zkv1000/emission</factor-prop>
     </emission>
   </animation>
-
-	<animation>
-		<type>material</type>
-		<object-name>body.pfd</object-name>
-		<object-name>softkey.NAV.swap</object-name>
-		<object-name>softkey.COMM.swap</object-name>
-		<object-name>knob.NAV.small</object-name>
-		<object-name>knob.NAV.large</object-name>
-		<object-name>knob.COMM.small</object-name>
-		<object-name>knob.COMM.large</object-name>
-		<object-name>knob.HDG</object-name>
-		<object-name>knob.CRS</object-name>
-		<object-name>knob.BARO</object-name>
-		<object-name>knob.RANGE.push</object-name>
-		<object-name>knob.RANGE.left</object-name>
-		<object-name>knob.RANGE.right</object-name>
-		<object-name>knob.RANGE.up</object-name>
-		<object-name>knob.RANGE.down</object-name>
-		<object-name>knob.ALT.small</object-name>
-		<object-name>knob.ALT.large</object-name>
-		<object-name>knob.FMS.small</object-name>
-		<object-name>knob.FMS.large</object-name>
-		<object-name>off.power</object-name>
-		<object-name>softkey.01</object-name>
-		<object-name>softkey.02</object-name>
-		<object-name>softkey.03</object-name>
-		<object-name>softkey.04</object-name>
-		<object-name>softkey.05</object-name>
-		<object-name>softkey.06</object-name>
-		<object-name>softkey.07</object-name>
-		<object-name>softkey.08</object-name>
-		<object-name>softkey.09</object-name>
-		<object-name>softkey.10</object-name>
-		<object-name>softkey.11</object-name>
-		<object-name>softkey.12</object-name>
-		<object-name>softkey.D</object-name>
-		<object-name>softkey.MENU</object-name>
-		<object-name>softkey.FPL</object-name>
-		<object-name>softkey.PROC</object-name>
-		<object-name>softkey.CLR</object-name>
-		<object-name>softkey.ENT</object-name>
-		<emission>
-			<blue>  0.2 </blue>
-			<red>   0.2 </red>
-			<green> 0.2 </green>
-			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
-		</emission>
-		<condition>
-			<greater-than>
-				<property>/controls/lighting/flood-lights</property>
-				<value>0</value>
-			</greater-than>	
-		</condition>
-	</animation>
-	
-	<animation> 
+  
+  <animation>
+    <type>material</type>
+    <object-name>body.pfd</object-name>
+    <object-name>softkey.NAV.swap</object-name>
+    <object-name>softkey.COMM.swap</object-name>
+    <object-name>knob.NAV.small</object-name>
+    <object-name>knob.NAV.large</object-name>
+    <object-name>knob.COMM.small</object-name>
+    <object-name>knob.COMM.large</object-name>
+    <object-name>knob.HDG</object-name>
+    <object-name>knob.CRS</object-name>
+    <object-name>knob.BARO</object-name>
+    <object-name>knob.RANGE.push</object-name>
+    <object-name>knob.RANGE.left</object-name>
+    <object-name>knob.RANGE.right</object-name>
+    <object-name>knob.RANGE.up</object-name>
+    <object-name>knob.RANGE.down</object-name>
+    <object-name>knob.ALT.small</object-name>
+    <object-name>knob.ALT.large</object-name>
+    <object-name>knob.FMS.small</object-name>
+    <object-name>knob.FMS.large</object-name>
+    <object-name>off.power</object-name>
+    <object-name>softkey.01</object-name>
+    <object-name>softkey.02</object-name>
+    <object-name>softkey.03</object-name>
+    <object-name>softkey.04</object-name>
+    <object-name>softkey.05</object-name>
+    <object-name>softkey.06</object-name>
+    <object-name>softkey.07</object-name>
+    <object-name>softkey.08</object-name>
+    <object-name>softkey.09</object-name>
+    <object-name>softkey.10</object-name>
+    <object-name>softkey.11</object-name>
+    <object-name>softkey.12</object-name>
+    <object-name>softkey.D</object-name>
+    <object-name>softkey.MENU</object-name>
+    <object-name>softkey.FPL</object-name>
+    <object-name>softkey.PROC</object-name>
+    <object-name>softkey.CLR</object-name>
+    <object-name>softkey.ENT</object-name>
+    <emission>
+      <blue>  0.2 </blue>
+      <red>   0.2 </red>
+      <green> 0.2 </green>
+      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+    </emission>
+    <condition>
+      <greater-than>
+        <property>/controls/lighting/flood-lights</property>
+        <value>0</value>
+      </greater-than> 
+    </condition>
+  </animation>
+  
+  <animation> 
     <type>textranslate</type> 
     <object-name>body.pfd</object-name> 
     <condition>
       <and>
         <greater-than>
           <property>/instrumentation/zkv1000/body-emission</property>
-        <value>0.1</value>
+          <value>0.1</value>
         </greater-than>
         <property>/instrumentation/zkv1000/device[0]/status</property>
       </and>
@@ -318,23 +318,23 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
-<!--
+  
+  <!--
   <animation>
-    <object-name>body.enlighted</object-name>
-    <type>select</type>
-    <condition>
-      <and>
-        <greater-than>
-          <property>/instrumentation/zkv1000/body-emission</property>
-        <value>0.1</value>
-        </greater-than>
-        <property>/instrumentation/zkv1000/device[0]/status</property>
-      </and>
-    </condition>
+  <object-name>body.enlighted</object-name>
+  <type>select</type>
+  <condition>
+  <and>
+  <greater-than>
+  <property>/instrumentation/zkv1000/body-emission</property>
+  <value>0.1</value>
+  </greater-than>
+  <property>/instrumentation/zkv1000/device[0]/status</property>
+  </and>
+  </condition>
   </animation>
--->
-
+  -->
+  
   <!-- ATTITUDE INDICATOR -->
   <animation>
     <object-name>ai.pitch.indicator</object-name>
@@ -369,7 +369,7 @@
       </axis>
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>ai.background</object-name>
     <type>texmultiple</type>
@@ -403,7 +403,7 @@
       </axis>
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>ai.roll.ref</object-name>
     <type>rotate</type>
@@ -419,7 +419,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>ai.fd.bars</object-name>
     <type>select</type>
@@ -427,7 +427,7 @@
       <property>/instrumentation/zkv1000/afcs/fd-bars-visible</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>ai.fd.bars</object-name>
     <type>rotate</type>
@@ -443,7 +443,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>ai.fd.bars</object-name>
     <type>rotate</type>
@@ -459,7 +459,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>ai.fd.bars</object-name>
     <type>translate</type>
@@ -471,7 +471,7 @@
       <z>-1</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>ai.fd.bars</object-name>
     <type>translate</type>
@@ -483,7 +483,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <!-- AIRSPEED INDICATOR -->
   <animation>
     <object-name>asi.tape</object-name>
@@ -496,14 +496,14 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>asi.tape</object-name>
     <type>material</type>
     <property-base>/instrumentation/zkv1000</property-base>
     <texture-prop>asi-tape-texture</texture-prop>
   </animation>
-
+  
   <animation>
     <object-name>asi.cursor.100</object-name>
     <type>texmultiple</type>
@@ -529,7 +529,7 @@
       </axis>    
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>asi.cursor.010</object-name>
     <type>texmultiple</type>
@@ -555,7 +555,7 @@
       </axis>    
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>asi.cursor.001</object-name>
     <type>texmultiple</type>
@@ -580,7 +580,7 @@
       </axis>    
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>infos.FLC</object-name>
     <object-name>asi.bug</object-name>
@@ -592,7 +592,7 @@
       </equals>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>asi.bug</object-name>
     <type>translate</type>
@@ -608,7 +608,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <!-- ALTITUDE INDICATOR -->
   <animation>
     <object-name>alt.tape</object-name>
@@ -647,7 +647,7 @@
       </axis>    
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>alt.cursor.01000</object-name>
     <type>texmultiple</type>
@@ -673,7 +673,7 @@
       </axis>    
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>alt.cursor.00100</object-name>
     <type>texmultiple</type>
@@ -699,7 +699,7 @@
       </axis>    
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>alt.cursor.00011</object-name>
     <type>textranslate</type>
@@ -711,7 +711,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>infos.ALT</object-name>
     <object-name>alt.bug</object-name>
@@ -720,7 +720,7 @@
       <property>/instrumentation/zkv1000/afcs/alt-bug-visible</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>alt.bug</object-name>
     <type>translate</type>
@@ -736,7 +736,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <!-- VERTICAL SPEED INDICATOR -->
   <animation>
     <object-name>alt.vs.ptr</object-name>
@@ -753,7 +753,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>alt.vs.bug</object-name>
     <type>select</type>
@@ -764,7 +764,7 @@
       </equals>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>alt.vs.bug</object-name>
     <type>translate</type>
@@ -780,7 +780,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <!-- COMPASS ROSE -->
   <animation>
     <object-name>hsi.compass</object-name>
@@ -797,7 +797,7 @@
       <z>-1</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>hsi.bezel.turn.right</object-name>
     <type>texrotate</type>
@@ -815,7 +815,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>hsi.bezel.turn.left</object-name>
     <type>texrotate</type>
@@ -833,7 +833,7 @@
       <z>1</z>
     </axis>
   </animation>
-
+  
   <!-- HORIZONTAL SITUATION INDICATOR -->
   <animation>
     <object-name>hsi.crs.pointer</object-name>
@@ -845,7 +845,7 @@
       <property>/instrumentation/zkv1000/cdi/visible</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>hsi.crs.deflection</object-name>
     <type>select</type>
@@ -856,7 +856,7 @@
       </and>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>hsi.crs.deflection</object-name>
     <object-name>hsi.crs.pointer</object-name>
@@ -882,7 +882,7 @@
       </axis>
     </transform>
   </animation>
-
+  
   <animation>
     <object-name>hsi.crs.pointer</object-name>
     <object-name>hsi.crs.deflect.ref</object-name>
@@ -901,7 +901,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>hsi.crs.pointer</object-name>
     <object-name>hsi.crs.deflect.ref</object-name>
@@ -919,7 +919,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>hsi.crs.deflection</object-name>
     <type>translate</type>
@@ -931,7 +931,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>hsi.bug.HDG</object-name>
     <type>rotate</type>
@@ -947,7 +947,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <!-- ALERTS -->
   <animation>
     <object-name>infos.CRS</object-name>
@@ -956,7 +956,7 @@
       <property>/instrumentation/zkv1000/infos/course</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>infos.HDG</object-name>
     <type>select</type>
@@ -964,7 +964,7 @@
       <property>/instrumentation/zkv1000/infos/heading</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>infos.WIND</object-name>
     <type>select</type>
@@ -972,7 +972,7 @@
       <property>/instrumentation/zkv1000/infos/wind-data</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>infos.BRG1</object-name>
     <type>select</type>
@@ -980,7 +980,7 @@
       <property>/instrumentation/zkv1000/infos/brg1</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>infos.BRG2</object-name>
     <type>select</type>
@@ -988,7 +988,7 @@
       <property>/instrumentation/zkv1000/infos/brg2</property>
     </condition>
   </animation>
-
+  
   <animation>
     <object-name>infos.DME</object-name>
     <type>select</type>
@@ -996,7 +996,7 @@
       <property>/instrumentation/zkv1000/infos/dme</property>
     </condition>
   </animation>
-
+  
   <!-- KNOBS AND BUTTONS -->
   <animation>
     <object-name>off.power</object-name>
@@ -1016,7 +1016,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.ENT</object-name>
     <type>pick</type>
@@ -1035,7 +1035,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.01</object-name>
     <type>pick</type>
@@ -1057,7 +1057,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.02</object-name>
     <type>pick</type>
@@ -1076,7 +1076,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.03</object-name>
     <type>pick</type>
@@ -1095,7 +1095,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.04</object-name>
     <type>pick</type>
@@ -1114,7 +1114,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.05</object-name>
     <type>pick</type>
@@ -1133,7 +1133,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.06</object-name>
     <type>pick</type>
@@ -1152,7 +1152,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.07</object-name>
     <type>pick</type>
@@ -1171,7 +1171,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.08</object-name>
     <type>pick</type>
@@ -1190,7 +1190,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.09</object-name>
     <type>pick</type>
@@ -1209,7 +1209,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.10</object-name>
     <type>pick</type>
@@ -1228,7 +1228,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.11</object-name>
     <type>pick</type>
@@ -1247,7 +1247,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.HDG</object-name>
     <type>pick</type>
@@ -1294,7 +1294,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.NAV.small</object-name>
     <object-name>knob.NAV.large</object-name>
@@ -1314,7 +1314,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.NAV.small</object-name>
     <type>pick</type>
@@ -1348,7 +1348,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.NAV.large</object-name>
     <type>pick</type>
@@ -1382,7 +1382,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.NAV.swap</object-name>
     <type>pick</type>
@@ -1401,7 +1401,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.COMM.small</object-name>
     <object-name>knob.COMM.large</object-name>
@@ -1421,7 +1421,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.COMM.small</object-name>
     <type>pick</type>
@@ -1455,7 +1455,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.COMM.large</object-name>
     <type>pick</type>
@@ -1489,7 +1489,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>softkey.COMM.swap</object-name>
     <type>pick</type>
@@ -1521,7 +1521,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.BARO</object-name>
     <type>pick</type>
@@ -1555,7 +1555,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.CRS</object-name>
     <type>pick</type>
@@ -1602,7 +1602,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.FMS.large</object-name>
     <type>pick</type>
@@ -1636,7 +1636,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.FMS.small</object-name>
     <type>pick</type>
@@ -1670,7 +1670,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.ALT.small</object-name>
     <type>pick</type>
@@ -1704,7 +1704,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.ALT.large</object-name>
     <type>pick</type>
@@ -1738,7 +1738,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.RANGE.up</object-name>
     <type>pick</type>
@@ -1758,7 +1758,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.RANGE.right</object-name>
     <type>pick</type>
@@ -1778,7 +1778,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.RANGE.down</object-name>
     <type>pick</type>
@@ -1790,7 +1790,7 @@
       <binding>
         <command>nasal</command>
         <script>zkv1000.joystick(0, -1);</script>
-      </binding>	
+      </binding>  
       <binding>
         <command>property-assign</command>
         <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
@@ -1798,7 +1798,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.RANGE.left</object-name>
     <type>pick</type>
@@ -1818,7 +1818,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>knob.RANGE.push</object-name>
     <type>pick</type>
@@ -1863,7 +1863,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <!-- NOT YET USED -->
   <animation>
     <object-name>softkey.12</object-name>
@@ -1888,7 +1888,7 @@
       </binding>
     </action>
   </animation>
-
+  
   <animation>
     <object-name>alert.ASI</object-name>
     <!--object-name>infos.WIND</object-name-->
@@ -1898,7 +1898,7 @@
     <object-name>hsi.bug.GPS</object-name>
     <type>select</type>
   </animation>
-
+  
   <animation>
     <object-name>infos.MUD</object-name>
     <type>select</type>
@@ -1906,7 +1906,7 @@
       <property>/instrumentation/zkv1000/mud/displayed</property>
     </condition>
   </animation>
-
+  
   <panel>
     <path>Aircraft/Diamond-Da42/zkv1000/Systems/pfd.xml</path>
     <bottom-left>
@@ -1925,6 +1925,5 @@
       <z-m> 0.087</z-m>
     </top-left>
   </panel>
-
+  
 </PropertyList>
-

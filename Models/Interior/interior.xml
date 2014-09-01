@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>interior.ac</path>
-
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
@@ -15,33 +15,25 @@
     <object-name>sieges</object-name>
     <object-name>intbagage.leftdoor</object-name>
     <object-name>intbagage.rightdoor</object-name>
-
+    
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
     <object-name>intvitreporte</object-name>
   </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
     <object-name>intvitreporte</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>intvitres</object-name>
-    <object-name>intverriere</object-name>
-    <object-name>intvitreporte</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- Yoke -->
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
     <name>LeftYoke</name>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
     <offsets>
       <x-m> -1.702 </x-m>
       <y-m> -0.300 </y-m>
@@ -50,8 +42,8 @@
   </model>
   
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
     <name>RightYoke</name>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
     <offsets>
       <x-m> -1.702 </x-m>
       <y-m>  0.300 </y-m>
@@ -66,8 +58,8 @@
   
   <!-- Pilote -->
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Pilot/pilot.xml</path>
     <name>pilot</name>
+    <path>Aircraft/Diamond-Da42/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -1.650 </x-m>
       <y-m> -0.300 </y-m>
@@ -77,68 +69,68 @@
   
   <!-- CoPilote -->
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Passenger/copilot.xml</path>
     <name>copilot</name>
+    <path>Aircraft/Diamond-Da42/Models/Passenger/copilot.xml</path>
     <offsets>
       <x-m> -1.650 </x-m>
       <y-m>  0.300 </y-m>
       <z-m> -0.040 </z-m>
     </offsets>
   </model>
-
+  
   <animation>
-		<type>select</type>
-		<object-name>copilot</object-name>
-		<condition>
-			<greater-than>
-				<property>/sim/weight[1]/weight-lb</property>
-				<value>0.0</value>
-			</greater-than>
-		</condition>
-	</animation>
+    <type>select</type>
+    <object-name>copilot</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[1]/weight-lb</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </animation>
   
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Passenger/passenger.xml</path>
     <name>passagerG</name>
+    <path>Aircraft/Diamond-Da42/Models/Passenger/passenger.xml</path>
     <offsets>
       <x-m> -0.743 </x-m>
       <y-m> -0.300 </y-m>
       <z-m> -0.125 </z-m>
     </offsets>
   </model>
-
-	<animation>
-		<type>select</type>
-		<object-name>passagerG</object-name>
-		<condition>
-			<greater-than>
-				<property>/sim/weight[2]/weight-lb</property>
-				<value>0.0</value>
-			</greater-than>
-		</condition>
-	</animation>
-	
+  
+  <animation>
+    <type>select</type>
+    <object-name>passagerG</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[2]/weight-lb</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </animation>
+  
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Passenger/passenger.xml</path>
     <name>passagerD</name>
+    <path>Aircraft/Diamond-Da42/Models/Passenger/passenger.xml</path>
     <offsets>
       <x-m> -0.743 </x-m>
       <y-m>  0.300 </y-m>
       <z-m> -0.125 </z-m>
     </offsets>
   </model>
-
+  
   <animation>
-		<type>select</type>
-		<object-name>passagerD</object-name>
-		<condition>
-			<greater-than>
-				<property>/sim/weight[3]/weight-lb</property>
-				<value>0.0</value>
-			</greater-than>
-		</condition>
-	</animation>
-	
+    <type>select</type>
+    <object-name>passagerD</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[3]/weight-lb</property>
+        <value>0.0</value>
+      </greater-than>
+    </condition>
+  </animation>
+  
   <!-- Tableau de bord -->
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/panel.xml</path>
@@ -148,7 +140,7 @@
       <z-m>  0.097 </z-m>
     </offsets>
   </model>
-
+  
   <!-- Int Canopy -->
   <animation>
     <name>IntCanopeTotale</name>
@@ -156,11 +148,11 @@
     <object-name>inttourverriere</object-name>
     <object-name>intintverriere</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>IntCanopeTotale</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 45 </factor>
     <center>
       <x-m> -2.337 </x-m>
@@ -173,18 +165,18 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
   <animation>
     <name>IntPorteTotale</name>
     <object-name>intporte</object-name>
     <object-name>inttourporte</object-name>
     <object-name>intvitreporte</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>IntPorteTotale</object-name>
-    <property>instrumentation/doors/passenger/position-norm</property>
+    <property>sim/model/door-positions/passenger/position-norm</property>
     <factor> -95 </factor>
     <axis>
       <x1-m> -0.796 </x1-m>
@@ -195,37 +187,36 @@
       <z2-m>  0.698 </z2-m>
     </axis>
   </animation>
-
+  
   <!-- Noze doors -->
-	<animation>
-		<type>rotate</type>
+  <animation>
+    <type>rotate</type>
     <object-name>intbagage.leftdoor</object-name>
-		<property>instrumentation/doors/leftbagage/position-norm</property>
-		<factor> -100 </factor>
-		<axis>
-			<x1-m> -3.705 </x1-m>
-			<y1-m> -0.0610 </y1-m>
-			<z1-m>  0.0601 </z1-m>
-			<x2-m> -2.8638 </x2-m>
-			<y2-m> -0.0917 </y2-m>
-			<z2-m>  0.2437 </z2-m>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
+    <property>sim/model/door-positions/leftbagage/position-norm</property>
+    <factor> -100 </factor>
+    <axis>
+      <x1-m> -3.705 </x1-m>
+      <y1-m> -0.0610 </y1-m>
+      <z1-m>  0.0601 </z1-m>
+      <x2-m> -2.8638 </x2-m>
+      <y2-m> -0.0917 </y2-m>
+      <z2-m>  0.2437 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
     <object-name>intbagage.rightdoor</object-name>
-		<property>instrumentation/doors/rightbagage/position-norm</property>
-		<factor> 100 </factor>
-		<axis>
-			<x1-m> -3.7050 </x1-m>
-			<y1-m>  0.0610 </y1-m>
-			<z1-m>  0.0601 </z1-m>
-			<x2-m> -2.8638 </x2-m>
-			<y2-m>  0.0917 </y2-m>
-			<z2-m>  0.2437 </z2-m>
-		</axis>
-	</animation>
-
+    <property>sim/model/door-positions/rightbagage/position-norm</property>
+    <factor> 100 </factor>
+    <axis>
+      <x1-m> -3.7050 </x1-m>
+      <y1-m>  0.0610 </y1-m>
+      <z1-m>  0.0601 </z1-m>
+      <x2-m> -2.8638 </x2-m>
+      <y2-m>  0.0917 </y2-m>
+      <z2-m>  0.2437 </z2-m>
+    </axis>
+  </animation>
+  
 </PropertyList>
-

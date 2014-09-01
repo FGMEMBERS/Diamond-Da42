@@ -1,85 +1,96 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <PropertyList> 
-	<path>trimwheel.ac</path> 
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>TrimWheel</object-name>
-		<property>/controls/flight/elevator-trim</property>
-		<factor>-360</factor>
-		<axis>
-			<x>0.0</x>
-			<y>1.0</y>
-			<z>0.0</z>
-		</axis>
-	</animation>
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>trimind</object-name>
-		<property>/controls/flight/elevator-trim</property>
-		<factor>-40</factor>
-		<axis>
-			<x>0.0</x>
-			<y>1.0</y>
-			<z>0.0</z>
-		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>-0.0137</y-m>
-			<z-m>-0.0578</z-m>
-		</center>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>trimdn</object-name>
-		<visible>false</visible>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>/controls/flight/elevator-trim</property>
-				<step>0.1</step>
-				<min>-1</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>trimup</object-name>
-		<visible>false</visible>
-		<action>
-			<button>0</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>/controls/flight/elevator-trim</property>
-				<step>-0.1</step>
-				<min>-1</min>
-				<max>1</max>
-			</binding>
-		</action>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>TrimWheel</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>da42.mouseHandler.setY( "/controls/flight/elevator-trim", 0.01 , -1.0 , 1.0);</script>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>nasal</command>
-					<script>da42.mouseHandler.setY();</script>
-				</binding>
-			</mod-up>
-		</action>
-	</animation>
+  
+  <path>trimwheel.ac</path> 
+  
+  <animation>
+    <object-name>TrimWheel</object-name>
+    <object-name>trimind</object-name>
+    
+    <object-name>trimdn</object-name>
+    <object-name>trimup</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>TrimWheel</object-name>
+    <property>/controls/flight/elevator-trim</property>
+    <factor> -360 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>trimind</object-name>
+    <property>/controls/flight/elevator-trim</property>
+    <factor> -40 </factor>
+    <center>
+      <x-m>  0.0000 </x-m>
+      <y-m> -0.0137 </y-m>
+      <z-m> -0.0578 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>trimdn</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/flight/elevator-trim</property>
+        <step> 0.1 </step>
+        <min> -1.0 </min>
+        <max>  1.0 </max>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>trimup</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/flight/elevator-trim</property>
+        <step> -0.1 </step>
+        <min>  -1.0 </min>
+        <max>   1.0 </max>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>TrimWheel</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>da42.mouseHandler.setY( "/controls/flight/elevator-trim", 0.01 , -1.0 , 1.0);</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>da42.mouseHandler.setY();</script>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
 </PropertyList>

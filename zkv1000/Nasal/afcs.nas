@@ -244,5 +244,3 @@ var init_AFCS = func {
          setprop("/sim/systems/autopilot/path", "Aircraft/Diamond-Da42/zkv1000/Systems/autopilot.xml");
      }
 }
-
-

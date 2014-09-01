@@ -1,11 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <default>
     <menu n="10">
       <label>Diamond DA 42 Twin Star</label>
       <enabled type="bool">true</enabled>
+      <item>
+        <label>Autostart</label>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/starterkey-insert</property>
+          <value>1</value>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/right-master-engine-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/left-master-engine-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/left-alt-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/right-alt-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/master-switch</property>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/instrument-lights-norm</property>
+          <value>1.5</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/flood-lights-norm</property>
+          <value>1.5</value>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/masteravionic-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/positionlight-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/strobelight-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/switches/emerhoriz-lever</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>zkv1000.powerOn(0);</script>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>zkv1000.powerOn(1);</script>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>controls.startEngine(0,0)</script>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>controls.startEngine(0,1)</script>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>gui.popupTip("Press 's' to start")</script>
+        </binding>
+      </item>
       <item>
         <label>Select Livery</label>
         <binding>
@@ -22,6 +96,5 @@
       </item>
     </menu>
   </default>
-
+  
 </PropertyList>
-

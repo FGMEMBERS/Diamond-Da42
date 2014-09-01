@@ -1,60 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
-	<path>knob.ac</path>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>knob</object-name>
-		<property>/controls/switches/instrument-lights-norm</property>
-		<factor>-135</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	
-	<animation>
-		<type>material</type>
-		<object-name>knob</object-name>
-		<emission>
-			<red>0.0</red>
-			<green>0.4</green>
-			<blue>0.0</blue>
-		</emission>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>knob</object-name>
-		<action>
-			<button>3</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>/controls/switches/instrument-lights-norm</property>
-				<step>0.1</step>
-				<min>0</min>
-				<max>2</max>
-			</binding>
-		</action>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>knob</object-name>
-		<action>
-			<button>4</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>/controls/switches/instrument-lights-norm</property>
-				<step>-0.1</step>
-				<min>0</min>
-				<max>2</max>
-			</binding>
-		</action>
-	</animation>
+  
+  <path>knob.ac</path>
+  
+  <animation>
+    <object-name>support</object-name>
+    <object-name>knob</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>knob</object-name>
+    <property>/controls/switches/instrument-lights-norm</property>
+    <factor> -135 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>knob</object-name>
+    <emission>
+      <red>   0.0 </red>
+      <green> 0.4 </green>
+      <blue>  0.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <action>
+      <button>3</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/instrument-lights-norm</property>
+        <step>0.1</step>
+        <min>0</min>
+        <max>2</max>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <action>
+      <button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/instrument-lights-norm</property>
+        <step>-0.1</step>
+        <min>0</min>
+        <max>2</max>
+      </binding>
+    </action>
+  </animation>
+  
 </PropertyList>
-
-

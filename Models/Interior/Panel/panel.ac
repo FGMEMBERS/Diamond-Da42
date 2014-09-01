@@ -1,14 +1,15 @@
 AC3Db
-MATERIAL "DefaultWhite" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 50 trans 0
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
 kids 5
 OBJECT poly
 name "panel"
-loc 0.2 -0 -0
+loc 0.2 0 -0
 data 5
 panel
-texture "colors.png"
-texrep 1 1
+texture "panel.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 137
 -0.162929 0.37158 0.113284
 -0.162929 0.358605 0.222676
@@ -931,11 +932,12 @@ refs 3
 kids 0
 OBJECT poly
 name "panelfront"
-loc 0.2 -0 -0
+loc 0.2 0 -0
 data 10
 panelfront
-texture "colors.png"
-texrep 1 1
+texture "panel.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 302
 -0.18074 0.303892 0.393215
 -0.193068 0.20141 -0.482024
@@ -3090,11 +3092,12 @@ refs 4
 kids 0
 OBJECT poly
 name "pedestal"
-loc 0.2 -0 -0
+loc 0.2 0 -0
 data 8
 pedestal
-texture "colors.png"
-texrep 1 1
+texture "panel.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 50
 0.284362 -0.127198 -0.050627
 0.284362 -0.127198 0.050627
@@ -3139,13 +3142,13 @@ numvert 50
 -0.193068 -0.014896 -0.050627
 0.330873 -0.154386 -0.000063
 0.195159 -0.149786 -0.000063
-0.203107 -0.145042 0
-0.219479 -0.136012 0
-0.262818 -0.125092 0
-0.320824 -0.145479 0
-0.240983 -0.127856 0
-0.284362 -0.127198 0
-0.305397 -0.135013 0
+0.203107 -0.145042 -0
+0.219479 -0.136012 -0
+0.262818 -0.125092 -0
+0.320824 -0.145479 -0
+0.240983 -0.127856 -0
+0.284362 -0.127198 -0
+0.305397 -0.135013 -0
 numsurf 56
 SURF 0x10
 mat 0
@@ -3523,8 +3526,9 @@ name "registration"
 loc 0.006932 0.005855 -0.32691
 data 12
 registration
-texture "colors.png"
-texrep 1 1
+texture "panel.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 4
 0 0.215213 0.796682
 0 0.215213 0.732876
@@ -3544,8 +3548,9 @@ name "textes"
 loc 0.006932 0.005855 -0.32691
 data 6
 textes
-texture "colors.png"
-texrep 1 1
+texture "panel.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 261
 0 0.056004 0.750198
 0 0.056004 0.744956

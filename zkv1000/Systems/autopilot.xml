@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
- 
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <!-- From Generic Autopilot Configuration -->
-
 <PropertyList>
-
+  
   <!-- =============================================================== -->
   <!-- Roll Axis Modes                                                 -->
   <!-- =============================================================== -->
-
+  
   <pid-controller>
     <name>Wing Leveler (Turn Coordinator based)</name>
     <debug>false</debug>
@@ -44,7 +43,7 @@
       <u_max>1.0</u_max>
     </config>
   </pid-controller>
-
+  
   <pid-controller>
     <name>Heading Bug Hold (DG based) Stage 1</name>
     <debug>false</debug>
@@ -72,7 +71,7 @@
       <u_max>22.0</u_max>
     </config>
   </pid-controller>
-
+  
   <pid-controller>
     <name>NAV Hold Stage 1</name>
     <debug>false</debug>
@@ -100,7 +99,7 @@
       <u_max>22.0</u_max>
     </config>
   </pid-controller>
-
+  
   <pid-controller>
     <name>Approach mode Stage 1</name>
     <debug>false</debug>
@@ -128,7 +127,7 @@
       <u_max>22.0</u_max>
     </config>
   </pid-controller>
-
+  
   <pid-controller>
     <name>Ailerons control</name>
     <debug>false</debug>
@@ -166,12 +165,12 @@
       <u_max>1.0</u_max>
     </config>
   </pid-controller>
-
- <!-- =============================================================== -->
- <!-- Pitch Axis Modes                                                -->
- <!-- =============================================================== -->
-
- <pid-controller>
+  
+  <!-- =============================================================== -->
+  <!-- Pitch Axis Modes                                                -->
+  <!-- =============================================================== -->
+  
+  <pid-controller>
     <name>Pitch hold</name>
     <debug>false</debug>
     <enable>
@@ -206,7 +205,7 @@
       <u_min>-1.0</u_min>
       <u_max>1.0</u_max>
     </config>
-   </pid-controller>
+  </pid-controller>
   
   <pid-controller>
     <name>Altitude Hold</name>
@@ -235,35 +234,35 @@
       <u_max>15.0</u_max>
     </config>
   </pid-controller>
-
+  
   <!--pid-controller>
-    <name>Selected Altitude Hold</name>
-    <debug>false</debug>
-    <enable>
-      <prop>/autopilot/locks/pitch</prop>
-      <value>ALTS</value>
-    </enable>
-    <input>
-      <prop>/instrumentation/altimeter/indicated-altitude-ft</prop>
-    </input>
-    <reference>
-      <prop>/autopilot/settings/target-altitude-ft</prop>
-    </reference>
-    <output>
-      <prop>/autopilot/internal/target-pitch-deg</prop>
-    </output>
-    <config>
-      <Kp>0.025</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>50.0</Ti>
-      <Td>0.0</Td>
-      <u_min>-20.0</u_min>
-      <u_max>15.0</u_max>
-    </config>
+  <name>Selected Altitude Hold</name>
+  <debug>false</debug>
+  <enable>
+  <prop>/autopilot/locks/pitch</prop>
+  <value>ALTS</value>
+  </enable>
+  <input>
+  <prop>/instrumentation/altimeter/indicated-altitude-ft</prop>
+  </input>
+  <reference>
+  <prop>/autopilot/settings/target-altitude-ft</prop>
+  </reference>
+  <output>
+  <prop>/autopilot/internal/target-pitch-deg</prop>
+  </output>
+  <config>
+  <Kp>0.025</Kp>
+  <beta>1.0</beta>
+  <alpha>0.1</alpha>
+  <gamma>0.0</gamma>
+  <Ti>50.0</Ti>
+  <Td>0.0</Td>
+  <u_min>-20.0</u_min>
+  <u_max>15.0</u_max>
+  </config>
   </pid-controller-->
-
+  
   <pid-controller>
     <name>Glideslop Hold</name>
     <debug>false</debug>
@@ -291,7 +290,7 @@
       <u_max>5</u_max>
     </config>
   </pid-controller>
-
+  
   <pi-simple-controller>
     <name>Vertical Speed Hold</name>
     <debug>false</debug>
@@ -316,7 +315,7 @@
       <u_max>15.0</u_max>
     </config>
   </pi-simple-controller>
-
+  
   <pid-controller>
     <name>Flight Change Level (altitude) stage #1</name>
     <debug>false</debug>
@@ -344,7 +343,7 @@
       <u_max>15.0</u_max>
     </config>
   </pid-controller>
-
+  
   <pid-controller>
     <name>Flight Change Level (airspeed) stage #1</name>
     <debug>false</debug>
@@ -372,7 +371,7 @@
       <u_max>15.0</u_max>
     </config>
   </pid-controller>
-
+  
   <pid-controller>
     <name>Elevator Trim Control</name>
     <debug>false</debug>
@@ -410,5 +409,5 @@
       <u_max>1.0</u_max>
     </config>
   </pid-controller>
-
+  
 </PropertyList>

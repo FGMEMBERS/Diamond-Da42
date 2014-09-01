@@ -1,37 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
-	<path>greenlight.ac</path>
-
-	<animation>
-		<type>material</type>
-		<object-name>light</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-		</emission>
-		<condition>
-			<and>
-				<or>
-					<equals>
-							<property>/gear/gear[1]/position-norm</property>
-							<value type="double">1.0</value>
-					</equals>
-					<equals>
-						<property>/controls/switches/test-transit-button</property>
-						<value>1</value>
-					</equals>
-				</or>
-				<equals>
-					<property>/controls/lighting/gearwrn</property>
-					<value>1</value>
-				</equals>
-			</and>
-		</condition>
-	</animation>
-
+  
+  <path>greenlight.ac</path>
+  
+  <animation>
+    <object-name>support</object-name>
+    <object-name>light</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>light</object-name>
+    <emission>
+      <red>   0 </red>
+      <green> 2 </green>
+      <blue>  0 </blue>
+    </emission>
+    <condition>
+      <and>
+        <or>
+          <equals>
+            <property>/gear/gear[1]/position-norm</property>
+            <value type="double">1.0</value>
+          </equals>
+          <equals>
+            <property>/controls/switches/test-transit-button</property>
+            <value>1</value>
+          </equals>
+        </or>
+        <equals>
+          <property>/controls/lighting/gearwrn</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  
 </PropertyList>
-
-

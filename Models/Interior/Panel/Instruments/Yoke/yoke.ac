@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "DefaultWhite" rgb 0.8 0.8 0.8 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 50 trans 0
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
 kids 5
 OBJECT poly
@@ -7,8 +7,9 @@ name "buttonbase"
 loc 0 0.098124 -0
 data 10
 buttonbase
-texture "colors.png"
-texrep 1 1
+texture "yoke.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 25
 -0.007191 0.307073 -0.008098
 -0.00589 0.300339 -0.008098
@@ -198,8 +199,9 @@ name "buttons"
 loc 0 0.098124 -0
 data 7
 buttons
-texture "colors.png"
-texrep 1 1
+texture "yoke.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 16
 -0.006535 0.306154 0.005583
 -0.013567 0.308713 0.005583
@@ -335,8 +337,9 @@ name "redbutton"
 loc 0 0.098124 -0
 data 9
 redbutton
-texture "colors.png"
-texrep 1 1
+texture "yoke.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 25
 -0.006904 0.308217 -0.008115
 -0.004841 0.306256 -0.008115
@@ -526,8 +529,9 @@ name "topyoke"
 loc 0 0.098124 -0
 data 7
 topyoke
-texture "colors.png"
-texrep 1 1
+texture "yoke.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 109
 -0.011969 0.30262 0.001371
 0.009116 0.198225 -0.006514
@@ -1424,16 +1428,17 @@ name "tubeyoke"
 loc 0 0.098124 -0
 data 8
 tubeyoke
-texture "colors.png"
-texrep 1 1
+texture "yoke.png"
+texrep 1.000000 1.000000
+crease 180.000005
 numvert 24
-0.01 -0.1 0
+0.01 -0.1 -0
 0.00866 -0.1 -0.005
 0.005 -0.1 -0.00866
 0 -0.1 -0.01
 -0.005 -0.1 -0.00866
 -0.00866 -0.1 -0.005
--0.01 -0.1 0
+-0.01 -0.1 -0
 -0.00866 -0.1 0.005
 -0.005 -0.1 0.00866
 0 -0.1 0.01
@@ -1442,13 +1447,13 @@ numvert 24
 0.01 0.202 -0
 0.00866 0.202 -0.005
 0.005 0.202 -0.00866
--0 0.202 -0.01
+0 0.202 -0.01
 -0.005 0.202 -0.00866
 -0.00866 0.202 -0.005
 -0.01 0.202 -0
 -0.00866 0.202 0.005
 -0.005 0.202 0.00866
--0 0.202 0.01
+0 0.202 0.01
 0.005 0.202 0.00866
 0.00866 0.202 0.005
 numsurf 12

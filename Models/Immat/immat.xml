@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>immat.ac</path>
-
+  
   <animation>
     <!-- Immatriculations -->
     <object-name>ImatWingL1</object-name> 
@@ -31,7 +31,7 @@
     <object-name>ImatPanel5</object-name>
     <object-name>ImatPanel6</object-name>
   </animation>
-
+  
   <animation>
     <type>noshadow</type>
     <object-name>ImatWingL1</object-name> 
@@ -59,13 +59,13 @@
     <object-name>ImatPanel5</object-name>
     <object-name>ImatPanel6</object-name>
   </animation>
-
+  
   <!-- Ne me demandez pas comment j'ai obtenu la formule du facteur, ce fut au feeling ;) -->
   <!--
-       Largeur de l'image complète : 2048 pixels
-       Largeur d'un caractère      :   50 pixels
-       Nombre de cases             : 2048/50 = 40.96
-       factor                      : 1/40.96 = 0.0244140625
+  Largeur de l'image complète : 2048 pixels
+  Largeur d'un caractère      :   50 pixels
+  Nombre de cases             : 2048/50 = 40.96
+  factor                      : 1/40.96 = 0.0244140625
   -->
   <!-- Fuselage gauche -->
   <animation> 
@@ -79,7 +79,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageL2</object-name> 
@@ -91,7 +91,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageL3</object-name> 
@@ -103,7 +103,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageL4</object-name> 
@@ -115,7 +115,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageL5</object-name> 
@@ -127,7 +127,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageL6</object-name> 
@@ -139,7 +139,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <!-- Fuselage droit -->
   <animation> 
     <type>textranslate</type> 
@@ -152,7 +152,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageR2</object-name> 
@@ -164,7 +164,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageR3</object-name> 
@@ -176,7 +176,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageR4</object-name> 
@@ -188,7 +188,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageR5</object-name> 
@@ -200,7 +200,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatFuselageR6</object-name> 
@@ -225,7 +225,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatWingL2</object-name> 
@@ -237,7 +237,7 @@
       <z> 0 </z>  
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatWingL3</object-name> 
@@ -249,7 +249,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatWingL4</object-name> 
@@ -261,7 +261,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatWingL5</object-name> 
@@ -273,7 +273,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatWingL6</object-name> 
@@ -285,7 +285,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <!-- Tableau de bord -->
   <animation> 
     <type>textranslate</type> 
@@ -298,7 +298,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatPanel2</object-name> 
@@ -310,7 +310,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatPanel3</object-name> 
@@ -322,7 +322,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatPanel4</object-name> 
@@ -334,7 +334,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatPanel5</object-name> 
@@ -346,7 +346,7 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation> 
     <type>textranslate</type> 
     <object-name>ImatPanel6</object-name> 
@@ -358,24 +358,23 @@
       <z> 0 </z> 
     </axis> 
   </animation>
-
+  
   <animation>
-		<type>rotate</type>
-		<object-name>ImatFuselageR1</object-name>
-		<object-name>ImatFuselageR2</object-name>
-		<object-name>ImatFuselageL5</object-name>
-		<object-name>ImatFuselageL6</object-name>
-		<property>surface-positions/rudder-pos-norm</property>
-		<factor> 15 </factor>
-		<axis>
-			<x1-m> 3.572 </x1-m>
-			<y1-m> 0.000 </y1-m>
-			<z1-m> 0.015 </z1-m>
-			<x2-m> 3.775 </x2-m>
-			<y2-m> 0.000 </y2-m>
-			<z2-m> 0.666 </z2-m>
-		</axis>
-	</animation>
-
+    <type>rotate</type>
+    <object-name>ImatFuselageR1</object-name>
+    <object-name>ImatFuselageR2</object-name>
+    <object-name>ImatFuselageL5</object-name>
+    <object-name>ImatFuselageL6</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 15 </factor>
+    <axis>
+      <x1-m> 3.572 </x1-m>
+      <y1-m> 0.000 </y1-m>
+      <z1-m> 0.015 </z1-m>
+      <x2-m> 3.775 </x2-m>
+      <y2-m> 0.000 </y2-m>
+      <z2-m> 0.666 </z2-m>
+    </axis>
+  </animation>
+  
 </PropertyList>
-

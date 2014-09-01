@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
   Diamond Da 42 - 2010 - Emmanuel BARANGER
@@ -13,8 +13,7 @@
   Engine        : 2 Austro Engine AE 300 (170 hp each) 
   Maximum speed :   356 km/h ( 200 kts )
 -->
-
-<airplane mass="1761">
+<airplane mass="1761" version="YASIM_VERSION_CURRENT">
 
   <!-- Approach configuration -->
   <approach speed="55" aoa="4" fuel="0.3">
@@ -50,7 +49,6 @@
 
   <!-- Moteur droit -->
   <fuselage ax="2.57"  ay="-1.78" az="-0.175" bx=" 0.576" by="-1.78" bz="-0.157" width="0.8" taper="0.4" midpoint="0.2"/>
-
 
   <mstab x="1" y="0" z="-0.426"
         chord="1.848"
@@ -104,7 +102,7 @@
          sweep="50"
          taper="0.5">
        
-</vstab>
+  </vstab>
 
   <vstab x="0.755" y="-6.590" z="0.162"
          chord="0.5"

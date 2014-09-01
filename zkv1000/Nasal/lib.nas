@@ -51,4 +51,3 @@ var swapCOMM = void;
 var swapNAV = void;
 var joystick = void;
 var RANGEknob = void;
-

@@ -80,5 +80,3 @@ var powerOn = func (d) {
         settimer(main_loop, 0);
     }
 }
-
-

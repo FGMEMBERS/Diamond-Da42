@@ -34,10 +34,11 @@ BARANGER Emmanuel
 November, 26, 2010.
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
 
 
-[FranÃ§ais]
+[Français]
 ----------
 
 Un peu d'histoire
@@ -48,13 +49,13 @@ Diamond Da 42 "Twin Star"
 
 Constructeur                  :
 Type                          :
-AnnÃ©e                         :
+Année                         :
 Moteur                        :
 Envergure                     :
 Longueur                      :
 Hauteur                       :
-Poids Ã  vide                  :
-Vitesse de croisiÃ¨re          :
+Poids à vide                  :
+Vitesse de croisière          :
 Equipage                      :
 
 
@@ -62,7 +63,7 @@ Quelques touches utiles :
 =========================
 
 d : cockpit
-D : porte arriÃ¨re
+D : porte arrière
 
 Remerciements
 =============
@@ -72,4 +73,5 @@ BARANGER Emmanuel
 26 Novembre 2010.
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
