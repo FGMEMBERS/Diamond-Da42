@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>yoke.ac</path>
+  
+  <animation>
+    <object-name>tubeyoke</object-name>
+    <object-name>topyoke</object-name>
+    <object-name>buttons</object-name>
+    <object-name>buttonbase</object-name>
+    <object-name>redbutton</object-name>
+  </animation>
+  
+  <animation>
+    <name>yoke</name>
+    <object-name>tubeyoke</object-name>
+    <object-name>topyoke</object-name>
+    <object-name>buttons</object-name>
+    <object-name>buttonbase</object-name>
+    <object-name>redbutton</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>yoke</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> 20 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>yoke</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> 20 </factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

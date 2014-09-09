@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <key n="68">
+    <name>D</name>
+    <desc>Passenger door</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.passenger.toggle();</script>
+      <condition>
+        <equals>
+          <property>/controls/doors/door[1]/locked</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </binding>
+  </key>
+  
+  <key n="100">
+    <name>d</name>
+    <desc>Doors</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.crew.toggle();</script>
+      <condition>
+        <equals>
+          <property>/controls/doors/door[0]/locked</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </binding>
+  </key>
+
+  <!--tip placement instruments-->
+  <key n="357">
+    <name>up</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/z</property>
+      <step>0.001</step>
+    </binding>
+  </key>
+
+  <key n="359">
+    <name>down</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/z</property>
+      <step>-0.001</step>
+    </binding>
+  </key>
+
+  <key n="356">
+    <name>left</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/y</property>
+      <step>-0.001</step>
+    </binding>
+  </key>
+
+  <key n="358">
+    <name>right</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/y</property>
+      <step>0.001</step>
+    </binding>
+  </key>
+
+  <key n="360">
+    <name>fwd</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/x</property>
+      <step>-0.001</step>
+    </binding>
+  </key>
+
+  <key n="361">
+    <name>backwd</name>
+    <binding n="0">
+      <command>property-adjust</command>
+      <property>/mymodel/x</property>
+      <step>0.001</step>
+    </binding>
+  </key>
+  <!--tip placement instruments-->
+
+</PropertyList>

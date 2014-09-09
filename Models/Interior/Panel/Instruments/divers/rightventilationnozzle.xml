@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>ventilationnozzle.ac</path>
+  
+  <animation>
+    <object-name>base</object-name>
+    <object-name>nozzle</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>nozzle</object-name>
+    <property>/controls/nozzles/rightnozzle-x</property>
+    <factor> 20 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>nozzle</object-name>
+    <property>/controls/nozzles/rightnozzle-y</property>
+    <factor> -20 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>nozzle</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>da42.mouseHandler.setX( "/controls/nozzles/rightnozzle-x", 0.01 , -1.0 , 1.0);</script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>da42.mouseHandler.setY( "/controls/nozzles/rightnozzle-y", 0.01 , -1.0 , 1.0);</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>da42.mouseHandler.setX();</script>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>da42.mouseHandler.setY();</script>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+</PropertyList>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+  
+  <path>emergencygear.ac</path> 
+  
+  <animation>
+    <object-name>lever</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>lever</object-name>
+    <property>/controls/switches/alternateair</property>
+    <factor> 90 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>lever</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/emergency</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
