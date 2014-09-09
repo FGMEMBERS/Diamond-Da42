@@ -1,0 +1,1929 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>Textures/pfd.ac</path>
+  
+  <animation>
+    <object-name>off.background</object-name>
+    <object-name>off.power</object-name>
+    <type>select</type>
+    <condition>
+      <not>
+        <property>/instrumentation/zkv1000/device[0]/status</property>
+      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>menu.alerts</object-name>
+    <object-name>menu.main</object-name>
+    <object-name>radios.main</object-name>
+    <!--
+    <object-name>softkey.01</object-name>
+    <object-name>softkey.02</object-name>
+    <object-name>softkey.03</object-name>
+    <object-name>softkey.04</object-name>
+    <object-name>softkey.05</object-name>
+    <object-name>softkey.06</object-name>
+    <object-name>softkey.07</object-name>
+    <object-name>softkey.08</object-name>
+    <object-name>softkey.09</object-name>
+    <object-name>softkey.10</object-name>
+    <object-name>softkey.11</object-name>
+    <object-name>softkey.12</object-name>
+    <object-name>softkey.COMM.swap</object-name>
+    <object-name>softkey.ENT</object-name>
+    <object-name>knob.COMM.large</object-name>
+    <object-name>knob.COMM.small</object-name>
+    <object-name>knob.FMS.large</object-name>
+    <object-name>knob.FMS.small</object-name>
+    -->
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/device[0]/status</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>ai.background</object-name>
+    <object-name>ai.cursor.C</object-name>
+    <object-name>ai.cursor.L</object-name>
+    <object-name>ai.cursor.R</object-name>
+    <object-name>ai.fd.bars</object-name>
+    <object-name>ai.pitch.indicator</object-name>
+    <object-name>ai.roll.indicator</object-name>
+    <object-name>ai.roll.ref</object-name>
+    <object-name>alt.baro</object-name>
+    <object-name>alt.bug</object-name>
+    <object-name>alt.cursor</object-name>
+    <object-name>alt.cursor.00011</object-name>
+    <object-name>alt.cursor.00100</object-name>
+    <object-name>alt.cursor.01000</object-name>
+    <object-name>alt.cursor.10000</object-name>
+    <object-name>alt.gs.bug</object-name>
+    <object-name>alt.gs.ref</object-name>
+    <object-name>alt.tape</object-name>
+    <object-name>alt.vs.bug</object-name>
+    <object-name>alt.vs.ref</object-name>
+    <object-name>alt.vs.ptr</object-name>
+    <object-name>asi.TAS</object-name>
+    <object-name>asi.bug</object-name>
+    <object-name>asi.cursor.001</object-name>
+    <object-name>asi.cursor.010</object-name>
+    <object-name>asi.cursor.100</object-name>
+    <object-name>asi.tape</object-name>
+    <!--
+    <object-name>body.enlighted</object-name>
+    <object-name>knob.HDG</object-name>
+    <object-name>knob.ALT.small</object-name>
+    <object-name>knob.ALT.large</object-name>
+    <object-name>knob.CRS</object-name>
+    <object-name>knob.BARO</object-name>
+    <object-name>knob.NAV.large</object-name>
+    <object-name>knob.NAV.small</object-name>
+    -->
+    <object-name>infos.MUD</object-name>
+    <object-name>infos.ALT</object-name>
+    <object-name>infos.CRS</object-name>
+    <object-name>infos.FLC</object-name>
+    <object-name>infos.HDG</object-name>
+    <object-name>infos.OAT</object-name>
+    <object-name>infos.BRG1</object-name>
+    <object-name>infos.BRG2</object-name>
+    <object-name>infos.DME</object-name>
+    <object-name>infos.WIND</object-name>
+    <object-name>infos.XPDR</object-name>
+    <!--
+    <object-name>softkey.NAV.swap</object-name>
+    <object-name>sofkey.NAV.swap</object-name>
+    <object-name>softkey.AP</object-name>
+    <object-name>softkey.NAV</object-name>
+    <object-name>softkey.HDG</object-name>
+    <object-name>softkey.FD</object-name>
+    <object-name>softkey.APR</object-name>
+    <object-name>softkey.ALT</object-name>
+    <object-name>softkey.VNV</object-name>
+    <object-name>softkey.VS</object-name>
+    <object-name>softkey.NOSEUP</object-name>
+    <object-name>softkey.NOSEDOWN</object-name>
+    <object-name>softkey.FLC</object-name
+    -->
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/instrumentation/zkv1000/device[0]/status</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.bezel</object-name>
+    <object-name>hsi.bezel.turn.left</object-name>
+    <object-name>hsi.bezel.turn.right</object-name>
+    <object-name>hsi.bug.GPS</object-name>
+    <object-name>hsi.bug.HDG</object-name>
+    <object-name>hsi.compass</object-name>
+    <object-name>hsi.crs.deflect.ref</object-name>
+    <object-name>hsi.crs.deflection</object-name>
+    <object-name>hsi.crs.plane</object-name>
+    <object-name>hsi.crs.pointer</object-name>
+    <object-name>hsi.hdg</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/device[0]/status</property>
+      <property>/instrumentation/zkv1000/device[0]/hsi-360</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.arc</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/device[0]/status</property>
+      <not>
+        <property>/instrumentation/zkv1000/device[0]/hsi-360</property>
+      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>knob.RANGE.push</object-name>
+    <object-name>knob.RANGE.up</object-name>
+    <object-name>knob.RANGE.right</object-name>
+    <object-name>knob.RANGE.down</object-name>
+    <object-name>knob.RANGE.left</object-name>
+    <!--
+    <object-name>softkey.D</object-name>
+    <object-name>softkey.MENU</object-name>
+    <object-name>softkey.FPL</object-name>
+    <object-name>softkey.PROC</object-name>
+    <object-name>softkey.CLR</object-name>
+    -->
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/instrumentation/zkv1000/device[1]/status</property>
+        <value>2</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>ai.background</object-name>
+    <object-name>ai.cursor.C</object-name>
+    <object-name>ai.cursor.L</object-name>
+    <object-name>ai.cursor.R</object-name>
+    <object-name>ai.fd.bars</object-name>
+    <object-name>ai.pitch.indicator</object-name>
+    <object-name>ai.roll.indicator</object-name>
+    <object-name>ai.roll.ref</object-name>
+    <object-name>alt.baro</object-name>
+    <object-name>alt.baro.00.01</object-name>
+    <object-name>alt.baro.00.10</object-name>
+    <object-name>alt.baro.01.00</object-name>
+    <object-name>alt.baro.10.00</object-name>
+    <object-name>alt.bug</object-name>
+    <object-name>alt.cursor</object-name>
+    <object-name>alt.cursor.00011</object-name>
+    <object-name>alt.cursor.00100</object-name>
+    <object-name>alt.cursor.01000</object-name>
+    <object-name>alt.cursor.10000</object-name>
+    <object-name>alt.gs.bug</object-name>
+    <object-name>alt.gs.ref</object-name>
+    <object-name>alt.tape</object-name>
+    <object-name>alt.vs.bug</object-name>
+    <object-name>alt.vs.ref</object-name>
+    <object-name>asi.TAS</object-name>
+    <object-name>asi.TAS.001</object-name>
+    <object-name>asi.TAS.010</object-name>
+    <object-name>asi.TAS.100</object-name>
+    <object-name>asi.bug</object-name>
+    <object-name>asi.cursor.001</object-name>
+    <object-name>asi.cursor.010</object-name>
+    <object-name>asi.cursor.100</object-name>
+    <object-name>asi.tape</object-name>
+    <!--
+    <object-name>body.pfd</object-name>
+    <object-name>body.enlighted</object-name>
+    -->
+    <object-name>hsi.arc</object-name>
+    <object-name>hsi.bezel</object-name>
+    <object-name>hsi.bezel.turn.left</object-name>
+    <object-name>hsi.bezel.turn.right</object-name>
+    <object-name>hsi.bug.GPS</object-name>
+    <object-name>hsi.bug.HDG</object-name>
+    <object-name>hsi.compass</object-name>
+    <object-name>hsi.crs.deflect.ref</object-name>
+    <object-name>hsi.crs.deflection</object-name>
+    <object-name>hsi.crs.plane</object-name>
+    <object-name>hsi.crs.pointer</object-name>
+    <object-name>hsi.hdg</object-name>
+    <object-name>infos.MUD</object-name>
+    <object-name>infos.ALT.00001</object-name>
+    <object-name>infos.ALT.00010</object-name>
+    <object-name>infos.ALT.00100</object-name>
+    <object-name>infos.ALT.01000</object-name>
+    <object-name>infos.ALT.10000</object-name>
+    <!--object-name>infos.BARO</object-name-->
+    <object-name>infos.BRG1</object-name>
+    <object-name>infos.BRG2</object-name>
+    <object-name>infos.DME</object-name>
+    <object-name>infos.WIND</object-name>
+    <object-name>infos.OAT</object-name>
+    <object-name>infos.XPDR</object-name>
+    <object-name>menu.alerts</object-name>
+    <object-name>menu.main</object-name>
+    <object-name>radios.main</object-name>
+    <emission>
+      <blue>  1 </blue>
+      <red>   1 </red>
+      <green> 1 </green>
+      <factor-prop>/instrumentation/zkv1000/emission</factor-prop>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>body.pfd</object-name>
+    <object-name>softkey.NAV.swap</object-name>
+    <object-name>softkey.COMM.swap</object-name>
+    <object-name>knob.NAV.small</object-name>
+    <object-name>knob.NAV.large</object-name>
+    <object-name>knob.COMM.small</object-name>
+    <object-name>knob.COMM.large</object-name>
+    <object-name>knob.HDG</object-name>
+    <object-name>knob.CRS</object-name>
+    <object-name>knob.BARO</object-name>
+    <object-name>knob.RANGE.push</object-name>
+    <object-name>knob.RANGE.left</object-name>
+    <object-name>knob.RANGE.right</object-name>
+    <object-name>knob.RANGE.up</object-name>
+    <object-name>knob.RANGE.down</object-name>
+    <object-name>knob.ALT.small</object-name>
+    <object-name>knob.ALT.large</object-name>
+    <object-name>knob.FMS.small</object-name>
+    <object-name>knob.FMS.large</object-name>
+    <object-name>off.power</object-name>
+    <object-name>softkey.01</object-name>
+    <object-name>softkey.02</object-name>
+    <object-name>softkey.03</object-name>
+    <object-name>softkey.04</object-name>
+    <object-name>softkey.05</object-name>
+    <object-name>softkey.06</object-name>
+    <object-name>softkey.07</object-name>
+    <object-name>softkey.08</object-name>
+    <object-name>softkey.09</object-name>
+    <object-name>softkey.10</object-name>
+    <object-name>softkey.11</object-name>
+    <object-name>softkey.12</object-name>
+    <object-name>softkey.D</object-name>
+    <object-name>softkey.MENU</object-name>
+    <object-name>softkey.FPL</object-name>
+    <object-name>softkey.PROC</object-name>
+    <object-name>softkey.CLR</object-name>
+    <object-name>softkey.ENT</object-name>
+    <emission>
+      <blue>  0.2 </blue>
+      <red>   0.2 </red>
+      <green> 0.2 </green>
+      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+    </emission>
+    <condition>
+      <greater-than>
+        <property>/controls/lighting/flood-lights</property>
+        <value>0</value>
+      </greater-than> 
+    </condition>
+  </animation>
+  
+  <animation> 
+    <type>textranslate</type> 
+    <object-name>body.pfd</object-name> 
+    <condition>
+      <and>
+        <greater-than>
+          <property>/instrumentation/zkv1000/body-emission</property>
+          <value>0.1</value>
+        </greater-than>
+        <property>/instrumentation/zkv1000/device[0]/status</property>
+      </and>
+    </condition>
+    <factor> 0.5 </factor>
+    <axis> 
+      <x> 1 </x> 
+      <y> 0 </y> 
+      <z> 0 </z> 
+    </axis> 
+  </animation>
+  
+  <!--
+  <animation>
+  <object-name>body.enlighted</object-name>
+  <type>select</type>
+  <condition>
+  <and>
+  <greater-than>
+  <property>/instrumentation/zkv1000/body-emission</property>
+  <value>0.1</value>
+  </greater-than>
+  <property>/instrumentation/zkv1000/device[0]/status</property>
+  </and>
+  </condition>
+  </animation>
+  -->
+  
+  <!-- ATTITUDE INDICATOR -->
+  <animation>
+    <object-name>ai.pitch.indicator</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/orientation/pitch-deg</property>
+      <factor>0.005</factor>
+      <center>
+        <x>0.5</x>
+        <y>0.5</y>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>texrotate</subtype>
+      <property>/orientation/roll-deg</property>
+      <min>-180</min>
+      <max> 180</max>
+      <center>
+        <x>0.5</x>
+        <y>0.5</y>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>0</y>
+        <z>-1</z>
+      </axis>
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>ai.background</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/orientation/pitch-deg</property>
+      <factor>0.003</factor>
+      <center>
+        <x>0.5</x>
+        <y>0.5</y>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>texrotate</subtype>
+      <property>/orientation/roll-deg</property>
+      <min>-180</min>
+      <max> 180</max>
+      <center>
+        <x>0.5</x>
+        <y>0.5</y>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>0</y>
+        <z>-1</z>
+      </axis>
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>ai.roll.ref</object-name>
+    <type>rotate</type>
+    <property>/orientation/roll-deg</property>
+    <center>
+      <x-m> 0.061</x-m>
+      <y-m>-0.011</y-m>
+      <z-m> 0.027</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>ai.fd.bars</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/afcs/fd-bars-visible</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>ai.fd.bars</object-name>
+    <type>rotate</type>
+    <property>/autopilot/internal/target-roll-deg</property>
+    <center>
+      <x-m> 0.061</x-m>
+      <y-m>-0.011</y-m>
+      <z-m> 0.027</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>ai.fd.bars</object-name>
+    <type>rotate</type>
+    <property>/orientation/roll-deg</property>
+    <center>
+      <x-m> 0.061</x-m>
+      <y-m>-0.011</y-m>
+      <z-m> 0.027</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>ai.fd.bars</object-name>
+    <type>translate</type>
+    <property>/orientation/pitch-deg</property>
+    <factor>0.00135</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>ai.fd.bars</object-name>
+    <type>translate</type>
+    <property>/autopilot/internal/target-pitch-deg</property>
+    <factor>0.00135</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <!-- AIRSPEED INDICATOR -->
+  <animation>
+    <object-name>asi.tape</object-name>
+    <type>textranslate</type>
+    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <factor>0.0025</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>asi.tape</object-name>
+    <type>material</type>
+    <property-base>/instrumentation/zkv1000</property-base>
+    <texture-prop>asi-tape-texture</texture-prop>
+  </animation>
+  
+  <animation>
+    <object-name>asi.cursor.100</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+      <step>100</step>
+      <factor>0.001</factor>
+      <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cursors/ias[0]</property>
+      <factor>0.125</factor>
+      <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>    
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>asi.cursor.010</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+      <step>10</step>
+      <factor>0.01</factor>
+      <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cursors/ias[1]</property>
+      <factor>0.125</factor>
+      <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>    
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>asi.cursor.001</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+      <factor>0.1</factor>
+      <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cursors/ias[2]</property>
+      <factor>0.125</factor>
+      <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>    
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>infos.FLC</object-name>
+    <object-name>asi.bug</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/autopilot/locks/pitch</property>
+        <value>FLC</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>asi.bug</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/afcs/selected-ias-kt-diff</property>
+    <interpolation>
+      <entry><ind>-30</ind><dep>-0.0331</dep></entry>
+      <entry><ind> 0   </ind><dep> 0   </dep></entry>
+      <entry><ind> 30</ind><dep> 0.0331</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <!-- ALTITUDE INDICATOR -->
+  <animation>
+    <object-name>alt.tape</object-name>
+    <type>textranslate</type>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>0.0000437</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>alt.cursor.10000</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+      <step>10000</step>
+      <factor>-0.00001</factor>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cursors/alt[0]</property>
+      <factor>0.125</factor>
+      <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>    
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>alt.cursor.01000</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+      <step>1000</step>
+      <factor>-0.0001</factor>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cursors/alt[1]</property>
+      <factor>0.125</factor>
+      <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>    
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>alt.cursor.00100</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+      <step>100</step>
+      <factor>-0.001</factor>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cursors/alt[2]</property>
+      <factor>0.125</factor>
+      <axis>
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>    
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>alt.cursor.00011</object-name>
+    <type>textranslate</type>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>-0.01</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>infos.ALT</object-name>
+    <object-name>alt.bug</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/afcs/alt-bug-visible</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>alt.bug</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/afcs/selected-alt-ft-diff</property>
+    <interpolation>
+      <entry><ind>-300</ind><dep>-0.0358</dep></entry>
+      <entry><ind> 0   </ind><dep> 0   </dep></entry>
+      <entry><ind> 300</ind><dep> 0.0358</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <!-- VERTICAL SPEED INDICATOR -->
+  <animation>
+    <object-name>alt.vs.ptr</object-name>
+    <type>translate</type>
+    <property>/velocities/vertical-speed-fps</property>
+    <interpolation>
+      <entry><ind>-33.3333333</ind><dep>-0.03</dep></entry>
+      <entry><ind> 0   </ind><dep> 0   </dep></entry>
+      <entry><ind> 33.3333333</ind><dep> 0.03</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>alt.vs.bug</object-name>
+    <type>select</type>
+    <condition>
+      <equals>
+        <property>/instrumentation/zkv1000/afcs/pit-active-mode</property>
+        <value>3</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>alt.vs.bug</object-name>
+    <type>translate</type>
+    <property>/autopilot/settings/vertical-speed-fpm</property>
+    <interpolation>
+      <entry><ind>-2000</ind><dep>-0.03</dep></entry>
+      <entry><ind> 0   </ind><dep> 0   </dep></entry>
+      <entry><ind> 2000</ind><dep> 0.03</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <!-- COMPASS ROSE -->
+  <animation>
+    <object-name>hsi.compass</object-name>
+    <object-name>hsi.arc</object-name>
+    <type>texrotate</type>
+    <property>/orientation/heading-magnetic-deg</property>
+    <center>
+      <x>0.5</x>
+      <y>0.5</y>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.bezel.turn.right</object-name>
+    <type>texrotate</type>
+    <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor>30</factor>
+    <min>0</min>
+    <max>1.2</max>
+    <center>
+      <x>0.5</x>
+      <y>0.5</y>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.bezel.turn.left</object-name>
+    <type>texrotate</type>
+    <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor>30</factor>
+    <min>-1.2</min>
+    <max>0</max>
+    <center>
+      <x>0.5</x>
+      <y>0.5</y>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <!-- HORIZONTAL SITUATION INDICATOR -->
+  <animation>
+    <object-name>hsi.crs.pointer</object-name>
+    <object-name>hsi.crs.deflect.ref</object-name>
+    <object-name>hsi.crs.plane</object-name>
+    <object-name>hsi.BRG1</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/cdi/visible</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.crs.deflection</object-name>
+    <type>select</type>
+    <condition>
+      <and>
+        <property>/instrumentation/zkv1000/cdi/visible</property>
+        <property>/instrumentation/zkv1000/cdi/in-range</property>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.crs.deflection</object-name>
+    <object-name>hsi.crs.pointer</object-name>
+    <type>texmultiple</type>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cdi/pointer-type</property>
+      <factor>0.166666667</factor>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    </transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/zkv1000/cdi/from-flag</property>
+      <factor>0.166666667</factor>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    </transform>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.crs.pointer</object-name>
+    <object-name>hsi.crs.deflect.ref</object-name>
+    <object-name>hsi.crs.deflection</object-name>
+    <object-name>hsi.bug.HDG</object-name>
+    <type>rotate</type>
+    <property>/orientation/heading-magnetic-deg</property>
+    <center>
+      <x-m> 0.004</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.crs.pointer</object-name>
+    <object-name>hsi.crs.deflect.ref</object-name>
+    <object-name>hsi.crs.deflection</object-name>
+    <type>rotate</type>
+    <property>/instrumentation/zkv1000/cdi/course</property>
+    <center>
+      <x-m> 0.004</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.crs.deflection</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/cdi/course-deflection</property>
+    <factor>0.006</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>hsi.bug.HDG</object-name>
+    <type>rotate</type>
+    <property>/instrumentation/zkv1000/afcs/heading-bug-deg</property>
+    <center>
+      <x-m> 0.062</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <!-- ALERTS -->
+  <animation>
+    <object-name>infos.CRS</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/infos/course</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>infos.HDG</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/infos/heading</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>infos.WIND</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/infos/wind-data</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>infos.BRG1</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/infos/brg1</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>infos.BRG2</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/infos/brg2</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>infos.DME</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/infos/dme</property>
+    </condition>
+  </animation>
+  
+  <!-- KNOBS AND BUTTONS -->
+  <animation>
+    <object-name>off.power</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.powerOn(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.ENT</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.ENTsoftkey();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.01</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <condition>
+      <property>/instrumentation/zkv1000/device[0]/status</property>
+    </condition>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.02</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.03</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(2);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.04</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(3);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.05</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(4);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.06</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(5);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.07</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(6);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.08</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(7);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.09</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(8);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.10</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(9);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.11</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[0].softkey(10);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.HDG</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.HDGknob(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.HDGknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.HDGknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.NAV.small</object-name>
+    <object-name>knob.NAV.large</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVknob(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.NAV.small</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVknob(0.05);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVknob(-0.05);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.NAV.large</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.NAV.swap</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.swapNAV();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.COMM.small</object-name>
+    <object-name>knob.COMM.large</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMknob(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.COMM.small</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMknob(0.025);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMknob(-0.025);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.COMM.large</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.COMM.swap</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.swapCOMM();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.swapCOMM(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.BARO</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.BAROknob(0.01);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.BAROknob(-0.01);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.CRS</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.CRSknob(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.CRSknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.CRSknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.FMS.large</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.largeFMSknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.largeFMSknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.FMS.small</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.smallFMSknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.smallFMSknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.ALT.small</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.ALTknob(100);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.ALTknob(-100);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.ALT.large</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.ALTknob(1000);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.ALTknob(-1000);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.RANGE.up</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>print("tagada"); zkv1000.joystick(0, 1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.RANGE.right</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.joystick(1, 0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.RANGE.down</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.joystick(0, -1);</script>
+      </binding>  
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.RANGE.left</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.joystick(-1, 0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>knob.RANGE.push</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.RANGEknob(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.RANGEknob(-1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.RANGEknob(1);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <!-- NOT YET USED -->
+  <animation>
+    <object-name>softkey.12</object-name>
+    <object-name>softkey.CLR</object-name>
+    <object-name>softkey.D</object-name>
+    <object-name>softkey.FPL</object-name>
+    <object-name>softkey.MENU</object-name>
+    <object-name>softkey.PROC</object-name>
+    <type>pick</type>
+    <visible>true</visible>
+    <action>
+      <!--<button>0</button>
+      <repeatable>false</repeatable>-->
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.nyi();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>alert.ASI</object-name>
+    <!--object-name>infos.WIND</object-name-->
+    <object-name>alt.ref</object-name>
+    <object-name>alt.gs.ref</object-name>
+    <object-name>alt.gs.bug</object-name>
+    <object-name>hsi.bug.GPS</object-name>
+    <type>select</type>
+  </animation>
+  
+  <animation>
+    <object-name>infos.MUD</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/mud/displayed</property>
+    </condition>
+  </animation>
+  
+  <panel>
+    <path>Aircraft/Diamond-Da42/zkv1000/Systems/pfd.xml</path>
+    <bottom-left>
+      <x-m> 0.007</x-m>
+      <y-m>-0.108</y-m>
+      <z-m>-0.071</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m> 0.007</x-m>
+      <y-m> 0.108</y-m>
+      <z-m>-0.071</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m> 0.007</x-m>
+      <y-m>-0.108</y-m>
+      <z-m> 0.087</z-m>
+    </top-left>
+  </panel>
+  
+</PropertyList>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+  
+  <path>starter.ac</path>
+  
+  <animation>
+    <object-name>startersupport</object-name>
+    <object-name>starter</object-name>
+    <object-name>key</object-name>
+    
+    <object-name>turnleft</object-name>
+    <object-name>turnright</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>key</object-name>
+    <object-name>starter</object-name>
+    <property>/controls/switches/starterkey</property>
+    <factor> -30 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>key</object-name>
+    <condition>
+      <property>/controls/switches/starterkey-insert</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>starter</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/starterkey-insert</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>turnleft</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/switches/starterkey</property>
+        <value type="double">-1</value>
+      </binding>
+      <binding>
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>nasal</command>
+        <script>controls.startEngine(1,0)</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/starterkey</property>
+          <value type="double">0</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>controls.startEngine(0,0)</script>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>turnright</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/switches/starterkey</property>
+        <value type="double">1</value>
+      </binding>
+      <binding>
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>nasal</command>
+        <script>controls.startEngine(1,1)</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/starterkey</property>
+          <value type="double">0</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>controls.startEngine(0,1)</script>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+</PropertyList>

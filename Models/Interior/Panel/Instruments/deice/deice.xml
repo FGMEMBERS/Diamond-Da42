@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>deice.ac</path>
+  
+  <animation>
+    <object-name>support</object-name>
+    <object-name>max.support</object-name>
+    <object-name>max.button</object-name>
+    <object-name>windshield.support</object-name>
+    <object-name>windshield.button</object-name>
+    <object-name>alternate.lock.base</object-name>
+    <object-name>alternate.lock.lever</object-name>
+    <object-name>alternate.lever.base</object-name>
+    <object-name>alternate.lever.lever</object-name>
+    <object-name>speed.base</object-name>
+    <object-name>speed.lever</object-name>
+    <object-name>icelight.base</object-name>
+    <object-name>icelight.lever</object-name>
+    <object-name>pump.base</object-name>
+    <object-name>pump.lever</object-name>  
+    <object-name>high.support</object-name>
+    <object-name>norm.support</object-name>
+    <object-name>low.support</object-name>
+    <object-name>high.light</object-name>
+    <object-name>norm.light</object-name>
+    <object-name>low.light</object-name>
+
+    <object-name>speedUp</object-name>
+    <object-name>speedDn</object-name>
+    <object-name>icelightUp</object-name>
+    <object-name>icelightDn</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>support</object-name>
+    <object-name>max.support</object-name>
+    <object-name>max.button</object-name>
+    <object-name>windshield.support</object-name>
+    <object-name>windshield.button</object-name>
+    <object-name>alternate.lock.base</object-name>
+    <object-name>alternate.lock.lever</object-name>
+    <object-name>alternate.lever.base</object-name>
+    <object-name>alternate.lever.lever</object-name>
+    <object-name>speed.base</object-name>
+    <object-name>speed.lever</object-name>
+    <object-name>icelight.base</object-name>
+    <object-name>icelight.lever</object-name>
+    <object-name>pump.base</object-name>
+    <object-name>pump.lever</object-name>  
+    <object-name>high.support</object-name>
+    <object-name>norm.support</object-name>
+    <object-name>low.support</object-name>
+    <object-name>high.light</object-name>
+    <object-name>norm.light</object-name>
+    <object-name>low.light</object-name>
+    <emission>
+      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+      <red>   0.2 </red>
+      <green> 0.2 </green>
+      <blue>  0.2 </blue>
+    </emission>
+    <condition>
+      <greater-than>
+        <property>/controls/lighting/flood-lights</property>
+        <value>0</value>
+      </greater-than> 
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>max.button</object-name>
+    <property>/controls/switches/deice/max</property>
+    <factor> -0.003 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>max.button</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/deice/max</property>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/deice/max</property>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>windshield.button</object-name>
+    <property>/controls/switches/deice/windshield</property>
+    <factor>-0.003</factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>windshield.button</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/deice/windshield</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>da42.nyi("Deice windshield");</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/switches/deice/windshield</property>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>speed.lever</object-name>
+    <property>/controls/switches/deice/speed</property>
+    <factor> -15 </factor>
+    <center>
+      <x-m>  0.0028 </x-m>
+      <y-m> -0.0167 </y-m>
+      <z-m> -0.0008 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>speedUp</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/deice/speed</property>
+        <step> 1 </step>
+        <min> -1 </min>
+        <max>  1 </max>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>speedDn</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/deice/speed</property>
+        <step> -1 </step>
+        <min>  -1 </min>
+        <max>   1 </max>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>alternate.lock.lever</object-name>
+    <property>/controls/switches/deice/alternate-lock</property>
+    <factor> -90 </factor>
+    <center>
+      <x-m> 0.0089 </x-m>
+      <y-m> 0.0165 </y-m>
+      <z-m> 0.0272 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>alternate.lock.lever</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/deice/alternate-lock</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>alternate.lever.lever</object-name>
+    <property>/controls/switches/deice/alternate-lever</property>
+    <factor> 60 </factor>
+    <center>
+      <x-m> 0.0032 </x-m>
+      <y-m> 0.0165 </y-m>
+      <z-m> 0.0018 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>alternate.lever.lever</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <condition>
+          <equals>
+            <property>/controls/switches/deice/alternate-lock</property>
+            <value type="double">1</value>
+          </equals>
+        </condition>
+        <command>property-toggle</command>
+        <property>/controls/switches/deice/alternate-lever</property>
+      </binding>
+      <binding>
+        <condition>
+          <equals>
+            <property>/controls/switches/deice/alternate-lock</property>
+            <value type="double">1</value>
+          </equals>
+        </condition>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>pump.lever</object-name>
+    <property>/controls/switches/deice/pump</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m>  0.0032 </x-m>
+      <y-m> -0.0165 </y-m>
+      <z-m> -0.0293 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>pump.lever</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/deice/pump</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>da42.nyi("Deice pump");</script>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>icelight.lever</object-name>
+    <property>/controls/switches/deice/icelight</property>
+    <factor> -15 </factor>
+    <center>
+      <x-m>  0.0032 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -0.0293 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>icelightUp</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/deice/icelight</property>
+        <step> 1 </step>
+        <min> -1 </min>
+        <max>  1 </max>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>icelightDn</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/deice/icelight</property>
+        <step> -1 </step>
+        <min>  -1 </min>
+        <max>   1 </max>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/sound/switch</property>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/deice/icelight</property>
+          <value>0</value>
+          <condition>
+            <property>/controls/switches/deice/icelight</property>
+            <value>-1</value>
+          </condition>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>high.light</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  0 </blue>
+    </emission>
+    <condition>
+      <and>
+        <equals>
+          <property>/controls/electric/alimentation/deice</property>
+          <value>1</value>
+        </equals>
+        <or>
+          <equals>
+            <property>/controls/deice/mode</property>
+            <value>2</value>
+          </equals>
+          <equals>
+            <property>/controls/switches/deice/icelight</property>
+            <value>-1</value>
+          </equals>
+        </or>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>norm.light</object-name>
+    <emission>
+      <red>   1.0 </red>
+      <green> 0.6 </green>
+      <blue>  0.0 </blue>
+    </emission>
+    <condition>
+      <and>
+        <equals>
+          <property>/controls/electric/alimentation/deice</property>
+          <value>1</value>
+        </equals>
+        <or>
+          <equals>
+            <property>/controls/deice/mode</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/controls/switches/deice/icelight</property>
+            <value>-1</value>
+          </equals>
+        </or>
+      </and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>low.light</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+    <condition>
+      <and>
+        <equals>
+          <property>/controls/electric/alimentation/deice</property>
+          <value>1</value>
+        </equals>
+        <or>
+          <equals>
+            <property>/controls/deice/mode</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/controls/switches/deice/icelight</property>
+            <value>-1</value>
+          </equals>
+        </or>
+      </and>
+    </condition>
+  </animation>
+  
+</PropertyList>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <!--bagages, repris du pa24-->
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/bagages/suitcase1.xml</path>
+    <name>bagFront1</name>
+    <offsets>
+      <x-m> -2.881 </x-m>
+      <y-m> -0.217 </y-m>
+      <z-m> -0.066 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>bagFront1</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[4]/weight-lb</property>
+        <value> 0 </value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/bagages/suitcase2.xml</path>
+    <name>bagFront2</name>
+    <offsets>
+      <x-m> -2.880 </x-m>
+      <y-m>  0.222 </y-m>
+      <z-m> -0.064 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>bagFront2</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[4]/weight-lb</property>
+        <value> 33 </value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/bagages/suitcase3.xml</path>
+    <name>bagRear1</name>
+    <offsets>
+      <x-m>  0.013 </x-m>
+      <y-m>  0.184 </y-m>
+      <z-m> -0.085 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>bagRear1</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[5]/weight-lb</property>
+        <value> 0 </value>
+      </greater-than>
+    </condition>
+  </animation>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/bagages/suitcase4.xml</path>
+    <name>bagRear2</name>
+    <offsets>
+      <x-m>  0.081 </x-m>
+      <y-m> -0.277 </y-m>
+      <z-m> -0.024 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>bagRear2</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[5]/weight-lb</property>
+        <value> 50 </value>
+      </greater-than>
+    </condition>
+  </animation> 
+  
+</PropertyList>

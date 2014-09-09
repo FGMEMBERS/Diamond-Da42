@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>handlenozeL.ac</path>
+  
+  <animation>
+    <object-name>lock</object-name>
+    <object-name>support</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>lock</object-name>
+    <object-name>support</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/doors/door[2]/locks/lock[0]/locked</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>lock</object-name>
+    <property>/controls/doors/door[2]/locks/lock[0]/locked</property>
+    <factor> -90 </factor>
+    <center>
+      <x-m> -0.034350 </x-m>
+      <y-m>  0.001494 </y-m>
+      <z-m> -0.000979 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>
