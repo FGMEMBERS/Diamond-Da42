@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
-kids 4
+kids 2
 OBJECT poly
 name "trimind"
 loc 0.00028 0.036648 0.00012
@@ -23,46 +23,6 @@ refs 4
 1 0.959721624851 0.174194976687
 2 0.959721624851 0.013183191419
 3 0.984814465046 0.013183191419
-kids 0
-OBJECT poly
-name "trimleft"
-loc 0.006173 -0.000529 0.026542
-data 8
-trimleft
-crease 180.000005
-numvert 4
-0 -0.029534 -0.025099
-0 -0.029534 0.025099
-0 0.029534 0.025099
-0 0.029534 -0.025099
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-3 1 1
-2 0 1
-1 0 0
-0 1 0
-kids 0
-OBJECT poly
-name "trimright"
-loc 0.006173 -0.000529 -0.026542
-data 9
-trimright
-crease 180.000005
-numvert 4
-0 0.029534 -0.025099
-0 0.029534 0.025099
-0 -0.029534 0.025099
-0 -0.029534 -0.025099
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-0 1 1
-1 0 1
-2 0 0
-3 1 0
 kids 0
 OBJECT poly
 name "trimwheel"

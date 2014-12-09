@@ -12,7 +12,7 @@
     <object-name>inttourporte</object-name>
     <object-name>intintverriere</object-name>
     <object-name>intporte</object-name>
-    <object-name>sieges</object-name>
+    <object-name>planchet</object-name>
     <object-name>intbagage.leftdoor</object-name>
     <object-name>intbagage.rightdoor</object-name>
     
@@ -30,30 +30,14 @@
     <object-name>intvitreporte</object-name>
   </effect>
   
-  <!-- Yoke -->
+  <!-- Tableau de bord -->
   <model>
-    <name>LeftYoke</name>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <x-m> -1.702 </x-m>
-      <y-m> -0.300 </y-m>
-      <z-m> -0.228 </z-m>
+      <x-m> -1.981 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.097 </z-m>
     </offsets>
-  </model>
-  
-  <model>
-    <name>RightYoke</name>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
-    <offsets>
-      <x-m> -1.702 </x-m>
-      <y-m>  0.300 </y-m>
-      <z-m> -0.228 </z-m>
-    </offsets>
-  </model>
-  
-  <!-- Les bagages -->
-  <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/bagages/all-suitcases.xml</path>
   </model>
   
   <!-- Pilote -->
@@ -70,11 +54,31 @@
   <!-- CoPilote -->
   <model>
     <name>copilot</name>
-    <path>Aircraft/Diamond-Da42/Models/Passenger/copilot.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Pilot/copilot.xml</path>
     <offsets>
       <x-m> -1.650 </x-m>
       <y-m>  0.300 </y-m>
       <z-m> -0.040 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>passagerG</name>
+    <path>Aircraft/Diamond-Da42/Models/Pilot/passenger.xml</path>
+    <offsets>
+      <x-m> -0.743 </x-m>
+      <y-m> -0.300 </y-m>
+      <z-m> -0.125 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>passagerD</name>
+    <path>Aircraft/Diamond-Da42/Models/Pilot/passenger.xml</path>
+    <offsets>
+      <x-m> -0.743 </x-m>
+      <y-m>  0.300 </y-m>
+      <z-m> -0.125 </z-m>
     </offsets>
   </model>
   
@@ -89,16 +93,6 @@
     </condition>
   </animation>
   
-  <model>
-    <name>passagerG</name>
-    <path>Aircraft/Diamond-Da42/Models/Passenger/passenger.xml</path>
-    <offsets>
-      <x-m> -0.743 </x-m>
-      <y-m> -0.300 </y-m>
-      <z-m> -0.125 </z-m>
-    </offsets>
-  </model>
-  
   <animation>
     <type>select</type>
     <object-name>passagerG</object-name>
@@ -109,16 +103,6 @@
       </greater-than>
     </condition>
   </animation>
-  
-  <model>
-    <name>passagerD</name>
-    <path>Aircraft/Diamond-Da42/Models/Passenger/passenger.xml</path>
-    <offsets>
-      <x-m> -0.743 </x-m>
-      <y-m>  0.300 </y-m>
-      <z-m> -0.125 </z-m>
-    </offsets>
-  </model>
   
   <animation>
     <type>select</type>
@@ -131,14 +115,65 @@
     </condition>
   </animation>
   
-  <!-- Tableau de bord -->
+  <!-- Seats-->
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/panel.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Seats/seat.xml</path>
     <offsets>
-      <x-m> -1.981 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.097 </z-m>
+      <x-m> -1.30 </x-m>
+      <y-m> -0.30 </y-m>
+      <z-m>  0.07 </z-m>
     </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.30 </x-m>
+      <y-m>  0.30 </y-m>
+      <z-m>  0.07 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Seats/rearseat.xml</path>
+    <offsets>
+      <x-m> -0.33 </x-m>
+      <y-m> -0.30 </y-m>
+      <z-m>  0.04 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Seats/rearseat.xml</path>
+    <offsets>
+      <x-m> -0.33 </x-m>
+      <y-m>  0.30 </y-m>
+      <z-m>  0.04 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Yoke -->
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -1.702 </x-m>
+      <y-m> -0.300 </y-m>
+      <z-m> -0.228 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -1.702 </x-m>
+      <y-m>  0.300 </y-m>
+      <z-m> -0.228 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Les bagages -->
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/bagages/all-suitcases.xml</path>
   </model>
   
   <!-- Int Canopy -->

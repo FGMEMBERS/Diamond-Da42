@@ -5,10 +5,12 @@
   <sim>
     
     <description>Diamond DA 42 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM) - OO ZVY (FDM) - JeeP Cheney (Cockpit-Systems)</author>
-    <aircraft-version>0.9 du 29/08/2014</aircraft-version>
-    <flight-model archive="y">yasim</flight-model>
-    <aero archive="y">da42-yasim</aero>
+    <author>Emmanuel BARANGER (3D/FDM) - OO ZVY (FDM) - Jeep (System)</author>
+    <aircraft-version>0.95 du 07/12/2014</aircraft-version>
+    <status>Beta</status>
+    
+    <flight-model>yasim</flight-model>
+    <aero>da42-yasim</aero>
     
     <rating>
       <FDM type="int">     3 </FDM>

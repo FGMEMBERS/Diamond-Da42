@@ -19,20 +19,11 @@
     </emission>
     <condition>
       <and>
-        <or>
-          <equals>
-            <property>/gear/gear[1]/position-norm</property>
-            <value type="double">1.0</value>
-          </equals>
-          <equals>
-            <property>/controls/switches/test-transit-button</property>
-            <value>1</value>
-          </equals>
-        </or>
         <equals>
-          <property>/controls/lighting/gearwrn</property>
-          <value>1</value>
+          <property>/gear/gear[1]/position-norm</property>
+          <value type="double">1</value>
         </equals>
+        <property>/controls/electric/battery-switch</property>
       </and>
     </condition>
   </animation>

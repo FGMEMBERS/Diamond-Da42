@@ -26,18 +26,30 @@
     <object-name>leftthrottle</object-name>
     <visible>true</visible>
     <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
+      <button>3</button>
       <binding>
-        <command>nasal</command>
-        <script>da42.mouseHandler.setY( "/controls/engines/engine[0]/throttle", 0.01 , 0 , 1.0);</script>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine[0]/throttle</property>
+        <step> 0.1 </step>
+        <min>  0.0 </min>
+        <max>  1.0 </max>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>da42.mouseHandler.setY();</script>
-        </binding>
-      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>leftthrottle</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine[0]/throttle</property>
+        <step> -0.1 </step>
+        <min>   0.0 </min>
+        <max>   1.0 </max>
+      </binding>
     </action>
   </animation>
   
@@ -58,18 +70,30 @@
     <object-name>rightthrottle</object-name>
     <visible>true</visible>
     <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
+      <button>3</button>
       <binding>
-        <command>nasal</command>
-        <script>da42.mouseHandler.setY( "/controls/engines/engine[1]/throttle", 0.01 , 0 , 1.0);</script>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine[1]/throttle</property>
+        <step> 0.1 </step>
+        <min>  0.0 </min>
+        <max>  1.0 </max>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>da42.mouseHandler.setY();</script>
-        </binding>
-      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>rightthrottle</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine[1]/throttle</property>
+        <step> -0.1 </step>
+        <min>   0.0 </min>
+        <max>   1.0 </max>
+      </binding>
     </action>
   </animation>
   

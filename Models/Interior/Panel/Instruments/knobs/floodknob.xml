@@ -12,7 +12,7 @@
   <animation>
     <type>rotate</type>
     <object-name>knob</object-name>
-    <property>/controls/switches/flood-lights-norm</property>
+    <property>/controls/lighting/floods-lights</property>
     <factor> -135 </factor>
     <axis>
       <x> 1 </x>
@@ -38,7 +38,7 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/flood-lights-norm</property>
+        <property>/controls/lighting/floods-lights</property>
         <step>0.1</step>
         <min>0</min>
         <max>2</max>
@@ -53,7 +53,7 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/flood-lights-norm</property>
+        <property>/controls/lighting/floods-lights</property>
         <step>-0.1</step>
         <min>0</min>
         <max>2</max>

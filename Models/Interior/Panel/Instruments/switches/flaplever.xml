@@ -7,15 +7,12 @@
   <animation>
     <object-name>base</object-name>
     <object-name>flaplever</object-name>
-    
-    <object-name>flapup</object-name>
-    <object-name>flapdn</object-name>
   </animation>
   
   <animation>
     <type>rotate</type>
     <object-name>flaplever</object-name>
-    <property>/controls/switches/flaplever-switch</property>
+    <property>/surface-positions/flaps-pos-norm</property>
     <factor> 30 </factor>
     <axis>
       <x> 0 </x>
@@ -26,16 +23,16 @@
   
   <animation>
     <type>pick</type>
-    <object-name>flapup</object-name>
-    <visible>false</visible>
+    <object-name>flaplever</object-name>
+    <visible>true</visible>
     <action>
-      <button>0</button>
+      <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/flaplever-switch</property>
-        <step>-1</step>
-        <min>0</min>
-        <max>2</max>
+        <property>/surface-positions/flaps-pos-norm</property>
+        <step> -1 </step>
+        <min>   0 </min>
+        <max>   2 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
@@ -46,16 +43,16 @@
   
   <animation>
     <type>pick</type>
-    <object-name>flapdn</object-name>
-    <visible>false</visible>
+    <object-name>flaplever</object-name>
+    <visible>true</visible>
     <action>
-      <button>0</button>
+      <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/flaplever-switch</property>
-        <step>1</step>
-        <min>0</min>
-        <max>2</max>
+        <property>/surface-positions/flaps-pos-norm</property>
+        <step> 1 </step>
+        <min>  0 </min>
+        <max>  2 </max>
       </binding>
       <binding>
         <command>property-toggle</command>

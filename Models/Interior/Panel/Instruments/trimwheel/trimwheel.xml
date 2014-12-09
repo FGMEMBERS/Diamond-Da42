@@ -7,9 +7,6 @@
   <animation>
     <object-name>TrimWheel</object-name>
     <object-name>trimind</object-name>
-    
-    <object-name>trimdn</object-name>
-    <object-name>trimup</object-name>
   </animation>
   
   <animation>
@@ -43,10 +40,10 @@
   
   <animation>
     <type>pick</type>
-    <object-name>trimdn</object-name>
-    <visible>false</visible>
+    <object-name>TrimWheel</object-name>
+    <visible>true</visible>
     <action>
-      <button>0</button>
+      <button>3</button>
       <binding>
         <command>property-adjust</command>
         <property>/controls/flight/elevator-trim</property>
@@ -59,10 +56,10 @@
   
   <animation>
     <type>pick</type>
-    <object-name>trimup</object-name>
-    <visible>false</visible>
+    <object-name>TrimWheel</object-name>
+    <visible>true</visible>
     <action>
-      <button>0</button>
+      <button>4</button>
       <binding>
         <command>property-adjust</command>
         <property>/controls/flight/elevator-trim</property>
@@ -70,26 +67,6 @@
         <min>  -1.0 </min>
         <max>   1.0 </max>
       </binding>
-    </action>
-  </animation>
-  
-  <animation>
-    <type>pick</type>
-    <object-name>TrimWheel</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>da42.mouseHandler.setY( "/controls/flight/elevator-trim", 0.01 , -1.0 , 1.0);</script>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>da42.mouseHandler.setY();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
   

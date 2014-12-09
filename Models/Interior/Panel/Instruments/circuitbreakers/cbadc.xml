@@ -20,10 +20,6 @@
         <command>property-toggle</command>
         <property>/controls/electric/circuitbreaker/adc</property>
       </binding>
-      <binding>
-        <command>nasal</command>
-        <script>da42.nyi("Air data computer");</script>
-      </binding>
     </action>
   </animation>
   

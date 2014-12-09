@@ -58,7 +58,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/controls/switches/strobelight-switch</property>
+      <property>controls/lighting/strobe-lights</property>
     </condition>
   </animation>
   

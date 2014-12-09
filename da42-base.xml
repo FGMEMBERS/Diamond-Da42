@@ -4,63 +4,75 @@
 
   <sim include="Systems/views.xml">
 
-    <description>Diamond DA 42 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM) - OO ZVY (FDM) - JeeP Cheney (Cockpit-Systems)</author>
-    <aircraft-version>0.9 - 29/08/2014</aircraft-version>
+    <description>Diamond Da 42 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM) - OO ZVY (FDM) - Jeep (System)</author>
+    <aircraft-version>0.95 - 07/12/2014</aircraft-version>
     <status>Beta</status>
-
-    <fuel-fraction>1.0</fuel-fraction>
-
+   
+    <fuel-fraction>0.8</fuel-fraction>
+  
     <startup>
       <splash-texture>Aircraft/Diamond-Da42/da42-splash.png</splash-texture>
     </startup>
 
-    <systems include="Systems/electrical.xml"></systems>
-
-    <instrumentation>
-      <path>Aircraft/Diamond-Da42/Systems/instrumentation.xml</path>
-    </instrumentation>
-	
     <sound>
-      <path archive="y">Aircraft/Diamond-Da42/Sounds/da42-sound.xml</path>
+      <path>Aircraft/Diamond-Da42/Sounds/da42-sound.xml</path>
     </sound>
 
     <model>
-      <path archive="y">Aircraft/Diamond-Da42/Models/da42.xml</path>
+      <path>Aircraft/Diamond-Da42/Models/da42.xml</path>
       <livery>
         <file type="string">default</file>
       </livery>
-    </model>
+      <door-positions>
+        <crew>
+          <position-norm>0</position-norm>
+        </crew>
+        <passenger>
+          <position-norm>0</position-norm>
+        </passenger>
+        <leftbagage>
+          <position-norm>0</position-norm>
+        </leftbagage>
+        <rightbagage>
+          <position-norm>0</position-norm>
+        </rightbagage>
+      </door-positions>
+    </model> 
 
     <flaps>
-      <setting> 0.000 </setting>
-      <setting> 0.375 </setting>
-      <setting> 1.000 </setting> <!-- 20 deg -->
+      <setting> 0.0 </setting> <!-- Cruise -->
+      <setting> 0.5 </setting> <!-- Half -->
+      <setting> 1.0 </setting> <!-- Full -->
     </flaps>
-
+    
+    <instrumentation>
+      <path>Aircraft/Diamond-Da42/Systems/instrumentation.xml</path>
+    </instrumentation>      
+    
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int" n="0">  0 </int>                                          <!-- 0 immat -->
-        <int type="int" n="1">  0 </int>                                          <!-- 1 immat -->
-        <int type="int" n="2">  0 </int>                                          <!-- 2 immat -->
-        <int type="int" n="3">  0 </int>                                          <!-- 3 immat -->
-        <int type="int" n="4">  0 </int>                                          <!-- 4 immat -->
-        <int type="int" n="5">  0 </int>                                          <!-- 5 immat -->
-        <int type="bool" n="6"> 1 </int>                                          <!-- 6 smoke/bomb/torpedo -->
-        <int type="int" n="7">  0 </int>                                          <!-- 7 color -->
-        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>      <!-- 8 nav-lights -->
-        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>          <!-- 9 strobe-lights -->
-        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
-        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
-        <float n="2" alias="/position/gear-agl-m"> 0 </float>                     <!-- altitude for MP shadow -->
-        <float n="3" alias="/position/altitude-ft"> 0 </float>                    <!-- altitude for Smoke/Trail -->
-        <float n="4" alias="/sim/model/door-positions/leftbagage/position-norm"/>
-        <float n="5" alias="/sim/model/door-positions/rightbagage/position-norm"/>
-        <float n="6" alias="/engines/engine[0]/rpm"/>
-        <float n="7" alias="/engines/engine[0]/cranking"/>
-        <float n="8" alias="/engines/engine[1]/rpm"/>
-        <float n="9" alias="/engines/engine[1]/cranking"/>
+        <int   n="0"  type="int"> 0</int>                                          <!-- 0 immat -->
+        <int   n="1"  type="int"> 0</int>                                          <!-- 1 immat -->
+        <int   n="2"  type="int"> 0</int>                                          <!-- 2 immat -->
+        <int   n="3"  type="int"> 0</int>                                          <!-- 3 immat -->
+        <int   n="4"  type="int"> 0</int>                                          <!-- 4 immat -->
+        <int   n="5"  type="int"> 0</int>                                          <!-- 5 immat -->
+        <int   n="6"  type="bool">1</int>                                          <!-- 6 smoke/bomb/torpedo -->
+        <int   n="7"  type="int"> 0</int>                                          <!-- 7 color -->
+        <int   n="8"  alias="/systems/electrical/outputs/nav-lights">0</int>         <!-- 8 nav-lights -->
+        <int   n="9"  alias="/sim/model/lights/beacon/state">false</int>             <!-- 9 strobe-lights -->
+        <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2"  alias="/position/gear-agl-m">0</float>                       <!-- altitude for MP shadow -->
+        <float n="3"  alias="/position/altitude-ft">0</float>                      <!-- altitude for Smoke/Trail -->
+        <float n="4"  alias="/sim/model/door-positions/leftbagage/position-norm"/>
+        <float n="5"  alias="/sim/model/door-positions/rightbagage/position-norm"/>
+        <float n="6"  alias="/engines/engine[0]/rpm"/>
+        <float n="7"  alias="/engines/engine[0]/cranking"/>
+        <float n="8"  alias="/engines/engine[1]/rpm"/>
+        <float n="9"  alias="/engines/engine[1]/cranking"/>
         <float n="10" alias="/gear/gear[0]/wow/"/>
         <float n="11" alias="/gear/gear[1]/wow/"/>
         <float n="12" alias="/gear/gear[2]/wow/"/>
@@ -74,7 +86,7 @@
     </multiplay>
     
     <help include="Systems/help.xml"/>
-
+    
     <menubar include="Dialogs/da42-menu.xml"/>
 
     <weight n="0">
@@ -83,7 +95,7 @@
       <max-lb type="double">300.0</max-lb>
       <weight-lb type="double">200</weight-lb>
     </weight>
-
+    
     <weight n="1">
       <name type="string">Co Pilot</name>
       <min-lb type="double">0.0</min-lb>
@@ -118,196 +130,36 @@
       <max-lb type="double">100.0</max-lb>
       <weight-lb type="double">0</weight-lb>
     </weight>
-
-    <icing>
-      <windshield type="double">1.0</windshield>
-    </icing>
     
   </sim>
- 
-  <controls>
-    <gear>
-      <brake-parking type="double">1</brake-parking>
-    </gear>
-    <fuel>
-      <tank n="0">
-        <position type="double">2</position>
-        <lock type="double">1</lock>
-      </tank>
-      <tank n="1">
-        <position type="double">2</position>
-        <lock type="double">1</lock>
-      </tank>
-    </fuel>
-    <switches>
-      <defrost-lever>0</defrost-lever>
-      <cabinheat-lever>0</cabinheat-lever>
-      <emerhoriz-lever>0</emerhoriz-lever>
-      <emerhoriz-lock>0</emerhoriz-lock>
-      <geardown>1</geardown>
-      <deice>
-        <speed>-1</speed>
-        <icelight>0</icelight>
-      </deice>
-      <flaplever-switch>0</flaplever-switch>
-      <ecu n="0">
-        <switch type="bool">1</switch>
-      </ecu>
-      <ecu n="1">
-        <switch type="bool">1</switch>
-      </ecu>
-      <doors>
-        <door n="0">
-          <locked type="bool">1</locked>
-        </door>
-        <door n="1">
-          <locked type="bool">0</locked>
-        </door>
-      </doors>
-    </switches>
-    <lighting>
-      <elt type="bool">0</elt>
-      <antiicelight type="bool">0</antiicelight>
-      <nav-lights type="bool">0</nav-lights>
-      <strobe type="bool">0</strobe>
-      <taxi-light type="bool">0</taxi-light>
-      <flood-lights type="bool">0</flood-lights>
-      <landing-lights type="bool">0</landing-lights>
-      <instr-lights type="bool">0</instr-lights>
-      <gearwrn type="bool">0</gearwrn>
-    </lighting>
-    <deice>
-      <mode type="int">-1</mode>
-    </deice>
-    <electric>
-      <circuitbreaker>
-        <com1>0</com1>
-        <gpsnav1>0</gpsnav1>
-        <xpcom>0</xpcom>
-        <enginstr>0</enginstr>
-        <pitot>0</pitot>
-        <deice>1</deice>
-        <taxilight>1</taxilight>
-        <oxy>1</oxy>
-        <pfd>0</pfd>
-        <adc>0</adc>
-        <ahrs>0</ahrs>
-        <gearwrn>1</gearwrn>
-        <gearctrl>1</gearctrl>
-        <mfd>0</mfd>
-        <ah>1</ah>
-        <stallwrn>1</stallwrn>
-        <flap>1</flap>
-        <landinglight>1</landinglight>
-        <instlight>1</instlight>
-        <fans>0</fans>
-        <avionicbus>1</avionicbus>
-        <avionicctrl>0</avionicctrl>
-        <com2>0</com2>
-        <gpsnav2>0</gpsnav2>
-        <audio>0</audio>
-        <autopilot>0</autopilot>
-        <datalink>0</datalink>
-        <wx500>0</wx500>
-        <adf>0</adf>
-        <dme>0</dme>
-        <wxrdr>0</wxrdr>
-        <leftecubus>1</leftecubus>
-        <leftecub>1</leftecub>
-        <leftecua>1</leftecua>
-        <leftalt>1</leftalt>
-        <leftbat>1</leftbat>
-        <rightbat>1</rightbat>
-        <rightalt>1</rightalt>
-        <rightecubus>1</rightecubus>
-        <rightecub>1</rightecub>
-        <rightecua>1</rightecua>
-      </circuitbreaker>
-      <alimentation>
-        <gear type="bool">0</gear>
-        <flap type="bool">0</flap>
-        <stallwrn type="bool">0</stallwrn>
-        <deice type="bool">0</deice>
-        <engines>
-          <engine n="0">
-          <starter type="bool">0</starter>
-          <ecus>
-            <ecu n="0">
-              <serviceable type="bool">0</serviceable>
-              <selected type="bool">0</selected>
-            </ecu>
-            <ecu n="1">
-              <serviceable type="bool">0</serviceable>
-              <selected type="bool">0</selected>
-            </ecu>
-          </ecus>
-          </engine>
-            <engine n="1">
-            <starter type="bool">0</starter>
-            <ecus>
-              <ecu n="0">
-                <serviceable type="bool">0</serviceable>
-                <selected type="bool">0</selected>
-              </ecu>
-              <ecu n="1">
-                <serviceable type="bool">0</serviceable>
-                <selected type="bool">0</selected>
-              </ecu>
-            </ecus>
-          </engine>
-        </engines>
-      </alimentation>
-    </electric>
-  </controls>
 
-  <consumables>
-    <fuel>
-      <tank n="0">
-        <name>Left wing</name>
-        <selected type="bool">true</selected>
-      </tank>
-      <tank n="1">
-        <name>Right wing</name>
-        <selected type="bool">true</selected>
-      </tank>
-    </fuel>
-    <!--1 unite par seconde en mode normal = 2h30, 2.5 en mode high = 1h00, et en max 5 done 30mn-->
-    <deice type="double">9000.0</deice>
-  </consumables>
+  <input include="Systems/da42-keyboard.xml"/>
   
-  <input>
-    <keyboard include="Systems/da42-keyboard.xml"/>
-  </input>
-
-  <!--placement instruments -->
-  <!-- -->
-  <mymodel>
-    <x> 0.007 </x>
-    <y> 0.318 </y>
-    <z> 0.184 </z>
-  </mymodel>
-  <!-- -->
-  <!--placement instruments -->
- 
+  <controls include="Systems/controls.xml"/>
+  
+  <instrumentation include="Systems/initialisation.xml"/>
+  
+  <engines>
+    <engine n="0">
+      <rpm type="float">0</rpm>
+    </engine>
+    <engine n="1">
+      <rpm type="float">0</rpm>
+    </engine>
+  </engines>
+  
   <nasal>
     <doors>
       <file>Aircraft/Diamond-Da42/Nasal/doors.nas</file>
     </doors>
     <da42>
-      <file>Aircraft/Diamond-Da42/Nasal/light.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/liveries.nas</file>
+      <file>Aircraft/Diamond-Da42/Nasal/light.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/immat.nas</file>
-      <file>Aircraft/Diamond-Da42/Nasal/tools.nas</file>
-      <file>Aircraft/Diamond-Da42/Nasal/electrical.nas</file>
     </da42>
-    <!--
-         Le zkv100 de Zakharov disponible pour mises à jour ici : http://gitorious.org/zakharov/zkv1000 
-         En attendant son arrivée dans Aircraft/Instruments-3D il est placé à la raçine du dossier de l'avion
-         pour garder la même arborescence.
-    -->
     <zkv1000>
-      <file>Aircraft/Diamond-Da42/zkv1000/zkv1000.nas</file>
+      <file>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/zkv1000/zkv1000.nas</file>
     </zkv1000>
   </nasal>
-   
+
 </PropertyList>

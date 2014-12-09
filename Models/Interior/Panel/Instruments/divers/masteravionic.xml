@@ -13,31 +13,31 @@
   </animation>
   
   <animation>
-    <type>rotate</type>
-    <object-name>on-off</object-name>
-    <property>/controls/switches/masteravionic-switch</property>
-    <factor> -30 </factor>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-  
-  <animation>
     <type>pick</type>
     <object-name>on-off</object-name>
     <action>
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/masteravionic-switch</property>
+        <property>/controls/lighting/instrument-lights</property>
       </binding>
       <binding>
         <command>property-toggle</command>
         <property>/sim/sound/switch</property>
       </binding>
     </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>on-off</object-name>
+    <property>/controls/lighting/instrument-lights</property>
+    <factor> -30 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
   </animation>
   
 </PropertyList>

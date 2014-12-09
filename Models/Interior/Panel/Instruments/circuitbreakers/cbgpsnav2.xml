@@ -20,10 +20,6 @@
         <command>property-toggle</command>
         <property>/controls/electric/circuitbreaker/gpsnav2</property>
       </binding>
-      <binding>
-        <command>nasal</command>
-        <script>da42.nyi("Gps nav 2");</script>
-      </binding>
     </action>
   </animation>
   
