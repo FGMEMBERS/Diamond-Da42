@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <gear>
+    <brake-parking type="bool">1</brake-parking>
+    <emergency type="bool">false</emergency>
+  </gear>
+  
+  <lighting>
+    <instrument-lights type="bool">false</instrument-lights>
+    <nav-lights type="bool">false</nav-lights>
+    <taxi-lights type="bool">false</taxi-lights>
+    <strobe-lights type="bool">false</strobe-lights>
+    <landing-lights type="bool">false</landing-lights>
+    <luminosite-lights type="float">2</luminosite-lights>
+    <floods-lights type="float">1.5</floods-lights>
+    <elt type="bool">false</elt>
+  </lighting>
+  
+  <nozzles>
+    <rightnozzle-x type="float">0</rightnozzle-x>
+    <rightnozzle-y type="float">0</rightnozzle-y>
+    <leftnozzle-x type="float">0</leftnozzle-x>
+    <leftnozzle-y type="float">0</leftnozzle-y>
+  </nozzles>
+  
+  <electric>
+    <battery-switch>0</battery-switch>
+    <generator>0</generator>
+    <alimentation>
+      <deice type="int">0</deice>
+    </alimentation>
+    <engines>
+      <engine n="0">
+        <fuel-pump>0</fuel-pump>
+      </engine>
+      <engine n="1">
+        <fuel-pump>0</fuel-pump>
+      </engine>
+    </engines>
+    <circuitbreaker>
+      <adc type="bool">true</adc>
+      <adf type="bool">true</adf>
+      <ah type="bool">true</ah>
+      <ahrs type="bool">true</ahrs>
+      <audio type="bool">true</audio>
+      <autopilot type="bool">true</autopilot>
+      <avionicbus type="bool">true</avionicbus>
+      <avionicctrl type="bool">true</avionicctrl>
+      <com1 type="bool">true</com1>
+      <com2 type="bool">true</com2>
+      <datalink type="bool">true</datalink>
+      <deice type="bool">true</deice>
+      <dme type="bool">true</dme>
+      <enginstr type="bool">true</enginstr>
+      <fans type="bool">true</fans>
+      <flap type="bool">true</flap>
+      <gearctrl type="bool">true</gearctrl>
+      <gearwrn type="bool">true</gearwrn>
+      <gpsnav1 type="bool">true</gpsnav1>
+      <gpsnav2 type="bool">true</gpsnav2>
+      <instlight type="bool">true</instlight>
+      <landinglight type="bool">true</landinglight>
+      <leftalt type="bool">true</leftalt>
+      <leftbat type="bool">true</leftbat>
+      <leftecua type="bool">true</leftecua>
+      <leftecub type="bool">true</leftecub>
+      <leftecubus type="bool">true</leftecubus>
+      <mfd type="bool">true</mfd>
+      <oxy type="bool">true</oxy>
+      <pfd type="bool">true</pfd>
+      <pitot type="bool">true</pitot>
+      <rightalt type="bool">true</rightalt>
+      <rightbat type="bool">true</rightbat>
+      <rightecua type="bool">true</rightecua>
+      <rightecub type="bool">true</rightecub>
+      <rightecubus type="bool">true</rightecubus>
+      <stallwrn type="bool">true</stallwrn>
+      <taxilight type="bool">true</taxilight>
+      <wx500 type="bool">true</wx500>
+      <wxrdr type="bool">true</wxrdr>
+      <xpcom type="bool">true</xpcom>
+    </circuitbreaker>
+  </electric>
+  
+  <switches>
+    <elt type="bool">false</elt>
+    <alternateair type="bool">false</alternateair>
+    <emerhoriz-lock type="bool">false</emerhoriz-lock>
+    <emerhoriz-lever type="bool">false</emerhoriz-lever>
+    <starterkey-insert type="bool">false</starterkey-insert>
+    <starterkey type="int">0</starterkey>
+    <deice>
+      <max type="bool">false</max>
+      <windshield type="bool">false</windshield>
+      <alternate-lock type="bool">false</alternate-lock>
+      <alternate-lever type="bool">false</alternate-lever>
+      <pump type="bool">false</pump>
+      <speed type="int">0</speed>
+      <icelight type="int">0</icelight>
+      <mode type="int">0</mode>
+    </deice>
+  </switches>
+  
+  <fuel>
+    <tank n="0">
+      <lock type="bool">false</lock>
+      <position type="double">0</position>
+    </tank>
+    <tank n="1">
+      <lock type="bool">false</lock>
+      <position type="double">0</position>
+    </tank>
+  </fuel>
+  
+</PropertyList>

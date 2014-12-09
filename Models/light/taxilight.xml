@@ -40,7 +40,7 @@
     <object-name>Cone-texture</object-name>
     <object-name>Light</object-name>
     <condition>
-      <property>/controls/switches/taxilight-switch</property>
+      <property>/controls/lighting/taxi-lights</property>
     </condition>
   </animation>
 

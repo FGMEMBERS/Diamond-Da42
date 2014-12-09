@@ -6,11 +6,27 @@
   <line>______________________________________________</line>
   <key>
     <name>d</name>
-    <desc>Open/Close canopy</desc>
+    <desc>Open/Close crew door</desc>
   </key>
   <key>
     <name>d</name>
-    <desc>Open/Close door</desc>
+    <desc>Open/Close pasenger door</desc>
+  </key>
+  <key>
+    <name>e</name>
+    <desc>Open/Close left bagage door</desc>
+  </key>
+  <key>
+    <name>E</name>
+    <desc>Open/Close right bagage door</desc>
+  </key> 
+  <key>
+    <name>l</name>
+    <desc>Landing lights on/off</desc>
+  </key> 
+  <key>
+    <name>L</name>
+    <desc>Taxi lights on/off</desc>
   </key>
   
 </PropertyList>

@@ -21,22 +21,20 @@
     <object-name>panelfront</object-name>
     <object-name>registration</object-name>
     <object-name>textes</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
     <emission>
+      <factor-prop>controls/lighting/floods-lights</factor-prop>
       <red>   0.2 </red>
       <green> 0.2 </green>
       <blue>  0.2 </blue>
-      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
     </emission>
-    <condition>
-      <greater-than>
-        <property>/controls/lighting/flood-lights</property>
-        <value>0</value>
-      </greater-than> 
-    </condition>
   </animation>
   
   <model>
-    <path>Aircraft/Diamond-Da42/zkv1000/mfd.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/zkv1000/mfd.xml</path>
     <offsets>
       <x-m> 0.004 </x-m>
       <y-m> 0.118 </y-m>
@@ -45,7 +43,16 @@
   </model>
   
   <model>
-    <path>Aircraft/Diamond-Da42/zkv1000/pfd.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/zkv1000/mixer.xml</path>
+    <offsets>
+      <x-m>  0.006 </x-m>
+      <y-m> -0.055 </y-m>
+      <z-m>  0.152 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/zkv1000/pfd.xml</path>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m> -0.228 </y-m>
@@ -90,19 +97,10 @@
   </model>
   
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/strobelight.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/landinglight.xml</path>
     <offsets>
       <x-m>  0.022 </x-m>
-      <y-m> -0.197 </y-m>
-      <z-m>  0.303 </z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/positionlight.xml</path>
-    <offsets>
-      <x-m>  0.022 </x-m>
-      <y-m> -0.218 </y-m>
+      <y-m> -0.262 </y-m>
       <z-m>  0.303 </z-m>
     </offsets>
   </model>
@@ -117,10 +115,19 @@
   </model>
   
   <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/landinglight.xml</path>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/positionlight.xml</path>
     <offsets>
       <x-m>  0.022 </x-m>
-      <y-m> -0.262 </y-m>
+      <y-m> -0.218 </y-m>
+      <z-m>  0.303 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/divers/strobelight.xml</path>
+    <offsets>
+      <x-m>  0.022 </x-m>
+      <y-m> -0.197 </y-m>
       <z-m>  0.303 </z-m>
     </offsets>
   </model>
@@ -808,15 +815,6 @@
       <x-m> 0.023 </x-m>
       <y-m> 0.306 </y-m>
       <z-m> 0.299 </z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/mixer/mixer.xml</path>
-    <offsets>
-      <x-m>  0.006 </x-m>
-      <y-m> -0.055 </y-m>
-      <z-m>  0.152 </z-m>
     </offsets>
   </model>
   

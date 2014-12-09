@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <chase-distance-m type="double" archive="y"> -20 </chase-distance-m>
+  <chase-distance-m type="double" archive="y"> -12 </chase-distance-m>
 
   <view n="100">
     <name>Passanger Seat View</name>
@@ -14,8 +14,8 @@
        <x-offset-m archive="y">  0.200 </x-offset-m>	<!-- Right -->
        <y-offset-m archive="y">  0.505 </y-offset-m>	<!-- Up    -->
        <z-offset-m archive="y"> -1.421 </z-offset-m>	<!-- Back  -->
-      <pitch-offset-deg> -7 </pitch-offset-deg>
-      <default-field-of-view-deg> 75 </default-field-of-view-deg>
+      <pitch-offset-deg> -5 </pitch-offset-deg>
+      <default-field-of-view-deg> 80 </default-field-of-view-deg>
       <dynamic-view type="bool">true</dynamic-view>
     </config>
   </view>
@@ -42,8 +42,8 @@
        <x-offset-m archive="y"> -0.200 </x-offset-m>	<!-- Right -->
        <y-offset-m archive="y">  0.505 </y-offset-m>	<!-- Up    -->
        <z-offset-m archive="y"> -1.421 </z-offset-m>	<!-- Back  -->
-       <pitch-offset-deg> -7 </pitch-offset-deg>
-      <default-field-of-view-deg> 75 </default-field-of-view-deg>
+       <pitch-offset-deg> -5 </pitch-offset-deg>
+      <default-field-of-view-deg> 80 </default-field-of-view-deg>
     </config>
   </view>
 

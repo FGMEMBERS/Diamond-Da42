@@ -20,10 +20,6 @@
         <command>property-toggle</command>
         <property>/controls/electric/circuitbreaker/adf</property>
       </binding>
-      <binding>
-        <command>nasal</command>
-        <script>da42.nyi("Adf");</script>
-      </binding>
     </action>
   </animation>
   

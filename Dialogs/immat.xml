@@ -17,7 +17,7 @@
   <group>
     <layout>hbox</layout>
     <input>
-      <property>/sim/multiplay/callsign</property>
+      <property>/sim/model/immat</property>
       <type>STRING</type>
       <width>100</width>
     </input>

@@ -36,28 +36,44 @@
   <animation>
     <type>pick</type>
     <object-name>nozzle</object-name>
-    <visible>true</visible>
     <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
+      <button>3</button>
       <binding>
-        <command>nasal</command>
-        <script>da42.mouseHandler.setX( "/controls/nozzles/rightnozzle-x", 0.01 , -1.0 , 1.0);</script>
+        <command>property-adjust</command>
+        <property>/controls/nozzles/rightnozzle-x</property>
+        <step> 0.1 </step>
+        <min> -1.0 </min>
+        <max>  1.0 </max>
       </binding>
       <binding>
-        <command>nasal</command>
-        <script>da42.mouseHandler.setY( "/controls/nozzles/rightnozzle-y", 0.01 , -1.0 , 1.0);</script>
+        <command>property-adjust</command>
+        <property>/controls/nozzles/rightnozzle-y</property>
+        <step> 0.1 </step>
+        <min> -1.0 </min>
+        <max>  1.0 </max>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>da42.mouseHandler.setX();</script>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script>da42.mouseHandler.setY();</script>
-        </binding>
-      </mod-up>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>nozzle</object-name>
+    <action>
+      <button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/nozzles/rightnozzle-x</property>
+        <step> -0.1 </step>
+        <min>  -1.0 </min>
+        <max>   1.0 </max>
+      </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/nozzles/rightnozzle-y</property>
+        <step> -0.1 </step>
+        <min>  -1.0 </min>
+        <max>   1.0 </max>
+      </binding>
     </action>
   </animation>
   

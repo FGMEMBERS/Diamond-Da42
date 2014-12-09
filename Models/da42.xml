@@ -128,11 +128,11 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
   </animation>
   
   <effect>
@@ -202,14 +202,9 @@
   
   <!-- Intérieur -->
   <model>
-    <name>Interieur</name>
+    <usage>interio</usage>
     <path>Aircraft/Diamond-Da42/Models/Interior/interior.xml</path>
   </model>
-  
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
   
   <!-- Cranking effects -->
   <!-- Left -->
@@ -403,6 +398,40 @@
     </axis>
   </animation>
   
+  <!-- Gouverne de direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>direction</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 15 </factor>
+    <axis>
+      <x1-m> 3.572 </x1-m>
+      <y1-m> 0.000 </y1-m>
+      <z1-m> 0.015 </z1-m>
+      <x2-m> 3.775 </x2-m>
+      <y2-m> 0.000 </y2-m>
+      <z2-m> 0.666 </z2-m>
+    </axis>
+  </animation>
+  
+  <!-- Gouverne de profondeur -->
+  <animation>
+    <type>rotate</type>
+    <object-name>profondeur</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 20 </factor>
+    <center>
+      <x-m> 3.985 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 1.172 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
   <!-- Animations des ailerons -->
   <animation>
     <type>rotate</type>
@@ -500,40 +529,6 @@
       <x2-m> -0.622 </x2-m>
       <y2-m>  4.870 </y2-m>
       <z2-m> -0.008 </z2-m>
-    </axis>
-  </animation>
-  
-  <!-- Gouverne de direction -->
-  <animation>
-    <type>rotate</type>
-    <object-name>direction</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> 15 </factor>
-    <axis>
-      <x1-m> 3.572 </x1-m>
-      <y1-m> 0.000 </y1-m>
-      <z1-m> 0.015 </z1-m>
-      <x2-m> 3.775 </x2-m>
-      <y2-m> 0.000 </y2-m>
-      <z2-m> 0.666 </z2-m>
-    </axis>
-  </animation>
-  
-  <!-- Gouverne de profondeur -->
-  <animation>
-    <type>rotate</type>
-    <object-name>profondeur</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> 20 </factor>
-    <center>
-      <x-m> 3.985 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 1.172 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
     </axis>
   </animation>
   
@@ -893,14 +888,6 @@
     </axis>
   </animation>
   
-  <!-- icing -->
-  <!--
-  <model>
-    <name>Icing</name>
-    <path>Aircraft/Diamond-Da42/Models/Icing/icing.xml</path>
-  </model>
-  -->
-  
   <!-- ******************************************************************************************* -->
   <model>
     <name>front_door.handle</name>
@@ -1206,37 +1193,6 @@
       <x-m> -0.870 </x-m>
       <y-m>  6.629 </y-m>
       <z-m>  0.187 </z-m>
-    </offsets>
-  </model>
-  
-  <animation>
-    <type>material</type>
-    <object-name>antiicelight</object-name>
-    <emission>
-      <factor-prop>/controls/lighting/antiicelight</factor-prop>
-      <red>   0.5 </red>
-      <green> 0.5 </green>
-      <blue>  0.5 </blue>
-    </emission>
-  </animation>
-  
-  <model>
-    <path>Aircraft/Diamond-Da42/Models/light/light-cone-antiice.xml</path>
-    <offsets>
-      <x-m> -1.701 </x-m>
-      <y-m>  2.080 </y-m>
-      <z-m> -0.100 </z-m>
-      <heading-deg> -95 </heading-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/Diamond-Da42/Models/light/light-cone-antiice.xml</path>
-    <offsets>
-      <x-m> -1.701 </x-m>
-      <y-m> -2.080 </y-m>
-      <z-m> -0.100 </z-m>
-      <heading-deg> 95 </heading-deg>
     </offsets>
   </model>
   

@@ -9,73 +9,119 @@
       <item>
         <label>Autostart</label>
         <binding>
-          <command>property-assign</command>
+          <command>property-toggle</command>
+          <property>/controls/electric/battery-switch</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/electric/engine/generator</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/lighting/instrument-lights</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/lighting/nav-lights</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/lighting/strobe-lights</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
           <property>/controls/switches/starterkey-insert</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/engines/engine[0]/fuel-pump</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/engines/engine[1]/fuel-pump</property>
+        </binding>
+        <!-- Magnetos -->
+        <binding>
+          <condition>
+            <property>/controls/switches/starterkey-insert</property>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/magnetos</property>
+          <value>3</value>
+        </binding>
+        <binding>
+          <condition>
+            <property>/controls/switches/starterkey-insert</property>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[1]/magnetos</property>
+          <value>3</value>
+        </binding>
+        <binding>
+          <condition>
+            <not>
+              <property>/controls/switches/starterkey-insert</property>
+            </not>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/magnetos</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <condition>
+            <not>
+              <property>/controls/switches/starterkey-insert</property>
+            </not>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[1]/magnetos</property>
+          <value>0</value>
+        </binding>
+        <!-- PFD / MFD -->
+        <binding>
+          <condition>
+            <property>/controls/switches/starterkey-insert</property>
+          </condition>
+          <command>property-assign</command>
+          <property>/instrumentation/zkv1000/pfd/status</property>
           <value>1</value>
         </binding>
         <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/right-master-engine-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/left-master-engine-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/left-alt-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/right-alt-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/master-switch</property>
-        </binding>
-        <binding>
+          <condition>
+            <property>/controls/switches/starterkey-insert</property>
+          </condition>
           <command>property-assign</command>
-          <property>/controls/switches/instrument-lights-norm</property>
-          <value>1.5</value>
+          <property>/instrumentation/zkv1000/mfd/status</property>
+          <value>2</value>
         </binding>
         <binding>
+          <condition>
+            <not>
+              <property>/controls/switches/starterkey-insert</property>
+            </not>
+          </condition>
           <command>property-assign</command>
-          <property>/controls/switches/flood-lights-norm</property>
-          <value>1.5</value>
+          <property>/instrumentation/zkv1000/pfd/status</property>
+          <value>0</value>
         </binding>
         <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/masteravionic-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/positionlight-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>/controls/switches/strobelight-switch</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>controls/switches/emerhoriz-lever</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script>zkv1000.powerOn(0);</script>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script>zkv1000.powerOn(1);</script>
+          <condition>
+            <not>
+              <property>/controls/switches/starterkey-insert</property>
+            </not>
+          </condition>
+          <command>property-assign</command>
+          <property>/instrumentation/zkv1000/mfd/status</property>
+          <value>0</value>
         </binding>
         <binding>
           <command>nasal</command>
           <script>controls.startEngine(0,0)</script>
         </binding>
         <binding>
-          <command>nasal</command>
-          <script>controls.startEngine(0,1)</script>
-        </binding>
-        <binding>
+          <condition>
+            <property>/controls/switches/starterkey-insert</property>
+          </condition>
           <command>nasal</command>
           <script>gui.popupTip("Press 's' to start")</script>
         </binding>
@@ -84,14 +130,14 @@
         <label>Select Livery</label>
         <binding>
           <command>nasal</command>
-          <script>aircraft.livery.dialog.toggle();</script>
+          <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
       <item>
         <label>Immatriculation</label>
         <binding>
           <command>nasal</command>
-          <script>da42.immat_dialog.toggle();</script>
+          <script>da42.immat_dialog.toggle()</script>
         </binding>
       </item>
     </menu>

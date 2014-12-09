@@ -12,7 +12,7 @@
   <animation>
     <type>rotate</type>
     <object-name>gearlever</object-name>
-    <property>/controls/switches/geardown</property>
+    <property>//controls/gear/gear-down</property>
     <factor> 30 </factor>
     <axis>
       <x> 0 </x>
@@ -28,7 +28,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/geardown</property>
+        <property>//controls/gear/gear-down</property>
       </binding>
       <binding>
         <command>property-toggle</command>

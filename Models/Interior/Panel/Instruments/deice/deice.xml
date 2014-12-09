@@ -56,18 +56,16 @@
     <object-name>high.light</object-name>
     <object-name>norm.light</object-name>
     <object-name>low.light</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
     <emission>
       <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
       <red>   0.2 </red>
       <green> 0.2 </green>
       <blue>  0.2 </blue>
     </emission>
-    <condition>
-      <greater-than>
-        <property>/controls/lighting/flood-lights</property>
-        <value>0</value>
-      </greater-than> 
-    </condition>
   </animation>
   
   <animation>
@@ -246,20 +244,14 @@
       <repeatable>false</repeatable>
       <binding>
         <condition>
-          <equals>
-            <property>/controls/switches/deice/alternate-lock</property>
-            <value type="double">1</value>
-          </equals>
+          <property>/controls/switches/deice/alternate-lock</property>
         </condition>
         <command>property-toggle</command>
         <property>/controls/switches/deice/alternate-lever</property>
       </binding>
       <binding>
         <condition>
-          <equals>
-            <property>/controls/switches/deice/alternate-lock</property>
-            <value type="double">1</value>
-          </equals>
+          <property>/controls/switches/deice/alternate-lock</property>
         </condition>
         <command>property-toggle</command>
         <property>/sim/sound/switch</property>
@@ -293,10 +285,6 @@
       <binding>
         <command>property-toggle</command>
         <property>/controls/switches/deice/pump</property>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>da42.nyi("Deice pump");</script>
       </binding>
       <binding>
         <command>property-toggle</command>

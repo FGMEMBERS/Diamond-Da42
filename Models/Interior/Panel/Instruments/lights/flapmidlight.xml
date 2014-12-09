@@ -19,18 +19,15 @@
     </emission>
     <condition>
       <and>
-        <less-than>
-          <property>/surface-positions/flaps-pos-norm</property>
-          <value type="double">-0.15</value>
-        </less-than>
         <greater-than>
           <property>/surface-positions/flaps-pos-norm</property>
-          <value type="double">-0.75</value>
+          <value type="double">0.15</value>
         </greater-than>
-        <equals>
-          <property>/controls/electric/alimentation/flap</property>
-          <value>1</value>
-        </equals>
+        <less-than>
+          <property>/surface-positions/flaps-pos-norm</property>
+          <value type="double">0.75</value>
+        </less-than>
+        <property>/controls/electric/battery-switch</property>
       </and>
     </condition>
   </animation>
