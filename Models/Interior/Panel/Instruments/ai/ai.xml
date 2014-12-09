@@ -33,18 +33,16 @@
     <object-name>face-press</object-name>
     <object-name>ring</object-name>
     <object-name>needle</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
     <emission>
-      <factor-prop>/controls/switches/instrument-lights-norm-bis</factor-prop>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
     </emission>
-    <condition>
-      <greater-than>
-        <property>/controls/lighting/flood-lights</property>
-        <value>0</value>
-      </greater-than> 
-    </condition>
   </animation>
   
   <animation>
@@ -53,18 +51,16 @@
     <object-name>knob</object-name>
     <object-name>bille</object-name>
     <object-name>bille.support</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
     <emission>
-      <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+      <factor-prop>controls/lighting/floods-lights</factor-prop>
       <red>   0.2 </red>
       <green> 0.2 </green>
       <blue>  0.2 </blue>
     </emission>
-    <condition>
-      <greater-than>
-        <property>/controls/lighting/flood-lights</property>
-        <value>0</value>
-      </greater-than> 
-    </condition>
   </animation>
   
   <animation>

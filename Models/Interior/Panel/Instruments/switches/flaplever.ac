@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
-kids 4
+kids 2
 OBJECT poly
 name "base"
 loc 0.007092 0.000067 0.00979
@@ -382,26 +382,6 @@ refs 3
 36 0.408315628767 0.664620816708
 kids 0
 OBJECT poly
-name "flapdn"
-loc 0.003 -0.018231 -0.000111
-data 6
-flapdn
-crease 180.000005
-numvert 4
-0 0.018106 -0.00862
-0 0.018106 0.00862
-0 -0.018106 0.00862
-0 -0.018106 -0.00862
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-0 1 1
-1 0 1
-2 0 0
-3 1 0
-kids 0
-OBJECT poly
 name "flaplever"
 loc 0 0 -0
 data 9
@@ -550,24 +530,4 @@ refs 4
 18 0.704016387463 0.771778464317
 23 0.704016387463 0.801452338696
 21 0.704016387463 0.930240809917
-kids 0
-OBJECT poly
-name "flapup"
-loc 0.003 0.015935 -0.000111
-data 6
-flapup
-crease 180.000005
-numvert 4
-0 -0.015913 -0.00862
-0 -0.015913 0.00862
-0 0.015913 0.00862
-0 0.015913 -0.00862
-numsurf 1
-SURF 0x10
-mat 0
-refs 4
-3 1 1
-2 0 1
-1 0 0
-0 1 0
 kids 0

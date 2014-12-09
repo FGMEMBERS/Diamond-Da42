@@ -40,7 +40,7 @@
     <object-name>Cone-texture</object-name>
     <object-name>Light</object-name>
     <condition>
-      <property>/controls/switches/landinglight-switch</property>
+      <property>/controls/lighting/landing-lights</property>
     </condition>
   </animation>
   

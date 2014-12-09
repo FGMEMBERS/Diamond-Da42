@@ -19,42 +19,31 @@
     </emission>
     <condition>
       <and>
-        <or>
-          <and>
-            <greater-than>
-              <property>/gear/gear[0]/position-norm</property>
-              <value type="double">0.0</value>
-            </greater-than> 
-            <less-than>
-              <property>/gear/gear[0]/position-norm</property>
-              <value type="double">1.0</value>
-            </less-than>  
-            <greater-than>
-              <property>/gear/gear[1]/position-norm</property>
-              <value type="double">0.0</value>
-            </greater-than> 
-            <less-than>
-              <property>/gear/gear[1]/position-norm</property>
-              <value type="double">1.0</value>
-            </less-than>  
-            <greater-than>
-              <property>/gear/gear[2]/position-norm</property>
-              <value type="double">0.0</value>
-            </greater-than> 
-            <less-than>
-              <property>/gear/gear[2]/position-norm</property>
-              <value type="double">1.0</value>
-            </less-than>
-          </and>
-          <equals>
-            <property>/controls/switches/test-transit-button</property>
-            <value>1</value>
-          </equals>
-        </or>
-        <equals>
-          <property>/controls/lighting/gearwrn</property>
-          <value>1</value>
-        </equals>
+        <greater-than>
+          <property>/gear/gear[0]/position-norm</property>
+          <value type="double">0</value>
+        </greater-than> 
+        <less-than>
+          <property>/gear/gear[0]/position-norm</property>
+          <value type="double">1</value>
+        </less-than>  
+        <greater-than>
+          <property>/gear/gear[1]/position-norm</property>
+          <value type="double">0</value>
+        </greater-than> 
+        <less-than>
+          <property>/gear/gear[1]/position-norm</property>
+          <value type="double">1</value>
+        </less-than>  
+        <greater-than>
+          <property>/gear/gear[2]/position-norm</property>
+          <value type="double">0</value>
+        </greater-than> 
+        <less-than>
+          <property>/gear/gear[2]/position-norm</property>
+          <value type="double">1</value>
+        </less-than>
+        <property>/controls/electric/battery-switch</property>
       </and>
     </condition>
   </animation>
