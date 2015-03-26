@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>maps.ac</path>
+
+  <animation>
+    <type>pick</type>
+    <object-name>book</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>property-toggle</command>
+			<property>/controls/books/maps/visible</property>
+		</binding>
+    </action>
+  </animation>
+  
+</PropertyList>
+

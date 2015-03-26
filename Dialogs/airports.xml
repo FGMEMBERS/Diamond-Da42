@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+   <name>airport-infos</name>
+
+   <width>600</width>
+   <height>700</height>
+   <modal>false</modal>
+   <draggable>true</draggable>
+   <resizable>false</resizable>
+   
+	<text>
+		<x>280</x>
+		<y>670</y>
+		<label>Airport infos</label>
+	</text>
+	
+	<airport-list>
+		<x>10</x>
+		<y>520</y>
+		<width>580</width>
+		<height>150</height>
+		<property>/sim/gui/dialogs/da42/airport</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+	</airport-list>
+
+   <textbox>
+        <name>airport-text</name>
+		<x>10</x>
+		<y>10</y>
+		<width>580</width>
+		<height>490</height>
+        <halign>fill</halign>
+        <stretch>true</stretch>
+        <slider>20</slider>
+        <editable>false</editable>
+        <wrap>true</wrap>
+        <live>false</live>
+        <property>/sim/gui/dialogs/da42/airport-infos</property>
+	</textbox>
+	  
+	<button>
+		<x>574</x>
+		<y>674</y>
+		<width>16</width>
+		<height>16</height>
+		<legend></legend>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+	
+	<nasal>
+		<open><![CDATA[
+			var load_airport = func{
+				var airport_string = getprop("/sim/gui/dialogs/da42/airport");
+				setprop("/sim/gui/dialogs/da42/airport","");
+				if(airport_string!=nil){
+					var airport_id = substr(airport_string,find("(",airport_string)+1);
+					var airport_id = substr(airport_id,0,find(")",airport_id));
+					#airport_id = "KSFO";
+					var airport = airportinfo(airport_id);
+					airport_string = substr(airport_string,1) ~"\n";
+					airport_string = airport_string ~ "\nPosition\n";
+					airport_string = airport_string ~ sprintf("Longitude %3.2f , Latitude %3.2f , Elevation %4.0f\n",airport.lon,airport.lat,airport.elevation);
+					airport_string = airport_string ~ "\nRunways\n";
+					
+					foreach (var r; keys(airport.runways)) {
+						var runway = airport.runways[r];
+						var ligne = sprintf("Runway %s Heading %3.f Length %3.f Width %3.f", runway.id,runway.heading,runway.length,runway.width);
+						foreach(var airwaykeys ; keys(runway)){
+							if(airwaykeys=="ils_frequency_mhz"){
+								ligne = sprintf("%s Frequence ILS %3.2f",ligne,runway.ils_frequency_mhz);
+							}
+						}
+						airport_string = airport_string ~ ligne ~"\n";
+					}
+					airport_string = airport_string ~ "\nRadios\n";
+					
+					props.globals.getNode("/instrumentation/zkv1000/airport_radios/airports/id_"~airport_id~"/name",1);
+					if(props.globals.getNode("/instrumentation/zkv1000/airport_radios/airports/id_"~airport_id~"/name").getType()=="STRING"){
+						var radio = props.globals.getNode("/instrumentation/zkv1000/airport_radios/airports/id_"~airport_id~"/radios").getChildren("radio");
+						for(var i=0; i<size(radio);i=i+1) {
+							var frequence = getprop("/instrumentation/zkv1000/airport_radios/airports/id_"~airport_id~"/radios/radio["~i~"]/frequence");
+							var freq_name = getprop("/instrumentation/zkv1000/airport_radios/airports/id_"~airport_id~"/radios/radio["~i~"]/id");
+							freq_name = freq_name ~ "                    ";
+							freq_name = substr(freq_name,0,20);
+							airport_string = airport_string ~ sprintf("%s %3.2f\n",freq_name,frequence);
+						}
+					}
+					
+					var coord_airport = geo.Coord.new().set_latlon(airport.lat,airport.lon);
+					props.globals.getNode("/instrumentation/gps/scratch/max-results", 1).setIntValue(10);
+					props.globals.getNode("/instrumentation/gps/scratch/longitude-deg", 1).setDoubleValue(airport.lon);
+					props.globals.getNode("/instrumentation/gps/scratch/latitude-deg", 1).setDoubleValue(airport.lat);
+					setprop("/instrumentation/gps/scratch/type", "vor");
+					setprop("/instrumentation/gps/command", "nearest");
+					
+					airport_string = airport_string ~ "\nNearest VOR to " ~ airport.id ~ "\n";
+					
+					while (getprop("/instrumentation/gps/scratch/has-next")) {
+						var coord_vor = geo.Coord.new().set_latlon(getprop('/instrumentation/gps/scratch/latitude-deg'),getprop('/instrumentation/gps/scratch/longitude-deg'));
+						var distance = coord_airport.distance_to(coord_vor) * 0.000539;
+						var bearing = coord_airport.course_to(coord_vor);
+						airport_string = airport_string ~ sprintf("%s (%s) Distance %.1fNM Bearing %03i Frequence %03.2f\n",
+							getprop("/instrumentation/gps/scratch/name"),
+							getprop('/instrumentation/gps/scratch/ident'),
+							distance,
+							bearing,
+							getprop('/instrumentation/gps/scratch/frequency-mhz'));
+						setprop("/instrumentation/gps/command", "next");
+					}
+					
+					props.globals.getNode("/instrumentation/gps/scratch/max-results", 1).setIntValue(10);
+					props.globals.getNode("/instrumentation/gps/scratch/longitude-deg", 1).setDoubleValue(airport.lon);
+					props.globals.getNode("/instrumentation/gps/scratch/latitude-deg", 1).setDoubleValue(airport.lat);
+					setprop("/instrumentation/gps/scratch/type", "ndb");
+					setprop("/instrumentation/gps/command", "nearest");
+					
+					airport_string = airport_string ~ "\nNearest NDB to " ~ airport.id ~ "\n";
+					
+					while (getprop("/instrumentation/gps/scratch/has-next")) {
+						var coord_ndb = geo.Coord.new().set_latlon(getprop('/instrumentation/gps/scratch/latitude-deg'),getprop('/instrumentation/gps/scratch/longitude-deg'));
+						var distance = coord_airport.distance_to(coord_ndb) * 0.000539;
+						var bearing = coord_airport.course_to(coord_ndb);
+						airport_string = airport_string ~ sprintf("%s (%s) Distance %.1fNM Bearing %03i Frequence %03.1f\n",
+							getprop("/instrumentation/gps/scratch/name"),
+							getprop('/instrumentation/gps/scratch/ident'),
+							distance, 
+							bearing,
+							getprop('/instrumentation/gps/scratch/frequency-khz'));
+						setprop("/instrumentation/gps/command", "next");
+					}
+					
+					props.globals.getNode("/instrumentation/gps/scratch/max-results", 1).setIntValue(50);
+					props.globals.getNode("/instrumentation/gps/scratch/longitude-deg", 1).setDoubleValue(airport.lon);
+					props.globals.getNode("/instrumentation/gps/scratch/latitude-deg", 1).setDoubleValue(airport.lat);
+					setprop("/instrumentation/gps/scratch/type", "fix");
+					setprop("/instrumentation/gps/command", "nearest");
+					
+					airport_string = airport_string ~ "\nNearest FIX to " ~ airport.id ~ "\n";
+					
+					while (getprop("/instrumentation/gps/scratch/has-next")) {
+						var coord_fix = geo.Coord.new().set_latlon(getprop('/instrumentation/gps/scratch/latitude-deg'),getprop('/instrumentation/gps/scratch/longitude-deg'));
+						var distance = coord_airport.distance_to(coord_fix) * 0.000539;
+						var bearing = coord_airport.course_to(coord_fix);
+						airport_string = airport_string ~ sprintf("%s (%s) Distance %.1fNM Bearing %03i\n",
+							getprop("/instrumentation/gps/scratch/name"),
+							getprop('/instrumentation/gps/scratch/ident'),
+							distance, 
+							bearing);
+						setprop("/instrumentation/gps/command", "next");
+					}
+					
+					var text = props.globals.getNode("/sim/gui/dialogs/da42/airport-infos", 1);
+					text.setValue(airport_string);
+					
+					gui.dialog_update("airport-infos");
+				}
+			}
+			
+			setlistener("/sim/gui/dialogs/da42/airport",load_airport);
+		]]></open>
+	</nasal>
+  </PropertyList>

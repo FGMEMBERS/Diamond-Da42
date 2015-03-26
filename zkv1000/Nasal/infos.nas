@@ -47,3 +47,17 @@ var wind_opt3 = func () {
 }
 
 var wind_infos = void;
+
+var dme_infos = func {
+	setprop("/instrumentation/zkv1000/infos/dme-line[1]",sprintf("%.2f",getprop("/instrumentation/dme/frequencies/selected-mhz")));
+	var distance = getprop("/instrumentation/dme/indicated-distance-nm");
+	if(distance==0){
+		setprop("/instrumentation/zkv1000/infos/dme-line[2]","-.--NM");
+	}elsif(distance<10){
+		setprop("/instrumentation/zkv1000/infos/dme-line[2]",sprintf("%.2fNM",getprop("/instrumentation/dme/indicated-distance-nm")));
+	}elsif(distance<100){
+		setprop("/instrumentation/zkv1000/infos/dme-line[2]",sprintf("%.1fNM",getprop("/instrumentation/dme/indicated-distance-nm")));
+	}else{
+		setprop("/instrumentation/zkv1000/infos/dme-line[2]",sprintf("%3iNM",getprop("/instrumentation/dme/indicated-distance-nm")));
+	}
+}

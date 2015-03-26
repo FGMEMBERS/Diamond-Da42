@@ -6,7 +6,7 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>light</object-name>
+		<object-name>lighton</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
@@ -14,10 +14,27 @@
 		</emission>
 		<condition>
 			<and>
-				<less-than>
+				<greater-than>
 						<property>/surface-positions/flaps-pos-norm</property>
-						<value type="double">-0.6</value>
-				</less-than>
+						<value type="double">0.6</value>
+				</greater-than>
+				<equals>
+					<property>/controls/electric/alimentation/flap</property>
+					<value>1</value>
+				</equals>
+			</and>			
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lighton</object-name>
+		<condition>
+			<and>
+				<greater-than>
+						<property>/surface-positions/flaps-pos-norm</property>
+						<value type="double">0.6</value>
+				</greater-than>
 				<equals>
 					<property>/controls/electric/alimentation/flap</property>
 					<value>1</value>

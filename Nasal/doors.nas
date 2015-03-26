@@ -8,8 +8,8 @@ Doors.new = func {
    obj = { parents : [Doors],
            crew : aircraft.door.new("instrumentation/doors/crew", 8.0),
            passenger : aircraft.door.new("instrumentation/doors/passenger", 8.0),
-		       leftbagage : aircraft.door.new("instrumentation/doors/leftbagage", 3.0),
-		       rightbagage : aircraft.door.new("instrumentation/doors/rightbagage", 3.0)
+		   leftbagage : aircraft.door.new("instrumentation/doors/leftbagage", 3.0),
+		   rightbagage : aircraft.door.new("instrumentation/doors/rightbagage", 3.0)
          };
    return obj;
 };

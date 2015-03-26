@@ -14,10 +14,6 @@
             <command>property-toggle</command>
             <property>/controls/electric/circuitbreaker/avionicctrl</property>
           </binding>
-		  <binding>
-				<command>nasal</command>
-				<script>da42.nyi("Avionic ctrl");</script>
-			</binding>
         </action>
     </animation>
     <animation>

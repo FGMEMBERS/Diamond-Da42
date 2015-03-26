@@ -5,533 +5,646 @@
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM1MIC</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com1mic</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM1MIC</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com1mic</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com1mic</property>
+			</and>
+		</condition>
 	</animation>
 	<!---->
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM1</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com1</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM1</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com1</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com1</property>
+			</and>
+		</condition>
 	</animation>
-	
+		
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM2MIC</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com2mic</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM2MIC</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com2mic</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com2mic</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM2</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com2</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM2</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com2</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com2</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM3MIC</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com3mic</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM3MIC</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com3mic</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com3mic</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM3</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com3</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM3</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com3</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com3</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COM12</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/com12</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COM12</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/com12</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/com12</property>
+			</and>
+		</condition>
 	</animation>
 
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.TEL</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/tel</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.TEL</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/tel</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/tel</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.PA</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/pa</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.PA</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/pa</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/pa</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.SPKR</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/spkr</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.SPKR</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/spkr</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/spkr</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.MKRMUTE</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/mkrmute</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.MKRMUTE</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/mkrmute</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/mkrmute</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.HISENS</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/hisens</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.HISENS</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/hisens</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/hisens</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.DME</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/dme</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.DME</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/dme</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/dme</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.NAV1</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/nav1</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.NAV1</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/nav1</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/nav1</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.ADF</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/adf</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.ADF</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/adf</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/adf</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.NAV2</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/nav2</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.NAV2</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/nav2</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/nav2</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.AUX</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/aux</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.AUX</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/aux</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/aux</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.MANSQ</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/mansq</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.MANSQ</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/mansq</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/mansq</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.PLAY</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/play</property>
 			</binding>
+			<binding>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
+				<command>dialog-show</command>
+			<dialog-name>RadioReplay</dialog-name>
+			</binding>
+			<mod-up>
+				<binding>
+					<condition>
+						<property>/instrumentation/audio/serviceable</property>
+					</condition>
+					<command>property-toggle</command>
+					<property>/controls/switches/mixer/play</property>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.PLAY</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/play</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/play</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.PILOT</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/pilot</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
-	
+
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.PILOT</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/pilot</factor-prop>
-		</emission>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/pilot</property>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>pick</type>
 		<object-name>softkey.COPLT</object-name>
+		<visible>false</visible>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/switches/mixer/coplt</property>
+				<condition>
+					<property>/instrumentation/audio/serviceable</property>
+				</condition>
 			</binding>
 		</action>
 	</animation>
 	
 	<animation>
-		<type>material</type>
+		<type>select</type>
 		<object-name>led.COPLT</object-name>
+		<condition>
+			<and>
+				<property>/instrumentation/audio/serviceable</property>
+				<property>/controls/switches/mixer/coplt</property>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<object-name>knob.RED</object-name>
+		<type>pick</type>
+		<repeatable>false</repeatable>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>zkv1000.toggleReversionaryMode();</script>
+			</binding>
+		</action>
+	</animation>
+	
+	<!--futur utilisation-->
+	<animation>
+		<object-name>knob.Vol.small</object-name>
+		<object-name>knob.Vol.large</object-name>
+		<type>pick</type>
+		<repeatable>false</repeatable>
+		<visible>false</visible>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>knob.RED</object-name>-
 		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>/controls/switches/mixer/coplt</factor-prop>
+			<red>1</red>
+			<green>0</green>
+			<blue>0</blue>
 		</emission>
+		<condition>
+			<property>/instrumentation/audio/serviceable</property>
+		</condition>
 	</animation>
 	
 	<animation>
 		<type>material</type>
 		<object-name>body.mixer</object-name>
-		<object-name>knob.Vol.large</object-name>
-		<object-name>knob.Vol.small</object-name>
-		<object-name>softkey.PILOT</object-name>
-		<object-name>softkey.COPLT</object-name>
-		<object-name>softkey.MANSQ</object-name>
-		<object-name>softkey.PLAY</object-name>
-		<object-name>softkey.AUX</object-name>
-		<object-name>softkey.ADF</object-name>
-		<object-name>softkey.DME</object-name>
-		<object-name>softkey.NAV1</object-name>
-		<object-name>softkey.NAV2</object-name>
-		<object-name>softkey.MKRMUTE</object-name>
-		<object-name>softkey.HISENS</object-name>
-		<object-name>softkey.PA</object-name>
-		<object-name>softkey.SPKR</object-name>
-		<object-name>softkey.COM12</object-name>
-		<object-name>softkey.TEL</object-name>
-		<object-name>softkey.COM1MIC</object-name>
-		<object-name>softkey.COM1</object-name>
-		<object-name>softkey.COM2MIC</object-name>
-		<object-name>softkey.COM2</object-name>
-		<object-name>softkey.COM3MIC</object-name>
-		<object-name>softkey.COM3</object-name>
 		<emission>
 			<red>0.2</red>
 			<green>0.2</green>
@@ -546,5 +659,17 @@
 		</condition>
 	</animation>
 	
-	
+	<animation> 
+    <type>select</type> 
+    <object-name>body.enlighted</object-name> 
+    <condition>
+      <and>
+        <greater-than>
+          <property>/instrumentation/zkv1000/body-emission</property>
+			<value>0.1</value>
+        </greater-than>
+       <property>/instrumentation/audio/serviceable</property>
+      </and>
+    </condition>
+  </animation>
 </PropertyList>

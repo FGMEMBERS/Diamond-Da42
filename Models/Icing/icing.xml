@@ -2,36 +2,187 @@
 
 <PropertyList>
 
-  <path>icing.ac</path>
+	<path>icing.ac</path>
+	
+	<!-- icing -->
+	<nopreview/>
 
-  <!-- icing -->
 	<animation>
-		<type>material</type>
-		<object-name>verriere</object-name>
-		<ambient>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>/sim/icing/windshield</factor-prop>
-		</ambient>
-		<diffuse>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>/sim/icing/windshield</factor-prop>
-		</diffuse>
-		<specular>
-			<red>1</red>
-			<green>1</green>
-			<blue>1</blue>
-			<factor-prop>/sim/icing/windshield</factor-prop>
-		</specular>
-		<transparency>
-			<alpha>1</alpha>
-			<factor-prop>/sim/icing/windshield</factor-prop>
-			<offset>0.05</offset>
-		</transparency>
+		<type>textranslate</type>
+		<object-name>icing.vitres</object-name>
+		<object-name>icing.vitreporte</object-name>
+		<object-name>icing.bolG</object-name>
+		<object-name>icing.bolD</object-name>
+		<property>/sim/icing/other</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>0.75</dep></entry>
+			<entry><ind>2</ind><dep>0.75</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>icing.cone</object-name>
+		<property>/sim/icing/other</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>0.45</dep></entry>
+			<entry><ind>2</ind><dep>0.45</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>icing.winlet.L</object-name>
+		<object-name>icing.winlet.R</object-name>
+		<object-name>icing.moteurs.L</object-name>
+		<object-name>icing.moteurs.R</object-name>
+		<property>/sim/icing/other</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>0.3</dep></entry>
+			<entry><ind>2</ind><dep>0.3</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>icing.windshield</object-name>
+		<property>/sim/icing/windshield</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>0.75</dep></entry>
+			<entry><ind>2</ind><dep>0.75</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>icing.aile.L</object-name>
+		<object-name>icing.aile.R</object-name>
+		<object-name>icing.stab</object-name>
+		<object-name>icing.stab2</object-name>
+		<property>/sim/icing/wings</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>0.45</dep></entry>
+			<entry><ind>2</ind><dep>0.45</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>icing.bolG</object-name>
+		<property>engines/engine[0]/rpm</property>
+		<factor> 1 </factor>
+		<center>
+			<x-m> -2.627 </x-m>
+			<y-m> -1.740 </y-m>
+			<z-m>  0.021 </z-m>
+		</center>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>icing.bolD</object-name>
+		<property>engines/engine[1]/rpm</property>
+		<factor> 1 </factor>
+		<center>
+			<x-m> -2.627 </x-m>
+			<y-m> 1.740 </y-m>
+			<z-m>  0.021 </z-m>
+		</center>
+		<axis>
+			<x> -1 </x>
+			<y>  0 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>icing.vitreporte</object-name>
+		<property>instrumentation/doors/passenger/position-norm</property>
+		<factor> -95 </factor>
+		<axis>
+			<x1-m> -0.796 </x1-m>
+			<y1-m> -0.112 </y1-m>
+			<z1-m>  0.727 </z1-m>
+			<x2-m> -0.481 </x2-m>
+			<y2-m> -0.112 </y2-m>
+			<z2-m>  0.698 </z2-m>
+		</axis>
 	</animation>
   
+	<animation>
+		<type>rotate</type>
+		<object-name>icing.windshield</object-name>
+		<property>instrumentation/doors/crew/position-norm</property>
+		<factor> 45 </factor>
+		<center>
+			<x-m> -2.337 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m>  0.324 </z-m>
+		</center>
+		<axis>
+			<x>  0 </x>
+			<y> -1 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>icing.windshield</object-name>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/flood-lights</property>
+				<value>0</value>
+			</greater-than>	
+		</condition>
+		<emission>
+			<red>   0.12 </red>
+			<green> 0.12 </green>
+			<blue>  0.12 </blue>
+		    <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+	</animation>
+
 </PropertyList>
 

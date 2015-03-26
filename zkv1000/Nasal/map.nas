@@ -7,36 +7,40 @@ var panningMap = 0;
 var mapRanges = [0.01, 0.05, 0.1, 0.25, 0.5, 1.0, 2.0];
 var mapRange = 0;
 
-var init_map = func {
-    var maps = "/zkv1000/maps";
-    var root_l = common_l = common_c = 0;
-
+var init_map = func{
+	var maps = "/zkv1000/maps";
     var home = string.normpath(getprop("/sim/fg-home"));
-    var home_s = size(home);
-    
-    var root = string.normpath(getprop("/sim/fg-root"));
-    var root_s = size(root);
-    
-    for (var i = 0; i < root_s; i += 1) 
-        if (root[i] == `/`)
-            root_l += 1;
-    
-    for (var i = 0; i < root_s and i < home_s; i += 1) {
-        (home[i] == root[i]) or break;
-        common_c += 1;
-        if (home[i] == `/`) common_l += 1;
-    }
-    
-    mapsRelativePath = "../../../../";
-    for (var i = 0; i < root_l - common_l; i += 1)
+    var root = string.normpath(getprop("/sim/aircraft-dir"));
+	
+	var first_slash = 0;
+	for(var i=0;i<size(home);i=i+1){
+		if(substr(home,i,1)=="/"){
+			first_slash = i;
+			break;
+		}
+	}
+	
+	var nb_slash_root = 0;
+	for(var i=0;i<size(root);i=i+1){
+		if(substr(root,i,1)=="/"){
+			nb_slash_root = nb_slash_root + 1;
+		}
+	}
+	
+	mapsRelativePath ~= "../";
+	for (var i = 0; i < nb_slash_root; i += 1)
         mapsRelativePath ~= "../";
-    
-    mapsRelativePath ~= substr(home, common_c, home_s) ~ maps;
+	
+	mapsRelativePath ~= substr(home, first_slash+1) ~ maps;
     mapsAbsolutePath = home ~ maps;
-    mapRange = mapRanges[getprop("/instrumentation/zkv1000/map/range-index")];
 }
 
 var moveMap = func {
+	##gps failure or not inline
+	if(getprop("/instrumentation/gps/serviceable")==0 or (getprop("/instrumentation/gps/power-btn1")==0 and getprop("/instrumentation/gps/power-btn2")==0 )){
+		return;
+	}
+		  
     var lat = getprop("/instrumentation/zkv1000/map/latitude-deg");
     var lon = getprop("/instrumentation/zkv1000/map/longitude-deg");
     var map = sprintf("%s%03i%s%02i",
@@ -45,9 +49,14 @@ var moveMap = func {
         (lat > 0)? "n" : "s",
         (lat > 0)? lat : (abs(lat) + 1)
     );
+	
     if (actual_map == map) {
-        setprop("/instrumentation/zkv1000/map/moving-x", (lon > 0)? frac(lon) : 1 - abs(frac(lon)));
-        setprop("/instrumentation/zkv1000/map/moving-y", (lat > 0)? frac(lat) : 1 - abs(frac(lat)));
+        var movx = (lon > 0)? frac(lon) : 1 - abs(frac(lon));
+		var movy = (lat > 0)? frac(lat) : 1 - abs(frac(lat));
+		movx = movx - 0.5;
+		movy = movy - 0.5;
+        setprop("/instrumentation/zkv1000/map/moving-x", movx);
+        setprop("/instrumentation/zkv1000/map/moving-y", movy);
     }
     elsif (io.stat(mapsAbsolutePath ~ "/terrain/" ~ map ~ textureExtension) != nil) {
         actual_map = map;
@@ -55,9 +64,12 @@ var moveMap = func {
 
 #        setprop("/instrumentation/zkv1000/map/objects-path", mapsRelativePath ~ "/objects/" ~ map ~ textureExtension);
 #        setprop("/instrumentation/zkv1000/map/navaids-path", mapsRelativePath ~ "/navaids/" ~ map ~ textureExtension);
-
-        setprop("/instrumentation/zkv1000/map/moving-x", (lon > 0)? frac(lon) : 1 - abs(frac(lon)));
-        setprop("/instrumentation/zkv1000/map/moving-y", (lat > 0)? frac(lat) : 1 - abs(frac(lat)));
+		var movx = (lon > 0)? frac(lon) : 1 - abs(frac(lon));
+		var movy = (lat > 0)? frac(lat) : 1 - abs(frac(lat));
+		movx = movx - 0.5;
+		movy = movy - 0.5;
+        setprop("/instrumentation/zkv1000/map/moving-x", movx);
+        setprop("/instrumentation/zkv1000/map/moving-y", movy);
     }
     else {
         actual_map = "";
@@ -66,6 +78,7 @@ var moveMap = func {
 #        setprop("/instrumentation/zkv1000/map/navaids-path", "");
         setprop("/instrumentation/zkv1000/map/moving-x", 0);
         setprop("/instrumentation/zkv1000/map/moving-y", 0);
+
     }
     setprop("/instrumentation/zkv1000/map/alt", computeCursorPosition(alt));
     setprop("/instrumentation/zkv1000/map/alt-selected", computeCursorPosition(getprop("/instrumentation/zkv1000/afcs/selected-alt-ft")));
@@ -74,9 +87,14 @@ var moveMap = func {
 
 var computeCursorPosition = func (v) {
     var ref = round_bis(v, (v < 1000)? 250 : 500);
-    if (ref < 1500) ref /= 250;
-    elsif (ref > 6500) ref = 15;
-    else {
+    if (ref < 1500){
+		ref /= 250;
+		if(ref<-1){
+			ref = -1;
+		}
+	}elsif (ref > 6500){
+		ref = 15;
+    }else{
         ref /= 500;
         ref += 2;
     }

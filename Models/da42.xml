@@ -32,6 +32,7 @@
       livery_update.stop();
       crew_door.unalias();
       passenger_door.unalias();
+	  
       <!--
       leftbagage_door.unalias();
       rightbagage_door.unalias();
@@ -42,7 +43,9 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
+    <object-name>aile.R</object-name>
+	<object-name>ailedestroyed.R</object-name>
+	<object-name>aile.L</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG1</object-name>
@@ -52,7 +55,8 @@
     <object-name>ailes2</object-name>
     <object-name>direction</object-name>
     <object-name>profondeur</object-name>
-    <object-name>moteurs</object-name>
+    <object-name>moteurs.L</object-name>
+	<object-name>moteurs.R</object-name>
     <object-name>heliceG</object-name>
     <object-name>heliceD</object-name>
     <object-name>bolG</object-name>
@@ -63,8 +67,10 @@
     <object-name>porteAD</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <object-name>lampes</object-name>
-    <object-name>antiicelightbase</object-name>
+    <object-name>lampes.R</object-name>
+	<object-name>lampes.L</object-name>
+    <object-name>antiicelightbase.R</object-name>
+	<object-name>antiicelightbase.L</object-name>
     <object-name>bagage.leftdoor</object-name>
     <object-name>bagage.rightdoor</object-name>
 
@@ -77,6 +83,8 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>trous</object-name>
+	<object-name>trous.L</object-name>
+	<object-name>trous.R</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
@@ -84,17 +92,28 @@
     <object-name>vitreporte</object-name>
     <object-name>lamperouge</object-name>
     <object-name>lampevert</object-name>
-    <object-name>antiicelight</object-name>
+    <object-name>antiicelight.R</object-name>
+	<object-name>antiicelight.L</object-name>
     <object-name>propblurG</object-name>
     <object-name>propblurD</object-name>
     <object-name>propdiscG</object-name>
     <object-name>propdiscD</object-name>
   </animation>
 
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>propblurGRembrandt</object-name>
+    <object-name>propblurDRembrandt</object-name>
+    <object-name>propdiscGRembrandt</object-name>
+    <object-name>propdiscDRembrandt</object-name>
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
+    <object-name>aile.R</object-name>
+	<object-name>ailedestroyed.R</object-name>
+	<object-name>aile.L</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG1</object-name>
@@ -104,7 +123,8 @@
     <object-name>ailes2</object-name>
     <object-name>direction</object-name>
     <object-name>profondeur</object-name>
-    <object-name>moteurs</object-name>
+    <object-name>moteurs.L</object-name>
+	<object-name>moteurs.R</object-name>
     <object-name>heliceG</object-name>
     <object-name>heliceD</object-name>
     <object-name>bolG</object-name>
@@ -115,8 +135,10 @@
     <object-name>porteAD</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <object-name>lampes</object-name>
-    <object-name>antiicelightbase</object-name>
+    <object-name>lampes.R</object-name>
+	<object-name>lampes.L</object-name>
+    <object-name>antiicelightbase.L</object-name>
+	<object-name>antiicelightbase.R</object-name>
     <object-name>bagage.leftdoor</object-name>
     <object-name>bagage.rightdoor</object-name>
 
@@ -129,6 +151,8 @@
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     <object-name>trous</object-name>
+	<object-name>trous.L</object-name>
+	<object-name>trous.R</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -161,13 +185,20 @@
     </shininess>
     -->
   </animation>
-
+  
+  <animation>
+	<object-name>ailedestroyed.R</object-name>
+	<nopreview/>
+  </animation>
+  
 	<effect>
 		<inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
 		<object-name>fuselage</object-name>
 		<object-name>bagage.leftdoor</object-name>
 		<object-name>bagage.rightdoor</object-name>
-		<object-name>ailes</object-name>
+		<object-name>aile.R</object-name>
+		<object-name>ailedestroyed.R</object-name>
+		<object-name>aile.L</object-name>
 		<object-name>aileronG</object-name>
 		<object-name>aileronD</object-name>
 		<object-name>voletG1</object-name>
@@ -177,7 +208,8 @@
 		<object-name>ailes2</object-name>
 		<object-name>direction</object-name>
 		<object-name>profondeur</object-name>
-		<object-name>moteurs</object-name>
+		<object-name>moteurs.L</object-name>
+		<object-name>moteurs.R</object-name>
 		<object-name>heliceG</object-name>
 		<object-name>heliceD</object-name>
 		<object-name>bolG</object-name>
@@ -188,8 +220,10 @@
 		<object-name>porteAD</object-name>
 		<object-name>porteG</object-name>
 		<object-name>porteD</object-name>
-		<object-name>lampes</object-name>
-		<object-name>antiicelightbase</object-name>
+		<object-name>lampes.R</object-name>
+		<object-name>lampes.L</object-name>
+		<object-name>antiicelightbase.L</object-name>
+		<object-name>antiicelightbase.R</object-name>
 		<object-name>bagage.leftdoor</object-name>
 		<object-name>bagage.rightdoor</object-name>
 	</effect>
@@ -208,7 +242,8 @@
 		<object-name>vitres</object-name>
 		<object-name>verriere</object-name>
 		<object-name>vitreporte</object-name>
-		<object-name>antiicelight</object-name>
+		<object-name>antiicelight.R</object-name>
+		<object-name>antiicelight.L</object-name>
 
 		<object-name>lamperouge</object-name>
 		<object-name>lampevert</object-name>
@@ -216,21 +251,65 @@
 		<object-name>propblurD</object-name>
 		<object-name>propdiscG</object-name>
 		<object-name>propdiscD</object-name>
+		<object-name>propblurGRembrandt</object-name>
+		<object-name>propblurDRembrandt</object-name>
+		<object-name>propdiscGRembrandt</object-name>
+		<object-name>propdiscDRembrandt</object-name>
 	</animation>
 
+	<!--Wing destroyed by g load or vne-->
+	<animation>
+		<type>select</type>
+		<object-name>aile.R</object-name>
+		<object-name>trous.R</object-name>
+		<object-name>roueD</object-name>
+		<object-name>axeDH</object-name>
+		<object-name>axeDB</object-name>
+		<object-name>porteD</object-name>
+		<object-name>lampevert</object-name>
+		<object-name>lampes.R</object-name>
+		<object-name>aileronD</object-name>
+		<object-name>voletD1</object-name>
+		<object-name>voletD2</object-name>
+		<object-name>moteurs.R</object-name>
+		<object-name>heliceD</object-name>
+		<object-name>bolD</object-name>
+		<object-name>antiicelight.R</object-name>
+		<object-name>antiicelightbase.R</object-name>
+		<object-name>trous.R</object-name>
+		<condition>
+			<equals>
+				<property>/controls/flight/wing_destroyed</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ailedestroyed.R</object-name>
+		<condition>
+			<equals>
+				<property>/controls/flight/wing_destroyed</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
 	<!-- Une ombre pour OSG -->
 	<model>
 		<path>Aircraft/Diamond-Da42/Models/shadow.xml</path>
+		<name>osgshadow</name>
 	</model>
-
+	
 	<model>
 		<path>Aircraft/Diamond-Da42/Models/Immat/immat.xml</path>
 	</model>
+	
   
 	<!-- Cranking effects -->
 	<!-- Left -->
 	<model>
-		<path>Aircraft/Diamond-Da42/Models/Effects/cranking/cranking.xml</path>
+		<path>Aircraft/Diamond-Da42/Models/Effects/cranking/cranking-l.xml</path>
 		<offsets>
 			<x-m> -1.455 </x-m>
 			<y-m> -1.750 </y-m>
@@ -239,7 +318,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/Diamond-Da42/Models/Effects/cranking/cranking.xml</path>
+		<path>Aircraft/Diamond-Da42/Models/Effects/cranking/cranking-r.xml</path>
 		<offsets>
 			<x-m> -1.455 </x-m>
 			<y-m>  1.750 </y-m>
@@ -278,29 +357,39 @@
 		</offsets>
 	</model>
 
-	<!-- Intérieur -->
+	<!-- Interieur -->
 	<model>
 		<path>Aircraft/Diamond-Da42/Models/Interior/interior.xml</path>
 	</model>
 
-	<!-- Les hélices --> 
+	<!-- Les helices --> 
 	<animation>
 		<name>HeliceCompleteG</name>
 		<object-name>propdiscG</object-name>
 		<object-name>propblurG</object-name>
+		<object-name>propdiscGRembrandt</object-name>
+		<object-name>propblurGRembrandt</object-name>
 		<object-name>heliceG</object-name>
 		<object-name>bolG</object-name>
 	</animation>
 
-	<!-- Séléction de l'objet visible en fonction des rpm -->
+	<!-- Selection de l'objet visible en fonction des rpm -->
 	<animation>
 		<type>select</type>
 		<object-name>propdiscG</object-name>
 		<condition>
-			<greater-than>
-				<property>engines/engine[0]/rpm</property>
-				<value>1100</value>
-			</greater-than>
+			<and>
+				<greater-than>
+					<property>engines/engine[0]/rpm</property>
+					<value>1100</value>
+				</greater-than>
+				<not>
+					<equals>
+						<property>/sim/rendering/rembrandt/enabled</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</and>
 		</condition>
 	</animation>
 
@@ -317,10 +406,55 @@
 					<property>engines/engine[0]/rpm</property>
 					<value>1100.001</value>
 				</less-than>
+				<not>
+					<equals>
+						<property>/sim/rendering/rembrandt/enabled</property>
+						<value>1</value>
+					</equals>
+				</not>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>propdiscGRembrandt</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>engines/engine[0]/rpm</property>
+					<value>1100</value>
+				</greater-than>
+				<equals>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					<value>1</value>
+				</equals>
 			</and>
 		</condition>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>propblurGRembrandt</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>engines/engine[0]/rpm</property>
+					<value>500.000</value>
+				</greater-than>
+				<less-than>
+					<property>engines/engine[0]/rpm</property>
+					<value>1100.001</value>
+				</less-than>
+				<equals>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					<value>1</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	
 	<animation>
 		<type>select</type>
 		<object-name>heliceG</object-name>
@@ -336,6 +470,12 @@
 		<type>spin</type>
 		<object-name>HeliceCompleteG</object-name>
 		<property>engines/engine[0]/rpm</property>
+		<condition>
+			<greater-than>
+				<property>engines/engine[0]/rpm</property>
+				<value>5</value>
+			</greater-than>	
+		</condition>
 		<factor> 1 </factor>
 		<center>
 			<x-m> -2.627 </x-m>
@@ -353,19 +493,33 @@
 		<name>HeliceCompleteD</name>
 		<object-name>propdiscD</object-name>
 		<object-name>propblurD</object-name>
+		<object-name>propdiscDRembrandt</object-name>
+		<object-name>propblurDRembrandt</object-name>
 		<object-name>heliceD</object-name>
 		<object-name>bolD</object-name>
 	</animation>
 
-	<!-- Séléction de l'objet visible en fonction des rpm -->
+	<!-- Selection de l'objet visible en fonction des rpm -->
 	<animation>
 		<type>select</type>
 		<object-name>propdiscD</object-name>
 		<condition>
-			<greater-than>
-				<property>engines/engine[1]/rpm</property>
-				<value>1100</value>
-			</greater-than>
+			<and>
+				<greater-than>
+					<property>engines/engine[1]/rpm</property>
+					<value>1100</value>
+				</greater-than>
+				<not>
+					<equals>
+						<property>/sim/rendering/rembrandt/enabled</property>
+						<value>1</value>
+					</equals>
+				</not>
+				<equals>
+					<property>/controls/flight/wing_destroyed</property>
+					<value>0</value>
+				</equals>
+			</and>
 		</condition>
 	</animation>
 
@@ -382,6 +536,62 @@
 					<property>engines/engine[1]/rpm</property>
 					<value>1100.001</value>
 				</less-than>
+				<not>
+					<equals>
+						<property>/sim/rendering/rembrandt/enabled</property>
+						<value>1</value>
+					</equals>
+				</not>
+				<equals>
+					<property>/controls/flight/wing_destroyed</property>
+					<value>0</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>propdiscDRembrandt</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>engines/engine[1]/rpm</property>
+					<value>1100</value>
+				</greater-than>
+				<equals>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>/controls/flight/wing_destroyed</property>
+					<value>0</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>propblurDRembrandt</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>engines/engine[1]/rpm</property>
+					<value>500.000</value>
+				</greater-than>
+				<less-than>
+					<property>engines/engine[1]/rpm</property>
+					<value>1100.001</value>
+				</less-than>
+				<equals>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>/controls/flight/wing_destroyed</property>
+					<value>0</value>
+				</equals>
 			</and>
 		</condition>
 	</animation>
@@ -401,6 +611,12 @@
 		<type>spin</type>
 		<object-name>HeliceCompleteD</object-name>
 		<property>engines/engine[1]/rpm</property>
+		<condition>
+			<greater-than>
+				<property>engines/engine[1]/rpm</property>
+				<value>5</value>
+			</greater-than>	
+		</condition>
 		<factor> 1 </factor>
 		<center>
 			<x-m> -2.627 </x-m>
@@ -458,7 +674,7 @@
 		<type>rotate</type>
 		<object-name>voletG1</object-name>
 		<property>surface-positions/flaps-pos-norm</property>
-		<factor> -60 </factor>
+		<factor> 60 </factor>
 		<axis>
 			<x1-m> -0.580 </x1-m>
 			<y1-m> -2.212 </y1-m>
@@ -473,7 +689,7 @@
 		<type>rotate</type>
 		<object-name>voletG2</object-name>
 		<property>surface-positions/flaps-pos-norm</property>
-		<factor> -60 </factor>
+		<factor> 60 </factor>
 		<axis>
 			<x1-m> -0.622 </x1-m>
 			<y1-m> -4.870 </y1-m>
@@ -488,7 +704,7 @@
 		<type>rotate</type>
 		<object-name>voletD1</object-name>
 		<property>surface-positions/flaps-pos-norm</property>
-		<factor> -60 </factor>
+		<factor> 60 </factor>
 		<axis>
 			<x1-m> -0.492 </x1-m>
 			<y1-m>  0.709 </y1-m>
@@ -503,7 +719,7 @@
 		<type>rotate</type>
 		<object-name>voletD2</object-name>
 		<property>surface-positions/flaps-pos-norm</property>
-		<factor> -60 </factor>
+		<factor> 60 </factor>
 		<axis>
 			<x1-m> -0.580 </x1-m>
 			<y1-m>  2.212 </y1-m>
@@ -687,7 +903,7 @@
 		</axis>
 	</animation>
 
-	<!-- Rentrée des roues -->
+	<!-- Rentree des roues -->
 	<animation>
 		<name>TrainAvant</name>
 		<object-name>axeAH</object-name>
@@ -905,7 +1121,7 @@
   </animation>
 
   <!-- icing -->
-  <!--<model>
+  <model>
   <path>Aircraft/Diamond-Da42/Models/Icing/icing.xml</path>
     <name>Icing</name>
     <offsets>
@@ -914,12 +1130,7 @@
       <z-m> 0 </z-m>
     </offsets>
   </model>
-  -->
 
-  <!-- ******************************************************************************************* -->
-  <!-- ******************************************************************************************* -->
-  <!-- ******************************************************************************************* -->
-  <!-- ******************************************************************************************* -->
   <model>
     <name>front_door.handle</name>
     <path>Aircraft/Diamond-Da42/Models/Handles/handledoor.xml</path>
@@ -1202,6 +1413,15 @@
       <z-m>  0.187 </z-m>
     </offsets>
   </model>
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/RedLightRembrandt.xml</path>
+    <name>RedNavLightRembrandt</name>
+    <offsets>
+      <x-m> -0.882 </x-m>
+      <y-m> -6.629 </y-m>
+      <z-m>  0.187 </z-m>
+    </offsets>
+  </model>
 
   <model>
     <path>Aircraft/Diamond-Da42/Models/light/GreenLight.xml</path>
@@ -1212,30 +1432,75 @@
       <z-m>  0.187 </z-m>
     </offsets>
   </model>
-
   <model>
-    <path>Aircraft/Diamond-Da42/Models/light/StrobeWhite.xml</path>
-    <name>RightStrobeLight</name>
+    <path>Aircraft/Diamond-Da42/Models/light/GreenLightRembrandt.xml</path>
+    <name>GreenNavLightRembrandt</name>
     <offsets>
-      <x-m> -0.870 </x-m>
-      <y-m> -6.629 </y-m>
+      <x-m> -0.882 </x-m>
+      <y-m>  6.629 </y-m>
       <z-m>  0.187 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/Diamond-Da42/Models/light/StrobeWhite.xml</path>
-    <name>LeftStrobeLight</name>
+    <path>Aircraft/Diamond-Da42/Models/light/RightStrobeWhite.xml</path>
+    <name>RightStrobeLight</name>
     <offsets>
       <x-m> -0.870 </x-m>
       <y-m>  6.629 </y-m>
       <z-m>  0.187 </z-m>
     </offsets>
   </model>
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/RightStrobeLightRembrandt.xml</path>
+    <name>RightStrobeLightRembrandt</name>
+    <offsets>
+      <x-m> -0.870 </x-m>
+      <y-m>  6.629 </y-m>
+      <z-m>  0.187 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+	<type>select</type>
+	<object-name>GreenNavLight</object-name>
+	<object-name>RightStrobeLight</object-name>
+	<object-name>RightAntiIceLightCone</object-name>
+	<object-name>GreenNavLightRembrandt</object-name>
+	<object-name>RightStrobeLightRembrandt</object-name>
+	<object-name>RightAntiIceLightConeRembrandt</object-name>
+	<condition>
+		<equals>
+			<property>/controls/flight/wing_destroyed</property>
+			<value>0</value>
+		</equals>
+	</condition>
+  </animation>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/LeftStrobeWhite.xml</path>
+    <name>LeftStrobeLight</name>
+    <offsets>
+      <x-m> -0.870 </x-m>
+      <y-m> -6.629 </y-m>
+      <z-m>  0.187 </z-m>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/LeftStrobeLightRembrandt.xml</path>
+    <name>LeftStrobeLightRembrandt</name>
+    <offsets>
+      <x-m> -0.870 </x-m>
+      <y-m> -6.629 </y-m>
+      <z-m>  0.187 </z-m>
+    </offsets>
+  </model>
+	
 	
   <animation>
     <type>material</type>
-    <object-name>antiicelight</object-name>
+	<object-name>antiicelight.L</object-name>
+	<object-name>antiicelight.R</object-name>
     <emission>
       <red>   0.5 </red>
       <green> 0.5 </green>
@@ -1243,7 +1508,7 @@
       <factor-prop>/controls/lighting/antiicelight</factor-prop>
     </emission>
   </animation>
-  
+
   <model>
     <path>Aircraft/Diamond-Da42/Models/light/light-cone-antiice.xml</path>
     <name>RightAntiIceLightCone</name>
@@ -1251,7 +1516,19 @@
       <x-m> -1.701 </x-m>
       <y-m>  2.080 </y-m>
       <z-m> -0.100 </z-m>
-      <heading-deg> -95 </heading-deg>
+      <heading-deg> -100 </heading-deg>
+	  <pitch-deg> 7.500 </pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/light-cone-antiice-rembrandt.xml</path>
+    <name>RightAntiIceLightConeRembrandt</name>
+    <offsets>
+      <x-m> -1.701 </x-m>
+      <y-m>  2.080 </y-m>
+      <z-m> -0.100 </z-m>
+      <heading-deg> -100 </heading-deg>
+	  <pitch-deg> 7.500 </pitch-deg>
     </offsets>
   </model>
   
@@ -1262,7 +1539,19 @@
       <x-m> -1.701 </x-m>
       <y-m> -2.080 </y-m>
       <z-m> -0.100 </z-m>
-      <heading-deg> 95 </heading-deg>
+      <heading-deg> 100 </heading-deg>
+	  <pitch-deg> 7.500 </pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/light-cone-antiice-rembrandt.xml</path>
+    <name>LeftAntiIceLightConeRembrandt</name>
+    <offsets>
+      <x-m> -1.701 </x-m>
+      <y-m> -2.080 </y-m>
+      <z-m> -0.100 </z-m>
+      <heading-deg> 100 </heading-deg>
+	  <pitch-deg> 7.500 </pitch-deg>
     </offsets>
   </model>
 	
@@ -1273,7 +1562,17 @@
       <x-m> -1.86 </x-m>
       <y-m>  0.34 </y-m>
       <z-m> -0.38 </z-m>
-      <pitch-deg> 0 </pitch-deg>
+      <pitch-deg> -5 </pitch-deg>
+    </offsets>
+  </model>
+   <model>
+    <path>Aircraft/Diamond-Da42/Models/light/taxilight-rembrandt.xml</path>
+    <name>TaxiLightRembrandt</name>
+    <offsets>
+      <x-m> -1.86 </x-m>
+      <y-m>  0.34 </y-m>
+      <z-m> -0.38 </z-m>
+      <pitch-deg> -5 </pitch-deg>
     </offsets>
   </model>
 
@@ -1284,8 +1583,70 @@
       <x-m> -1.86 </x-m>
       <y-m> -0.34 </y-m>
       <z-m> -0.38 </z-m>
-      <pitch-deg> 1 </pitch-deg>
+      <pitch-deg> 0 </pitch-deg>
     </offsets>
   </model>
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/light/landinglight-rembrandt.xml</path>
+    <name>LandingLightRembrandt</name>
+    <offsets>
+      <x-m> -1.86 </x-m>
+      <y-m> -0.34 </y-m>
+      <z-m> -0.38 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+	<name>Pushback</name>
+	<path>Aircraft/Diamond-Da42/Models/Pushback/pushback.xml</path>
+	<offsets>
+		<x-m>-2.578</x-m>
+		<y-m>0</y-m>
+		<z-m>-0.018</z-m>
+	</offsets>
+  </model>
+
+  <!--selection ombres et lumieres-->
+  <animation>
+		<type>select</type>
+		<object-name>GreenNavLightRembrandt</object-name>
+		<object-name>RedNavLightRembrandt</object-name>
+		<object-name>RightStrobeLightRembrandt</object-name>
+		<object-name>LeftStrobeLightRembrandt</object-name>
+		<object-name>LeftAntiIceLightConeRembrandt</object-name>
+		<object-name>RightAntiIceLightConeRembrandt</object-name>
+		<object-name>TaxiLightRembrandt</object-name>
+		<object-name>LandingLightRembrandt</object-name>
+		<condition>
+			<equals>
+				<property>/sim/rendering/rembrandt/enabled</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	 <animation>
+		<type>select</type>
+		<object-name>osgshadow</object-name>
+		<object-name>LandingLight</object-name>
+		<object-name>TaxiLight</object-name>
+		<!--<object-name>LeftStrobeLight</object-name>
+		<object-name>RightStrobeLight</object-name>
+		<object-name>GreenNavLight</object-name>
+		<object-name>RedNavLight</object-name>-->
+		<object-name>LeftAntiIceLightCone</object-name>
+		<object-name>RightAntiIceLightCone</object-name>
+		<!--<object-name>antiicelight.L</object-name>
+		<object-name>antiicelight.R</object-name>-->
+		<condition>
+			<not>
+				<equals>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					<value>1</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
 
 </PropertyList>

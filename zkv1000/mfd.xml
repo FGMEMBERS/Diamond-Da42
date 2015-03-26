@@ -6,7 +6,6 @@
 
   <animation>
     <object-name>off.background</object-name>
-    <object-name>off.power</object-name>
     <type>select</type>
     <condition>
       <not>
@@ -16,7 +15,6 @@
   </animation>
 
   <animation>
-    <object-name>menu.alerts</object-name>
     <object-name>menu.main</object-name>
     <object-name>radios.main</object-name>
 <!--
@@ -53,62 +51,590 @@
     <object-name>knob.FMS.large</object-name>
     <object-name>knob.FMS.small</object-name>
 -->
-    <object-name>eis.background</object-name>
-    <object-name>eis.circle.0</object-name>
-    <object-name>eis.circle.1</object-name>
-    <object-name>eis.bar.0</object-name>
-    <object-name>eis.bar.1</object-name>
-    <object-name>eis.bar.2</object-name>
-    <object-name>eis.bar.3</object-name>
-    <object-name>eis.bar.4</object-name>
-    <object-name>eis.bar.5</object-name>
-    <object-name>eis.bar.6</object-name>
-    <object-name>eis.bar.7</object-name>
-	
-	<object-name>infos.leftRPM</object-name>
-	<object-name>infos.rightRPM</object-name>
-	<object-name>infos.leftLoad</object-name>
-	<object-name>infos.rightLoad</object-name>
-	
-	
     <type>select</type>
     <condition>
       <property>/instrumentation/zkv1000/device[1]/status</property>
     </condition>
   </animation>
-
+  
+  <!--alerts-->
   <animation>
-    <object-name>ai.background</object-name>
-    <object-name>ai.cursor.C</object-name>
-    <object-name>ai.cursor.L</object-name>
-    <object-name>ai.cursor.R</object-name>
-    <object-name>ai.fd.bars</object-name>
-    <object-name>ai.pitch.indicator</object-name>
-    <object-name>ai.roll.indicator</object-name>
-    <object-name>ai.roll.ref</object-name>
+    <object-name>infos.ALERTS</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<greater-than>
+				<property>/instrumentation/zkv1000/alerts/nbinfos</property>
+				<value>0</value>
+			</greater-than>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+		<type>translate</type>
+		<object-name>infos.ALERTS</object-name>
+		<property>/instrumentation/zkv1000/alerts/posinfos</property>
+		<factor>0.004</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>scale</type>
+		<object-name>infos.ALERTS</object-name>
+		<property>/instrumentation/zkv1000/alerts/nbinfos</property>
+		<x-min>1.0</x-min>
+		<y-min>1.0</y-min>
+		<z-min>1.0</z-min>
+		<x-factor>0.0</x-factor>
+		<y-factor>0.0</y-factor>
+		<z-factor>1.0</z-factor>
+	</animation>
+	
+	<animation>
+    <object-name>menu.alerts.startup</object-name>
+    <type>select</type>
+    <condition>
+		<equals>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<value>7</value>
+		</equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>menu.alerts.no</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<not>
+				<property>/instrumentation/zkv1000/alerts/warning</property>
+			</not>
+			<not>
+				<property>/instrumentation/zkv1000/alerts/caution</property>
+			</not>
+			<not>
+				<property>/instrumentation/zkv1000/alerts/advisory</property>
+			</not>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>menu.alerts.warning</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/zkv1000/alerts/warning</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>menu.alerts.caution</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<not>
+				<property>/instrumentation/zkv1000/alerts/warning</property>
+			</not>
+			<property>/instrumentation/zkv1000/alerts/caution</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>menu.alerts.advisory</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<not>
+				<property>/instrumentation/zkv1000/alerts/warning</property>
+			</not>
+			<not>
+				<property>/instrumentation/zkv1000/alerts/caution</property>
+			</not>
+			<property>/instrumentation/zkv1000/alerts/advisory</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>eis.engine.background</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>eis.enginebars.background</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>eis.system.background</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>2</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>eis.fuel.background</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>3</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>infos.leftRPM</object-name>
+	<object-name>infos.leftLoad</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/enginstr/serviceable</property>
+			<property>/controls/engines/engine[0]/magnetos</property>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.0</object-name>
+    <object-name>eis.bar.2</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/enginstr/serviceable</property>
+			<property>/controls/engines/engine[0]/magnetos</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.4</object-name>
+    <object-name>eis.bar.6</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.8</object-name>
+    <object-name>eis.bar.9</object-name>
+    <object-name>eis.bar.10</object-name>
+	<object-name>eis.bar.11</object-name>
+    <object-name>eis.bar.12</object-name>
+    <object-name>eis.bar.13</object-name>
+	<object-name>eis.bar.14</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/enginstr/serviceable</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>2</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>infos.rightRPM</object-name>
+	<object-name>infos.rightLoad</object-name>
+
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/enginstr/serviceable</property>
+			<property>/controls/engines/engine[1]/magnetos</property>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.1</object-name>
+    <object-name>eis.bar.3</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<property>/instrumentation/enginstr/serviceable</property>
+			<property>/controls/engines/engine[1]/magnetos</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+
+   <animation>
+    <object-name>eis.bar.5</object-name>
+    <object-name>eis.bar.7</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>gpswpt.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/gps/serviceable</property>
+			</not>
+			<and>
+				<not>
+				  <property>/instrumentation/gps/power-btn1</property>
+				</not>
+				<not>
+				  <property>/instrumentation/gps/power-btn2</property>
+				</not>
+			</and>
+		</or>
+		<property>/instrumentation/zkv1000/device[0]/status</property>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>comm1.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/comm[0]/serviceable</property>
+			</not>
+			<not>
+			  <property>/instrumentation/comm[0]/power-btn</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>comm2.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/comm[1]/serviceable</property>
+			</not>
+			<not>
+			  <property>/instrumentation/comm[1]/power-btn</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>nav1.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/nav[0]/serviceable</property>
+			</not>
+			<not>
+			  <property>/instrumentation/nav[0]/power-btn</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>nav2.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/nav[1]/serviceable</property>
+			</not>
+			<not>
+			  <property>/instrumentation/nav[1]/power-btn</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>left.enginstr.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			</not>
+			<not>
+				<property>/controls/engines/engine[0]/magnetos</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+		<not>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>7</value>
+			</equals>
+		</not>
+	  </and>
+    </condition>
+  </animation>
+  <animation>
+  	<object-name>left.engbar.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			</not>
+			<not>
+				<property>/controls/engines/engine[0]/magnetos</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<equals>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<value>1</value>
+		</equals>
+		<not>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>7</value>
+			</equals>
+		</not>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
+  	<object-name>right.enginstr.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			</not>
+			<not>
+				<property>/controls/engines/engine[1]/magnetos</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+		<not>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>7</value>
+			</equals>
+		</not>
+	  </and>
+    </condition>
+  </animation>
+  <animation>
+  	<object-name>right.engbar.unserviceable</object-name>
+	<type>select</type>
+    <condition>
+	  <and>
+		<or>
+			<not>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			</not>
+			<not>
+				<property>/controls/engines/engine[1]/magnetos</property>
+			</not>
+		</or>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<equals>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<value>1</value>
+		</equals>
+		<not>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>7</value>
+			</equals>
+		</not>
+	  </and>
+    </condition>
+  </animation>
+  
+  <animation>
     <object-name>alt.baro</object-name>
-    <object-name>alt.bug</object-name>
-    <object-name>alt.cursor</object-name>
-    <object-name>alt.cursor.00011</object-name>
-    <object-name>alt.cursor.00100</object-name>
-    <object-name>alt.cursor.01000</object-name>
-    <object-name>alt.cursor.10000</object-name>
-    <object-name>alt.gs.bug</object-name>
-    <object-name>alt.gs.ref</object-name>
-    <object-name>alt.tape</object-name>
-    <object-name>alt.vs.bug</object-name>
-    <object-name>alt.vs.ref</object-name>
-    <object-name>alt.vs.ptr</object-name>
-    <object-name>asi.TAS</object-name>
-    <object-name>asi.bug</object-name>
-    <object-name>asi.cursor.001</object-name>
-    <object-name>asi.cursor.010</object-name>
-    <object-name>asi.cursor.100</object-name>
-    <object-name>asi.tape</object-name>
 <!--
     <object-name>body.enlighted</object-name>
--->
-    <object-name>infos.MUD</object-name>
+    <object-name>infos.MUD</object-name>-->
     <object-name>infos.ALT</object-name>
     <!--object-name>infos.ALT.00001</object-name>
     <object-name>infos.ALT.00010</object-name>
@@ -121,16 +647,17 @@
     <object-name>infos.CRS.010</object-name>
     <object-name>infos.CRS.100</object-name-->
     <object-name>infos.FLC</object-name>
-    <object-name>infos.HDG</object-name>
     <!--object-name>infos.HDG.001</object-name>
     <object-name>infos.HDG.010</object-name>
     <object-name>infos.HDG.100</object-name-->
-    <object-name>infos.OAT</object-name>
     <object-name>infos.BRG1</object-name>
     <object-name>infos.BRG2</object-name>
-    <object-name>infos.DME</object-name>
-    <object-name>infos.WIND</object-name>
-    <object-name>infos.XPDR</object-name>
+	<object-name>infos.BRG1.arrow</object-name>
+	<object-name>infos.BRG2.arrow</object-name>
+	<object-name>infos.LCL</object-name>
+	<object-name>infos.HDG</object-name>
+	
+	<object-name>ai.roll.indicator</object-name>
 <!--
     <object-name>knob.HDG</object-name>
     <object-name>knob.ALT.small</object-name>
@@ -147,7 +674,126 @@
       </equals>
     </condition>
   </animation>
+  
+  <animation>
+    <object-name>XPDR.unserviceable</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<property>/instrumentation/transponder/serviceable</property>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>infos.XPDR</object-name>
+		<type>select</type>
+    <condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<property>/instrumentation/transponder/serviceable</property>
+		</and>
+    </condition>
+  </animation>
+  
+   <animation>
+    <object-name>adc.unserviceable</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<property>/instrumentation/adc/serviceable</property>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>asi.TAS</object-name>
+    <object-name>asi.bug</object-name>
+    <object-name>asi.cursor.001</object-name>
+    <object-name>asi.cursor.010</object-name>
+    <object-name>asi.cursor.100</object-name>
+    <object-name>asi.tape</object-name>
+    <object-name>infos.OAT</object-name>
+	<object-name>alt.bug</object-name>
+    <object-name>alt.cursor</object-name>
+    <object-name>alt.cursor.00011</object-name>
+    <object-name>alt.cursor.00100</object-name>
+    <object-name>alt.cursor.01000</object-name>
+    <object-name>alt.cursor.10000</object-name>
+    <object-name>alt.gs.bug</object-name>
+    <object-name>alt.gs.ref</object-name>
+    <object-name>alt.tape</object-name>
+    <object-name>alt.vs.bug</object-name>
+    <object-name>alt.vs.ref</object-name>
+    <object-name>alt.vs.ptr</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<property>/instrumentation/adc/serviceable</property>
+		</and>
+    </condition>
+  </animation>
 
+  <animation>
+    <object-name>ahrs.unserviceable</object-name>
+	<object-name>ahrs.unserviceable2</object-name>
+	<object-name>ai.roll.ref.unserviceable</object-name>
+	<object-name>hsi.bug.HDG.unserviceable</object-name>
+	<object-name>hsi.compass.unserviceable</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<property>/instrumentation/ahrs/serviceable</property>
+			</not>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>ai.background</object-name>
+    <object-name>ai.cursor.C</object-name>
+    <object-name>ai.cursor.L</object-name>
+    <object-name>ai.cursor.R</object-name>
+    <object-name>ai.fd.bars</object-name>
+    <object-name>ai.pitch.indicator</object-name>
+    <object-name>ai.roll.ref</object-name>
+	<object-name>hsi.hdg</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<property>/instrumentation/ahrs/serviceable</property>
+		</and>
+    </condition>
+  </animation>
+  
   <animation>
     <object-name>hsi.bezel</object-name>
     <object-name>hsi.bezel.turn.left</object-name>
@@ -159,7 +805,15 @@
     <object-name>hsi.crs.deflection</object-name>
     <object-name>hsi.crs.plane</object-name>
     <object-name>hsi.crs.pointer</object-name>
-    <object-name>hsi.hdg</object-name>
+	<object-name>brg1.crs.pointer</object-name>
+	<object-name>brg2.crs.pointer</object-name>
+    <object-name>infos.BRG1</object-name>
+    <object-name>infos.BRG2</object-name>
+	<object-name>BRG1.unserviceable</object-name>
+    <object-name>BRG2.unserviceable</object-name>
+	<object-name>infos.BRG1.arrow</object-name>
+	<object-name>infos.BRG2.arrow</object-name>
+ 
     <type>select</type>
     <condition>
       <equals>
@@ -167,6 +821,7 @@
         <value>1</value>
       </equals>
       <property>/instrumentation/zkv1000/device[1]/hsi-360</property>
+	  <property>/instrumentation/ahrs/serviceable</property>
     </condition>
   </animation>
 
@@ -181,6 +836,7 @@
       <not>
         <property>/instrumentation/zkv1000/device[1]/hsi-360</property>
       </not>
+	  <property>/instrumentation/ahrs/serviceable</property>
     </condition>
    </animation>
 
@@ -213,6 +869,41 @@
     </condition>
   </animation>
 
+  <animation>
+    <object-name>traffic.background</object-name>
+    <object-name>traffic.aircraft</object-name>
+    <type>select</type>
+    <condition>
+		<or>
+			<and>
+			  <equals>
+				<property>/instrumentation/zkv1000/device[1]/traffic</property>
+				<value>1</value>
+			  </equals>
+			  <equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>3</value>
+			  </equals>
+		  </and>
+		  <equals>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<value>6</value>
+		  </equals>
+	  </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <object-name>startup.background</object-name>
+    <type>select</type>
+    <condition>
+	  <equals>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<value>7</value>
+	  </equals>
+    </condition>
+  </animation>
+  
   <animation>
     <type>material</type>
     <object-name>ai.background</object-name>
@@ -272,6 +963,8 @@
     <object-name>hsi.crs.deflection</object-name>
     <object-name>hsi.crs.plane</object-name>
     <object-name>hsi.crs.pointer</object-name>
+	<object-name>brg1.crs.pointer</object-name>
+	<object-name>brg2.crs.pointer</object-name>
     <object-name>hsi.hdg</object-name>
     <object-name>infos.MUD</object-name>
     <object-name>infos.ALT.00001</object-name>
@@ -282,7 +975,13 @@
     <!--object-name>infos.BARO</object-name-->
     <object-name>infos.BRG1</object-name>
     <object-name>infos.BRG2</object-name>
+	<object-name>infos.BRG1.arrow</object-name>
+	<object-name>infos.BRG2.arrow</object-name>
     <object-name>infos.DME</object-name>
+	<object-name>infos.TRAFFIC</object-name>
+	<object-name>DME.unserviceable</object-name>
+	<object-name>BRG1.unserviceable</object-name>
+	<object-name>BRG2.unserviceable</object-name>
     <object-name>infos.WIND</object-name>
     <object-name>infos.OAT</object-name>
 	<object-name>infos.leftRPM</object-name>
@@ -290,7 +989,12 @@
 	<object-name>infos.leftLoad</object-name>
 	<object-name>infos.rightLoad</object-name>
     <object-name>infos.XPDR</object-name>
-    <object-name>menu.alerts</object-name>
+	<object-name>infos.LCL</object-name>
+	<object-name>menu.alerts.startup</object-name>
+    <object-name>menu.alerts.no</object-name>
+	<object-name>menu.alerts.warning</object-name>
+	<object-name>menu.alerts.caution</object-name>
+	<object-name>menu.alerts.advisory</object-name>
     <object-name>menu.main</object-name>
     <object-name>radios.main</object-name>
     <object-name>map.background</object-name>
@@ -299,7 +1003,12 @@
     <object-name>map.alt</object-name>
     <object-name>map.alt.selected</object-name>
     <object-name>map.alt.1min</object-name>
-    <object-name>eis.background</object-name>
+	<object-name>traffic.background</object-name>
+    <object-name>traffic.aircraft</object-name>
+	<object-name>startup.background</object-name>
+    <object-name>eis.engine.background</object-name>
+	<object-name>eis.enginebars.background</object-name>
+	<object-name>eis.system.background</object-name>
     <object-name>eis.circle.0</object-name>
     <object-name>eis.circle.1</object-name>
     <object-name>eis.bar.0</object-name>
@@ -310,6 +1019,32 @@
     <object-name>eis.bar.5</object-name>
     <object-name>eis.bar.6</object-name>
     <object-name>eis.bar.7</object-name>
+	<object-name>eis.bar.8</object-name>
+    <object-name>eis.bar.9</object-name>
+    <object-name>eis.bar.10</object-name>
+    <object-name>eis.bar.11</object-name>
+    <object-name>eis.bar.12</object-name>
+    <object-name>eis.bar.13</object-name>
+	<object-name>eis.bar.14</object-name>
+	<object-name>gpswpt.unserviceable</object-name>
+	<object-name>comm1.unserviceable</object-name>
+	<object-name>comm2.unserviceable</object-name>
+	<object-name>nav1.unserviceable</object-name>
+	<object-name>nav2.unserviceable</object-name>
+	<object-name>left.enginstr.unserviceable</object-name>
+	<object-name>right.enginstr.unserviceable</object-name>
+	<object-name>left.engbar.unserviceable</object-name>
+	<object-name>right.engbar.unserviceable</object-name>
+	<object-name>adc.unserviceable</object-name>
+	<object-name>ahrs.unserviceable</object-name>
+	<object-name>xpdr.unserviceable</object-name>
+	
+	<object-name>markerbeacon.inner</object-name>
+	<object-name>markerbeacon.middle</object-name>
+	<object-name>markerbeacon.outer</object-name>
+	
+	<object-name>Moving Map</object-name>
+	
     <emission>
       <blue>  1 </blue>
       <red>   1 </red>
@@ -325,8 +1060,10 @@
 		<object-name>softkey.COMM.swap</object-name>
 		<object-name>knob.NAV.small</object-name>
 		<object-name>knob.NAV.large</object-name>
+		<object-name>knob.NAV.volume</object-name>
 		<object-name>knob.COMM.small</object-name>
 		<object-name>knob.COMM.large</object-name>
+		<object-name>knob.COMM.volume</object-name>
 		<object-name>knob.HDG</object-name>
 		<object-name>knob.CRS</object-name>
 		<object-name>knob.BARO</object-name>
@@ -339,7 +1076,6 @@
 		<object-name>knob.ALT.large</object-name>
 		<object-name>knob.FMS.small</object-name>
 		<object-name>knob.FMS.large</object-name>
-		<object-name>off.power</object-name>
 		<object-name>softkey.01</object-name>
 		<object-name>softkey.02</object-name>
 		<object-name>softkey.03</object-name>
@@ -358,6 +1094,18 @@
 		<object-name>softkey.PROC</object-name>
 		<object-name>softkey.CLR</object-name>
 		<object-name>softkey.ENT</object-name>
+		
+		<object-name>softkey.AP</object-name>
+		<object-name>softkey.FD</object-name>
+		<object-name>softkey.HDG</object-name>
+		<object-name>softkey.NAV</object-name>
+		<object-name>softkey.APR</object-name>
+		<object-name>softkey.ALT</object-name>
+		<object-name>softkey.VNV</object-name>
+		<object-name>softkey.VS</object-name>
+		<object-name>softkey.NOSEUP</object-name>
+		<object-name>softkey.FLC</object-name>
+		<object-name>softkey.NOSEDOWN</object-name>
 		<emission>
 			<blue>  0.2 </blue>
 			<red>   0.2 </red>
@@ -373,47 +1121,26 @@
 	</animation>
 	
   <animation> 
-    <type>textranslate</type> 
-    <object-name>body.mfd</object-name> 
+    <type>select</type> 
+    <object-name>body.enlighted</object-name> 
     <condition>
       <and>
         <greater-than>
           <property>/instrumentation/zkv1000/body-emission</property>
-        <value>0.1</value>
+			<value>0.1</value>
         </greater-than>
         <property>/instrumentation/zkv1000/device[1]/status</property>
       </and>
     </condition>
-    <factor> 0.5 </factor>
-    <axis> 
-      <x> 1 </x> 
-      <y> 0 </y> 
-      <z> 0 </z> 
-    </axis> 
   </animation>
 
-<!--
-  <animation>
-    <object-name>body.enlighted</object-name>
-    <type>select</type>
-    <condition>
-      <and>
-        <greater-than>
-          <property>/instrumentation/zkv1000/body-emission</property>
-          <value>0.1</value>
-        </greater-than>
-        <property>/instrumentation/zkv1000/device[1]/status</property>
-      </and>
-    </condition>
-  </animation>
--->
   <animation>
     <type>texmultiple</type>
     <object-name>map.background</object-name>
     <transform>
       <subtype>textranslate</subtype>
       <property>/instrumentation/zkv1000/map/moving-x</property>
-      <factor>0.6667</factor>
+	  <factor>0.79</factor>
       <axis>
         <x>1</x>
         <y>0</y>
@@ -423,7 +1150,7 @@
     <transform>
       <subtype>textranslate</subtype>
       <property>/instrumentation/zkv1000/map/moving-y</property>
-      <factor>0.6667</factor>
+	  <factor>1</factor>
       <axis>
         <x>0</x>
         <y>1</y>
@@ -629,6 +1356,90 @@
     </axis>
   </animation>
 
+  <animation>
+    <object-name>eis.bar.8</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[8]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.9</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[9]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.10</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[10]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.11</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[11]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.12</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[12]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.13</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[13]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <object-name>eis.bar.14</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/eis/bar[14]</property>
+    <factor>0.016</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
   <!-- ATTITUDE INDICATOR -->
   <animation>
     <object-name>ai.pitch.indicator</object-name>
@@ -783,7 +1594,7 @@
     <object-name>infos.leftLoad</object-name>
     <type>textranslate</type>
     <property>/engines/engine[0]/thrust-lbs</property>
-    <factor>0.0004</factor>
+    <factor>0.000333</factor>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -795,7 +1606,7 @@
     <object-name>infos.rightLoad</object-name>
     <type>textranslate</type>
     <property>/engines/engine[1]/thrust-lbs</property>
-    <factor>0.0004</factor>
+    <factor>0.000333</factor>
     <axis>
       <x>1</x>
       <y>0</y>
@@ -1225,15 +2036,141 @@
     </axis>
   </animation>
 
+  <animation>
+    <object-name>brg1.crs.pointer</object-name>
+	<object-name>infos.BRG1</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/brg1/visible</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>NAV1</value>
+					</equals>
+					<property>/instrumentation/nav[0]/serviceable</property>
+					<property>/instrumentation/nav[0]/power-btn</property>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>GPS</value>
+					</equals>
+					<property>/instrumentation/gps/serviceable</property>
+					<or>
+						<property>/instrumentation/gps/power-btn1</property>
+						<property>/instrumentation/gps/power-btn2</property>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>ADF</value>
+					</equals>
+					<property>/instrumentation/adf/serviceable</property>
+					<property>/instrumentation/adf/power-btn</property>
+				</and>
+			</or>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>infos.BRG1.arrow</object-name>
+    <type>select</type>
+    <condition>
+		<property>/instrumentation/zkv1000/brg1/visible</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>brg2.crs.pointer</object-name>
+	<object-name>infos.BRG2</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/brg2/visible</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>NAV2</value>
+					</equals>
+					<property>/instrumentation/nav[1]/serviceable</property>
+					<property>/instrumentation/nav[1]/power-btn</property>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>GPS</value>
+					</equals>
+					<property>/instrumentation/gps/serviceable</property>
+					<or>
+						<property>/instrumentation/gps/power-btn1</property>
+						<property>/instrumentation/gps/power-btn2</property>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>ADF</value>
+					</equals>
+					<property>/instrumentation/adf/serviceable</property>
+					<property>/instrumentation/adf/power-btn</property>
+				</and>
+			</or>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+	<object-name>infos.BRG2.arrow</object-name>
+    <type>select</type>
+    <condition>
+		<property>/instrumentation/zkv1000/brg2/visible</property>
+    </condition>
+  </animation>
+  
   <!-- HORIZONTAL SITUATION INDICATOR -->
   <animation>
     <object-name>hsi.crs.pointer</object-name>
     <object-name>hsi.crs.deflect.ref</object-name>
     <object-name>hsi.crs.plane</object-name>
-    <object-name>hsi.BRG1</object-name>
     <type>select</type>
     <condition>
-      <property>/instrumentation/zkv1000/cdi/visible</property>
+		<and>
+			<property>/instrumentation/zkv1000/cdi/visible</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/cdi/pointer-type</property>
+						<value>0</value>
+					</equals>
+					<property>/instrumentation/nav[0]/serviceable</property>
+					<property>/instrumentation/nav[0]/power-btn</property>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/cdi/pointer-type</property>
+						<value>2</value>
+					</equals>
+					<property>/instrumentation/nav[1]/serviceable</property>
+					<property>/instrumentation/nav[1]/power-btn</property>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/cdi/pointer-type</property>
+						<value>4</value>
+					</equals>
+					<property>/instrumentation/gps/serviceable</property>
+					<or>
+						<property>/instrumentation/gps/power-btn1</property>
+						<property>/instrumentation/gps/power-btn2</property>
+					</or>
+				</and>
+			</or>
+		</and>
     </condition>
   </animation>
 
@@ -1244,6 +2181,33 @@
       <and>
         <property>/instrumentation/zkv1000/cdi/visible</property>
         <property>/instrumentation/zkv1000/cdi/in-range</property>
+		<or>
+			<and>
+				<equals>
+					<property>/instrumentation/zkv1000/cdi/pointer-type</property>
+					<value>0</value>
+				</equals>
+				<property>/instrumentation/nav[0]/serviceable</property>
+			</and>
+			<and>
+				<equals>
+					<property>/instrumentation/zkv1000/cdi/pointer-type</property>
+					<value>2</value>
+				</equals>
+				<property>/instrumentation/nav[1]/serviceable</property>
+			</and>
+			<and>
+				<equals>
+					<property>/instrumentation/zkv1000/cdi/pointer-type</property>
+					<value>4</value>
+				</equals>
+				<property>/instrumentation/gps/serviceable</property>
+				<or>
+					<property>/instrumentation/gps/power-btn1</property>
+					<property>/instrumentation/gps/power-btn2</property>
+				</or>
+			</and>
+		</or>
       </and>
     </condition>
   </animation>
@@ -1292,7 +2256,7 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
   <animation>
     <object-name>hsi.crs.pointer</object-name>
     <object-name>hsi.crs.deflect.ref</object-name>
@@ -1310,12 +2274,106 @@
       <z>0</z>
     </axis>
   </animation>
+  
+  <animation>
+    <object-name>brg1.crs.pointer</object-name>
+    <type>rotate</type>
+    <property>/instrumentation/zkv1000/brg1/course</property>
+    <center>
+      <x-m> 0.004</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+	<condition>
+		<property>/instrumentation/zkv1000/brg1/in-range</property>
+	</condition>
+  </animation>
+  
+  <animation>
+   <object-name>brg1.crs.pointer</object-name>
+    <type>rotate</type>
+    <property>/orientation/heading-magnetic-deg</property>
+    <center>
+      <x-m> 0.004</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+	<condition>
+		<or>
+			<equals>
+				<property>/instrumentation/zkv1000/brg1/type</property>
+				<value>GPS</value>
+			</equals>
+			<equals>
+				<property>/instrumentation/zkv1000/brg1/type</property>
+				<value>NAV1</value>
+			</equals>
+		</or>
+	</condition>
+  </animation>
+  
+  <animation>
+    <object-name>brg2.crs.pointer</object-name>
+    <type>rotate</type>
+    <property>/instrumentation/zkv1000/brg2/course</property>
+    <center>
+      <x-m> 0.004</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+	<condition>
+		<property>/instrumentation/zkv1000/brg2/in-range</property>
+	</condition>
+  </animation>
 
+  <animation>
+   <object-name>brg2.crs.pointer</object-name>
+    <type>rotate</type>
+    <property>/orientation/heading-magnetic-deg</property>
+    <center>
+      <x-m> 0.004</x-m>
+      <y-m>-0.011</y-m>
+      <z-m>-0.038</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+	<condition>
+		<or>
+			<equals>
+				<property>/instrumentation/zkv1000/brg2/type</property>
+				<value>NAV2</value>
+			</equals>
+			<equals>
+				<property>/instrumentation/zkv1000/brg2/type</property>
+				<value>GPS</value>
+			</equals>
+		</or>
+	</condition>
+  </animation>
+  
   <animation>
     <object-name>hsi.crs.deflection</object-name>
     <type>translate</type>
     <property>/instrumentation/zkv1000/cdi/course-deflection</property>
-    <factor>0.006</factor>
+    <factor>0.0012</factor>
     <axis>
       <x>0</x>
       <y>1</y>
@@ -1338,7 +2396,45 @@
       <z>0</z>
     </axis>
   </animation>
-
+  
+  <!-- marker beacon -->
+  <animation>
+    <object-name>markerbeacon.inner</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/marker-beacon/inner</property>
+	  <property>/instrumentation/marker-beacon/serviceable</property>
+	  <equals>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<value>1</value>
+	  </equals>
+    </condition>
+  </animation>
+  <animation>
+    <object-name>markerbeacon.middle</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/marker-beacon/middle</property>
+	  <property>/instrumentation/marker-beacon/serviceable</property>
+	  <equals>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<value>1</value>
+	  </equals>
+    </condition>
+  </animation>
+  <animation>
+    <object-name>markerbeacon.outer</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/marker-beacon/outer</property>
+	  <property>/instrumentation/marker-beacon/serviceable</property>
+	  <equals>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<value>1</value>
+	  </equals>
+    </condition>
+  </animation>
+  
   <!-- ALERTS -->
   <animation>
     <object-name>infos.CRS</object-name>
@@ -1359,38 +2455,194 @@
   <animation>
     <object-name>infos.WIND</object-name>
     <type>select</type>
-    <condition>
-      <property>/instrumentation/zkv1000/infos/wind-data</property>
-    </condition>
+      <condition>
+        <equals>
+         <property>/instrumentation/zkv1000/device[1]/status</property>
+         <value>1</value>
+        </equals>
+        <property>/instrumentation/zkv1000/device[1]/wind-data</property>
+      </condition>
   </animation>
 
   <animation>
-    <object-name>infos.BRG1</object-name>
+    <object-name>infos.TRAFFIC</object-name>
     <type>select</type>
     <condition>
-      <property>/instrumentation/zkv1000/infos/brg1</property>
+      <property>/instrumentation/zkv1000/alerts/traffic-proximity</property>
+	  <equals>
+        <property>/instrumentation/zkv1000/device[1]/status</property>
+        <value>1</value>
+      </equals>
     </condition>
   </animation>
-
-  <animation>
-    <object-name>infos.BRG2</object-name>
-    <type>select</type>
-    <condition>
-      <property>/instrumentation/zkv1000/infos/brg2</property>
-    </condition>
+  <animation> 
+    <object-name>infos.TRAFFIC</object-name>
+	<type>textranslate</type> 
+    <property>/instrumentation/zkv1000/alerts/traffic-proximity</property>
+    <factor> 0.5 </factor>
+    <axis> 
+      <x> 0 </x> 
+      <y> 1 </y> 
+      <z> 0 </z> 
+    </axis> 
   </animation>
-
+  
   <animation>
     <object-name>infos.DME</object-name>
     <type>select</type>
     <condition>
-      <property>/instrumentation/zkv1000/infos/dme</property>
+      <property>/instrumentation/zkv1000/device[1]/dme</property>
+	  <property>/instrumentation/dme/serviceable</property>
+	  <property>/instrumentation/dme/power-btn</property>
+	  <equals>
+        <property>/instrumentation/zkv1000/device[1]/status</property>
+        <value>1</value>
+      </equals>
+	  <property>/instrumentation/zkv1000/device[1]/hsi-360</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>DME.unserviceable</object-name>
+    <type>select</type>
+    <condition>
+      <property>/instrumentation/zkv1000/device[1]/dme</property>
+	  <or>
+		  <not>
+			<property>/instrumentation/dme/serviceable</property>
+		  </not>
+		  <not>
+			<property>/instrumentation/dme/power-btn</property>
+		  </not>
+		</or>
+	  <equals>
+        <property>/instrumentation/zkv1000/device[1]/status</property>
+        <value>1</value>
+      </equals>
     </condition>
   </animation>
 
+  <animation>
+    <object-name>BRG1.unserviceable</object-name>
+    <type>select</type>
+    <condition>
+		<and>
+			<property>/instrumentation/zkv1000/brg1/visible</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>NAV1</value>
+					</equals>
+					<or>
+						<not>
+							<property>/instrumentation/nav[0]/serviceable</property>
+						</not>
+						<not>
+							<property>/instrumentation/nav[0]/power-btn</property>
+						</not>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>GPS</value>
+					</equals>
+					<or>
+						<not>
+							<property>/instrumentation/gps/serviceable</property>
+						</not>
+						<and>
+							<not>
+								<property>/instrumentation/gps/power-btn1</property>
+							</not>
+							<not>
+								<property>/instrumentation/gps/power-btn2</property>
+							</not>
+						</and>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>ADF</value>
+					</equals>
+					<or>
+						<not>
+							<property>/instrumentation/adf/serviceable</property>
+						</not>
+						<not>
+							<property>/instrumentation/adf/power-btn</property>
+						</not>
+					</or>
+				</and>
+			</or>
+		</and>
+    </condition>
+  </animation>
+  
+   <animation>
+    <object-name>BRG2.unserviceable</object-name>
+    <type>select</type>
+     <condition>
+		<and>
+			<property>/instrumentation/zkv1000/brg2/visible</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>NAV2</value>
+					</equals>
+					<or>
+						<not>
+							<property>/instrumentation/nav[1]/serviceable</property>
+						</not>
+						<not>
+							<property>/instrumentation/nav[1]/power-btn</property>
+						</not>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>GPS</value>
+					</equals>
+					<or>
+						<not>
+							<property>/instrumentation/gps/serviceable</property>
+						</not>
+						<and>
+							<not>
+								<property>/instrumentation/gps/power-btn1</property>
+							</not>
+							<not>
+								<property>/instrumentation/gps/power-btn2</property>
+							</not>
+						</and>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>ADF</value>
+					</equals>
+					<or>
+						<not>
+							<property>/instrumentation/adf/serviceable</property>
+						</not>
+						<not>
+							<property>/instrumentation/adf/power-btn</property>
+						</not>
+					</or>
+				</and>
+			</or>
+		</and>
+    </condition>
+  </animation>
+  
   <!-- KNOBS AND BUTTONS -->
   <animation>
-    <object-name>off.power</object-name>
+    <object-name>softkey.AP</object-name>
     <type>pick</type>
     <visible>false</visible>
     <action>
@@ -1398,26 +2650,10 @@
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.powerOn(1);</script>
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
-        <value type="bool">true</value>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <object-name>softkey.AP</object-name>
-    <type>pick</type>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
         <script>zkv1000.AFCS.AP();</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1430,13 +2666,16 @@
   <animation>
     <object-name>softkey.HDG</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
         <script>zkv1000.setRollMode("HDG");</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1449,13 +2688,16 @@
   <animation>
     <object-name>softkey.ALT</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
         <script>zkv1000.setPitchMode("ALT");</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1468,13 +2710,16 @@
   <animation>
     <object-name>softkey.NAV</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
         <script>zkv1000.setRollMode("NAV");</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1487,13 +2732,16 @@
   <animation>
     <object-name>softkey.FD</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
         <script>zkv1000.AFCS.FD();</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1506,13 +2754,16 @@
   <animation>
     <object-name>softkey.VNV</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.nyi("VNV");</script>
+        <script>zkv1000.AFCS.VNV();</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1525,13 +2776,16 @@
   <animation>
     <object-name>softkey.VS</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
         <script>zkv1000.setPitchMode("VS");</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1544,13 +2798,16 @@
   <animation>
     <object-name>softkey.APR</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.nyi("APR")</script>
+        <script>zkv1000.AFCS.APR();</script>
+		<condition>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+		</condition>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1563,7 +2820,7 @@
   <animation>
     <object-name>softkey.NOSEDOWN</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1577,12 +2834,15 @@
         <value type="bool">true</value>
       </binding>
     </action>
+	<condition>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	</condition>
   </animation>
 
   <animation>
     <object-name>softkey.NOSEUP</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1596,12 +2856,15 @@
         <value type="bool">true</value>
       </binding>
     </action>
+	<condition>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	</condition>
   </animation>
 
   <animation>
     <object-name>softkey.FLC</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1615,18 +2878,97 @@
         <value type="bool">true</value>
       </binding>
     </action>
+	<condition>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+	</condition>
   </animation>
 
   <animation>
     <object-name>softkey.ENT</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.ENTsoftkey();</script>
+        <script>zkv1000.device[1].ENTsoftkey();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.CLR</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[1].CLRsoftkey();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.FPL</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[1].FPLsoftkey();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.MENU</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[1].MENUsoftkey();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <object-name>softkey.D</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[1].Dsoftkey();</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -1639,7 +2981,7 @@
   <animation>
     <object-name>softkey.01</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <condition>
       <property>/instrumentation/zkv1000/device[1]/status</property>
     </condition>
@@ -1661,7 +3003,7 @@
   <animation>
     <object-name>softkey.02</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1680,7 +3022,7 @@
   <animation>
     <object-name>softkey.03</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1699,7 +3041,7 @@
   <animation>
     <object-name>softkey.04</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1718,7 +3060,7 @@
   <animation>
     <object-name>softkey.05</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1737,7 +3079,7 @@
   <animation>
     <object-name>softkey.06</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1756,7 +3098,7 @@
   <animation>
     <object-name>softkey.07</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1775,7 +3117,7 @@
   <animation>
     <object-name>softkey.08</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1794,7 +3136,7 @@
   <animation>
     <object-name>softkey.09</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1813,7 +3155,7 @@
   <animation>
     <object-name>softkey.10</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1832,7 +3174,7 @@
   <animation>
     <object-name>softkey.11</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -1849,9 +3191,28 @@
   </animation>
 
   <animation>
+    <object-name>softkey.12</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.device[1].ALERT();</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <object-name>knob.HDG</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>1</button>
       <repeatable>false</repeatable>
@@ -1896,10 +3257,57 @@
   </animation>
 
   <animation>
+    <object-name>knob.NAV.volume</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+	<action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVvolume(0);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVvolume(0.05);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.NAVvolume(-0.05);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <object-name>knob.NAV.small</object-name>
     <object-name>knob.NAV.large</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>1</button>
       <repeatable>false</repeatable>
@@ -1918,7 +3326,7 @@
   <animation>
     <object-name>knob.NAV.small</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -1952,7 +3360,7 @@
   <animation>
     <object-name>knob.NAV.large</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -1986,7 +3394,7 @@
   <animation>
     <object-name>softkey.NAV.swap</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -2003,10 +3411,44 @@
   </animation>
 
   <animation>
+    <object-name>knob.COM.volume</object-name>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMvolume(0.05);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+    <action>
+      <button>2</button>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>zkv1000.COMMvolume(-0.05);</script>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property type="bool">/devices/status/mice/mouse[0]/freezed</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <object-name>knob.COMM.small</object-name>
     <object-name>knob.COMM.large</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>1</button>
       <repeatable>false</repeatable>
@@ -2025,7 +3467,7 @@
   <animation>
     <object-name>knob.COMM.small</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -2059,7 +3501,7 @@
   <animation>
     <object-name>knob.COMM.large</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -2093,7 +3535,7 @@
   <animation>
     <object-name>softkey.COMM.swap</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -2125,7 +3567,7 @@
   <animation>
     <object-name>knob.BARO</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -2159,7 +3601,7 @@
   <animation>
     <object-name>knob.CRS</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>1</button>
       <repeatable>false</repeatable>
@@ -2206,14 +3648,14 @@
   <animation>
     <object-name>knob.FMS.large</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.largeFMSknob(1);</script>
+        <script>zkv1000.device[1].largeFMSknob(1);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2227,7 +3669,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.largeFMSknob(-1);</script>
+        <script>zkv1000.device[1].largeFMSknob(-1);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2240,14 +3682,14 @@
   <animation>
     <object-name>knob.FMS.small</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
       <repeatable>true</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.smallFMSknob(1);</script>
+        <script>zkv1000.device[1].smallFMSknob(1);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2261,7 +3703,7 @@
       <repeatable>true</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.smallFMSknob(-1);</script>
+        <script>zkv1000.device[1].smallFMSknob(-1);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2274,7 +3716,7 @@
   <animation>
     <object-name>knob.ALT.small</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -2308,7 +3750,7 @@
   <animation>
     <object-name>knob.ALT.large</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
       <button>0</button>
       <button>3</button>
@@ -2414,13 +3856,13 @@
   <animation>
     <object-name>knob.RANGE.push</object-name>
     <type>pick</type>
-    <visible>false</visible>
+	<visible>false</visible>
     <action>
       <button>1</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.RANGEknob(0);</script>
+        <script>zkv1000.device[1].RANGEknob(0);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2433,7 +3875,7 @@
       <button>3</button>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.RANGEknob(-1);</script>
+        <script>zkv1000.device[1].RANGEknob(-1);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2446,7 +3888,7 @@
       <button>4</button>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.RANGEknob(1);</script>
+        <script>zkv1000.device[1].RANGEknob(1);</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2458,20 +3900,15 @@
 
   <!-- NOT YET USED -->
   <animation>
-    <object-name>softkey.12</object-name>
-    <object-name>softkey.CLR</object-name>
-    <object-name>softkey.D</object-name>
-    <object-name>softkey.FPL</object-name>
-    <object-name>softkey.MENU</object-name>
     <object-name>softkey.PROC</object-name>
     <type>pick</type>
-    <visible>true</visible>
+    <visible>false</visible>
     <action>
-      <!--<button>0</button>
-      <repeatable>false</repeatable>-->
+      <button>0</button>
+      <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>zkv1000.nyi();</script>
+        <script>zkv1000.nyi("...");</script>
       </binding>
       <binding>
         <command>property-assign</command>
@@ -2483,22 +3920,74 @@
 
   <animation>
     <object-name>alert.ASI</object-name>
-    <!--object-name>infos.WIND</object-name-->
     <object-name>alt.ref</object-name>
-    <object-name>alt.gs.ref</object-name>
-    <object-name>alt.gs.bug</object-name>
     <object-name>hsi.bug.GPS</object-name>
     <type>select</type>
   </animation>
 
   <animation>
+    <object-name>alt.gs.ref</object-name>
+    <object-name>alt.gs.bug</object-name>
+    <type>select</type>
+	<condition>
+		<and>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>1</value>
+			</equals>
+			<property>/instrumentation/zkv1000/cdi/has-gs</property>
+		</and>
+    </condition>
+  </animation>
+  
+  <animation>
+    <object-name>alt.gs.bug</object-name>
+    <type>translate</type>
+    <property>/instrumentation/zkv1000/cdi/gs-needle-deflection-norm</property>
+    <factor>0.023</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  
+  <animation>
     <object-name>infos.MUD</object-name>
     <type>select</type>
     <condition>
-      <property>/instrumentation/zkv1000/mud/displayed</property>
+		<property>/instrumentation/zkv1000/device[1]/status</property>
+		<property>/instrumentation/zkv1000/device[1]/mud/displayed</property>
     </condition>
   </animation>
 
+  <animation>
+    <object-name>airport.background</object-name>
+	<type>select</type>
+    <condition>
+      <equals>
+        <property>/instrumentation/zkv1000/device[1]/status</property>
+        <value>4</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <!-- MFD Zoom -->
+  <animation>
+    <object-name>body.click</object-name>
+	<visible>false</visible>
+    <type>pick</type>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>da42.changeView(1);</script>
+      </binding>
+    </action>
+  </animation>
+  
   <panel>
     <path>Aircraft/Diamond-Da42/zkv1000/Systems/mfd.xml</path>
     <bottom-left>
@@ -2517,6 +4006,65 @@
       <z-m> 0.087</z-m>
     </top-left>
   </panel>
+  
+  <panel>
+    <path>Aircraft/Diamond-Da42/zkv1000/Systems/mfd-traffic.xml</path>
+    <bottom-left>
+      <x-m> 0.007</x-m>
+      <y-m>-0.108</y-m>
+      <z-m>-0.071</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m> 0.007</x-m>
+      <y-m> 0.108</y-m>
+      <z-m>-0.071</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m> 0.007</x-m>
+      <y-m>-0.108</y-m>
+      <z-m> 0.087</z-m>
+    </top-left>
+  </panel>
 
+  <panel>
+    <path>Aircraft/Diamond-Da42/zkv1000/Systems/mfd-symbmap.xml</path>
+    <bottom-left>
+      <x-m> 0.007</x-m>
+      <y-m>-0.108</y-m>
+      <z-m>-0.071</z-m>
+    </bottom-left>
+    <bottom-right>
+      <x-m> 0.007</x-m>
+      <y-m> 0.108</y-m>
+      <z-m>-0.071</z-m>
+    </bottom-right>
+    <top-left>
+      <x-m> 0.007</x-m>
+      <y-m>-0.108</y-m>
+      <z-m> 0.087</z-m>
+    </top-left>
+  </panel>
+  
+  <!--moving map -->
+  <model>
+    <path>Aircraft/Diamond-Da42/zkv1000/Moving-map/moving-map.xml</path>
+    <name>Moving Map</name>
+    <offsets>
+      <x-m> 0</x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0.002 </z-m>
+    </offsets>
+  </model>
+  
+	<animation>
+		<object-name>Moving Map</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>/instrumentation/zkv1000/device[1]/status</property>
+				<value>5</value>
+			</equals>
+		</condition>
+	</animation>
+	
 </PropertyList>
-

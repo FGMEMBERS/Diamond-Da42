@@ -27,12 +27,10 @@ var AFCS = {
     nose_max : 0,
     nose_min : 0,
     AP  : func { 
-              getprop("/instrumentation/zkv1000/status") or return;
               if (getPitchMode() == "") setPitchMode("PIT");
               setprop("/autopilot/locks/passive-mode", getprop("/autopilot/locks/passive-mode")? 0 : 1);
           },
     FD : func { 
-             getprop("/instrumentation/zkv1000/status") or return;
              setPitchMode(getPitchMode() == "" ? "PIT" : "");
          },
     ROL : func {
@@ -42,7 +40,7 @@ var AFCS = {
               setprop("/autopilot/internal/target-roll-deg", 0);
           },
     HDG : func { 
-              settings.getNode("heading-bug-deg").alias(afcs.getNode("heading-bug-deg")); 
+              settings.getNode("heading-bug-deg").alias(afcs.getNode("heading-bug-deg"));
           },
     NAV : func { 
               settings.getNode("heading-bug-deg").unalias();
@@ -67,6 +65,7 @@ var AFCS = {
           },
     ALT : func { 
               setprop("/autopilot/settings/target-altitude-ft", getprop(afcs.getNode("selected-alt-ft").getPath()));
+			  print("test=",afcs.getNode("selected-alt-ft").getPath());
               checkPitchAquisition = checkSelectedAltAquisition;
           },
     FLC : func { 
@@ -183,6 +182,12 @@ var setRollMode = func (m, s=1) {
     if (rollMode != "") {
         setprop("/instrumentation/zkv1000/afcs/fd-bars-visible", 1);
         if (getPitchMode() == "") setPitchMode("PIT");
+		
+		if(rollMode == "HDG"){
+			zkv1000.AFCS.HDG();
+			print("hdg");
+		}
+		
     }
     else {
         setprop("/instrumentation/zkv1000/afcs/fd-bars-visible", 0);
@@ -240,9 +245,14 @@ var init_AFCS = func {
         [0.5, 0.5], 
         afcs.getNode("roll-armed").getPath());
      rollBlinking.switch(0);
-     if (getprop("/sim/systems/autopilot/path") == "Aircraft/Generic/generic-autopilot.xml") {
-         setprop("/sim/systems/autopilot/path", "Aircraft/Diamond-Da42/zkv1000/Systems/autopilot.xml");
-     }
+     #if (getprop("/sim/systems/autopilot/path") == "Aircraft/Generic/generic-autopilot.xml") {
+     #    setprop("/sim/systems/autopilot/path", "Aircraft/Diamond-Da42/zkv1000/Systems/autopilot.xml");
+     #}
+	 
+	 ##pour test
+	 settings.getNode("target-altitude-ft").alias(afcs.getNode("selected-alt-ft"));
+	 
+	 print("AFCS initiated...");
 }
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-  <!--
+  
   <key n="68">
     <name>D</name>
     <desc>Passenger door</desc>
@@ -9,6 +9,10 @@
      <command>nasal</command>
      <script>doors.doorsystem.passengerexport();</script>
     </binding>
+	<binding>
+		<command>property-toggle</command>
+		<property>/controls/doors/door[1]/locked</property>
+	</binding><!--pas tres joli mais bon ...-->
   </key>
 
   <key n="100">
@@ -18,11 +22,15 @@
       <command>nasal</command>
       <script>doors.doorsystem.crewexport();</script>
     </binding>
+	<binding>
+		<command>property-toggle</command>
+		<property>/controls/doors/door[0]/locked</property>
+	</binding><!--pas tres joli mais bon ...-->
   </key>
-  -->
+
 
   <!--tip placement instruments-->
-  <!-- -->
+  <!-- 
   <key n="357">
     <name>up</name>
     <binding n="0">
@@ -76,7 +84,7 @@
       <step>0.001</step>
     </binding>
   </key>
-  <!-- -->
+	-->
   <!--tip placement instruments-->
 
 </PropertyList>

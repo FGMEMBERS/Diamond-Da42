@@ -14,10 +14,6 @@
             <command>property-toggle</command>
             <property>/controls/electric/circuitbreaker/audio</property>
           </binding>
-		  <binding>
-				<command>nasal</command>
-				<script>da42.nyi("Audio");</script>
-			</binding>
         </action>
     </animation>
     <animation>

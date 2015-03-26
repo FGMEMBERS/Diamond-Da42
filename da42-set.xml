@@ -5,7 +5,22 @@
 
   <sim>
     <description>Diamond DA 42 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM) - JeeP Cheney (Cockpit-Systems)</author>
+    <author>Emmanuel BARANGER (3D/FDM) - JeeP Cheney (Cockpit-Systems) - Philippe BROCORENS (FDM) - PATTEN (Livery) - Zakharov (zkv1000) - Skyop (moving map)</author>
+	<aircraft-version>07/11/2012</aircraft-version>
+    <status>early-production</status>
+
+    <startup>
+      <splash-texture>Aircraft/Diamond-Da42/da42-splash.png</splash-texture>
+	  <splash-title>Version 07/11/2012</splash-title>
+    </startup>
+	
+	<rating>
+          <FDM type="int">2</FDM>
+          <systems type="int">5</systems>
+          <cockpit type="int">4</cockpit>
+          <model type="int">4</model>
+    </rating>
+		
   </sim>
 
 </PropertyList>

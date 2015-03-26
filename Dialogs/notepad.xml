@@ -1,0 +1,72 @@
+ <PropertyList>
+
+   <name>notepad</name>
+
+   <width>400</width>
+   <height>700</height>
+   <modal>false</modal>
+   <draggable>true</draggable>
+   <resizable>false</resizable>
+   
+	<text>
+		<x>180</x>
+		<y>670</y>
+		<label>NotePad</label>
+	</text>
+
+   <textbox>
+        <name>notepad-text</name>
+		<x>10</x>
+		<y>50</y>
+		<width>380</width>
+		<height>600</height>
+        <halign>fill</halign>
+        <stretch>true</stretch>
+        <slider>20</slider>
+        <editable>true</editable>
+        <wrap>true</wrap>
+        <live>false</live>
+        <property>/sim/gui/dialogs/da42/notepad</property>
+	</textbox>
+	  
+	<button>
+		<x>160</x>
+		<y>10</y>
+		<legend>Clear</legend>
+		<binding>
+			<command>nasal</command>
+			<script>setprop("/sim/gui/dialogs/da42/notepad","");</script>
+		</binding>
+		<binding>
+			<command>dialog-update</command>
+		</binding>
+	</button>
+	
+	<button>
+		<x>220</x>
+		<y>10</y>
+		<legend>Close</legend>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+	
+	<button>
+		<x>374</x>
+		<y>674</y>
+		<width>16</width>
+		<height>16</height>
+		<legend></legend>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+
+
+  </PropertyList>

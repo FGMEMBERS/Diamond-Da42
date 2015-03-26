@@ -35,7 +35,7 @@
 		<type>select</type>
 		<object-name>Light</object-name>
 		<condition>
-			<property>/controls/switches/positionlight-switch</property>
+			<property>/controls/lighting/nav-lights</property>
 		</condition>
 	</animation>
 	

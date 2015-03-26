@@ -13,11 +13,12 @@
     <object-name>brasD</object-name>
     <object-name>avantbrasG</object-name>
     <object-name>avantbrasD</object-name>
-    <object-name>manche</object-name>
+    <object-name>mainG</object-name>
+	<object-name>mainD</object-name>
     <object-name>cuisseG</object-name>
     <object-name>cuisseD</object-name>
     <object-name>jambeG</object-name>
-    <object-name>jambed</object-name>
+    <object-name>jambeD</object-name>
     <object-name>piedG</object-name>
     <object-name>piedD</object-name>
 
@@ -30,7 +31,7 @@
     <object-name>visiere</object-name>
   </animation>
 
-  <!-- Visière invisible depuis le cockpit -->
+  <!-- Visiere invisible depuis le cockpit -->
 	<animation>
 		<type>select</type>
 		<object-name>visiere</object-name>
@@ -44,7 +45,128 @@
 			</not>
 		</condition>
 	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>corps</object-name>
+		<object-name>brasG</object-name>
+		<object-name>brasD</object-name>
+		<object-name>avantbrasG</object-name>
+		<object-name>avantbrasD</object-name>
+		<object-name>mainG</object-name>
+		<object-name>mainD</object-name>
+		<object-name>cuisseG</object-name>
+		<object-name>cuisseD</object-name>
+		<object-name>jambeG</object-name>
+		<object-name>jambeD</object-name>
+		<object-name>piedG</object-name>
+		<object-name>piedD</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>sim/current-view/view-number</property>
+						<value>0</value>
+					</equals>
+					<property>/controls/pilot/visible</property>
+				</and>
+				<not>
+					<equals>
+						<property>sim/current-view/view-number</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</or>
+		</condition>
+	</animation>
 
+	<animation>
+		<type>translate</type>
+		<object-name>mainG</object-name>
+		<object-name>avantbrasG</object-name>
+		<property>/controls/flight/elevator</property>
+		<factor>-0.07</factor>
+		<axis>
+			<x> 1.000 </x>
+			<y> 0.000 </y>
+			<z> 0.000 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>mainG</object-name>
+		<object-name>avantbrasG</object-name>
+		<property>controls/flight/elevator</property>
+		<interpolation>
+			<entry><ind>  -1 </ind><dep> 10  </dep></entry>
+			<entry><ind>  0 </ind><dep>  0  </dep></entry>
+			<entry><ind>  1  </ind><dep> -10  </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-0.0482</x-m>
+			<y-m>-0.0046</y-m>
+			<z-m>0.1495</z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+    </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>brasG</object-name>
+		<property>controls/flight/elevator</property>
+		<interpolation>
+			<entry><ind>  -1 </ind><dep> -15  </dep></entry>
+			<entry><ind>  0 </ind><dep>  0  </dep></entry>
+			<entry><ind>  1  </ind><dep> 15  </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.3939</x-m>
+			<y-m>-0.1829</y-m>
+			<z-m>0.3004</z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+    </animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>mainG</object-name>
+		<object-name>avantbrasG</object-name>
+		<property>/surface-positions/left-aileron-pos-norm</property>
+		<factor>0.07</factor>
+		<axis>
+			<x> 0.000 </x>
+			<y> 1.000 </y>
+			<z> 0.000 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>brasG</object-name>
+		<property>/surface-positions/left-aileron-pos-norm</property>
+		<interpolation>
+			<entry><ind>  -1 </ind><dep> 15  </dep></entry>
+			<entry><ind>  0 </ind><dep>  0  </dep></entry>
+			<entry><ind>  1  </ind><dep> -15  </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.3939</x-m>
+			<y-m>-0.1829</y-m>
+			<z-m>0.3004</z-m>
+		</center>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+    </animation>
+	
   <animation>
     <type>rotate</type>
     <object-name>AnimeTete</object-name>
@@ -94,7 +216,133 @@
       <y> 0.000 </y>
       <z> 0.000 </z>
     </axis>
-  </animation> 
+  </animation>
+  
+  <animation>
+		<type>translate</type>
+		<object-name>piedG</object-name>
+		<object-name>jambeG</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>0.07</factor>
+		<axis>
+			<x> 1.000 </x>
+			<y> 0.000 </y>
+			<z> 0.000 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>piedD</object-name>
+		<object-name>jambeD</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>-0.07</factor>
+		<axis>
+			<x> 1.000 </x>
+			<y> 0.000 </y>
+			<z> 0.000 </z>
+		</axis>
+	</animation>
+	
+	<animation>
+    <type>rotate</type>
+    <object-name>jambeG</object-name>
+    <property>/controls/flight/rudder</property>
+    <factor> -7.0</factor>
+    <center>
+      <x-m> -0.4457 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.002 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>jambeD</object-name>
+    <property>/controls/flight/rudder</property>
+    <factor> 7.0</factor>
+    <center>
+      <x-m> -0.4457 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.002 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseG</object-name>
+    <property>/controls/flight/rudder</property>
+    <factor> 7.0</factor>
+    <center>
+      <x-m> 0.2177 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> -0.296 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>cuisseD</object-name>
+    <property>/controls/flight/rudder</property>
+    <factor> -7.0</factor>
+    <center>
+      <x-m> 0.2177 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> -0.296 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+	
+  <animation>
+    <type>rotate</type>
+    <object-name>piedG</object-name>
+    <property>/controls/gear/brake-left</property>
+    <factor> -15.0</factor>
+    <center>
+      <x-m> -0.4457 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.002 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>piedD</object-name>
+    <property>/controls/gear/brake-right</property>
+    <factor> -15.0</factor>
+    <center>
+      <x-m> -0.4457 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.002 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  
 
 </PropertyList>
 

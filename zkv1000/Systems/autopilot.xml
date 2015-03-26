@@ -25,7 +25,8 @@
       </condition>
     </enable>
     <input>
-      <prop>/instrumentation/turn-indicator/indicated-turn-rate</prop>
+		<prop>/orientation/roll-deg</prop>
+      <!--<prop>/instrumentation/turn-indicator/indicated-turn-rate</prop>-->
     </input>
     <reference>
       <value>0.0</value>

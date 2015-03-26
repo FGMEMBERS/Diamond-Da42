@@ -24,10 +24,6 @@
 				<command>property-toggle</command>
 				<property>/controls/switches/alternateair</property>
 			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>da42.nyi("Alternate air");</script>
-			</binding>
 		</action>
 	</animation>
 

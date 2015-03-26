@@ -6,7 +6,7 @@
 
 <PropertyList>
 
-<electrical>
+  <electrical>
 
   <!-- Include the following empty path to disable the default electrical system -->
 
@@ -137,6 +137,7 @@
 		<output type="string">Left Main Bus</output>
 		<switch type="string">/controls/electric/circuitbreaker/leftalt</switch>
 		<switch type="string">/controls/switches/left-alt-switch</switch>
+		<switch type="string">/controls/switches/left-master-engine-switch</switch><!--si le moteur est coupe, on coupe l arrivee de l alternateur-->
 	</connector>
 	
 	<connector>
@@ -157,6 +158,7 @@
 		<output type="string">Right Main Bus</output>
 		<switch type="string">/controls/electric/circuitbreaker/rightalt</switch>
 		<switch type="string">/controls/switches/right-alt-switch</switch>
+		<switch type="string">/controls/switches/right-master-engine-switch</switch><!--si le moteur est coupe, on coupe l arrivee de l alternateur-->
 	</connector>
 	
 	<connector>
@@ -222,6 +224,60 @@
 		<output type="string">Left Ecu B</output>
 		<switch type="string">/controls/electric/circuitbreaker/leftecub</switch>
 	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">Comm1</output>
+		<switch type="string">/controls/electric/circuitbreaker/com1</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">Nav1</output>
+		<switch type="string">/controls/electric/circuitbreaker/gpsnav1</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">GPSSRC1</output>
+		<switch type="string">/controls/electric/circuitbreaker/gpsnav1</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">Engine instruments</output>
+		<switch type="string">/controls/electric/circuitbreaker/enginstr</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">ADC</output>
+		<switch type="string">/controls/electric/circuitbreaker/adc</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">AHRS</output>
+		<switch type="string">/controls/electric/circuitbreaker/ahrs</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">PFD</output>
+		<switch type="string">/controls/electric/circuitbreaker/pfd</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">XPDR</output>
+		<switch type="string">/controls/electric/circuitbreaker/xpcom</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Left Main Bus</input>
+		<output type="string">PITOT</output>
+		<switch type="string">/controls/electric/circuitbreaker/pitot</switch>
+	</connector>
 		
 <!-- right bus -->
 	<connector>
@@ -272,6 +328,67 @@
 		<input type="string">Right Ecu Bus</input>
 		<output type="string">Right Ecu B</output>
 		<switch type="string">/controls/electric/circuitbreaker/rightecub</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Right Main Bus</input>
+		<output type="string">MFD</output>
+		<switch type="string">/controls/electric/circuitbreaker/mfd</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Right Main Bus</input>
+		<output type="string">FANS</output>
+		<switch type="string">/controls/electric/circuitbreaker/fans</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Right Main Bus</input>
+		<output type="string">ZKV1000</output>
+		<switch type="string">/controls/electric/circuitbreaker/avionicctrl</switch>
+	</connector>
+
+<!-- avionic bus -->
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">Comm2</output>
+		<switch type="string">/controls/electric/circuitbreaker/com2</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">Nav2</output>
+		<switch type="string">/controls/electric/circuitbreaker/gpsnav2</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">GPSSRC2</output>
+		<switch type="string">/controls/electric/circuitbreaker/gpsnav2</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">Audio</output>
+		<switch type="string">/controls/electric/circuitbreaker/audio</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">ADF</output>
+		<switch type="string">/controls/electric/circuitbreaker/adf</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">DME</output>
+		<switch type="string">/controls/electric/circuitbreaker/dme</switch>
+	</connector>
+	
+	<connector>
+		<input type="string">Avionics Bus</input>
+		<output type="string">AutoPilot</output>
+		<switch type="string">/controls/electric/circuitbreaker/autopilot</switch>
 	</connector>
 
 <!-- Output -->
@@ -344,6 +461,65 @@
 		<prop type="string">/controls/electric/alimentation/engines/engine[0]/ecus/ecu[1]/serviceable</prop>
 	</component>
 	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">Comm1</name>
+		<prop type="string">/instrumentation/comm[0]/power-btn</prop>
+		<prop type="string">/systems/electrical/outputs/audio-panel[0]</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">Nav1</name>
+		<prop type="string">/instrumentation/nav[0]/power-btn</prop>
+		<prop type="string">/systems/electrical/outputs/nav[0]</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+
+	<!--cas du gps proteger par deux sources d'alimentation-->
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">GPSSRC1</name>
+		<prop type="string">/instrumentation/gps/power-btn1</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">Engine instruments</name>
+		<prop type="string">/instrumentation/enginstr/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">ADC</name>
+		<prop type="string">/instrumentation/adc/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">AHRS</name>
+		<prop type="string">/instrumentation/ahrs/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">PFD</name>
+		<prop type="string">/instrumentation/zkv1000/device[0]/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">XPDR</name>
+		<prop type="string">/instrumentation/transponder/serviceable</prop>
+		<prop type="string">/instrumentation/encoder/serviceable</prop>
+		<prop type="string">/systems/electrical/outputs/transponder</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">PITOT</name>
+		<prop type="string">/instrumentation/pitot-heat/serviceable</prop>
+	</component>
+	
 <!-- right bus -->
 	<component>
 		<kind type="string">output</kind>
@@ -386,7 +562,73 @@
 		<name type="string">Right Ecu B</name>
 		<prop type="string">/controls/electric/alimentation/engines/engine[1]/ecus/ecu[1]/serviceable</prop>
 	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">MFD</name>
+		<prop type="string">/instrumentation/zkv1000/device[1]/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">FANS</name>
+		<prop type="string">/instrumentation/zkv1000/fans/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">ZKV1000</name>
+		<prop type="string">/instrumentation/zkv1000/serviceable</prop>
+	</component>
 
-</electrical>
+<!--avionics bus -->
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">Comm2</name>
+		<prop type="string">/instrumentation/comm[1]/power-btn</prop>
+		<prop type="string">/systems/electrical/outputs/audio-panel[1]</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">Nav2</name>
+		<prop type="string">/instrumentation/nav[1]/power-btn</prop>
+		<prop type="string">/systems/electrical/outputs/nav[1]</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+	
+	<!--cas du gps proteger par deux sources d'alimentation-->
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">GPSSRC2</name>
+		<prop type="string">/instrumentation/gps/power-btn2</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">Audio</name>
+		<prop type="string">/instrumentation/audio/serviceable</prop>
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">ADF</name>
+		<prop type="string">/instrumentation/adf[0]/power-btn</prop>
+		<prop type="string">/systems/electrical/outputs/adf</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">DME</name>
+		<prop type="string">/instrumentation/dme/power-btn</prop>
+		<prop type="string">/systems/electrical/outputs/dme</prop><!--pour faire marcher le moteur de fgfs-->
+	</component>
+	
+	<component>
+		<kind type="string">output</kind>
+		<name type="string">AutoPilot</name>
+		<prop type="string">/sim/systems/autopilot/serviceable</prop>
+	</component>
+	
+  </electrical>
 
 </PropertyList>

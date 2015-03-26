@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+   <name>RadioReplay</name>
+
+   <width>400</width>
+   <height>400</height>
+   <modal>false</modal>
+   <draggable>true</draggable>
+   <resizable>false</resizable>
+   
+	<text>
+		<x>150</x>
+		<y>370</y>
+		<label>Radio Replay</label>
+	</text>
+	
+	<textbox>
+        <name>replay-text</name>
+		<x>10</x>
+		<y>10</y>
+		<width>380</width>
+		<height>350</height>
+        <halign>fill</halign>
+        <stretch>true</stretch>
+        <slider>20</slider>
+        <editable>false</editable>
+        <wrap>true</wrap>
+        <live>false</live>
+        <property>/sim/gui/dialogs/da42/replay-text</property>
+	</textbox>
+
+	<button>
+		<x>374</x>
+		<y>374</y>
+		<width>16</width>
+		<height>16</height>
+		<legend></legend>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+	
+	<nasal>
+		<open><![CDATA[
+			var close_this_windows = func{
+				fgcommand("dialog-close", props.Node.new({ "dialog-name": "RadioReplay" }));
+			}
+
+			var message = "";
+			foreach (var emitter; props.globals.getNode("/sim/messages").getChildren()) {
+				if(emitter.getName()=="atis" and emitter.getType()=="STRING" and emitter.getValue()!=""){
+					var msg = string.replace(emitter.getValue(),"/","");
+					msg = string.replace(msg,"one","1");
+					msg = string.replace(msg,"two","2");
+					msg = string.replace(msg,"three","3");
+					msg = string.replace(msg,"four","4");
+					msg = string.replace(msg,"five","5");
+					msg = string.replace(msg,"six","6");
+					msg = string.replace(msg,"seven","7");
+					msg = string.replace(msg,"eight","8");
+					msg = string.replace(msg,"niner","9");
+					msg = string.replace(msg,"zero","0");
+					msg = string.replace(msg,"thousand"," ");
+					msg = string.replace(msg,"hundred","0 0");
+					msg = string.replace(msg,"  "," ");
+					
+					message = message ~ emitter.getName() ~ " said :\n" ~ msg;
+				}elsif(emitter.getType()=="STRING" and emitter.getValue()!=""){
+					message = message~emitter.getName()~" said : "~emitter.getValue()~"\n";
+				}
+			}
+			if(message==""){
+				message = "No replay";
+			}
+			
+			props.globals.getNode("/sim/gui/dialogs/da42/replay-text",1).setValue(message);
+			gui.dialog_update("RadioReplay");
+			
+			settimer(close_this_windows,5);
+		]]></open>
+	</nasal>
+  </PropertyList>

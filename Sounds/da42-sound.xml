@@ -1,52 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Base: The sounds of the FK9 Mark 2 by Maik JUSTUS -->
 <PropertyList>
 
-  <fx>
-    <crank>
-      <name>engstartLeft</name>
-      <path>Aircraft/Diamond-Da42/Sounds/eng_start_ext1_part1.wav</path>
-      <condition>
-        <and>
-          <property>/engines/engine[0]/cranking</property>
-          <property>/sim/current-view/internal</property>
-        </and>
-      </condition>
-      <volume>
-        <offset>0.4</offset>
-      </volume>
-      <position>
-        <x> -2.627 </x>
-        <y>  1.740 </y>
-        <z>  0.021 </z>
-      </position>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </crank>
+	<fx>
+		<crank>
+			<name>engstartLeft</name>
+			<path>Aircraft/Diamond-Da42/Sounds/eng_start_ext1_part1.wav</path>
+			<condition>
+				<and>
+					<property>/engines/engine[0]/cranking</property>
+					<property>/sim/current-view/internal</property>
+				</and>
+			</condition>
+			<volume>
+				<offset>0.4</offset>
+			</volume>
+			<position>
+				<x> -2.627 </x>
+				<y>  1.740 </y>
+				<z>  0.021 </z>
+			</position>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</crank>
 
-    <crank>
-      <name>engstartextLeft</name>
-      <path>Aircraft/Diamond-Da42/Sounds/eng_start_int1_part1.wav</path>
-      <condition>
-        <and>
-          <property>/engines/engine[0]/cranking</property>
-        <not>
-          <property>/sim/current-view/internal</property>
-        </not>
-        </and>
-      </condition>
-      <volume>
-        <offset>0.4</offset>
-      </volume>
-      <position>
-        <x> -2.627 </x>
-        <y>  1.740 </y>
-        <z>  0.021 </z>
-      </position>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </crank>
+		<crank>
+			<name>engstartextLeft</name>
+			<path>Aircraft/Diamond-Da42/Sounds/eng_start_int1_part1.wav</path>
+			<condition>
+				<and>
+					<property>/engines/engine[0]/cranking</property>
+					<not>
+						<property>/sim/current-view/internal</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<offset>0.4</offset>
+			</volume>
+			<position>
+				<x> -2.627 </x>
+				<y>  1.740 </y>
+				<z>  0.021 </z>
+			</position>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</crank>
 
 		<crank>
 			<name>crankLeft</name>
@@ -745,7 +744,8 @@
 				<offset>1.25</offset>
 			</pitch>
 		</wind>
-                          <gear>
+		
+    <gear>
         <name>gear</name>
         <mode>in-transit</mode>
         <path>Aircraft/Diamond-Da42/Sounds/gear.wav</path>
@@ -826,28 +826,28 @@
 		</gear-warn>
 		
 		<!--                  Toggle Switches                  -->     
-		<click> 
-		<name>Battery on</name>
-		<path>Sounds/click.wav</path>
-		<condition> 
-		<property>controls/electric/battery-switch</property>
-		</condition>
-		<volume> 
-		<factor>1.0</factor>
-		</volume>
+		<!--<click> 
+			<name>Battery on</name>
+			<path>Sounds/click.wav</path>
+			<condition> 
+				<property>controls/electric/battery-switch</property>
+			</condition>
+			<volume> 
+				<factor>1.0</factor>
+			</volume>
 		</click>
 
 		<click> 
-		<name>Battery off</name>
-		<path>Sounds/click.wav</path>
-		<condition> 
-		<not> 
-		<property>controls/electric/battery-switch</property>
-		</not>
-		</condition>
-		<volume> 
-		<factor>1.0</factor>
-		</volume>
+			<name>Battery off</name>
+			<path>Sounds/click.wav</path>
+			<condition> 
+				<not> 
+					<property>controls/electric/battery-switch</property>
+				</not>
+			</condition>
+			<volume> 
+			<factor>1.0</factor>
+			</volume>
 		</click>
 
 		<click> 
@@ -978,6 +978,22 @@
 			<max-dist>20.0</max-dist>
 		</stall>
 		
+		<warning>
+			<name>warning</name>
+			<mode>looped</mode>
+			<path>Aircraft/Diamond-Da42/Sounds/warning.wav</path>
+			<condition>
+				<property>/sim/alarms/warning</property>
+				<property>/sim/current-view/internal</property>
+			</condition>
+			<volume>
+				<property>/sim/alarms/warning</property>
+				<max>1.0</max>
+			</volume>
+			<reference-dist>10.0</reference-dist>
+			<max-dist>20.0</max-dist>
+		</warning>
+		
 		<switch>
 			<name>click on</name>
 			<mode>once</mode>
@@ -986,12 +1002,59 @@
 				<and>
 					<property>/sim/sound/switch</property>
 					<property>/sim/current-view/internal</property>
-        </and>
-      </condition>
-      <volume>
-        <factor>0.45</factor>
-      </volume>
-    </switch>
-  </fx>
+				</and>
+			</condition>
+			<volume>
+				<factor>1</factor>
+			</volume>
+		</switch>
+		
+		<elt>
+			<name>ELT check</name>
+			<mode>looped</mode>
+			<path>Aircraft/Diamond-Da42/Sounds/elt.wav</path>
+			<condition>
+				<and>
+					<property>/instrumentation/audio/serviceable</property>
+					<or>
+						<and>
+							<property>/instrumentation/comm[0]/serviceable</property>
+							<property>/instrumentation/comm[0]/power-btn</property>
+							<property>/controls/switches/mixer/com1</property>
+							<greater-than><!--the equals condition dont work when freq equals 121.500001 ...-->
+								<property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+								<value>121.490</value>
+							</greater-than>
+							<less-than>
+								<property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+								<value>121.510</value>
+							</less-than>
+						</and>
+						<and>
+							<property>/instrumentation/comm[1]/serviceable</property>
+							<property>/instrumentation/comm[1]/power-btn</property>
+							<property>/controls/switches/mixer/com2</property>
+							<greater-than><!--the equals condition dont work when freq equals 121.500001 ...-->
+								<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+								<value>121.490</value>
+							</greater-than>
+							<less-than>
+								<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+								<value>121.510</value>
+							</less-than>
+						</and>
+					</or>
+					<equals>
+						<property>/controls/switches/elt</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+			<volume>
+				<factor>1</factor>
+			</volume>
+		</elt>
+		
+	</fx>
 
 </PropertyList>

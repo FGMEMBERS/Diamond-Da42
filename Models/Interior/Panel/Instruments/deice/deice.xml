@@ -66,6 +66,18 @@
 					<property>/controls/switches/deice/max</property>
 				</binding>
 			</mod-up>
+			<binding>
+				<command>property-assign</command>
+				<property>/sim/sound/switch</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
 	
@@ -91,8 +103,9 @@
 				<property>/controls/switches/deice/windshield</property>
 			</binding>
 			<binding>
-				<command>nasal</command>
-				<script>da42.nyi("Deice windshield");</script>
+				<command>property-assign</command>
+				<property>/controls/deice/mode_windshield</property>
+				<value type="double">5</value>
 			</binding>
 			<mod-up>
 				<binding>
@@ -134,9 +147,17 @@
 				<max>1</max>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
 	
@@ -154,9 +175,17 @@
 				<max>1</max>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
 	
@@ -228,8 +257,9 @@
 						<value type="double">1</value>
 					</equals>
 				</condition>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
 		</action>
 	</animation>
@@ -265,9 +295,17 @@
 				<script>da42.nyi("Deice pump");</script>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
 	
@@ -302,9 +340,17 @@
 				<max>1</max>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
 	
@@ -322,10 +368,18 @@
 				<max>1</max>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
 			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
+			<!--<mod-up>
 				<binding>
 					<command>property-assign</command>
 					<property>/controls/switches/deice/icelight</property>
@@ -335,18 +389,40 @@
 						<value>-1</value>
 					</condition>
 				</binding>
-			</mod-up>
+			</mod-up>-->
 		</action>
 	</animation>
 	
 	<animation>
 		<type>material</type>
-		<object-name>high.light</object-name>
+		<object-name>high.lighton</object-name>
 		<emission>
 			<red>1</red>
-			<green>1</green>
+			<green>0.6</green>
 			<blue>0</blue>
 		</emission>
+		<condition>
+			<and>
+				<equals>
+					<property>/controls/electric/alimentation/deice</property>
+					<value>1</value>
+				</equals>
+				<or>
+					<equals>
+						<property>/controls/deice/mode</property>
+						<value>2</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/deice/icelight</property>
+						<value>-1</value>
+					</equals>
+				</or>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>high.lighton</object-name>
 		<condition>
 			<and>
 				<equals>
@@ -369,7 +445,7 @@
 	
 	<animation>
 		<type>material</type>
-		<object-name>norm.light</object-name>
+		<object-name>norm.lighton</object-name>
 		<emission>
 			<red>1</red>
 			<green>0.6</green>
@@ -382,6 +458,36 @@
 					<value>1</value>
 				</equals>
 				<or>
+					<equals>
+						<property>/controls/deice/mode</property>
+						<value>2</value>
+					</equals>
+					<equals>
+						<property>/controls/deice/mode</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/deice/icelight</property>
+						<value>-1</value>
+					</equals>
+				</or>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>norm.lighton</object-name>
+		<condition>
+			<and>
+				<equals>
+					<property>/controls/electric/alimentation/deice</property>
+					<value>1</value>
+				</equals>
+				<or>
+					<equals>
+						<property>/controls/deice/mode</property>
+						<value>2</value>
+					</equals>
 					<equals>
 						<property>/controls/deice/mode</property>
 						<value>1</value>
@@ -397,12 +503,34 @@
 	
 	<animation>
 		<type>material</type>
-		<object-name>low.light</object-name>
+		<object-name>low.lighton</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
 		</emission>
+		<condition>
+			<and>
+				<equals>
+					<property>/controls/electric/alimentation/deice</property>
+					<value>1</value>
+				</equals>
+				<or>
+					<equals>
+						<property>/controls/deice/mode</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/controls/switches/deice/icelight</property>
+						<value>-1</value>
+					</equals>
+				</or>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>low.lighton</object-name>
 		<condition>
 			<and>
 				<equals>

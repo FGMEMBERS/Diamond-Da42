@@ -1,0 +1,5128 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+OBJECT world
+kids 1
+OBJECT group
+name "Plane"
+loc 0.004699 0.00263049 -0.000131503
+kids 256
+OBJECT poly
+name "Plane.001"
+data 9
+Plane.001
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.4375
+0 -0.5 0.4375
+0 -0.5 0.5
+0 -0.4375 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.002"
+data 9
+Plane.002
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.375
+0 -0.5 0.375
+0 -0.5 0.4375
+0 -0.4375 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.003"
+data 9
+Plane.003
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.3125
+0 -0.5 0.3125
+0 -0.5 0.375
+0 -0.4375 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.004"
+data 9
+Plane.004
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.25
+0 -0.5 0.25
+0 -0.5 0.3125
+0 -0.4375 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.005"
+data 9
+Plane.005
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.1875
+0 -0.5 0.1875
+0 -0.5 0.25
+0 -0.4375 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.006"
+data 9
+Plane.006
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.125
+0 -0.5 0.125
+0 -0.5 0.1875
+0 -0.4375 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.007"
+data 9
+Plane.007
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0.0625
+0 -0.5 0.0625
+0 -0.5 0.125
+0 -0.4375 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.008"
+data 9
+Plane.008
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 0
+0 -0.5 0
+0 -0.5 0.0625
+0 -0.4375 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.009"
+data 9
+Plane.009
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.0625
+0 -0.5 -0.0625
+0 -0.5 0
+0 -0.4375 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.010"
+data 9
+Plane.010
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.125
+0 -0.5 -0.125
+0 -0.5 -0.0625
+0 -0.4375 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.011"
+data 9
+Plane.011
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.1875
+0 -0.5 -0.1875
+0 -0.5 -0.125
+0 -0.4375 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.012"
+data 9
+Plane.012
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.25
+0 -0.5 -0.25
+0 -0.5 -0.1875
+0 -0.4375 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.013"
+data 9
+Plane.013
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.3125
+0 -0.5 -0.3125
+0 -0.5 -0.25
+0 -0.4375 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.014"
+data 9
+Plane.014
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.375
+0 -0.5 -0.375
+0 -0.5 -0.3125
+0 -0.4375 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.015"
+data 9
+Plane.015
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.4375
+0 -0.5 -0.4375
+0 -0.5 -0.375
+0 -0.4375 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.016"
+data 9
+Plane.016
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.4375 -0.5
+0 -0.5 -0.5
+0 -0.5 -0.4375
+0 -0.4375 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.017"
+data 9
+Plane.017
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.4375
+0 -0.4375 0.4375
+0 -0.4375 0.5
+0 -0.375 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.018"
+data 9
+Plane.018
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.375
+0 -0.4375 0.375
+0 -0.4375 0.4375
+0 -0.375 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.019"
+data 9
+Plane.019
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.3125
+0 -0.4375 0.3125
+0 -0.4375 0.375
+0 -0.375 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.020"
+data 9
+Plane.020
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.25
+0 -0.4375 0.25
+0 -0.4375 0.3125
+0 -0.375 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.021"
+data 9
+Plane.021
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.1875
+0 -0.4375 0.1875
+0 -0.4375 0.25
+0 -0.375 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.022"
+data 9
+Plane.022
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.125
+0 -0.4375 0.125
+0 -0.4375 0.1875
+0 -0.375 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.023"
+data 9
+Plane.023
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0.0625
+0 -0.4375 0.0625
+0 -0.4375 0.125
+0 -0.375 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.024"
+data 9
+Plane.024
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 0
+0 -0.4375 0
+0 -0.4375 0.0625
+0 -0.375 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.025"
+data 9
+Plane.025
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.0625
+0 -0.4375 -0.0625
+0 -0.4375 0
+0 -0.375 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.026"
+data 9
+Plane.026
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.125
+0 -0.4375 -0.125
+0 -0.4375 -0.0625
+0 -0.375 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.027"
+data 9
+Plane.027
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.1875
+0 -0.4375 -0.1875
+0 -0.4375 -0.125
+0 -0.375 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.028"
+data 9
+Plane.028
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.25
+0 -0.4375 -0.25
+0 -0.4375 -0.1875
+0 -0.375 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.029"
+data 9
+Plane.029
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.3125
+0 -0.4375 -0.3125
+0 -0.4375 -0.25
+0 -0.375 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.030"
+data 9
+Plane.030
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.375
+0 -0.4375 -0.375
+0 -0.4375 -0.3125
+0 -0.375 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.031"
+data 9
+Plane.031
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.4375
+0 -0.4375 -0.4375
+0 -0.4375 -0.375
+0 -0.375 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.032"
+data 9
+Plane.032
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.375 -0.5
+0 -0.4375 -0.5
+0 -0.4375 -0.4375
+0 -0.375 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.033"
+data 9
+Plane.033
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.4375
+0 -0.375 0.4375
+0 -0.375 0.5
+0 -0.3125 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.034"
+data 9
+Plane.034
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.375
+0 -0.375 0.375
+0 -0.375 0.4375
+0 -0.3125 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.035"
+data 9
+Plane.035
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.3125
+0 -0.375 0.3125
+0 -0.375 0.375
+0 -0.3125 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.036"
+data 9
+Plane.036
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.25
+0 -0.375 0.25
+0 -0.375 0.3125
+0 -0.3125 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.037"
+data 9
+Plane.037
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.1875
+0 -0.375 0.1875
+0 -0.375 0.25
+0 -0.3125 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.038"
+data 9
+Plane.038
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.125
+0 -0.375 0.125
+0 -0.375 0.1875
+0 -0.3125 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.039"
+data 9
+Plane.039
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0.0625
+0 -0.375 0.0625
+0 -0.375 0.125
+0 -0.3125 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.040"
+data 9
+Plane.040
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 0
+0 -0.375 0
+0 -0.375 0.0625
+0 -0.3125 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.041"
+data 9
+Plane.041
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.0625
+0 -0.375 -0.0625
+0 -0.375 0
+0 -0.3125 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.042"
+data 9
+Plane.042
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.125
+0 -0.375 -0.125
+0 -0.375 -0.0625
+0 -0.3125 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.043"
+data 9
+Plane.043
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.1875
+0 -0.375 -0.1875
+0 -0.375 -0.125
+0 -0.3125 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.044"
+data 9
+Plane.044
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.25
+0 -0.375 -0.25
+0 -0.375 -0.1875
+0 -0.3125 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.045"
+data 9
+Plane.045
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.3125
+0 -0.375 -0.3125
+0 -0.375 -0.25
+0 -0.3125 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.046"
+data 9
+Plane.046
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.375
+0 -0.375 -0.375
+0 -0.375 -0.3125
+0 -0.3125 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.047"
+data 9
+Plane.047
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.4375
+0 -0.375 -0.4375
+0 -0.375 -0.375
+0 -0.3125 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.048"
+data 9
+Plane.048
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.3125 -0.5
+0 -0.375 -0.5
+0 -0.375 -0.4375
+0 -0.3125 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.049"
+data 9
+Plane.049
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.4375
+0 -0.3125 0.4375
+0 -0.3125 0.5
+0 -0.25 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.050"
+data 9
+Plane.050
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.375
+0 -0.3125 0.375
+0 -0.3125 0.4375
+0 -0.25 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.051"
+data 9
+Plane.051
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.3125
+0 -0.3125 0.3125
+0 -0.3125 0.375
+0 -0.25 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.052"
+data 9
+Plane.052
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.25
+0 -0.3125 0.25
+0 -0.3125 0.3125
+0 -0.25 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.053"
+data 9
+Plane.053
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.1875
+0 -0.3125 0.1875
+0 -0.3125 0.25
+0 -0.25 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.054"
+data 9
+Plane.054
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.125
+0 -0.3125 0.125
+0 -0.3125 0.1875
+0 -0.25 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.055"
+data 9
+Plane.055
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0.0625
+0 -0.3125 0.0625
+0 -0.3125 0.125
+0 -0.25 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.056"
+data 9
+Plane.056
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 0
+0 -0.3125 0
+0 -0.3125 0.0625
+0 -0.25 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.057"
+data 9
+Plane.057
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.0625
+0 -0.3125 -0.0625
+0 -0.3125 0
+0 -0.25 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.058"
+data 9
+Plane.058
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.125
+0 -0.3125 -0.125
+0 -0.3125 -0.0625
+0 -0.25 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.059"
+data 9
+Plane.059
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.1875
+0 -0.3125 -0.1875
+0 -0.3125 -0.125
+0 -0.25 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.060"
+data 9
+Plane.060
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.25
+0 -0.3125 -0.25
+0 -0.3125 -0.1875
+0 -0.25 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.061"
+data 9
+Plane.061
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.3125
+0 -0.3125 -0.3125
+0 -0.3125 -0.25
+0 -0.25 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.062"
+data 9
+Plane.062
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.375
+0 -0.3125 -0.375
+0 -0.3125 -0.3125
+0 -0.25 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.063"
+data 9
+Plane.063
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.4375
+0 -0.3125 -0.4375
+0 -0.3125 -0.375
+0 -0.25 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.064"
+data 9
+Plane.064
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.25 -0.5
+0 -0.3125 -0.5
+0 -0.3125 -0.4375
+0 -0.25 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.065"
+data 9
+Plane.065
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.4375
+0 -0.25 0.4375
+0 -0.25 0.5
+0 -0.1875 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.066"
+data 9
+Plane.066
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.375
+0 -0.25 0.375
+0 -0.25 0.4375
+0 -0.1875 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.067"
+data 9
+Plane.067
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.3125
+0 -0.25 0.3125
+0 -0.25 0.375
+0 -0.1875 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.068"
+data 9
+Plane.068
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.25
+0 -0.25 0.25
+0 -0.25 0.3125
+0 -0.1875 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.069"
+data 9
+Plane.069
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.1875
+0 -0.25 0.1875
+0 -0.25 0.25
+0 -0.1875 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.070"
+data 9
+Plane.070
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.125
+0 -0.25 0.125
+0 -0.25 0.1875
+0 -0.1875 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.071"
+data 9
+Plane.071
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0.0625
+0 -0.25 0.0625
+0 -0.25 0.125
+0 -0.1875 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.072"
+data 9
+Plane.072
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 0
+0 -0.25 0
+0 -0.25 0.0625
+0 -0.1875 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.073"
+data 9
+Plane.073
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.0625
+0 -0.25 -0.0625
+0 -0.25 0
+0 -0.1875 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.074"
+data 9
+Plane.074
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.125
+0 -0.25 -0.125
+0 -0.25 -0.0625
+0 -0.1875 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.075"
+data 9
+Plane.075
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.1875
+0 -0.25 -0.1875
+0 -0.25 -0.125
+0 -0.1875 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.076"
+data 9
+Plane.076
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.25
+0 -0.25 -0.25
+0 -0.25 -0.1875
+0 -0.1875 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.077"
+data 9
+Plane.077
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.3125
+0 -0.25 -0.3125
+0 -0.25 -0.25
+0 -0.1875 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.078"
+data 9
+Plane.078
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.375
+0 -0.25 -0.375
+0 -0.25 -0.3125
+0 -0.1875 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.079"
+data 9
+Plane.079
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.4375
+0 -0.25 -0.4375
+0 -0.25 -0.375
+0 -0.1875 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.080"
+data 9
+Plane.080
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.1875 -0.5
+0 -0.25 -0.5
+0 -0.25 -0.4375
+0 -0.1875 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.081"
+data 9
+Plane.081
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.4375
+0 -0.1875 0.4375
+0 -0.1875 0.5
+0 -0.125 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.082"
+data 9
+Plane.082
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.375
+0 -0.1875 0.375
+0 -0.1875 0.4375
+0 -0.125 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.083"
+data 9
+Plane.083
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.3125
+0 -0.1875 0.3125
+0 -0.1875 0.375
+0 -0.125 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.084"
+data 9
+Plane.084
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.25
+0 -0.1875 0.25
+0 -0.1875 0.3125
+0 -0.125 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.085"
+data 9
+Plane.085
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.1875
+0 -0.1875 0.1875
+0 -0.1875 0.25
+0 -0.125 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.086"
+data 9
+Plane.086
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.125
+0 -0.1875 0.125
+0 -0.1875 0.1875
+0 -0.125 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.087"
+data 9
+Plane.087
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0.0625
+0 -0.1875 0.0625
+0 -0.1875 0.125
+0 -0.125 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.088"
+data 9
+Plane.088
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 0
+0 -0.1875 0
+0 -0.1875 0.0625
+0 -0.125 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.089"
+data 9
+Plane.089
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.0625
+0 -0.1875 -0.0625
+0 -0.1875 0
+0 -0.125 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.090"
+data 9
+Plane.090
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.125
+0 -0.1875 -0.125
+0 -0.1875 -0.0625
+0 -0.125 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.091"
+data 9
+Plane.091
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.1875
+0 -0.1875 -0.1875
+0 -0.1875 -0.125
+0 -0.125 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.092"
+data 9
+Plane.092
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.25
+0 -0.1875 -0.25
+0 -0.1875 -0.1875
+0 -0.125 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.093"
+data 9
+Plane.093
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.3125
+0 -0.1875 -0.3125
+0 -0.1875 -0.25
+0 -0.125 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.094"
+data 9
+Plane.094
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.375
+0 -0.1875 -0.375
+0 -0.1875 -0.3125
+0 -0.125 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.095"
+data 9
+Plane.095
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.4375
+0 -0.1875 -0.4375
+0 -0.1875 -0.375
+0 -0.125 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.096"
+data 9
+Plane.096
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.125 -0.5
+0 -0.1875 -0.5
+0 -0.1875 -0.4375
+0 -0.125 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.097"
+data 9
+Plane.097
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.4375
+0 -0.125 0.4375
+0 -0.125 0.5
+0 -0.0625 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.098"
+data 9
+Plane.098
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.375
+0 -0.125 0.375
+0 -0.125 0.4375
+0 -0.0625 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.099"
+data 9
+Plane.099
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.3125
+0 -0.125 0.3125
+0 -0.125 0.375
+0 -0.0625 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.100"
+data 9
+Plane.100
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.25
+0 -0.125 0.25
+0 -0.125 0.3125
+0 -0.0625 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.101"
+data 9
+Plane.101
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.1875
+0 -0.125 0.1875
+0 -0.125 0.25
+0 -0.0625 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.102"
+data 9
+Plane.102
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.125
+0 -0.125 0.125
+0 -0.125 0.1875
+0 -0.0625 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.103"
+data 9
+Plane.103
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0.0625
+0 -0.125 0.0625
+0 -0.125 0.125
+0 -0.0625 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.104"
+data 9
+Plane.104
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 0
+0 -0.125 0
+0 -0.125 0.0625
+0 -0.0625 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.105"
+data 9
+Plane.105
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.0625
+0 -0.125 -0.0625
+0 -0.125 0
+0 -0.0625 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.106"
+data 9
+Plane.106
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.125
+0 -0.125 -0.125
+0 -0.125 -0.0625
+0 -0.0625 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.107"
+data 9
+Plane.107
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.1875
+0 -0.125 -0.1875
+0 -0.125 -0.125
+0 -0.0625 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.108"
+data 9
+Plane.108
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.25
+0 -0.125 -0.25
+0 -0.125 -0.1875
+0 -0.0625 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.109"
+data 9
+Plane.109
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.3125
+0 -0.125 -0.3125
+0 -0.125 -0.25
+0 -0.0625 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.110"
+data 9
+Plane.110
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.375
+0 -0.125 -0.375
+0 -0.125 -0.3125
+0 -0.0625 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.111"
+data 9
+Plane.111
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.4375
+0 -0.125 -0.4375
+0 -0.125 -0.375
+0 -0.0625 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.112"
+data 9
+Plane.112
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 -0.0625 -0.5
+0 -0.125 -0.5
+0 -0.125 -0.4375
+0 -0.0625 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.113"
+data 9
+Plane.113
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.4375
+0 -0.0625 0.4375
+0 -0.0625 0.5
+0 0 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.114"
+data 9
+Plane.114
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.375
+0 -0.0625 0.375
+0 -0.0625 0.4375
+0 0 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.115"
+data 9
+Plane.115
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.3125
+0 -0.0625 0.3125
+0 -0.0625 0.375
+0 0 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.116"
+data 9
+Plane.116
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.25
+0 -0.0625 0.25
+0 -0.0625 0.3125
+0 0 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.117"
+data 9
+Plane.117
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.1875
+0 -0.0625 0.1875
+0 -0.0625 0.25
+0 0 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.118"
+data 9
+Plane.118
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.125
+0 -0.0625 0.125
+0 -0.0625 0.1875
+0 0 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.119"
+data 9
+Plane.119
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0.0625
+0 -0.0625 0.0625
+0 -0.0625 0.125
+0 0 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.120"
+data 9
+Plane.120
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 0
+0 -0.0625 0
+0 -0.0625 0.0625
+0 0 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.121"
+data 9
+Plane.121
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.0625
+0 -0.0625 -0.0625
+0 -0.0625 0
+0 0 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.122"
+data 9
+Plane.122
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.125
+0 -0.0625 -0.125
+0 -0.0625 -0.0625
+0 0 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.123"
+data 9
+Plane.123
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.1875
+0 -0.0625 -0.1875
+0 -0.0625 -0.125
+0 0 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.124"
+data 9
+Plane.124
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.25
+0 -0.0625 -0.25
+0 -0.0625 -0.1875
+0 0 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.125"
+data 9
+Plane.125
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.3125
+0 -0.0625 -0.3125
+0 -0.0625 -0.25
+0 0 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.126"
+data 9
+Plane.126
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.375
+0 -0.0625 -0.375
+0 -0.0625 -0.3125
+0 0 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.127"
+data 9
+Plane.127
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.4375
+0 -0.0625 -0.4375
+0 -0.0625 -0.375
+0 0 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.128"
+data 9
+Plane.128
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0 -0.5
+0 -0.0625 -0.5
+0 -0.0625 -0.4375
+0 0 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.129"
+data 9
+Plane.129
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.4375
+0 0 0.4375
+0 0 0.5
+0 0.0625 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.130"
+data 9
+Plane.130
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.375
+0 0 0.375
+0 0 0.4375
+0 0.0625 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.131"
+data 9
+Plane.131
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.3125
+0 0 0.3125
+0 0 0.375
+0 0.0625 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.132"
+data 9
+Plane.132
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.25
+0 0 0.25
+0 0 0.3125
+0 0.0625 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.133"
+data 9
+Plane.133
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.1875
+0 0 0.1875
+0 0 0.25
+0 0.0625 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.134"
+data 9
+Plane.134
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.125
+0 0 0.125
+0 0 0.1875
+0 0.0625 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.135"
+data 9
+Plane.135
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0.0625
+0 0 0.0625
+0 0 0.125
+0 0.0625 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.136"
+data 9
+Plane.136
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 0
+0 0 0
+0 0 0.0625
+0 0.0625 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.137"
+data 9
+Plane.137
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.0625
+0 0 -0.0625
+0 0 0
+0 0.0625 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.138"
+data 9
+Plane.138
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.125
+0 0 -0.125
+0 0 -0.0625
+0 0.0625 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.139"
+data 9
+Plane.139
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.1875
+0 0 -0.1875
+0 0 -0.125
+0 0.0625 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.140"
+data 9
+Plane.140
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.25
+0 0 -0.25
+0 0 -0.1875
+0 0.0625 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.141"
+data 9
+Plane.141
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.3125
+0 0 -0.3125
+0 0 -0.25
+0 0.0625 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.142"
+data 9
+Plane.142
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.375
+0 0 -0.375
+0 0 -0.3125
+0 0.0625 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.143"
+data 9
+Plane.143
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.4375
+0 0 -0.4375
+0 0 -0.375
+0 0.0625 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.144"
+data 9
+Plane.144
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.0625 -0.5
+0 0 -0.5
+0 0 -0.4375
+0 0.0625 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.145"
+data 9
+Plane.145
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.4375
+0 0.0625 0.4375
+0 0.0625 0.5
+0 0.125 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.146"
+data 9
+Plane.146
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.375
+0 0.0625 0.375
+0 0.0625 0.4375
+0 0.125 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.147"
+data 9
+Plane.147
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.3125
+0 0.0625 0.3125
+0 0.0625 0.375
+0 0.125 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.148"
+data 9
+Plane.148
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.25
+0 0.0625 0.25
+0 0.0625 0.3125
+0 0.125 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.149"
+data 9
+Plane.149
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.1875
+0 0.0625 0.1875
+0 0.0625 0.25
+0 0.125 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.150"
+data 9
+Plane.150
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.125
+0 0.0625 0.125
+0 0.0625 0.1875
+0 0.125 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.151"
+data 9
+Plane.151
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0.0625
+0 0.0625 0.0625
+0 0.0625 0.125
+0 0.125 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.152"
+data 9
+Plane.152
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 0
+0 0.0625 0
+0 0.0625 0.0625
+0 0.125 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.153"
+data 9
+Plane.153
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.0625
+0 0.0625 -0.0625
+0 0.0625 0
+0 0.125 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.154"
+data 9
+Plane.154
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.125
+0 0.0625 -0.125
+0 0.0625 -0.0625
+0 0.125 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.155"
+data 9
+Plane.155
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.1875
+0 0.0625 -0.1875
+0 0.0625 -0.125
+0 0.125 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.156"
+data 9
+Plane.156
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.25
+0 0.0625 -0.25
+0 0.0625 -0.1875
+0 0.125 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.157"
+data 9
+Plane.157
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.3125
+0 0.0625 -0.3125
+0 0.0625 -0.25
+0 0.125 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.158"
+data 9
+Plane.158
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.375
+0 0.0625 -0.375
+0 0.0625 -0.3125
+0 0.125 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.159"
+data 9
+Plane.159
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.4375
+0 0.0625 -0.4375
+0 0.0625 -0.375
+0 0.125 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.160"
+data 9
+Plane.160
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.125 -0.5
+0 0.0625 -0.5
+0 0.0625 -0.4375
+0 0.125 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.161"
+data 9
+Plane.161
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.4375
+0 0.125 0.4375
+0 0.125 0.5
+0 0.1875 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.162"
+data 9
+Plane.162
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.375
+0 0.125 0.375
+0 0.125 0.4375
+0 0.1875 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.163"
+data 9
+Plane.163
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.3125
+0 0.125 0.3125
+0 0.125 0.375
+0 0.1875 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.164"
+data 9
+Plane.164
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.25
+0 0.125 0.25
+0 0.125 0.3125
+0 0.1875 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.165"
+data 9
+Plane.165
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.1875
+0 0.125 0.1875
+0 0.125 0.25
+0 0.1875 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.166"
+data 9
+Plane.166
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.125
+0 0.125 0.125
+0 0.125 0.1875
+0 0.1875 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.167"
+data 9
+Plane.167
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0.0625
+0 0.125 0.0625
+0 0.125 0.125
+0 0.1875 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.168"
+data 9
+Plane.168
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 0
+0 0.125 0
+0 0.125 0.0625
+0 0.1875 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.169"
+data 9
+Plane.169
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.0625
+0 0.125 -0.0625
+0 0.125 0
+0 0.1875 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.170"
+data 9
+Plane.170
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.125
+0 0.125 -0.125
+0 0.125 -0.0625
+0 0.1875 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.171"
+data 9
+Plane.171
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.1875
+0 0.125 -0.1875
+0 0.125 -0.125
+0 0.1875 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.172"
+data 9
+Plane.172
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.25
+0 0.125 -0.25
+0 0.125 -0.1875
+0 0.1875 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.173"
+data 9
+Plane.173
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.3125
+0 0.125 -0.3125
+0 0.125 -0.25
+0 0.1875 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.174"
+data 9
+Plane.174
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.375
+0 0.125 -0.375
+0 0.125 -0.3125
+0 0.1875 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.175"
+data 9
+Plane.175
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.4375
+0 0.125 -0.4375
+0 0.125 -0.375
+0 0.1875 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.176"
+data 9
+Plane.176
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.1875 -0.5
+0 0.125 -0.5
+0 0.125 -0.4375
+0 0.1875 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.177"
+data 9
+Plane.177
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.4375
+0 0.1875 0.4375
+0 0.1875 0.5
+0 0.25 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.178"
+data 9
+Plane.178
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.375
+0 0.1875 0.375
+0 0.1875 0.4375
+0 0.25 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.179"
+data 9
+Plane.179
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.3125
+0 0.1875 0.3125
+0 0.1875 0.375
+0 0.25 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.180"
+data 9
+Plane.180
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.25
+0 0.1875 0.25
+0 0.1875 0.3125
+0 0.25 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.181"
+data 9
+Plane.181
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.1875
+0 0.1875 0.1875
+0 0.1875 0.25
+0 0.25 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.182"
+data 9
+Plane.182
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.125
+0 0.1875 0.125
+0 0.1875 0.1875
+0 0.25 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.183"
+data 9
+Plane.183
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0.0625
+0 0.1875 0.0625
+0 0.1875 0.125
+0 0.25 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.184"
+data 9
+Plane.184
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 0
+0 0.1875 0
+0 0.1875 0.0625
+0 0.25 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.185"
+data 9
+Plane.185
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.0625
+0 0.1875 -0.0625
+0 0.1875 0
+0 0.25 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.186"
+data 9
+Plane.186
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.125
+0 0.1875 -0.125
+0 0.1875 -0.0625
+0 0.25 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.187"
+data 9
+Plane.187
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.1875
+0 0.1875 -0.1875
+0 0.1875 -0.125
+0 0.25 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.188"
+data 9
+Plane.188
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.25
+0 0.1875 -0.25
+0 0.1875 -0.1875
+0 0.25 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.189"
+data 9
+Plane.189
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.3125
+0 0.1875 -0.3125
+0 0.1875 -0.25
+0 0.25 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.190"
+data 9
+Plane.190
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.375
+0 0.1875 -0.375
+0 0.1875 -0.3125
+0 0.25 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.191"
+data 9
+Plane.191
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.4375
+0 0.1875 -0.4375
+0 0.1875 -0.375
+0 0.25 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.192"
+data 9
+Plane.192
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.25 -0.5
+0 0.1875 -0.5
+0 0.1875 -0.4375
+0 0.25 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.193"
+data 9
+Plane.193
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.4375
+0 0.25 0.4375
+0 0.25 0.5
+0 0.3125 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.194"
+data 9
+Plane.194
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.375
+0 0.25 0.375
+0 0.25 0.4375
+0 0.3125 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.195"
+data 9
+Plane.195
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.3125
+0 0.25 0.3125
+0 0.25 0.375
+0 0.3125 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.196"
+data 9
+Plane.196
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.25
+0 0.25 0.25
+0 0.25 0.3125
+0 0.3125 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.197"
+data 9
+Plane.197
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.1875
+0 0.25 0.1875
+0 0.25 0.25
+0 0.3125 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.198"
+data 9
+Plane.198
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.125
+0 0.25 0.125
+0 0.25 0.1875
+0 0.3125 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.199"
+data 9
+Plane.199
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0.0625
+0 0.25 0.0625
+0 0.25 0.125
+0 0.3125 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.200"
+data 9
+Plane.200
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 0
+0 0.25 0
+0 0.25 0.0625
+0 0.3125 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.201"
+data 9
+Plane.201
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.0625
+0 0.25 -0.0625
+0 0.25 0
+0 0.3125 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.202"
+data 9
+Plane.202
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.125
+0 0.25 -0.125
+0 0.25 -0.0625
+0 0.3125 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.203"
+data 9
+Plane.203
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.1875
+0 0.25 -0.1875
+0 0.25 -0.125
+0 0.3125 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.204"
+data 9
+Plane.204
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.25
+0 0.25 -0.25
+0 0.25 -0.1875
+0 0.3125 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.205"
+data 9
+Plane.205
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.3125
+0 0.25 -0.3125
+0 0.25 -0.25
+0 0.3125 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.206"
+data 9
+Plane.206
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.375
+0 0.25 -0.375
+0 0.25 -0.3125
+0 0.3125 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.207"
+data 9
+Plane.207
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.4375
+0 0.25 -0.4375
+0 0.25 -0.375
+0 0.3125 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.208"
+data 9
+Plane.208
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.3125 -0.5
+0 0.25 -0.5
+0 0.25 -0.4375
+0 0.3125 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.209"
+data 9
+Plane.209
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.4375
+0 0.3125 0.4375
+0 0.3125 0.5
+0 0.375 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.210"
+data 9
+Plane.210
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.375
+0 0.3125 0.375
+0 0.3125 0.4375
+0 0.375 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.211"
+data 9
+Plane.211
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.3125
+0 0.3125 0.3125
+0 0.3125 0.375
+0 0.375 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.212"
+data 9
+Plane.212
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.25
+0 0.3125 0.25
+0 0.3125 0.3125
+0 0.375 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.213"
+data 9
+Plane.213
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.1875
+0 0.3125 0.1875
+0 0.3125 0.25
+0 0.375 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.214"
+data 9
+Plane.214
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.125
+0 0.3125 0.125
+0 0.3125 0.1875
+0 0.375 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.215"
+data 9
+Plane.215
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0.0625
+0 0.3125 0.0625
+0 0.3125 0.125
+0 0.375 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.216"
+data 9
+Plane.216
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 0
+0 0.3125 0
+0 0.3125 0.0625
+0 0.375 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.217"
+data 9
+Plane.217
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.0625
+0 0.3125 -0.0625
+0 0.3125 0
+0 0.375 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.218"
+data 9
+Plane.218
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.125
+0 0.3125 -0.125
+0 0.3125 -0.0625
+0 0.375 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.219"
+data 9
+Plane.219
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.1875
+0 0.3125 -0.1875
+0 0.3125 -0.125
+0 0.375 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.220"
+data 9
+Plane.220
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.25
+0 0.3125 -0.25
+0 0.3125 -0.1875
+0 0.375 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.221"
+data 9
+Plane.221
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.3125
+0 0.3125 -0.3125
+0 0.3125 -0.25
+0 0.375 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.222"
+data 9
+Plane.222
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.375
+0 0.3125 -0.375
+0 0.3125 -0.3125
+0 0.375 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.223"
+data 9
+Plane.223
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.4375
+0 0.3125 -0.4375
+0 0.3125 -0.375
+0 0.375 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.224"
+data 9
+Plane.224
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.375 -0.5
+0 0.3125 -0.5
+0 0.3125 -0.4375
+0 0.375 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.225"
+data 9
+Plane.225
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.4375
+0 0.375 0.4375
+0 0.375 0.5
+0 0.4375 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.226"
+data 9
+Plane.226
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.375
+0 0.375 0.375
+0 0.375 0.4375
+0 0.4375 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.227"
+data 9
+Plane.227
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.3125
+0 0.375 0.3125
+0 0.375 0.375
+0 0.4375 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.228"
+data 9
+Plane.228
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.25
+0 0.375 0.25
+0 0.375 0.3125
+0 0.4375 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.229"
+data 9
+Plane.229
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.1875
+0 0.375 0.1875
+0 0.375 0.25
+0 0.4375 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.230"
+data 9
+Plane.230
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.125
+0 0.375 0.125
+0 0.375 0.1875
+0 0.4375 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.231"
+data 9
+Plane.231
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0.0625
+0 0.375 0.0625
+0 0.375 0.125
+0 0.4375 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.232"
+data 9
+Plane.232
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 0
+0 0.375 0
+0 0.375 0.0625
+0 0.4375 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.233"
+data 9
+Plane.233
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.0625
+0 0.375 -0.0625
+0 0.375 0
+0 0.4375 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.234"
+data 9
+Plane.234
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.125
+0 0.375 -0.125
+0 0.375 -0.0625
+0 0.4375 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.235"
+data 9
+Plane.235
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.1875
+0 0.375 -0.1875
+0 0.375 -0.125
+0 0.4375 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.236"
+data 9
+Plane.236
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.25
+0 0.375 -0.25
+0 0.375 -0.1875
+0 0.4375 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.237"
+data 9
+Plane.237
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.3125
+0 0.375 -0.3125
+0 0.375 -0.25
+0 0.4375 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.238"
+data 9
+Plane.238
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.375
+0 0.375 -0.375
+0 0.375 -0.3125
+0 0.4375 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.239"
+data 9
+Plane.239
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.4375
+0 0.375 -0.4375
+0 0.375 -0.375
+0 0.4375 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.240"
+data 9
+Plane.240
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.4375 -0.5
+0 0.375 -0.5
+0 0.375 -0.4375
+0 0.4375 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.241"
+data 9
+Plane.241
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.4375
+0 0.4375 0.4375
+0 0.4375 0.5
+0 0.5 0.5
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.242"
+data 9
+Plane.242
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.375
+0 0.4375 0.375
+0 0.4375 0.4375
+0 0.5 0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.243"
+data 9
+Plane.243
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.3125
+0 0.4375 0.3125
+0 0.4375 0.375
+0 0.5 0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.244"
+data 9
+Plane.244
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.25
+0 0.4375 0.25
+0 0.4375 0.3125
+0 0.5 0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.245"
+data 9
+Plane.245
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.1875
+0 0.4375 0.1875
+0 0.4375 0.25
+0 0.5 0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.246"
+data 9
+Plane.246
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.125
+0 0.4375 0.125
+0 0.4375 0.1875
+0 0.5 0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.247"
+data 9
+Plane.247
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0.0625
+0 0.4375 0.0625
+0 0.4375 0.125
+0 0.5 0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.248"
+data 9
+Plane.248
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 0
+0 0.4375 0
+0 0.4375 0.0625
+0 0.5 0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.249"
+data 9
+Plane.249
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.0625
+0 0.4375 -0.0625
+0 0.4375 0
+0 0.5 0
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.250"
+data 9
+Plane.250
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.125
+0 0.4375 -0.125
+0 0.4375 -0.0625
+0 0.5 -0.0625
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.251"
+data 9
+Plane.251
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.1875
+0 0.4375 -0.1875
+0 0.4375 -0.125
+0 0.5 -0.125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.252"
+data 9
+Plane.252
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.25
+0 0.4375 -0.25
+0 0.4375 -0.1875
+0 0.5 -0.1875
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.253"
+data 9
+Plane.253
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.3125
+0 0.4375 -0.3125
+0 0.4375 -0.25
+0 0.5 -0.25
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.254"
+data 9
+Plane.254
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.375
+0 0.4375 -0.375
+0 0.4375 -0.3125
+0 0.5 -0.3125
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.255"
+data 9
+Plane.255
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.4375
+0 0.4375 -0.4375
+0 0.4375 -0.375
+0 0.5 -0.375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0
+OBJECT poly
+name "Plane.256"
+data 5
+Plane
+texture "terrain-elevation.png"
+crease 30.000000
+numvert 4
+0 0.5 -0.5
+0 0.4375 -0.5
+0 0.4375 -0.4375
+0 0.5 -0.4375
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.1 0
+3 0.1 0
+2 0.1 1
+1 0.1 1
+kids 0

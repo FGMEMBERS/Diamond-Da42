@@ -1,91 +1,96 @@
-# Properties under /consumables/fuel/tank[n]:
-# + level-lbs       - Current fuel load.  Can be set by user code.
-# + selected        - boolean indicating tank selection.
-# + capacity-gal_us - Tank capacity
-#
-# Properties under /engines/engine[n]:
-# + fuel-consumed-lbs - Output from the FDM, zeroed by this script
-# + out-of-fuel       - boolean, set by this code.
+##fuel gestion
 
+var tankSelection = func{
+	var no_moteur_tank_0 = getprop("/controls/fuel/tank[0]/position");
+	var no_moteur_tank_1 = getprop("/controls/fuel/tank[1]/position");
 
-var UPDATE_PERIOD = 0.3;
-
-
-var update = func {
-	if (fuel_freeze)
-		return;
-
-	var consumed_fuel = 0;
-	foreach (var e; engines) {
-		var fuel = e.getNode("fuel-consumed-lbs");
-		consumed_fuel += fuel.getValue();
-		fuel.setDoubleValue(0);
+	var tank0_selected = 0;
+	var tank1_selected = 0;
+	#choix du reservoir utilise
+	if(no_moteur_tank_0==2 or no_moteur_tank_1==1){
+		tank0_selected = 1;
 	}
-
-	if (!consumed_fuel)
-		return;
-
-	var selected_tanks = [];
-	foreach (var t; tanks) {
-		var cap = t.getNode("capacity-gal_us",0).getValue();
-		if (cap > 0.01 and t.getNode("selected").getBoolValue())
-			append(selected_tanks, t);
+	if(no_moteur_tank_1==2 or no_moteur_tank_0==1){
+		tank1_selected = 1;
 	}
+	
+	var tank0_mixture = 0;
+	var tank1_mixture = 0;
+	#le moteur est il alimente
+	if((no_moteur_tank_0==2 and getprop("/consumables/fuel/tank[0]/empty")==0) or (no_moteur_tank_0==1 and getprop("/consumables/fuel/tank[1]/empty")==0)){
+		tank0_mixture = 1;
+		setprop("/engines/engine[0]/out-of-fuel",0);
+	}
+	if((no_moteur_tank_1==2 and getprop("/consumables/fuel/tank[1]/empty")==0) or (no_moteur_tank_1==1 and getprop("/consumables/fuel/tank[0]/empty")==0)){
+		tank1_mixture = 1;
+		setprop("/engines/engine[1]/out-of-fuel",0);
+	}
+	
+	setprop("/consumables/fuel/tank[0]/selected",tank0_selected);
+	setprop("/consumables/fuel/tank[1]/selected",tank1_selected);
+	setprop("/controls/engines/engine[0]/mixture",tank0_mixture);
+	setprop("/controls/engines/engine[1]/mixture",tank1_mixture);
+}
+setlistener("/controls/fuel/tank[0]/position", tankSelection);
+setlistener("/controls/fuel/tank[1]/position", tankSelection);
 
-	# Subtract fuel from tanks, set auxilliary properties.  Set out-of-fuel
-	# when any one tank is dry.
-	var out_of_fuel = 0;
-	if (size(selected_tanks) == 0) {
-		out_of_fuel = 1;
-	} else {
-		var fuel_per_tank = consumed_fuel / size(selected_tanks);
-		foreach (var t; selected_tanks) {
-			var lbs = t.getNode("level-lbs").getValue();
-			lbs = lbs - fuel_per_tank;
-			t.getNode("level-lbs").setDoubleValue(lbs);
-			if( t.getNode("empty").getBoolValue() ) {
-				# Kill the engines if we're told to, otherwise simply
-				# deselect the tank.
-				if (t.getNode("kill-when-empty", 1).getBoolValue())
-					out_of_fuel = 1;
-				else
-					t.getNode("selected").setBoolValue(0);
+##calcul de la consommation de carburant, pour le systeme de gestion du carburant du zkv1000
+var fuel_consumtion_calcul = func(dt){
+
+	##update for fuel level saving
+	setprop("/consumables/fuel/tank[0]/level-gal_us-for_save",getprop("/consumables/fuel/tank[0]/level-gal_us"));
+	setprop("/consumables/fuel/tank[1]/level-gal_us-for_save",getprop("/consumables/fuel/tank[1]/level-gal_us"));
+
+	if(getprop("/instrumentation/enginstr/serviceable")==1){
+		var fuel_used = getprop("/consumables/fuel/fuel-gest/fuel-used");
+		var fuel_remaining = getprop("/consumables/fuel/fuel-gest/fuel-remaining");
+		var fuel_gph_total = 0;
+		for(var i=0; i < 2; i = i + 1) {
+			if(getprop("/engines/engine[1]/fuel-flow-gph")!=nil){
+				fuel_gph_total = fuel_gph_total + getprop("/engines/engine["~i~"]/fuel-flow-gph");
 			}
 		}
-	}
+		
+		var fuel_gph_total_par_secondes = fuel_gph_total * dt / 3600;
+		fuel_remaining = fuel_remaining - fuel_gph_total_par_secondes;
+		fuel_used = fuel_used + fuel_gph_total_par_secondes;
+		if(fuel_remaining<0){
+			fuel_remaining = 0;
+		}
+		
+		var time_remaining = 0;
+		if(fuel_gph_total>0){
+			time_remaining = fuel_remaining / fuel_gph_total;
+		}
+		
+		var hours_remaining = int(time_remaining);
+		var minutes_remaining = int((time_remaining - hours_remaining) * 60);
 
-	foreach (var e; engines)
-		e.getNode("out-of-fuel").setBoolValue(out_of_fuel);
+		if(hours_remaining>99){
+			hours_remaining = 99;
+			minutes_remaining = 99;
+		}
+		if(hours_remaining<10){
+			hours_remaining = sprintf("0%1.f",hours_remaining);
+		}else{
+			hours_remaining = sprintf("%1.f",hours_remaining);
+		}
+		if(minutes_remaining<10){
+			minutes_remaining = sprintf("0%1.f",minutes_remaining);
+		}else{
+			minutes_remaining = sprintf("%1.f",minutes_remaining);
+		}
+
+		var speed = getprop("/velocities/airspeed-kt");
+		var range = speed * time_remaining;
+		if(range>9999){
+			range = 9999;
+		}
+		
+		setprop("/consumables/fuel/fuel-gest/fuel-used",fuel_used);
+		setprop("/consumables/fuel/fuel-gest/fuel-remaining",fuel_remaining);
+		setprop("/consumables/fuel/fuel-gest/endurance-hours",hours_remaining);
+		setprop("/consumables/fuel/fuel-gest/endurance-minutes",minutes_remaining);
+		setprop("/consumables/fuel/fuel-gest/range",range);
+	}
 }
-
-
-var loop = func {
-	update();
-	settimer(loop, UPDATE_PERIOD);
-}
-
-var tanks = [];
-var engines = [];
-var fuel_freeze = nil;
-
-_setlistener("/sim/signals/fdm-initialized", func {
-	setlistener("/sim/freeze/fuel", func(n) { fuel_freeze = n.getBoolValue() }, 1);
-
-	engines = props.globals.getNode("engines", 1).getChildren("engine");
-	foreach (var e; engines) {
-		e.getNode("fuel-consumed-lbs", 1).setDoubleValue(0);
-		e.getNode("out-of-fuel", 1).setBoolValue(0);
-	}
-
-	foreach (var t; props.globals.getNode("/consumables/fuel", 1).getChildren("tank")) {
-		if (!t.getAttribute("children"))
-			continue;           # skip native_fdm.cxx generated zombie tanks
-
-		append(tanks, t);
-		t.initNode("selected", 1, "BOOL");
-	}
-
-	loop();
-});
-
-

@@ -1,5 +1,7 @@
 var time_deice_max = 0;
+var time_deice_windshield = 0;
 var last_time = 0.0;
+var g_dt = 0;
 
 ## from senecaII
 # throttle, feather and condition with mouse
@@ -91,39 +93,25 @@ var MouseHandler = {
 
 var mouseHandler = MouseHandler.new();
 
-var TankSelection = func{
-	var no_moteur_tank_0 = getprop("/controls/fuel/tank[0]/position");
-	var no_moteur_tank_1 = getprop("/controls/fuel/tank[1]/position");
-
-	var tank0_selected = 0;
-	var tank1_selected = 0;
-	#choix du reservoir utilise
-	if(no_moteur_tank_0==2 or no_moteur_tank_1==1){
-		tank0_selected = 1;
+var togglePilot = func {
+	var visible = getprop("/controls/pilot/visible");
+	if(visible==1){
+		visible=0;
+	}else{
+		visible=1;
+		setprop("/controls/rudders/rudder[0]/position",0.45);
 	}
-	if(no_moteur_tank_1==2 or no_moteur_tank_0==1){
-		tank1_selected = 1;
-	}
-	
-	var tank0_mixture = 0;
-	var tank1_mixture = 0;
-	#le moteur est il alimente
-	if((no_moteur_tank_0==2 and getprop("/consumables/fuel/tank[0]/empty")==0) or (no_moteur_tank_0==1 and getprop("/consumables/fuel/tank[1]/empty")==0)){
-		tank0_mixture = 1;
-		setprop("/engines/engine[0]/out-of-fuel",0);
-	}
-	if((no_moteur_tank_1==2 and getprop("/consumables/fuel/tank[1]/empty")==0) or (no_moteur_tank_1==1 and getprop("/consumables/fuel/tank[0]/empty")==0)){
-		tank1_mixture = 1;
-		setprop("/engines/engine[1]/out-of-fuel",0);
-	}
-	
-	setprop("/consumables/fuel/tank[0]/selected",tank0_selected);
-	setprop("/consumables/fuel/tank[1]/selected",tank1_selected);
-	setprop("/controls/engines/engine[0]/mixture",tank0_mixture);
-	setprop("/controls/engines/engine[1]/mixture",tank1_mixture);
+	setprop("/controls/pilot/visible",visible);
 }
-setlistener("/controls/fuel/tank[0]/position", TankSelection);
-setlistener("/controls/fuel/tank[1]/position", TankSelection);
+
+## reglage du palonnier
+_setlistener("/sim/weight[1]/weight-lb", func {
+	if(getprop("/sim/weight[1]/weight-lb")>0){
+		setprop("/controls/rudders/rudder[1]/position",1);
+	}else{
+		setprop("/controls/rudders/rudder[1]/position",0.5);
+	}
+});
 
 #on reprend les fonctions gear et flaps parce qu'ils sont dirigés par electricité
 controls.gearDown = func(v) {
@@ -182,14 +170,17 @@ var lastFlapStep=0;
 var positionFlaps = func(){
 	position = getprop("/controls/switches/flaplever-switch");
 	if(position!=nil){
-		if(getprop("/controls/electric/alimentation/flap")!=nil and getprop("/controls/electric/alimentation/flap")==1){
-			while(position!=lastFlapStep){
-				if(position<lastFlapStep){
-					controls.stepProps("/controls/flight/flaps", "/sim/flaps", -1);
-					lastFlapStep = lastFlapStep - 1;
-				}else if(position>lastFlapStep){
-					controls.stepProps("/controls/flight/flaps", "/sim/flaps", 1);
-					lastFlapStep = lastFlapStep + 1;
+		##flap no destroyed
+		if(getprop("/sim/failure-manager/controls/flight/flaps/serviceable")==1){
+			if(getprop("/controls/electric/alimentation/flap")!=nil and getprop("/controls/electric/alimentation/flap")==1){
+				while(position!=lastFlapStep){
+					if(position<lastFlapStep){
+						controls.stepProps("/controls/flight/flaps", "/sim/flaps", -1);
+						lastFlapStep = lastFlapStep - 1;
+					}else if(position>lastFlapStep){
+						controls.stepProps("/controls/flight/flaps", "/sim/flaps", 1);
+						lastFlapStep = lastFlapStep + 1;
+					}
 				}
 			}
 		}
@@ -197,71 +188,6 @@ var positionFlaps = func(){
 }
 setlistener("/controls/switches/flaplever-switch", positionFlaps);
 setlistener("/controls/electric/alimentation/flap", positionFlaps);
-
-controls.startEngine = func(v = 1, which...) {
-    if (!v and !size(which))
-        return props.setAll("/controls/engines/engine", "starter", 0);
-    if(size(which)) {
-        foreach(var i; which)
-            foreach(var e; engines)
-                if(e.index == i and getprop("/controls/electric/alimentation/engines/engine["~e.index~"]/starter")==1){
-                    e.controls.getNode("starter").setBoolValue(v);
-				}
-    } else {
-        foreach(var e; engines)
-            if(e.selected.getValue() and getprop("/controls/electric/alimentation/engines/engine["~e.index~"]/starter")==1){
-                e.controls.getNode("starter").setBoolValue(v);
-			}
-    }
-}
-
-controls.stepMagnetos = func(change) {
-	#do nothing now ...
-}
-
-##calcul si le moteur peut fonctionner en fonction des ecu (simulation via les magnetos)
-var controlEngine = func(no_engine){
-	setprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[0]/selected",0);
-	setprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[1]/selected",0);
-	var no_ecu = -1;
-	var positionSwitchEcu = getprop("/controls/switches/ecu["~no_engine~"]/switch");
-	if(positionSwitchEcu==0){
-		if(getprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[1]/serviceable")==1){#ecu b selected
-			setprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[1]/selected",1);
-			no_ecu = 1;
-		}
-	}else{
-		if(getprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[0]/serviceable")==1){#ecu a
-			setprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[0]/selected",1);
-			no_ecu = 0;
-		}elsif(getprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[1]/serviceable")==1){#ecu b
-			setprop("/controls/electric/alimentation/engines/engine["~no_engine~"]/ecus/ecu[1]/selected",1);
-			no_ecu = 1;
-		}
-	}
-	if(no_ecu!=-1){
-		setprop("/controls/engines/engine["~no_engine~"]/magnetos",3);
-	}else{
-		setprop("/controls/engines/engine["~no_engine~"]/magnetos",0);
-	}
-}
-
-var controlEngineEcu = func(m){
-	var no_engine = m.getParent().getParent().getParent().getIndex();
-	controlEngine(no_engine);
-}
-
-var controlEcu = func(m){
-	var no_engine = m.getParent().getIndex();
-	controlEngine(no_engine);
-}
-
-setlistener("/controls/electric/alimentation/engines/engine[0]/ecus/ecu[0]/serviceable",controlEngineEcu);
-setlistener("/controls/electric/alimentation/engines/engine[0]/ecus/ecu[1]/serviceable",controlEngineEcu);
-setlistener("/controls/switches/ecu[0]/switch",controlEcu);
-setlistener("/controls/electric/alimentation/engines/engine[1]/ecus/ecu[0]/serviceable",controlEngineEcu);
-setlistener("/controls/electric/alimentation/engines/engine[1]/ecus/ecu[1]/serviceable",controlEngineEcu);
-setlistener("/controls/switches/ecu[1]/switch",controlEcu);
 
 var nyi = func (x) { gui.popupTip(x ~ ": not (yet ?) implemented", 3); }
 
@@ -281,33 +207,45 @@ _setlistener("/sim/signals/fdm-initialized", func {
     }
 });
 
-#activation de la stall horn (non gerer par yasim)
-var stall_horn = func{
-	var alert = 0;
-	var kias = getprop("velocities/airspeed-kt");
-	var wow0 = getprop("gear/gear[0]/wow");
-	var wow1 = getprop("gear/gear[1]/wow");
-	var wow2 = getprop("gear/gear[2]/wow");
-	#var button_click = getprop("/controls/switches/stall_annunciator-click");
-	if(getprop("/controls/electric/alimentation/stallwrn")){
-		var stall_speed = 62 - (getprop("/controls/flight/flaps")*6);
-		if(kias<stall_speed and !wow1 and !wow2 and !wow0){
-			alert=1;
-		}
-	}
-	
-	setprop("/sim/alarms/stall-warning",alert);
-}
+##
+# Mise a zero de l'audio
+#
+_setlistener("/sim/signals/fdm-initialized", func {
+	setprop("/instrumentation/nav[0]/audio-btn",0);
+	setprop("/instrumentation/nav[0]/ident",0);
+	setprop("/instrumentation/nav[1]/audio-btn",0);
+	setprop("/instrumentation/nav[1]/ident",0);
+});
 
 var init = func {
-	#print("Initialising urban effect and sone things else");
-	#setprop("/sim/rendering/quality-level",2);
-	#setprop("/sim/rendering/urban-shader",1);
-	#setprop("/sim/rendering/transition-shader",1);
-	#setprop("/sim/rendering/random-vegetation",1);
+	var save_list = ["/sim/model/livery/file",
+				"/sim/model/livery/name",
+				"/sim/model/livery/texture",
+				"/sim/multiplay/callsign",
+				"/sim/model/immat",
+				"/engines/engine[0]/hours-running",
+				"/engines/engine[1]/hours-running",
+				"/consumables/fuel/tank[0]/level-gal_us-for_save",
+                "/consumables/fuel/tank[1]/level-gal_us-for_save",
+				"/consumables/fuel/fuel-gest/fuel-remaining",
+				"/consumables/fuel/fuel-gest/fuel-used",
+				"/controls/fuel/tank[0]/position",
+				"/controls/fuel/tank[0]/lock",
+				"/controls/fuel/tank[1]/position",
+				"/controls/fuel/tank[1]/lock",
 
+				];
+
+	aircraft.data.add(save_list);
+	tankSelection();
 	
-	print("Inititialisation DA42 ...done");
+	##fuel level initialisation
+	if(getprop("/consumables/fuel/tank[0]/level-gal_us-for_save")!=nil){
+		setprop("/consumables/fuel/tank[0]/level-gal_us",getprop("/consumables/fuel/tank[0]/level-gal_us-for_save"));
+		setprop("/consumables/fuel/tank[1]/level-gal_us",getprop("/consumables/fuel/tank[1]/level-gal_us-for_save"));
+	}
+	eltmsg();
+	print("Initialisation DA42 ...done");
 	
 	main_loop();
 }
@@ -324,18 +262,20 @@ var main_loop = func {
 	
 	stall_horn();
 	deice_system(dt);
+	fuel_consumtion_calcul(dt);
+	da42.update_engine_params(dt);
 	
 	##failures
-	#check_g_load();
-	#check_vne_flaps();
-	#check_vne_gears();
-	#check_vne_structure();
-	
-	settimer(main_loop, 0);
+	check_g_load(dt);
+	check_vne_flaps();
+	check_vne_structure();
+	check_pitot_icing();
+	settimer(main_loop, 0.3);
 }
 
 var deice_system = func(dt){
 	var deice_mode = getprop("/controls/deice/mode");
+	var deice_windshield_mode = getprop("/controls/deice/mode_windshield");
 	var deice_alimentation = getprop("/controls/electric/alimentation/deice");
 	var deice_lightcone = getprop("/controls/switches/deice/icelight");
 	var deice_speed = getprop("/controls/switches/deice/speed");
@@ -364,6 +304,12 @@ var deice_system = func(dt){
 			}
 		}
 		
+		#windshield deice
+		if(deice_windshield_mode>0){
+			deice_windshield_mode = deice_windshield_mode - dt;
+			setprop("/controls/deice/mode_windshield",deice_windshield_mode);
+		}
+		
 		#consommation 
 		if(liquid_level!=nil and liquid_level>0){
 			if(deice_mode==0){#mode normal, conso en 2h30
@@ -372,7 +318,10 @@ var deice_system = func(dt){
 				liquid_level = liquid_level - dt*2.5;
 			}elsif(deice_mode==2){#mode max, conso en 0h30
 				liquid_level = liquid_level - dt*5;
+			}elsif(deice_windshield_mode>0){
+				liquid_level = liquid_level - dt*5;
 			}
+			
 			if(liquid_level<0){
 				liquid_level = 0;
 			}
@@ -380,6 +329,22 @@ var deice_system = func(dt){
 		}
 	}else{
 		setprop("/controls/deice/mode",-1);
+		setprop("/controls/deice/mode_windshield",0);
+	}
+	
+}
+
+var changeView = func(num){
+	var viewNumber = getprop("/sim/current-view/view-number");
+	
+	if(viewNumber==10 or  viewNumber==11){
+		setprop("/sim/current-view/view-number", 0);
+	}elsif(viewNumber==0){
+		if(num==0){
+			setprop("/sim/current-view/view-number", 10);
+		}elsif(num==1){
+			setprop("/sim/current-view/view-number", 11);
+		}
 	}
 }
 
@@ -391,37 +356,123 @@ var deice_system_max_toggle = func{
 }
 setlistener("/controls/switches/deice/max",deice_system_max_toggle);
 
-## a faire
-var check_g_load = func{
-	var g_load = getprop("/accelerations/pilot-g");
-	if(g_load!=nil and (g_load>3.58 or g_load<-1.43)){
-		g_dt = g_dt + 1;
+##pitot heat
+var toggle_pitot_heat = func{
+	if(getprop("/instrumentation/pitot-heat/serviceable")==1 and getprop("/controls/switches/pitotheat-switch")==1){
+		setprop("/instrumentation/pitot-heat/active",1);
 	}else{
-		g_dt = 0;
+		setprop("/instrumentation/pitot-heat/active",0);
 	}
+}
+setlistener("/instrumentation/pitot-heat/serviceable",toggle_pitot_heat);
+setlistener("/controls/switches/pitotheat-switch",toggle_pitot_heat);
 
-	if(g_dt>5){
-		setprop("/controls/flight/wing_destroyed",1);
-		setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","Too much G load !!!!!!!!!!!!!");
+##dialogs
+var notepad_dialog = gui.Dialog.new("/sim/gui/dialogs/da42/notepad/dialog", getprop("/sim/aircraft-dir")~"/Dialogs/notepad.xml");
+var airport_infos_dialog = gui.Dialog.new("/sim/gui/dialogs/da42/airport-infos/dialog", getprop("/sim/aircraft-dir")~"/Dialogs/airports.xml");
+var checklists_dialog = gui.Dialog.new("/sim/gui/dialogs/da42/checklists/dialog", getprop("/sim/aircraft-dir")~"/Dialogs/checklists.xml");
+setlistener("/sim/signals/fdm-initialized", func {
+	fgcommand("loadxml", props.Node.new({ filename: getprop("/sim/aircraft-dir")~"/Dialogs/checklists-text.xml", targetnode: "/sim/gui/dialogs/da42/checklists-list" }));
+});
+
+## autostart
+var autostart = func{
+	print("Auto start !!!");
+	setprop("/controls/switches/master-switch",1);
+	setprop("/controls/switches/masteravionic-switch",1);
+	setprop("/controls/switches/left-alt-switch",1);
+	setprop("/controls/switches/right-alt-switch",1);
+	setprop("/controls/switches/left-master-engine-switch",1);
+	setprop("/controls/switches/right-master-engine-switch",1);
+	setprop("/controls/switches/starterkey-insert",1);
+	
+	setprop("/controls/switches/positionlight-switch",1);
+	setprop("/controls/switches/strobelight-switch",1);
+	
+	setprop("/controls/switches/elt",-1);
+	setprop("/controls/lighting/elt",-1);
+	
+	var pressure = getprop("/environment/pressure-inhg");
+	setprop("/instrumentation/altimeter[0]/setting-inhg",pressure);
+	setprop("/instrumentation/altimeter[1]/setting-inhg",pressure);
+	gui.popupTip("Auto Start started, waiting for zkv1000 initialisation...", 3);
+	settimer(autostart_suite,5);
+}
+
+var autostart_suite = func{
+	setprop("/engines/engine[0]/rpm",900);
+	setprop("/engines/engine[1]/rpm",900);
+	
+	setprop("/instrumentation/zkv1000/alerts/warning",0);
+	setprop("/instrumentation/zkv1000/alerts/caution",0);
+	zkv1000.device[1].ALERT();
+	
+	gui.popupTip("Auto Start done ... you can lauch ECU tests and ask take off permission ;-)", 3);
+}
+
+############################################
+# ELT System from Cessna337
+# Authors: Pavel Cueto, with A LOT of collaboration from Thorsten and AndersG
+# Adaptation by Clément de l'Hamaide for DR400-jsbSim
+############################################
+
+var eltmsg = func {
+  var lat = getprop("/position/latitude-string");
+  var lon = getprop("/position/longitude-string");
+  var aircraft = getprop("sim/description");
+  var callsign = getprop("sim/multiplay/callsign");
+
+  setlistener("sim/crashed", func(n) {
+    if(n.getBoolValue()){
+      if(getprop("/controls/switches/elt")==-1) {#armed
+        var help_string = "ELT AutoMessage: " ~ aircraft ~ " " ~ callsign ~ " testing ELT at " ~lat~" LAT "~lon~" LON, requesting SAR service";
+        setprop("/sim/multiplay/chat", help_string);
+      }
+    }
+  });
+
+  setlistener("/controls/switches/elt", func(n) {
+    if(n.getValue()==1){
+      var help_string = "ELT AutoMessage: " ~ aircraft ~ " " ~ callsign ~ " testing ELT at " ~lat~" LAT "~lon~" LON, requesting SAR service";
+      setprop("/sim/multiplay/chat", help_string);
+    }
+  });
+}
+
+##test icing
+var testIcing = func{
+	setprop("/sim/icing/windshield",0.9);
+	setprop("/sim/icing/wings",0.8);
+	setprop("/sim/icing/other",0.7);
+	setprop("/sim/icing/engines",0.8);
+	setprop("/sim/icing/propellers",0.8);
+	setprop("/sim/icing/pitot",0.9);
+}
+
+##toogle rembrandt
+var toogleRembrandt = func{
+	if(getprop("/sim/rendering/rembrandt/enabled")==1){
+		setprop("/sim/rendering/rembrandt/enabled",0);
+	}else{
+		setprop("/sim/rendering/rembrandt/enabled",1);
 	}
 }
 
-var check_vne_flaps = func{
-	var kias = getprop("velocities/airspeed-kt");
-	var flaps = getprop("/controls/flight/flaps");
-	if(kias!=nil and kias>95 and flaps!=nil and flaps>0){
-		setprop("/sim/failure-manager/controls/flight/flaps/serviceable",0);
-#		setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","VNE for flaps exceed !!!!!!!!!!!!!");
+##toogle shaders
+var toogleShaders = func{
+	if(getprop("/controls/shaders/intvitres")==1){
+		setprop("/controls/shaders/intvitres",0);
+	}else{
+		setprop("/controls/shaders/intvitres",1);
 	}
-}
-
-var	check_vne_structure = func{
-	var kias = getprop("velocities/airspeed-kt");
-	if(kias!=nil and kias>151){
-		setprop("/controls/flight/wing_destroyed",1);
-		setprop("/sim/sound/crash",1);
-		setprop("/sim/messages/copilot","VNE exceed !!!!!!!!!!!!!");
+	if(getprop("/controls/shaders/intverriere")==1){
+		setprop("/controls/shaders/intverriere",0);
+	}else{
+		setprop("/controls/shaders/intverriere",1);
+	}
+	if(getprop("/controls/shaders/intvitreporte")==1){
+		setprop("/controls/shaders/intvitreporte",0);
+	}else{
+		setprop("/controls/shaders/intvitreporte",1);
 	}
 }

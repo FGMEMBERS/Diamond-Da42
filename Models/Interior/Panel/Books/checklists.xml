@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>checklists.ac</path>
+
+  <animation>
+    <type>pick</type>
+    <object-name>book</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>dialog-show</command>
+			<dialog-name>checklists</dialog-name>
+		</binding>
+    </action>
+  </animation>
+	
+</PropertyList>
+

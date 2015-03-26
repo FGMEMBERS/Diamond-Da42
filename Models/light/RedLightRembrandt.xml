@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>rembrandt_light.ac</path>
+	<nopreview/>
+	
+	<animation>
+    <type>light</type>
+    <light-type>point</light-type>
+    <object-name>light</object-name>
+    <position>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </position>
+    <direction>
+      <x>  0.0 </x>
+      <y> -1.0 </y>
+      <z> -0.4 </z>
+    </direction>
+    <ambient>
+      <r>  0.8 </r>
+      <g>  0.0 </g>
+      <b>  0.0 </b>
+      <a>  1.0 </a>
+    </ambient>
+    <diffuse>
+      <r>  1.0 </r>
+      <g>  0.0 </g>
+      <b>  0.0 </b>
+      <a>  1.0 </a>
+    </diffuse>
+    <specular>
+      <r>  1.0 </r>
+      <g>  0.5 </g>
+      <b>  0.5 </b>
+      <a>  1.0 </a>
+    </specular>
+    <attenuation>
+      <c>  0.8 </c>
+      <l>  0.2 </l>
+      <q>  2.0 </q>
+    </attenuation>
+    <exponent>  1.0   </exponent>
+    <cutoff>   50.0   </cutoff>
+    <near-m>    0.0   </near-m>
+    <far-m>     8.0 </far-m>
+  </animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>light</object-name>
+		<condition>
+			<property>/controls/lighting/nav-lights</property>
+		</condition>
+	</animation>
+
+
+</PropertyList>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>maps_open.ac</path>
+  <nopreview/>
+		
+  <animation>
+    <type>pick</type>
+    <object-name>close</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>property-toggle</command>
+			<property>/controls/books/maps/visible</property>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+			<property>/controls/books/maps/coords/lon</property>
+			<value>-500</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+			<property>/controls/books/maps/coords/lat</property>
+			<value>-500</value>
+		</binding>
+    </action>
+  </animation>
+
+  <animation>
+	<object-name>book</object-name>
+	<object-name>page</object-name>
+	<object-name>lon.minus</object-name>
+	<object-name>lon.maxus</object-name>
+	<object-name>lat.minus</object-name>
+	<object-name>lat.maxus</object-name>
+	<object-name>close</object-name>
+	<type>select</type>
+	<condition>
+		<property>/controls/books/maps/visible</property>
+	</condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>lon.minus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>nasal</command>
+			<script>da42.mapsLonMinus();</script>
+		</binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>lon.maxus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>nasal</command>
+			<script>da42.mapsLonMaxus();</script>
+		</binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>lat.minus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>nasal</command>
+			<script>da42.mapsLatMinus();</script>
+		</binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>lat.maxus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+			<command>nasal</command>
+			<script>da42.mapsLatMaxus();</script>
+		</binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>page</object-name>
+    <property-base>/controls/books/maps</property-base>
+    <texture-prop>terrain-path</texture-prop>
+  </animation>
+    
+</PropertyList>
+

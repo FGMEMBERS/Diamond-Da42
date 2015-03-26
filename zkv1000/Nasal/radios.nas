@@ -13,6 +13,8 @@ var radios_list = [
     "/instrumentation/comm[1]/frequencies/selected-mhz",
 ];
 
+foreach (var r; radios_list) props.globals.getNode(r ~ "-dec",1).setIntValue(0);
+
 var setNavTune = func {
     var freq = radios.getNode("nav-freq-mhz", 1);
     freq.unalias();
@@ -23,18 +25,6 @@ var setCommTune = func {
     var freq = radios.getNode("comm-freq-mhz", 1);
     freq.unalias();
     freq.alias(radios_list[getprop("/instrumentation/zkv1000/radios/comm-tune") + 4]);
-}
-
-var CDIfromNAV = func (n) {
-    nav = "/instrumentation/nav[" ~ n ~ "]/";
-    cdi.getNode("visible").setBoolValue(1);
-    cdi.getNode("in-range").alias(nav ~ "in-range");
-    cdi.getNode("course").alias(nav ~ "radials/selected-deg");
-    cdi.getNode("course-deflection").alias(nav ~ "heading-needle-deflection");
-    cdi.getNode("pointer-type").setIntValue(n * 2);
-    cdi.getNode("from-flag").alias(nav ~ "from-flag");
-    cdi.getNode("radial").alias(nav ~ "radials/reciprocal-radial-deg");
-    goto(0);
 }
 
 var XPDR_change_cursor_position = func (dir) {
@@ -72,13 +62,13 @@ var XPDR_activate_code = func (timer = 0) {
     xpdr_id_timer -= 1;
     xpdr_id_timer == 0 or return;
     }
-    goto(0);
+    #goto(0);
     largeFMSknob = void;
     smallFMSknob = void;
     ENTsoftkey = void;
 }
 
-var checkMarkerBaecon = func {
+var checkMarkerBeacon = func {
     if (getprop("/instrumentation/marker-beacon/inner")) {
         alerts.getNode("marker-beacon").setIntValue(1);
     }
@@ -92,5 +82,3 @@ var checkMarkerBaecon = func {
         alerts.getNode("marker-beacon").setIntValue(0);
     }
 }
-
-foreach (var r; radios_list) props.globals.getNode(r ~ "-dec",1).setIntValue(0);

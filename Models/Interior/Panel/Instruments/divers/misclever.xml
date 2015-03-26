@@ -51,10 +51,6 @@
 				<command>property-toggle</command>
 				<property>/controls/switches/defrost-lever</property>
 			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>da42.nyi("Defrost");</script>
-			</binding>
 		</action>
 	</animation>
 	

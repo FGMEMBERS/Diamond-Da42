@@ -9,11 +9,12 @@ var pfdCursors = func {
     cursors.getNode("ias[1]").setIntValue((ias >=    10)? 0 : 1);
     cursors.getNode("ias[2]").setIntValue(0);
     if (ias > VNE) {
-        cursors.getNode("ias[0]").setIntValue(-4);
-        cursors.getNode("ias[1]").setIntValue(-4);
-        cursors.getNode("ias[2]").setIntValue(-4);
+        cursors.getNode("ias[0]").setIntValue(-1);
+        cursors.getNode("ias[1]").setIntValue(-1);
+        cursors.getNode("ias[2]").setIntValue(-1);
     }
     wind_infos();
+	dme_infos();
     setprop("/instrumentation/zkv1000/infos/time", sprintf("%02i %02i %02i",
                 getprop("/sim/time/real/hour"),
                 getprop("/sim/time/real/minute"),
@@ -22,12 +23,20 @@ var pfdCursors = func {
     #setprop('/instrumentation/zkv1000/eis/circle[1]', getprop('/engines/engine/rpm') / 2600);
     setprop('/instrumentation/zkv1000/eis/bar[0]', getprop('/engines/engine[0]/oil-temperature-degf') / 250);
 	setprop('/instrumentation/zkv1000/eis/bar[1]', getprop('/engines/engine[1]/oil-temperature-degf') / 250);
-    setprop('/instrumentation/zkv1000/eis/bar[2]', getprop('/engines/engine[0]/egt-degf') / 80);
-	setprop('/instrumentation/zkv1000/eis/bar[3]', getprop('/engines/engine[1]/egt-degf') / 80);
-    setprop('/instrumentation/zkv1000/eis/bar[4]', getprop('/systems/electrical/bus/left-main-bus') / 32);
-    setprop('/instrumentation/zkv1000/eis/bar[5]', getprop('/systems/electrical/bus/right-main-bus') / 32);
-	setprop('/instrumentation/zkv1000/eis/bar[6]', getprop('/consumables/fuel/tank/level-gal_us') / 17);
-    setprop('/instrumentation/zkv1000/eis/bar[7]', getprop('/consumables/fuel/tank[1]/level-gal_us') / 17);
+	setprop('/instrumentation/zkv1000/eis/bar[2]', getprop('/engines/engine[0]/oil-pressure-psi') / 6);
+	setprop('/instrumentation/zkv1000/eis/bar[3]', getprop('/engines/engine[1]/oil-pressure-psi') / 6);
+	setprop('/instrumentation/zkv1000/eis/bar[4]', (getprop('/engines/engine[0]/fuel-temperature-degc')+30) / 100);
+	setprop('/instrumentation/zkv1000/eis/bar[5]', (getprop('/engines/engine[1]/fuel-temperature-degc')+30) / 100);
+	setprop('/instrumentation/zkv1000/eis/bar[6]', getprop('/consumables/fuel/tank[0]/level-gal_us') / 15.9);
+    setprop('/instrumentation/zkv1000/eis/bar[7]', getprop('/consumables/fuel/tank[1]/level-gal_us') / 15.9);
+	
+    setprop('/instrumentation/zkv1000/eis/bar[8]', getprop('/systems/electrical/bus/left-main-bus') / 32);
+    setprop('/instrumentation/zkv1000/eis/bar[9]', getprop('/systems/electrical/bus/right-main-bus') / 32);
+	setprop('/instrumentation/zkv1000/eis/bar[10]', getprop('/systems/electrical/bus/left-main-bus-amp') / 43);
+    setprop('/instrumentation/zkv1000/eis/bar[11]', getprop('/systems/electrical/bus/right-main-bus-amp') / 43);
+	setprop('/instrumentation/zkv1000/eis/bar[12]', getprop('/engines/engine[0]/coolant-temperature-degc') / 90);
+	setprop('/instrumentation/zkv1000/eis/bar[13]', getprop('/engines/engine[1]/coolant-temperature-degc') / 95);
+	setprop('/instrumentation/zkv1000/eis/bar[14]', getprop('/consumables/deice') / 5294);
 }
 
 var withdraw_course_info = func {

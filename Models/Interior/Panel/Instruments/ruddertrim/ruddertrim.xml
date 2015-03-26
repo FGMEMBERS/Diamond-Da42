@@ -32,10 +32,11 @@
 		<visible>false</visible>
 		<action>
 			<button>0</button>
+			<repeatable>true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>/controls/flight/rudder-trim</property>
-				<step>-0.1</step>
+				<step>-0.01</step>
 				<min>-1</min>
 				<max>1</max>
 			</binding>
@@ -52,7 +53,7 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>/controls/flight/rudder-trim</property>
-				<step>0.1</step>
+				<step>0.01</step>
 				<min>-1</min>
 				<max>1</max>
 			</binding>
@@ -76,6 +77,28 @@
 					<script>da42.mouseHandler.setX();</script>
 				</binding>
 			</mod-up>
+		</action>
+		<action>
+			<button>3</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/flight/rudder-trim</property>
+				<step>0.01</step>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>4</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/flight/rudder-trim</property>
+				<step>-0.01</step>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
 		</action>
 	</animation>
 </PropertyList>

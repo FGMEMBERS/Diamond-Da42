@@ -14,10 +14,6 @@
             <command>property-toggle</command>
             <property>/controls/electric/circuitbreaker/enginstr</property>
           </binding>
-		  <binding>
-				<command>nasal</command>
-				<script>da42.nyi("Engine instrument");</script>
-			</binding>
         </action>
     </animation>
     <animation>

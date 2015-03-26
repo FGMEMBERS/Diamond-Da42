@@ -15,10 +15,13 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <equals>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>1</value>
-        </equals>
+        <and>
+			<equals>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>1</value>
+			</equals>
+			<property>/instrumentation/adc/serviceable</property>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -80,10 +83,13 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <equals>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>1</value>
-        </equals>
+        <and>
+			<equals>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>1</value>
+			</equals>
+			<property>/instrumentation/ahrs/serviceable</property>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -115,7 +121,13 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <property>/instrumentation/zkv1000/infos/heading</property>
+        <and>
+			<property>/instrumentation/zkv1000/infos/heading</property>
+			<equals>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>1</value>
+			</equals>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -169,7 +181,13 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <property>/instrumentation/zkv1000/infos/course</property>
+		<and>
+			<property>/instrumentation/zkv1000/infos/course</property>
+			<equals>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>1</value>
+			</equals>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -223,10 +241,13 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <equals>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>1</value>
-        </equals>
+		<and>
+			<equals>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>1</value>
+			</equals>
+			<property>/instrumentation/adc/serviceable</property>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -256,7 +277,7 @@
           </color>
           <chunks>
             <chunk>
-              <type>text-value</type>
+              <type>number-value</type>
               <property>/instrumentation/zkv1000/infos/ktas</property>
               <format>%.0f</format>
             </chunk>
@@ -306,7 +327,7 @@
       </layers>
     </instrument>
 
-    <instrument>
+     <instrument>
       <name>BARO</name>
       <x>150</x>
       <y>59</y>
@@ -315,10 +336,15 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <equals>
-         <property>/instrumentation/zkv1000/device[1]/status</property>
-         <value>1</value>
-        </equals>
+		<and>
+		  <equals>
+            <property>/instrumentation/zkv1000/device[1]/status</property>
+            <value>1</value>
+          </equals>
+		  <not>
+			<property>/instrumentation/zkv1000/device[1]/baro-hpa</property>
+		  </not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -340,7 +366,511 @@
         </layer>
       </layers>
     </instrument>
+	<instrument>
+      <name>BARO</name>
+      <x>150</x>
+      <y>59</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+		  <equals>
+            <property>/instrumentation/zkv1000/device[1]/status</property>
+            <value>1</value>
+          </equals>
+		  <property>/instrumentation/zkv1000/device[1]/baro-hpa</property>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>0.332</red>
+            <green>0.914</green>
+            <blue>0.727</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/instrumentation/altimeter/setting-inhg</property>
+			  <scale>33.865</scale>
+              <format>%4.fHPA</format>
+            </chunk>
+          </chunks>
+        </layer>
+      </layers>
+    </instrument>
+	
+	<instrument>
+      <name>DME</name>
+      <x>54</x>
+      <y>32</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+        <equals>
+         <property>/instrumentation/zkv1000/device[1]/status</property>
+         <value>1</value>
+        </equals>
+		<property>/instrumentation/zkv1000/device[1]/dme</property>
+	    <property>/instrumentation/dme/serviceable</property>
+		<property>/instrumentation/dme/power-btn</property>
+		<property>/instrumentation/zkv1000/device[1]/hsi-360</property>
+      </condition>
+      <layers>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>DME</text>
+            </chunk>
+          </chunks>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>0.332</red>
+            <green>0.914</green>
+            <blue>0.727</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/infos/dme-line[0]</property>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+          </transformations>
+        </layer>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>0.332</red>
+            <green>0.914</green>
+            <blue>0.727</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/infos/dme-line[1]</property>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/infos/dme-line[2]</property>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+      </layers>
+    </instrument>
 
+	<instrument>
+      <name>BRG1</name>
+      <x>57</x>
+	  <y>11</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+        <and>
+			<equals>
+				 <property>/instrumentation/zkv1000/device[1]/status</property>
+				 <value>1</value>
+			</equals>
+			<property>/instrumentation/zkv1000/brg1/visible</property>
+			<property>/instrumentation/zkv1000/device[1]/hsi-360</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>NAV1</value>
+					</equals>
+					<property>/instrumentation/nav[0]/serviceable</property>
+					<property>/instrumentation/nav[0]/power-btn</property>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>GPS</value>
+					</equals>
+					<property>/instrumentation/gps/serviceable</property>
+					<or>
+						<property>/instrumentation/gps/power-btn1</property>
+						<property>/instrumentation/gps/power-btn2</property>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>ADF</value>
+					</equals>
+					<property>/instrumentation/adf/serviceable</property>
+					<property>/instrumentation/adf/power-btn</property>
+				</and>
+			</or>
+		</and>
+      </condition>
+      <layers>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/instrumentation/zkv1000/brg1/nav-distance</property>
+			  <format>%2.1f</format>
+			  <scale>0.00054</scale>
+			  <condition>
+				<and>
+					<property>/instrumentation/zkv1000/brg1/in-range</property>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>NAV1</value>
+					</equals>
+				</and>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/zkv1000/brg1/nav-distance</property>
+			  <format>%2.1f</format>
+			  <condition>
+				<equals>
+					<property>/instrumentation/zkv1000/brg1/type</property>
+					<value>GPS</value>
+				</equals>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>literal</type>
+              <text>--.-</text>
+			  <condition>
+				<and>
+					<not>
+						<property>/instrumentation/zkv1000/brg1/in-range</property>
+					</not>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>NAV1</value>
+					</equals>
+				</and>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>literal</type>
+              <text>NM</text>
+			  <condition>
+				<or>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>NAV1</value>
+					</equals>
+					<equals>
+						<property>/instrumentation/zkv1000/brg1/type</property>
+						<value>GPS</value>
+					</equals>
+				</or>
+			  </condition>
+            </chunk>
+          </chunks>
+        </layer>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>0.332</red>
+            <green>0.914</green>
+            <blue>0.727</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/brg1/name</property>
+			  <condition>
+					<property>/instrumentation/zkv1000/brg1/in-range</property>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/zkv1000/brg1/frequence</property>
+			  <format>%2.2f</format>
+			  <condition>
+				<not>
+					<property>/instrumentation/zkv1000/brg1/in-range</property>
+				</not>
+			  </condition>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/brg1/type</property>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+      </layers>
+    </instrument>
+	
+	<instrument>
+      <name>BRG2</name>
+      <x>129</x>
+	  <y>11</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+        <and>
+			<equals>
+				 <property>/instrumentation/zkv1000/device[1]/status</property>
+				 <value>1</value>
+			</equals>
+			<property>/instrumentation/zkv1000/brg2/visible</property>
+			<property>/instrumentation/zkv1000/device[1]/hsi-360</property>
+			<or>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>NAV2</value>
+					</equals>
+					<property>/instrumentation/nav[1]/serviceable</property>
+					<property>/instrumentation/nav[1]/power-btn</property>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>GPS</value>
+					</equals>
+					<property>/instrumentation/gps/serviceable</property>
+					<or>
+						<property>/instrumentation/gps/power-btn1</property>
+						<property>/instrumentation/gps/power-btn2</property>
+					</or>
+				</and>
+				<and>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>ADF</value>
+					</equals>
+					<property>/instrumentation/adf/serviceable</property>
+					<property>/instrumentation/adf/power-btn</property>
+				</and>
+			</or>
+		</and>
+      </condition>
+      <layers>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/instrumentation/zkv1000/brg2/nav-distance</property>
+			  <format>%2.1f</format>
+			  <scale>0.00054</scale>
+			  <condition>
+				<and>
+					<property>/instrumentation/zkv1000/brg2/in-range</property>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>NAV2</value>
+					</equals>
+				</and>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/zkv1000/brg2/nav-distance</property>
+			  <format>%2.1f</format>
+			  <condition>
+				<equals>
+					<property>/instrumentation/zkv1000/brg2/type</property>
+					<value>GPS</value>
+				</equals>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>literal</type>
+              <text>--.-</text>
+			  <condition>
+				<and>
+					<not>
+						<property>/instrumentation/zkv1000/brg2/in-range</property>
+					</not>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>NAV2</value>
+					</equals>
+				</and>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>literal</type>
+              <text>NM</text>
+			  <condition>
+				<or>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>NAV2</value>
+					</equals>
+					<equals>
+						<property>/instrumentation/zkv1000/brg2/type</property>
+						<value>GPS</value>
+					</equals>
+				</or>
+			  </condition>
+            </chunk>
+          </chunks>
+        </layer>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>0.332</red>
+            <green>0.914</green>
+            <blue>0.727</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/brg2/name</property>
+			  <condition>
+				<property>/instrumentation/zkv1000/brg2/in-range</property>
+			  </condition>
+            </chunk>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/zkv1000/brg2/frequence</property>
+			  <format>%2.2f</format>
+			  <condition>
+				<not>
+					<property>/instrumentation/zkv1000/brg2/in-range</property>
+				</not>
+			  </condition>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>2</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/brg2/type</property>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+      </layers>
+    </instrument>
+	
     <instrument>
       <name>WIND</name>
       <x>42</x>
@@ -452,10 +982,24 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <greater-than>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>0</value>
-        </greater-than>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <greater-than>
+				<property>/controls/engines/engine[0]/magnetos</property>
+				<value>0</value>
+			  </greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			  <not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -472,7 +1016,57 @@
               <type>number-value</type>
               <property>/engines/engine[0]/thrust-lbs</property>
               <format>%2.0f</format>
-			  <scale>0.4</scale>
+			  <scale>0.333</scale>
+            </chunk>
+          </chunks>
+        </layer>
+      </layers>
+    </instrument>
+	<instrument>
+      <name>LeftLoad</name>
+      <x>1</x>
+      <y>118</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			<or>
+				<not>
+				  <property>/instrumentation/enginstr/serviceable</property>
+				</not>
+				<not>
+					<property>/controls/engines/engine[0]/magnetos</property>
+				</not>
+			</or>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>-----</text>
             </chunk>
           </chunks>
         </layer>
@@ -488,10 +1082,24 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <greater-than>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>0</value>
-        </greater-than>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <greater-than>
+				<property>/controls/engines/engine[1]/magnetos</property>
+				<value>0</value>
+			  </greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			  <not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -508,7 +1116,57 @@
               <type>number-value</type>
               <property>/engines/engine[1]/thrust-lbs</property>
               <format>%2.0f</format>
-			  <scale>0.4</scale>
+			  <scale>0.333</scale>
+            </chunk>
+          </chunks>
+        </layer>
+      </layers>
+    </instrument>
+	<instrument>
+      <name>RightLoad</name>
+      <x>21</x>
+      <y>118</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			<or>
+				<not>
+				  <property>/instrumentation/enginstr/serviceable</property>
+				</not>
+				<not>
+					<property>/controls/engines/engine[1]/magnetos</property>
+				</not>
+			</or>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+         <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>-----</text>
             </chunk>
           </chunks>
         </layer>
@@ -524,10 +1182,24 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <greater-than>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>0</value>
-        </greater-than>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <greater-than>
+				<property>/controls/engines/engine[0]/magnetos</property>
+				<value>0</value>
+			  </greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			  <not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -549,6 +1221,56 @@
         </layer>
       </layers>
     </instrument>
+	<instrument>
+      <name>LeftRPM</name>
+      <x>0</x>
+      <y>79</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			<or>
+				<not>
+				  <property>/instrumentation/enginstr/serviceable</property>
+				</not>
+				<not>
+					<property>/controls/engines/engine[0]/magnetos</property>
+				</not>
+			</or>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>-----</text>
+            </chunk>
+          </chunks>
+        </layer>
+      </layers>
+    </instrument>
 	
 	<instrument>
       <name>RightRPM</name>
@@ -559,10 +1281,24 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <greater-than>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>0</value>
-        </greater-than>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <greater-than>
+				<property>/controls/engines/engine[1]/magnetos</property>
+				<value>0</value>
+			  </greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			  <not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -584,6 +1320,56 @@
         </layer>
       </layers>
     </instrument>
+	<instrument>
+      <name>RightRPM</name>
+      <x>18</x>
+      <y>79</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			<or>
+				<not>
+				  <property>/instrumentation/enginstr/serviceable</property>
+				</not>
+				<not>
+					<property>/controls/engines/engine[1]/magnetos</property>
+				</not>
+			</or>
+			<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>-----</text>
+            </chunk>
+          </chunks>
+        </layer>
+      </layers>
+    </instrument>
 	
 	<instrument>
       <name>LeftFuelFlow</name>
@@ -594,10 +1380,27 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <greater-than>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>0</value>
-        </greater-than>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <greater-than>
+				<property>/controls/engines/engine[0]/magnetos</property>
+				<value>0</value>
+			  </greater-than>
+			  <equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -629,10 +1432,27 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <greater-than>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>0</value>
-        </greater-than>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <greater-than>
+				<property>/controls/engines/engine[1]/magnetos</property>
+				<value>0</value>
+			  </greater-than>
+			  <equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>1</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -654,6 +1474,917 @@
         </layer>
       </layers>
     </instrument>
+
+    <instrument>
+      <name>EngineGestion</name>
+      <x>0</x>
+      <y>68</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>2</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/systems/electrical/bus/left-main-bus</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/systems/electrical/bus/right-main-bus</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+		    <transformation>
+              <type>x-shift</type>
+              <offset>20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/systems/electrical/bus/left-main-bus-amp</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-15</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>0</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/systems/electrical/bus/right-main-bus-amp</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-15</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+  
+	  <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/coolant-temperature-degc</property>
+              <format>%3.f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-36</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>0</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/coolant-temperature-degc</property>
+              <format>%3.f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-36</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+	  <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/oil-temperature-degc</property>
+              <format>%3.0f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-49</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>0</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/oil-temperature-degc</property>
+              <format>%3.0f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-49</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/oil-pressure-psi</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-53</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>0</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/oil-pressure-psi</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-53</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+      </layers>
+    </instrument>
+
+	<instrument>
+      <name>FuelGestion</name>
+      <x>0</x>
+      <y>67</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<and>
+			<greater-than>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>0</value>
+			</greater-than>
+			  <property>/instrumentation/enginstr/serviceable</property>
+			  <equals>
+				<property>/instrumentation/zkv1000/device[1]/eis-display</property>
+				<value>3</value>
+			</equals>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>-------FUEL-------</text>
+			</chunk>
+          </chunks>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/consumables/fuel/tank[0]/level-gal_us</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>GAL</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/consumables/fuel/tank[1]/level-gal_us</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>23</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/fuel-flow-gph</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>GPH</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/fuel-flow-gph</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>23</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/fuel-temperature-degc</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>C</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>14</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/fuel-temperature-degc</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>23</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>---FUEL CALC----</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>GAL REM</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-24</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/consumables/fuel/fuel-gest/fuel-remaining</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-24</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>23</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>GAL USED</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-28</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/consumables/fuel/fuel-gest/fuel-used</property>
+              <format>%2.1f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-28</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>23</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>ENDUR</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-32</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/consumables/fuel/fuel-gest/endurance-hours</property>
+              <format>%s</format>
+            </chunk>
+			<chunk>
+              <type>text-value</type>
+              <property>/consumables/fuel/fuel-gest/endurance-minutes</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-32</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>22</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>RANGE NM</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-36</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/consumables/fuel/fuel-gest/range</property>
+              <format>%2.f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-36</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>22</offset>
+            </transformation>
+          </transformations>
+        </layer>
+      
+	<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+			  <type>literal</type>
+			  <text>TTL IN SVC</text>
+			</chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-52</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/hours-running-display</property>
+              <format>LH %02.f</format>
+            </chunk>
+			<chunk>
+              <type>number-value</type>
+              <property>/engines/engine[0]/minutes-running-display</property>
+              <format> %02.f HRS</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-56</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/hours-running-display</property>
+              <format>RH %02.f</format>
+            </chunk>
+			<chunk>
+              <type>number-value</type>
+              <property>/engines/engine[1]/minutes-running-display</property>
+              <format> %02.f HRS</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-60</offset>
+            </transformation>
+			<transformation>
+              <type>x-shift</type>
+              <offset>1</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		</layers>
+    </instrument>
 	
     <instrument>
       <name>OAT</name>
@@ -664,10 +2395,13 @@
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <equals>
-          <property>/instrumentation/zkv1000/device[1]/status</property>
-          <value>1</value>
-        </equals>
+		<and>
+			<equals>
+			  <property>/instrumentation/zkv1000/device[1]/status</property>
+			  <value>1</value>
+			</equals>
+			<property>/instrumentation/adc/serviceable</property>
+		</and>
       </condition>
       <layers>
         <layer>
@@ -691,7 +2425,7 @@
     </instrument>
 
     <instrument>
-      <name>XPDR and time</name>
+      <name>XPDR</name>
       <x>140</x>
       <y>2</y>
       <w>1024</w>
@@ -703,6 +2437,7 @@
           <property>/instrumentation/zkv1000/device[1]/status</property>
           <value>1</value>
         </equals>
+		<property>/instrumentation/transponder/serviceable</property>
       </condition>
       <layers>
         <layer>
@@ -846,6 +2581,47 @@
         </layer>
       </layers>
     </instrument>
+	
+	<instrument>
+      <name>Time</name>
+      <x>140</x>
+      <y>2</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+        <equals>
+          <property>/instrumentation/zkv1000/device[1]/status</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <layers>
+        <layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>4</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/sim/time/gmt-string</property>
+              <format>LCL %s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>47</offset>
+            </transformation>
+          </transformations>
+        </layer>
+      </layers>
+    </instrument>
 
     <instrument>
       <name>menu bar</name>
@@ -876,7 +2652,7 @@
             </chunk>
           </chunks>
         </layer>
-        <layer>
+        <!--<layer>
           <condition>
             <equals>
               <property>/instrumentation/zkv1000/device[1]/status</property>
@@ -904,89 +2680,756 @@
               <offset>91.7</offset>
             </transformation>
           </transformations>
-        </layer>
+        </layer>-->
       </layers>
     </instrument>
 
-    <instrument>
-      <name>menu alert</name>
-      <x>0</x>
-      <y>-4</y>
+	<instrument>
+      <name>alerts display</name>
+      <x>186</x>
+      <y>83</y>
       <w>1024</w>
       <h>1024</h>
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
-        <property>/instrumentation/zkv1000/device[1]/status</property>
-     </condition>
-     <layers>
+		<and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<greater-than>
+				<property>/instrumentation/zkv1000/alerts/nbinfos</property>
+				<value>0</value>
+			</greater-than>
+			<not>
+				<equals>
+					<property>/instrumentation/zkv1000/device[1]/status</property>
+					<value>7</value>
+				</equals>
+			</not>
+		</and>
+      </condition>
+      <layers>
         <layer>
+          <name>ligne0 - red</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>4</point-size>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[0]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[0]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[0]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+        </layer>
+        <layer>
+          <name>ligne0 - yellow</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[0]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[0]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[0]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+        </layer>
+        <layer>
+          <name>ligne0 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
           <color>
             <red>1</red>
             <green>1</green>
             <blue>1</blue>
           </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[0]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[0]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>ALERT</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[0]/label</property>
+              <format>%s</format>
             </chunk>
           </chunks>
-          <transformations>
+        </layer>
+		
+		<layer>
+          <name>ligne1 - red</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[1]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[1]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[1]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
             <transformation>
-              <type>x-shift</type>
-              <offset>201</offset>
+              <type>y-shift</type>
+              <offset>-4</offset>
             </transformation>
           </transformations>
         </layer>
         <layer>
-          <condition>
-            <property>/instrumentation/zkv1000/alerts/menu-alert</property>
-          </condition>
+          <name>ligne1 - yellow</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>4</point-size>
+          <point-size>3</point-size>
           <color>
-            <red>0</red>
-            <green>0</green>
+            <red>1</red>
+            <green>1</green>
             <blue>0</blue>
           </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[1]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[1]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>ALERT</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[1]/label</property>
+              <format>%s</format>
             </chunk>
           </chunks>
-          <transformations>
+		  <transformations>
             <transformation>
-              <type>x-shift</type>
-              <offset>201</offset>
+              <type>y-shift</type>
+              <offset>-4</offset>
             </transformation>
           </transformations>
         </layer>
-      </layers>
-    </instrument>
-
+		<layer>
+          <name>ligne1 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[1]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[1]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[1]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <name>ligne2 - red</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[2]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[2]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[2]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+        <layer>
+          <name>ligne2 - yellow</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[2]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[2]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[2]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <name>ligne2 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[2]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[2]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[2]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <name>ligne3 - red</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[3]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[3]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[3]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+        <layer>
+          <name>ligne3 - yellow</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[3]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[3]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[3]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <name>ligne3 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[3]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[3]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[3]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <name>ligne4 - red</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[4]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[4]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[4]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-16</offset>
+            </transformation>
+          </transformations>
+        </layer>
+        <layer>
+          <name>ligne4 - yellow</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[4]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[4]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[4]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-16</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <name>ligne4 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[4]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[4]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[4]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-16</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <name>ligne5 - red</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[5]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[5]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[5]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+        <layer>
+          <name>ligne5 - yellow</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[5]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[5]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[5]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <name>ligne5 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[5]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[5]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[5]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <name>ligne6 - red</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[6]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[6]/level</property>
+					<value>2</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[6]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-24</offset>
+            </transformation>
+          </transformations>
+        </layer>
+        <layer>
+          <name>ligne6 - yellow</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[6]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[6]/level</property>
+					<value>1</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[6]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-24</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <name>ligne6 - white</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+		   <condition>
+			<and>
+				<property>/instrumentation/zkv1000/alerts/display-list/line[6]/active</property>
+				<equals>
+					<property>/instrumentation/zkv1000/alerts/display-list/line[6]/level</property>
+					<value>0</value>
+				</equals>
+			</and>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/alerts/display-list/line[6]/label</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-24</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+	  </layers>
+	</instrument>
+	
     <instrument>
       <name>Multi-use display</name>
-      <x>152</x>
-      <y>56</y>
+      <x>140</x>
+      <y>51</y>
       <w>1024</w>
       <h>1024</h>
       <w-base>1024</w-base>
       <h-base>1024</h-base>
       <condition>
         <property>/instrumentation/zkv1000/device[1]/mud/displayed</property>
+		 <property>/instrumentation/zkv1000/device[1]/status</property>
       </condition>
       <layers>
+        <layer>
+          <name>title</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/title</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+        </layer>
+
         <layer>
           <name>line 0</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>24</point-size>
+          <point-size>3</point-size>
           <color>
             <red>0</red>
             <green>0</green>
@@ -994,8 +3437,273 @@
           </color>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[0]</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[0]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 0 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[0]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[0]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-4</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 1</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0</red>
+            <green>0</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[1]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 1 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[1]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[1]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-8</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 2</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0</red>
+            <green>0</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[2]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 2 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[2]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[2]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 3</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0</red>
+            <green>0</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[3]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-16</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 3 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[3]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[3]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-16</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 4</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0</red>
+            <green>0</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[4]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 4 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[4]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[4]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-20</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 5</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0</red>
+            <green>0</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[5]</property>
               <format>%s</format>
             </chunk>
           </chunks>
@@ -1008,126 +3716,29 @@
         </layer>
 
         <layer>
-          <name>line 1</name>
+          <name>line 5 - selected</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>24</point-size>
+          <point-size>3</point-size>
           <color>
             <red>1</red>
             <green>1</green>
             <blue>1</blue>
           </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[5]</property>
+          </condition>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[1]</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[5]</property>
               <format>%s</format>
             </chunk>
           </chunks>
           <transformations>
             <transformation>
               <type>y-shift</type>
-              <offset>-48</offset>
-            </transformation>
-          </transformations>
-        </layer>
-
-        <layer>
-          <name>line 2</name>
-          <type>text</type>
-          <font>condensed</font>
-          <point-size>24</point-size>
-          <color>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-          </color>
-          <chunks>
-            <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[2]</text>
-              <format>%s</format>
-            </chunk>
-          </chunks>
-          <transformations>
-            <transformation>
-              <type>y-shift</type>
-              <offset>-72</offset>
-            </transformation>
-          </transformations>
-        </layer>
-
-        <layer>
-          <name>line 3</name>
-          <type>text</type>
-          <font>condensed</font>
-          <point-size>24</point-size>
-          <color>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-          </color>
-          <chunks>
-            <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[3]</text>
-              <format>%s</format>
-            </chunk>
-          </chunks>
-          <transformations>
-            <transformation>
-              <type>y-shift</type>
-              <offset>-96</offset>
-            </transformation>
-          </transformations>
-        </layer>
-
-        <layer>
-          <name>line 4</name>
-          <type>text</type>
-          <font>condensed</font>
-          <point-size>24</point-size>
-          <color>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-          </color>
-          <chunks>
-            <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[4]</text>
-              <format>%s</format>
-            </chunk>
-          </chunks>
-          <transformations>
-            <transformation>
-              <type>y-shift</type>
-              <offset>-120</offset>
-            </transformation>
-          </transformations>
-        </layer>
-
-        <layer>
-          <name>line 5</name>
-          <type>text</type>
-          <font>condensed</font>
-          <point-size>24</point-size>
-          <color>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-          </color>
-          <chunks>
-            <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[5]</text>
-              <format>%s</format>
-            </chunk>
-          </chunks>
-          <transformations>
-            <transformation>
-              <type>y-shift</type>
-              <offset>-144</offset>
+              <offset>-24</offset>
             </transformation>
           </transformations>
         </layer>
@@ -1136,23 +3747,51 @@
           <name>line 6</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>24</point-size>
+          <point-size>3</point-size>
           <color>
-            <red>1</red>
-            <green>1</green>
+            <red>0</red>
+            <green>0</green>
             <blue>1</blue>
           </color>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[6]</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[6]</property>
               <format>%s</format>
             </chunk>
           </chunks>
           <transformations>
             <transformation>
               <type>y-shift</type>
-              <offset>-168</offset>
+              <offset>-28</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 6 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[6]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[6]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-28</offset>
             </transformation>
           </transformations>
         </layer>
@@ -1161,23 +3800,51 @@
           <name>line 7</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>24</point-size>
+          <point-size>3</point-size>
           <color>
-            <red>1</red>
-            <green>1</green>
+            <red>0</red>
+            <green>0</green>
             <blue>1</blue>
           </color>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[7]</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[7]</property>
               <format>%s</format>
             </chunk>
           </chunks>
           <transformations>
             <transformation>
               <type>y-shift</type>
-              <offset>-192</offset>
+              <offset>-32</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 7 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[7]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[7]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-32</offset>
             </transformation>
           </transformations>
         </layer>
@@ -1186,23 +3853,51 @@
           <name>line 8</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>24</point-size>
+          <point-size>3</point-size>
           <color>
-            <red>1</red>
-            <green>1</green>
+            <red>0</red>
+            <green>0</green>
             <blue>1</blue>
           </color>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[8]</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[8]</property>
               <format>%s</format>
             </chunk>
           </chunks>
           <transformations>
             <transformation>
               <type>y-shift</type>
-              <offset>-216</offset>
+              <offset>-36</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 8 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[8]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[8]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-36</offset>
             </transformation>
           </transformations>
         </layer>
@@ -1211,23 +3906,51 @@
           <name>line 9</name>
           <type>text</type>
           <font>condensed</font>
-          <point-size>24</point-size>
+          <point-size>3</point-size>
           <color>
-            <red>1</red>
-            <green>1</green>
+            <red>0</red>
+            <green>0</green>
             <blue>1</blue>
           </color>
           <chunks>
             <chunk>
-              <type>literal</type>
-              <text>/instrumentation/zkv1000/device[1]/mud/line[9]</text>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[9]</property>
               <format>%s</format>
             </chunk>
           </chunks>
           <transformations>
             <transformation>
               <type>y-shift</type>
-              <offset>-240</offset>
+              <offset>-40</offset>
+            </transformation>
+          </transformations>
+        </layer>
+
+        <layer>
+          <name>line 9 - selected</name>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <condition>
+            <property>/instrumentation/zkv1000/device[1]/mud/sel-line[9]</property>
+          </condition>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/mud/line[9]</property>
+              <format>%s</format>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-40</offset>
             </transformation>
           </transformations>
         </layer>
@@ -1247,6 +3970,36 @@
       </condition>
       <layers>
          <layer>
+			<condition>
+				<property>/instrumentation/nav[0]/display-volume</property>
+			</condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/nav[0]/volume</property>
+              <format>%3.0f</format>
+			  <scale>100</scale>
+            </chunk>
+            <chunk>
+              <type>literal</type>
+              <text>% volume</text>
+            </chunk>
+          </chunks>
+        </layer>
+		<layer>
+			<condition>
+				<not>
+					<property>/instrumentation/nav[0]/display-volume</property>
+				</not>
+			</condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>3</point-size>
@@ -1269,6 +4022,13 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/nav[0]/serviceable</property>
+				<property>/instrumentation/nav[0]/power-btn</property>
+				<not>
+					<property>/instrumentation/nav[0]/display-volume</property>
+				</not>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1293,9 +4053,13 @@
         </layer>
         <layer>
           <condition>
-            <not>
-              <property>/instrumentation/zkv1000/radios/nav-tune</property>
-            </not>
+			<and>
+				<not>
+					<property>/instrumentation/zkv1000/radios/nav-tune</property>
+				</not>
+				<property>/instrumentation/nav[0]/serviceable</property>
+				<property>/instrumentation/nav[0]/power-btn</property>
+			  </and>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1319,6 +4083,10 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/nav[0]/serviceable</property>
+				<property>/instrumentation/nav[0]/power-btn</property>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1342,6 +4110,10 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/nav[0]/serviceable</property>
+				<property>/instrumentation/nav[0]/power-btn</property>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1369,7 +4141,11 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/radios/nav1-selected</property>
+			<and>
+				<property>/instrumentation/nav[0]/serviceable</property>
+				<property>/instrumentation/nav[0]/power-btn</property>
+				<property>/instrumentation/zkv1000/radios/nav1-selected</property>
+			</and>
           </condition>
           <color>
             <red>0</red>
@@ -1395,7 +4171,11 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/radios/nav1-selected</property>
+			<and>
+				<property>/instrumentation/nav[0]/serviceable</property>
+				<property>/instrumentation/nav[0]/power-btn</property>
+				<property>/instrumentation/zkv1000/radios/nav1-selected</property>
+			</and>
           </condition>
           <color>
             <red>0</red>
@@ -1431,7 +4211,37 @@
         <property>/instrumentation/zkv1000/device[1]/status</property>
       </condition>
       <layers>
-         <layer>
+		<layer>
+			<condition>
+				<property>/instrumentation/nav[1]/display-volume</property>
+			</condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/nav[1]/volume</property>
+              <format>%3.0f</format>
+			  <scale>100</scale>
+            </chunk>
+            <chunk>
+              <type>literal</type>
+              <text>% volume</text>
+            </chunk>
+          </chunks>
+        </layer>
+		<layer>
+			<condition>
+				<not>
+					<property>/instrumentation/nav[1]/display-volume</property>
+				</not>
+			</condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>3</point-size>
@@ -1454,6 +4264,13 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/nav[1]/serviceable</property>
+				<property>/instrumentation/nav[1]/power-btn</property>
+				<not>
+					<property>/instrumentation/nav[1]/display-volume</property>
+				</not>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1478,7 +4295,11 @@
         </layer>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/radios/nav-tune</property>
+			<and>
+				<property>/instrumentation/nav[1]/serviceable</property>
+				<property>/instrumentation/nav[1]/power-btn</property>
+				<property>/instrumentation/zkv1000/radios/nav-tune</property>
+			</and>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1502,6 +4323,10 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/nav[1]/serviceable</property>
+				<property>/instrumentation/nav[1]/power-btn</property>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1525,6 +4350,10 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/nav[1]/serviceable</property>
+				<property>/instrumentation/nav[1]/power-btn</property>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1552,7 +4381,11 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/radios/nav2-selected</property>
+			<and>
+				<property>/instrumentation/nav[1]/serviceable</property>
+				<property>/instrumentation/nav[1]/power-btn</property>
+				<property>/instrumentation/zkv1000/radios/nav2-selected</property>
+			</and>
           </condition>
           <color>
             <red>0</red>
@@ -1578,7 +4411,11 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/radios/nav2-selected</property>
+			<and>
+				<property>/instrumentation/nav[1]/serviceable</property>
+				<property>/instrumentation/nav[1]/power-btn</property>
+				<property>/instrumentation/zkv1000/radios/nav2-selected</property>
+			</and>
           </condition>
           <color>
             <red>0</red>
@@ -1615,6 +4452,10 @@
       </condition>
       <layers>
         <layer>
+			<condition>
+				<property>/instrumentation/comm[0]/serviceable</property>
+				<property>/instrumentation/comm[0]/power-btn</property>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1633,9 +4474,13 @@
         </layer>
         <layer>
           <condition>
-            <not>
-              <property>/instrumentation/zkv1000/radios/comm-tune</property>
-            </not>
+			<and>
+				<not>
+				  <property>/instrumentation/zkv1000/radios/comm-tune</property>
+				</not>
+				<property>/instrumentation/comm[0]/serviceable</property>
+				<property>/instrumentation/comm[0]/power-btn</property>
+			</and>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1659,6 +4504,13 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/comm[0]/serviceable</property>
+				<property>/instrumentation/comm[0]/power-btn</property>
+				<not>
+					<property>/instrumentation/comm[0]/display-volume</property>
+				</not>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1682,6 +4534,13 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/comm[0]/serviceable</property>
+				<property>/instrumentation/comm[0]/power-btn</property>
+				<not>
+					<property>/instrumentation/comm[0]/display-volume</property>
+				</not>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>3</point-size>
@@ -1709,6 +4568,39 @@
             </transformation>
           </transformations>
         </layer>
+		<layer>
+			<condition>
+				<property>/instrumentation/comm[0]/serviceable</property>
+				<property>/instrumentation/comm[0]/power-btn</property>
+				<property>/instrumentation/comm[0]/display-volume</property>
+          </condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/comm[0]/volume</property>
+              <format>%3.0f</format>
+			  <scale>100</scale>
+            </chunk>
+            <chunk>
+              <type>literal</type>
+              <text>% volume</text>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>27</offset>
+            </transformation>
+          </transformations>
+        </layer>
       </layers>
     </instrument>
 
@@ -1725,6 +4617,10 @@
       </condition>
       <layers>
         <layer>
+			<condition>
+				<property>/instrumentation/comm[1]/serviceable</property>
+				<property>/instrumentation/comm[1]/power-btn</property>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1743,7 +4639,11 @@
         </layer>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/radios/comm-tune</property>
+			<and>
+				<property>/instrumentation/comm[1]/serviceable</property>
+				<property>/instrumentation/comm[1]/power-btn</property>
+				<property>/instrumentation/zkv1000/radios/comm-tune</property>
+			</and>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1767,6 +4667,13 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<property>/instrumentation/comm[1]/serviceable</property>
+				<property>/instrumentation/comm[1]/power-btn</property>
+				<not>
+					<property>/instrumentation/comm[1]/display-volume</property>
+				</not>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>4</point-size>
@@ -1790,6 +4697,11 @@
           </transformations>
         </layer>
         <layer>
+			<condition>
+				<not>
+					<property>/instrumentation/comm[1]/display-volume</property>
+				</not>
+          </condition>
           <type>text</type>
           <font>condensed</font>
           <point-size>3</point-size>
@@ -1814,6 +4726,39 @@
             <transformation>
               <type>y-shift</type>
               <property>0.4</property>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+			<condition>
+				<property>/instrumentation/comm[1]/serviceable</property>
+				<property>/instrumentation/comm[1]/power-btn</property>
+				<property>/instrumentation/comm[1]/display-volume</property>
+          </condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>number-value</type>
+              <property>/instrumentation/comm[1]/volume</property>
+              <format>%3.0f</format>
+			  <scale>100</scale>
+            </chunk>
+            <chunk>
+              <type>literal</type>
+              <text>% volume</text>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>27</offset>
             </transformation>
           </transformations>
         </layer>
@@ -1981,5 +4926,361 @@
         </layer>
       </layers>
     </instrument>
+
+	<instrument>
+      <name>Airport Chart</name>
+	  <x>125</x>
+      <y>77</y>
+      <w>185</w>
+      <h>150</h>
+      <condition>
+		<equals>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<value>4</value>
+		</equals>
+      </condition>
+	  <layers>
+        <layer>
+            <name>ground network</name>
+            <texture>
+                <path>Aircraft/Diamond-Da42/zkv1000/Textures/od_groundradar1.rgb</path>
+                <x1>0</x1>
+                <y1>0</y1>
+                <x2>1</x2>
+                <y2>1</y2>
+            </texture>
+            <emissive>1</emissive>
+        </layer>
+	  </layers>
+	</instrument>
+	
+	<instrument>
+	  <name>Airport Infos</name>
+	  <x>32</x>
+      <y>148</y>
+      <w>1024</w>
+      <h>1024</h>
+	  <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+		<equals>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<value>4</value>
+		</equals>
+      </condition>
+	  <layers>
+		<layer>
+		  <type>text</type>
+          <font>condensed</font>
+          <point-size>6</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>Airport </text>
+            </chunk>
+			<chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/airport_id</property>
+            </chunk>
+          </chunks>
+		</layer>
+		<layer>
+		  <type>text</type>
+          <font>condensed</font>
+          <point-size>6</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+			<chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/device[1]/airport_name</property>
+            </chunk>
+          </chunks>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-6</offset>
+            </transformation>
+          </transformations>
+		</layer>
+      </layers>
+	</instrument>
+	
+	<instrument>
+      <name>GPS</name>
+      <x>67</x>
+      <y>161</y>
+      <w>1024</w>
+      <h>1024</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <condition>
+	    <and>
+			<property>/instrumentation/zkv1000/device[1]/status</property>
+			<or>
+				<property>/autopilot/route-manager/active</property>
+				<property>/instrumentation/gps/obs-mode</property>
+			</or>
+			<property>/instrumentation/gps/serviceable</property>
+			<or>
+				<property>/instrumentation/gps/power-btn1</property>
+				<property>/instrumentation/gps/power-btn2</property>
+			</or>
+		</and>
+      </condition>
+      <layers>
+         <layer>
+			<condition>
+				<equals>
+					<property>/instrumentation/gps/mode</property>
+					<value>leg</value>
+				</equals>
+			</condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>WPT </text>
+            </chunk>
+          </chunks>
+        </layer>
+		<layer>
+			<condition>
+				<equals>
+					<property>/instrumentation/gps/mode</property>
+					<value>leg</value>
+				</equals>
+			</condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0.43</red>
+            <green>0.04</green>
+            <blue>0.65</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/autopilot/route-manager/wp[0]/id</property>
+			  <format>%0.7s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>9</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+        <layer>
+			<condition>
+				<equals>
+					<property>/instrumentation/gps/mode</property>
+					<value>obs</value>
+				</equals>
+			</condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>DTO</text>
+            </chunk>
+          </chunks>
+        </layer>
+		<layer>
+			<condition>
+				<equals>
+					<property>/instrumentation/gps/mode</property>
+					<value>obs</value>
+				</equals>
+			</condition>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0.43</red>
+            <green>0.04</green>
+            <blue>0.65</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>text-value</type>
+              <property>/instrumentation/zkv1000/gps/id</property>
+			  <format>%0.7s</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>9</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>DIS</text>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>23</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0.43</red>
+            <green>0.04</green>
+            <blue>0.65</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/instrumentation/gps/wp/wp[1]/distance-nm</property>
+			  <format>%4.1fNM</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>30</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>BRG</text>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>47</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0.43</red>
+            <green>0.04</green>
+            <blue>0.65</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/instrumentation/gps/wp/wp[1]/bearing-mag-deg</property>
+			  <format>%03.f</format>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>56</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>literal</type>
+              <text>ETE</text>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>63</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		<layer>
+          <type>text</type>
+          <font>condensed</font>
+          <point-size>3</point-size>
+          <color>
+            <red>0.43</red>
+            <green>0.04</green>
+            <blue>0.65</blue>
+          </color>
+          <chunks>
+            <chunk>
+              <type>number-value</type>
+              <property>/instrumentation/gps/wp/wp[1]/TTW-sec</property>
+			  <format>%3.0fMN</format>
+			  <scale>0.016667</scale>
+            </chunk>
+          </chunks>
+		  <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>70</offset>
+            </transformation>
+          </transformations>
+        </layer>
+		
+	  </layers>
+	</instrument>
   </instruments>
 </PropertyList>

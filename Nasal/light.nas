@@ -35,9 +35,6 @@ var elt = aircraft.light.new( "/sim/model/lights/elt", [0.05 , 0.05] );
 setprop( "/sim/model/lights/elt/enabled",1);
 elt.interval = 0;
 
-setprop( "/instrumentation/nav[0]/ident", 0 );
-setprop( "/instrumentation/nav[1]/ident", 0 );
-
 var calc_instrument_norm = func(){
 	var instrument_norm = getprop("/controls/switches/instrument-lights-norm");
 	var flood_norm = getprop("/controls/switches/flood-lights-norm");

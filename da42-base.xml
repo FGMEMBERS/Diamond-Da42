@@ -4,21 +4,16 @@
 
   <sim include="Nasal/views.xml">
 
-    <aircraft-version>0.8 du 14/09/2011</aircraft-version>
-    <status>Beta</status>
+    <systems include="Nasal/electrical.xml">
+		<autopilot>
+            <path>Aircraft/Diamond-Da42/zkv1000/Systems/autopilot.xml</path>
+        </autopilot>
+	</systems>
 
-    <fuel-fraction>1.0</fuel-fraction>
-
-    <startup>
-      <splash-texture>Aircraft/Diamond-Da42/da42-splash.png</splash-texture>
-    </startup>
-
-    <systems include="Nasal/electrical.xml"></systems>
-
-    <instrumentation>
+	<instrumentation>
       <path>Aircraft/Diamond-Da42/Nasal/instrumentation.xml</path>
     </instrumentation>
-	
+
     <sound>
       <path archive="y">Aircraft/Diamond-Da42/Sounds/da42-sound.xml</path>
     </sound>
@@ -28,8 +23,49 @@
       <livery>
         <file type="string">default</file>
       </livery>
+	  
+	  <!--taken from Seneca II and adapted-->
+	  <icing>
+        <iceable>
+          <name>Wings</name>
+          <salvage-control>/controls/deice/mode</salvage-control>
+          <sensitivity type="double">0.8</sensitivity>
+          <output-property>/sim/icing/wings</output-property>
+        </iceable>
+        <iceable>
+          <name>Windshield</name>
+          <salvage-control>/controls/deice/mode_windshield</salvage-control>
+          <sensitivity type="double">0.5</sensitivity>
+          <output-property>/sim/icing/windshield</output-property>
+        </iceable>
+        <iceable>
+          <name>Fuselage</name>
+          <!-- no salvage control, no deicing of the fuselage -->
+          <sensitivity type="double">1.0</sensitivity>
+          <output-property>/sim/icing/other</output-property>
+        </iceable>
+		<iceable>
+          <name>Engines</name>
+          <!-- no salvage control, no deicing of the fuselage -->
+          <sensitivity type="double">1.0</sensitivity>
+          <output-property>/sim/icing/engines</output-property>
+        </iceable>
+		<iceable>
+          <name>Propellers</name>
+          <salvage-control>/controls/deice/mode</salvage-control>
+          <sensitivity type="double">0.5</sensitivity>
+          <output-property>/sim/icing/propellers</output-property>
+        </iceable>
+        <iceable>
+          <name>Pitot tube</name>
+          <sensitivity type="double">1</sensitivity>
+          <salvage-control>/instrumentation/pitot-heat/active</salvage-control>
+          <output-property>/sim/icing/pitot</output-property>
+        </iceable>
+      </icing>
     </model>
 
+	
     <flaps>
       <setting> 0.000 </setting>
       <setting> 0.375 </setting>
@@ -62,16 +98,17 @@
       <title>Diamond Da42</title>
       <key>
         <name>d</name>
-        <desc>Open/Close canopy</desc>
+        <desc>Open/Close crew canopy</desc>
       </key>
       <key>
-        <name>d</name>
-        <desc>Open/Close door</desc>
+        <name>D</name>
+        <desc>Open/Close passenger door</desc>
       </key>
     </help>
 
     <menubar include="Dialogs/da42-menu.xml"/>
 
+	<!--weights-->
     <weight n="0">
       <name type="string">Pilot</name>
       <min-lb type="double">120.0</min-lb>
@@ -115,12 +152,153 @@
     </weight>
 
     <icing>
-      <windshield type="double">1.0</windshield>
+      <windshield type="double">0.0</windshield>
+	  <wings type="double">0.0</wings>
+	  <other type="double">0.0</other>
+	  <engines type="double">0.0</engines><!-- if we must use the alternate air or not-->
+	  <propellers type="double">0.0</propellers>
+	  <pitot type="double">0.0</pitot>
+	  <ice-weight>
+		<wings type="double">0.0</wings>
+		<fuselage type="double">0.0</fuselage>
+	  </ice-weight>
     </icing>
     
+	<gui>
+		<dialogs>
+			<da42>
+				<!--<notepad type="string">You can use this place to write what you want or need ...</notepad>-->
+				<notepad type="string">Reste a faire:
+					finir l'autopilot
+					les effets exterieurs en multiplayer
+					</notepad>
+			</da42>
+		</dialogs>
+	</gui>
   </sim>
  
+	<instrumentation>
+		<comm n="0">
+			<serviceable type="bool">1</serviceable>
+			<volume type="double">0.5</volume>
+			<display-volume type="bool">0</display-volume>
+			<power-btn type="bool">0</power-btn>
+		</comm>
+		<comm n="1">
+			<serviceable type="bool">1</serviceable>
+			<volume type="double">0.5</volume>
+			<display-volume type="bool">0</display-volume>
+			<power-btn type="bool">0</power-btn>
+		</comm>
+		<nav n="0">
+			<serviceable type="bool">1</serviceable>
+			<volume type="double">0.5</volume>
+			<audio-btn type="bool">1</audio-btn>
+			<ident type="bool">1</ident>
+			<display-volume type="bool">0</display-volume>
+		</nav>
+		<nav n="1">
+			<serviceable type="bool">1</serviceable>
+			<volume type="double">0.5</volume>
+			<audio-btn type="bool">0</audio-btn>
+			<ident type="bool">0</ident>
+			<display-volume type="bool">0</display-volume>
+		</nav>
+		
+		<altimeter n="1">
+			<serviceable type="bool">1</serviceable>
+		</altimeter>
+		
+		<enginstr>
+			<serviceable type="bool">1</serviceable>
+		</enginstr>
+		<adc>
+			<serviceable type="bool">0</serviceable>
+		</adc>
+		<ahrs>
+			<serviceable type="bool">0</serviceable>
+		</ahrs>
+		<encoder>
+			<serviceable type="bool">0</serviceable>
+		</encoder>
+		<transponder>
+			<serviceable type="bool">0</serviceable>
+		</transponder>
+		
+		<adf n="0">
+			<serviceable type="bool">1</serviceable>
+			<ident-audible type="bool">0</ident-audible>
+		</adf>
+		
+		<dme n="0">
+			<serviceable type="bool">1</serviceable>
+		</dme>
+		
+		<audio>
+			<serviceable type="bool">0</serviceable>
+		</audio>
+		
+		<zkv1000>
+			<device n="0">
+				<groundradar>
+					<range type="double">0.5</range>
+					<id type="string">KSFO</id>
+				</groundradar>
+				<serviceable type="bool">0</serviceable>
+			</device>
+			<device n="1">
+				<groundradar>
+					<range type="double">0.5</range>
+					<id type="string">KSFO</id>
+				</groundradar>
+				<serviceable type="bool">0</serviceable>
+			</device>
+			
+			<moving-map>
+				<width-m type="double">0.217353</width-m>
+				<height-m type="double">0.147023</height-m>
+				<controls>
+					<range-nm type="int">25</range-nm>
+				</controls>
+				<terrain-elevation>
+					<use-high-resolution type="bool">false</use-high-resolution>
+				</terrain-elevation>
+			</moving-map>
+			
+			<symbmap-range type="int">10</symbmap-range>
+			<symbols>
+				<airport type="bool">1</airport>
+				<vor type="bool">1</vor>
+				<ndb type="bool">1</ndb>
+				<fix type="bool">1</fix>
+			</symbols>
+			<fans>
+				<serviceable type="bool">true</serviceable>
+			</fans>
+		</zkv1000>
+		
+		<pitot-heat>
+			<serviceable type="bool">true</serviceable>
+			<active type="bool">false</active>
+		</pitot-heat>
+		
+		<radar>
+            <serviceable type="bool">true</serviceable>
+            <range type="int" archive="y">1000</range>
+        </radar>
+
+	</instrumentation>
+
   <controls>
+	<books>
+		<maps>
+			<visible type="bool">0</visible>
+			<coords>
+				<lon type="long">-500</lon>
+				<lat type="long">-500</lat>
+			</coords>
+		</maps>
+	</books>
     <gear>
       <brake-parking type="double">1</brake-parking>
     </gear>
@@ -139,6 +317,16 @@
       <cabinheat-lever>0</cabinheat-lever>
       <emerhoriz-lever>0</emerhoriz-lever>
       <emerhoriz-lock>0</emerhoriz-lock>
+	  <master-switch type="bool">0</master-switch>
+	  <masteravionic-switch type="bool">0</masteravionic-switch>
+	  <landinglight-switch type="bool">0</landinglight-switch>
+	  <taxilight-switch type="bool">0</taxilight-switch>
+	  <strobelight-switch type="bool">0</strobelight-switch>
+	  <positionlight-switch type="bool">0</positionlight-switch>
+	  <left-alt-switch type="bool">0</left-alt-switch>
+	  <right-alt-switch type="bool">0</right-alt-switch>
+	  <left-master-engine-switch type="bool">0</left-master-engine-switch>
+	  <right-master-engine-switch type="bool">0</right-master-engine-switch>
       <geardown>1</geardown>
       <deice>
         <speed>-1</speed>
@@ -159,9 +347,19 @@
           <locked type="bool">0</locked>
         </door>
       </doors>
+	  <mixer>
+		<com1 type="bool">0</com1>
+		<com2 type="bool">0</com2>
+		<nav1 type="bool">0</nav1>
+		<nav2 type="bool">0</nav2>
+		<adf type="bool">0</adf>
+		<mkrmute type="bool">0</mkrmute>
+	  </mixer>
+	  <elt type="int">0</elt>
     </switches>
+	
     <lighting>
-      <elt type="bool">0</elt>
+      <elt type="int">0</elt>
       <antiicelight type="bool">0</antiicelight>
       <nav-lights type="bool">0</nav-lights>
       <strobe type="bool">0</strobe>
@@ -176,36 +374,36 @@
     </deice>
     <electric>
       <circuitbreaker>
-        <com1>0</com1>
-        <gpsnav1>0</gpsnav1>
-        <xpcom>0</xpcom>
-        <enginstr>0</enginstr>
-        <pitot>0</pitot>
+        <com1>1</com1>
+        <gpsnav1>1</gpsnav1>
+        <xpcom>1</xpcom>
+        <enginstr>1</enginstr>
+        <pitot>1</pitot>
         <deice>1</deice>
         <taxilight>1</taxilight>
         <oxy>1</oxy>
-        <pfd>0</pfd>
-        <adc>0</adc>
-        <ahrs>0</ahrs>
+        <pfd>1</pfd>
+        <adc>1</adc>
+        <ahrs>1</ahrs>
         <gearwrn>1</gearwrn>
         <gearctrl>1</gearctrl>
-        <mfd>0</mfd>
+        <mfd>1</mfd>
         <ah>1</ah>
         <stallwrn>1</stallwrn>
         <flap>1</flap>
         <landinglight>1</landinglight>
         <instlight>1</instlight>
-        <fans>0</fans>
+        <fans>1</fans>
         <avionicbus>1</avionicbus>
-        <avionicctrl>0</avionicctrl>
-        <com2>0</com2>
-        <gpsnav2>0</gpsnav2>
-        <audio>0</audio>
-        <autopilot>0</autopilot>
+        <avionicctrl>1</avionicctrl>
+        <com2>1</com2>
+        <gpsnav2>1</gpsnav2>
+        <audio>1</audio>
+        <autopilot>1</autopilot>
         <datalink>0</datalink>
         <wx500>0</wx500>
-        <adf>0</adf>
-        <dme>0</dme>
+        <adf>1</adf>
+        <dme>1</dme>
         <wxrdr>0</wxrdr>
         <leftecubus>1</leftecubus>
         <leftecub>1</leftecub>
@@ -225,8 +423,10 @@
         <deice type="bool">0</deice>
         <engines>
           <engine n="0">
-          <starter type="bool">0</starter>
-          <ecus>
+		   <!--<propeller-pitch-fadec type="double">1</propeller-pitch-fadec>
+		   <mixture-fadec type="double">1</mixture-fadec>-->
+           <starter type="bool">0</starter>
+           <ecus>
             <ecu n="0">
               <serviceable type="bool">0</serviceable>
               <selected type="bool">0</selected>
@@ -238,23 +438,73 @@
           </ecus>
           </engine>
             <engine n="1">
-            <starter type="bool">0</starter>
-            <ecus>
+			 <!--<propeller-pitch-fadec type="double">1</propeller-pitch-fadec>
+			 <mixture-fadec type="double">1</mixture-fadec>-->
+             <starter type="bool">0</starter>
+             <ecus>
               <ecu n="0">
                 <serviceable type="bool">0</serviceable>
                 <selected type="bool">0</selected>
+				<test-ecu type="bool">0</test-ecu>
               </ecu>
               <ecu n="1">
                 <serviceable type="bool">0</serviceable>
                 <selected type="bool">0</selected>
+				<test-ecu type="bool">0</test-ecu>
               </ecu>
             </ecus>
           </engine>
         </engines>
       </alimentation>
     </electric>
+	<pilot>
+		<visible type="bool">1</visible>
+	</pilot>
+	<rudders>
+		<rudder n="0">
+			<position type="double">0.45</position>
+			<locked type="bool">1</locked>
+		</rudder>
+		<rudder n="1">
+			<position type="double">0</position>
+			<locked type="bool">1</locked>
+		</rudder>
+	</rudders>
+	
+	<flight>
+		<elevator-trim>-0.357375</elevator-trim>
+		<!--<rudder-trim>0.085875</rudder-trim>-->
+		<wing_destroyed type="double">0</wing_destroyed>
+	 </flight>
+	 <shaders>
+		<intvitres type="bool">0</intvitres>
+		<intverriere type="bool">0</intverriere>
+		<intvitreporte type="bool">0</intvitreporte>
+	</shaders>
   </controls>
 
+  <engines>
+	<engine n="0">
+		<oil-pressure-psi type="double">1</oil-pressure-psi>
+		<coolant-temperature-degc type="double">19</coolant-temperature-degc>
+		<fuel-temperature-degc type="double">20</fuel-temperature-degc>
+	</engine>
+	<engine n="1">
+		<oil-pressure-psi type="double">1</oil-pressure-psi>
+		<coolant-temperature-degc type="double">19</coolant-temperature-degc>
+		<fuel-temperature-degc type="double">20</fuel-temperature-degc>
+	</engine>
+  </engines>
+  
+  <systems>
+	<electrical>
+		<bus>
+			<left-main-bus-amp type="double">75.0</left-main-bus-amp>
+			<right-main-bus-amp type="double">40.0</right-main-bus-amp>
+		</bus>
+	</electrical>
+  </systems>
+  
   <consumables>
     <fuel>
       <tank n="0">
@@ -265,24 +515,21 @@
         <name>Right wing</name>
         <selected type="bool">true</selected>
       </tank>
+	  <fuel-gest>
+		<fuel-remaining type="double">50.0</fuel-remaining>
+		<fuel-used type="double">0.0</fuel-used>
+		<endurance-hours type="string"></endurance-hours>
+		<endurance-minutes type="string"></endurance-minutes>
+		<range type="double">0.0</range>
+	  </fuel-gest>
     </fuel>
     <!--1 unite par seconde en mode normal = 2h30, 2.5 en mode high = 1h00, et en max 5 done 30mn-->
     <deice type="double">9000.0</deice>
   </consumables>
-  
+	
   <input>
     <keyboard include="Nasal/da42-keyboard.xml"/>
   </input>
-
-  <!--placement instruments -->
-  <!-- -->
-  <mymodel>
-    <x> 0.007 </x>
-    <y> 0.318 </y>
-    <z> 0.184 </z>
-  </mymodel>
-  <!-- -->
-  <!--placement instruments -->
  
   <nasal>
     <doors>
@@ -294,6 +541,12 @@
       <file>Aircraft/Diamond-Da42/Nasal/immat.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/tools.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/electrical.nas</file>
+	  <file>Aircraft/Diamond-Da42/Nasal/audio.nas</file>
+	  <file>Aircraft/Diamond-Da42/Nasal/maps.nas</file>
+	  <file>Aircraft/Diamond-Da42/Nasal/fuel.nas</file>
+	  <file>Aircraft/Diamond-Da42/Nasal/engine.nas</file>
+	  <file>Aircraft/Diamond-Da42/Nasal/alarms.nas</file>
+	  <file>Aircraft/Diamond-Da42/Nasal/icing.nas</file>
     </da42>
     <!--
          Le zkv100 de Zakharov disponible pour mises à jour ici : http://gitorious.org/zakharov/zkv1000 
@@ -303,7 +556,19 @@
     <zkv1000>
       <file>Aircraft/Diamond-Da42/zkv1000/zkv1000.nas</file>
     </zkv1000>
+	<moving-map>
+		<file>Aircraft/Diamond-Da42/zkv1000/Moving-map/moving-map.nas</file>
+	</moving-map>
   </nasal>
-   
+  
+  <!--placement instruments -->
+  <!-- -->
+  <mymodel>
+    <x> 0.0 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+  </mymodel>
+  <!-- -->
+  <!--placement instruments -->
 </PropertyList>
 

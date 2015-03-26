@@ -1,0 +1,286 @@
+<?xml version="1.0" ?> 
+<PropertyList> 
+	<path>rudder.ac</path>
+
+	<animation>
+		<name>Rudder</name>
+		<object-name>cable.L</object-name>
+		<object-name>spiral.tube.L</object-name>
+		<object-name>cylinder.L</object-name>
+		<object-name>rudder.tube.L</object-name>
+		<object-name>rudder.pedal.L</object-name>
+		<object-name>brake.support.L</object-name>
+		<object-name>brake.pedal.L</object-name>
+		<object-name>brake.tube.L</object-name>
+		<object-name>brake.piston.L</object-name>
+		
+		<object-name>cable.R</object-name>
+		<object-name>spiral.tube.R</object-name>
+		<object-name>cylinder.R</object-name>
+		<object-name>rudder.tube.R</object-name>
+		<object-name>rudder.pedal.R</object-name>
+		<object-name>brake.support.R</object-name>
+		<object-name>brake.pedal.R</object-name>
+		<object-name>brake.tube.R</object-name>
+		<object-name>brake.piston.R</object-name>
+
+		<object-name>support.center</object-name>
+	</animation>
+  
+	<animation>
+		<name>RudderLeft</name>
+		<object-name>spiral.tube.L</object-name>
+		<object-name>cylinder.L</object-name>
+		<object-name>rudder.tube.L</object-name>
+		<object-name>rudder.pedal.L</object-name>
+		<object-name>brake.support.L</object-name>
+		<object-name>brake.pedal.L</object-name>
+		<object-name>brake.tube.L</object-name>
+		<object-name>brake.piston.L</object-name>
+	</animation>
+	
+	<animation>
+		<name>RudderRight</name>
+		<object-name>spiral.tube.R</object-name>
+		<object-name>cylinder.R</object-name>
+		<object-name>rudder.tube.R</object-name>
+		<object-name>rudder.pedal.R</object-name>
+		<object-name>brake.support.R</object-name>
+		<object-name>brake.pedal.R</object-name>
+		<object-name>brake.tube.R</object-name>
+		<object-name>brake.piston.R</object-name>
+	</animation>
+	
+	<animation>
+		<name>BrakeLeft</name>
+		<object-name>brake.support.L</object-name>
+		<object-name>brake.pedal.L</object-name>
+	</animation>
+	
+	<animation>
+		<name>BrakeRight</name>
+		<object-name>brake.support.R</object-name>
+		<object-name>brake.pedal.R</object-name>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder.setting.lever</object-name>
+		<object-name>rudder.setting.tube</object-name>
+		<property>/controls/rudders/rudder[0]/locked</property>
+		<factor>90</factor>
+		<center>
+			<x-m> 0.1719</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.0770</z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>rudder.setting.lever</object-name>
+		<object-name>rudder.setting.tube</object-name>
+		<property>/controls/rudders/rudder[0]/locked</property>
+		<factor>0.01</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>rudder.setting.lever</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/rudders/rudder[0]/locked</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Rudder</object-name>
+		<property>/controls/rudders/rudder[0]/position</property>
+		<factor>-0.2</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>Rudder</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>da42.mouseHandler.setY( "/controls/rudders/rudder[0]/position", 0.01 , 0 , 1.0);</script>
+				<condition>
+					<not>
+						<property>/controls/rudders/rudder[0]/locked</property>
+					</not>
+				</condition>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>nasal</command>
+					<script>da42.mouseHandler.setY();</script>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RudderLeft</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>30</factor>
+		<center>
+			<x-m>0.1042</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.0809</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>cable.L</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>0.04</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>cable.L</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>-0.0001</factor>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RudderRight</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>0.1042</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>-0.0809</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>cable.R</object-name>
+		<property>/controls/flight/rudder</property>
+		<factor>-0.03</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>cable.R</object-name>
+		<property>/controls/flight/rudder</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>-0.01</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>-0.001</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>BrakeLeft</object-name>
+		<property>/controls/gear/brake-left</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>0.1037</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>0.0438</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>brake.tube.L</object-name>
+		<property>/controls/gear/brake-left</property>
+		<factor>-0.01</factor>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>BrakeRight</object-name>
+		<property>/controls/gear/brake-right</property>
+		<factor>-15</factor>
+		<center>
+			<x-m>0.1037</x-m>
+			<y-m> 0.0000</y-m>
+			<z-m>0.0438</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>brake.tube.R</object-name>
+		<property>/controls/gear/brake-right</property>
+		<factor>-0.01</factor>
+		<axis>
+			<x>0.0</x>
+			<y>0.0</y>
+			<z>1.0</z>
+		</axis>
+	</animation>
+
+	
+	
+	<!--brake loc 0.103709 0.0437952 0.225788 -->
+	
+</PropertyList>

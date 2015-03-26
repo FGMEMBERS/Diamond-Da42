@@ -14,7 +14,7 @@
 
     <!-- Objets transparents -->
   </animation>
-
+	
   <model>
     <path>Aircraft/Diamond-Da42/zkv1000/mfd.xml</path>
     <name>Mfd</name>
@@ -24,7 +24,7 @@
       <z-m> 0.152 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Diamond-Da42/zkv1000/pfd.xml</path>
     <name>Pfd</name>
@@ -239,7 +239,7 @@
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/starter/starter.xml</path>
 	<name>Starter</name>
     <offsets>
-      <x-m>  0.007 </x-m>
+      <x-m>  0.016 </x-m>
       <y-m> -0.287 </y-m>
       <z-m>  0.009 </z-m>
     </offsets>
@@ -897,6 +897,56 @@
     </offsets>
   </model>
   
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Books/notepad.xml</path>
+    <name>NotePad</name>
+    <offsets>
+      <x-m> 0.1 </x-m>
+      <y-m> -0.514 </y-m>
+      <z-m> -0.141 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Books/airport-infos.xml</path>
+    <name>Airport Infos</name>
+    <offsets>
+      <x-m> 0.1 </x-m>
+      <y-m> -0.506 </y-m>
+      <z-m> -0.141 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Books/maps.xml</path>
+    <name>Maps</name>
+    <offsets>
+      <x-m> 0.1 </x-m>
+      <y-m> -0.498 </y-m>
+      <z-m> -0.141 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Books/maps_open.xml</path>
+    <name>Maps Open</name>
+    <offsets>
+      <x-m> 0.1 </x-m>
+      <y-m> 0.026 </y-m>
+      <z-m> 0.403 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Books/checklists.xml</path>
+    <name>Checklists</name>
+    <offsets>
+      <x-m> 0.1 </x-m>
+      <y-m> -0.490 </y-m>
+      <z-m> -0.141 </z-m>
+    </offsets>
+  </model>
+  
   <animation>
     <type>pick</type>
     <object-name>registration</object-name>
@@ -905,43 +955,17 @@
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>da42.immat_dialog.toggle();</script>
+        <script>da42.immat_dialog.open();</script>
       </binding>
     </action>
   </animation>
    
   <!-- illumination du cockpit -->
-  <!-- Cette section n'a rien à faire ici. Elle devrait être dispatchée dans chaque xml d'instrument -->
   <animation>
     <type>material</type>
-    <!--
-    <object-name>Mfd</object-name>
-    <object-name>Pfd</object-name>
-    -->
-    <object-name>StrobeLightSwitch</object-name>
-    <object-name>PositionLightSwitch</object-name>
-    <object-name>TaxiLightSwitch</object-name>
-    <object-name>LandingLightSwitch</object-name>
-    <object-name>MasterAvioniqueSwitch</object-name>
-    <object-name>PitotHeatSwitch</object-name>
-    <object-name>MasterSwitch</object-name>
-    <object-name>LeftEcuSwitch</object-name>
-    <object-name>RightEcuSwitch</object-name>
-    <object-name>LeftAltSwitch</object-name>
-    <object-name>RightAltSwitch</object-name>
-    <object-name>LeftMasterEngineSwitch</object-name>
-    <object-name>RightMasterEngineSwitch</object-name>
-    <object-name>Starter</object-name>
-    <object-name>GearLever</object-name>
-    <object-name>FlapLever</object-name>
-    <object-name>LeftTestEcuButton</object-name>
-    <object-name>RightTestEcuButton</object-name>
-    <object-name>TestTransitButton</object-name>
-    <object-name>EmergencyHorizon</object-name>
-    <!--<object-name>Mixer</object-name>-->
     <object-name>panelfront</object-name>
     <object-name>registration</object-name>
-    <object-name>textes</object-name>
+    <object-name>abaq</object-name>
     <emission>
       <red>   0.2 </red>
       <green> 0.2 </green>
@@ -956,8 +980,8 @@
     </condition>
   </animation>
 
-  <!--deplacement placement instrument-->
-  <!-- 
+  		<!--deplacement placement instrument-->
+  <!--
 	<animation>
 		<type>translate</type>
 		<object-name>mygauge</object-name>
@@ -990,8 +1014,8 @@
 			<z> 1 </z>
 		</axis>
 	</animation>
-  -->
+-->
 	<!--deplacement placement instrument-->	
-
+	
 </PropertyList>
 

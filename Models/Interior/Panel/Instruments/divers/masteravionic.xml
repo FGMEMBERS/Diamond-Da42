@@ -26,10 +26,36 @@
 				<property>/controls/switches/masteravionic-switch</property>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-assign</command>
 				<property>/sim/sound/switch</property>
+				<value>1</value>
 			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/sound/switch</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>on-off</object-name>
+		<object-name>tour</object-name>
+		<emission>
+			<red>   0.2 </red>
+			<green> 0.2 </green>
+			<blue>  0.2 </blue>
+			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/flood-lights</property>
+				<value>0</value>
+			</greater-than>	
+		</condition>
 	</animation>
 </PropertyList>
 

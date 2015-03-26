@@ -24,7 +24,6 @@ file, these values will be used (they are hardcoded).
 -->
 
 <PropertyList>
-
   <adf>
     <name>adf</name>
     <number>0</number>
@@ -40,6 +39,14 @@ file, these values will be used (they are hardcoded).
   <altimeter>
     <name>altimeter</name>
     <number>0</number>
+    <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    <quantum>0</quantum>
+    <tau>0</tau>
+  </altimeter>
+  
+  <altimeter>
+    <name>altimeter</name>
+    <number>1</number>
     <static-pressure>/systems/static/pressure-inhg</static-pressure>
     <quantum>0</quantum>
     <tau>0</tau>
@@ -129,8 +136,24 @@ file, these values will be used (they are hardcoded).
   </gps>
 
   <radar>
-    <name>wxradar</name>
+    <name>radar</name>
     <number>0</number>
   </radar>
 
+  	<groundradar>
+        <name>groundradar</name>
+		<number>0</number>
+        <range-source>instrumentation/zkv1000/device[0]/groundradar/range</range-source>
+		<airport-id-source>instrumentation/zkv1000/device[0]/groundradar/id</airport-id-source>
+		<texture-name>Aircraft/Diamond-Da42/zkv1000/Textures/od_groundradar.rgb</texture-name>
+    </groundradar>
+	
+	<groundradar>
+        <name>groundradar</name>
+		<number>1</number>
+        <range-source>instrumentation/zkv1000/device[1]/groundradar/range</range-source>
+		<airport-id-source>instrumentation/zkv1000/device[1]/groundradar/id</airport-id-source>
+		<texture-name>Aircraft/Diamond-Da42/zkv1000/Textures/od_groundradar1.rgb</texture-name>
+    </groundradar>
+	
 </PropertyList>

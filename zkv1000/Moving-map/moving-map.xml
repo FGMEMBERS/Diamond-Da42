@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Simple, generic moving map for modern civil airliners -->
+<!-- By Ryan M -->
+
+<!-- This XML file is the actual model for the moving map. Put it somewhere on your MFD. -->
+
+<PropertyList>
+
+	<path>moving-map.ac</path>
+
+	<model>
+		<path>Aircraft/Diamond-Da42/zkv1000/Moving-map/terrain-map.xml</path>
+	</model>
+	<model>
+		<path>Aircraft/Diamond-Da42/zkv1000/Moving-map/terrain-map-hi.xml</path>
+	</model>
+
+		<!-- Parameters -->
+	<params>
+		<nav>
+			<font type="string">helvetica_bold.txf</font>
+			<character-size type="double">0.007</character-size>
+			<red type="double">1</red>
+			<green type="double">1</green>
+			<blue type="double">1</blue>
+		</nav>
+		<range>
+			<font type="string">helvetica_bold.txf</font>
+			<character-size type="double">0.007</character-size>
+			<red type="double">1</red>
+			<green type="double">1</green>
+			<blue type="double">1</blue>
+		</range>
+		<wp>
+			<font type="string">helvetica_bold.txf</font>
+			<character-size type="double">0.006</character-size>
+			<red type="double">1</red>
+			<green type="double">0</green>
+			<blue type="double">1</blue>
+		</wp>
+	</params>
+
+	<!-- Range markers -->
+	<text>
+		<name>Range0</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%4.1f</format>
+		<property>instrumentation/zkv1000/moving-map/controls/range-nm</property>
+		<scale>0.5</scale>
+		<font alias="../../params/range/font" />
+		<character-size alias="../../params/range/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>Range0</object-name>
+		<property>instrumentation/zkv1000/moving-map/height-m</property>
+		<factor>0.25</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<text>
+		<name>Range1</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%4.1f</format>
+		<property>instrumentation/zkv1000/moving-map/controls/range-nm</property>
+		<scale>1</scale>
+		<font alias="../../params/range/font" />
+		<character-size alias="../../params/range/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>Range1</object-name>
+		<property>instrumentation/zkv1000/moving-map/height-m</property>
+		<factor>0.48</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- VORs -->
+	<text>
+		<name>NAV0_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0.005</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>instrumentation/nav[0]/nav-id</property>
+		<font alias="../../params/nav/font" />
+		<character-size alias="../../params/nav/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV0</object-name>
+		<object-name>NAV0_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[0]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV0</object-name>
+		<object-name>NAV0_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[0]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>NAV0</object-name>
+		<object-name>NAV0_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/nav[0]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>NAV1_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0.005</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>instrumentation/nav[1]/nav-id</property>
+		<font alias="../../params/nav/font" />
+		<character-size alias="../../params/nav/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV1</object-name>
+		<object-name>NAV1_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[1]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV1</object-name>
+		<object-name>NAV1_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[1]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>NAV1</object-name>
+		<object-name>NAV1_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/nav[1]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>NAV2_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0.005</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>instrumentation/nav[2]/nav-id</property>
+		<font alias="../../params/nav/font" />
+		<character-size alias="../../params/nav/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV2</object-name>
+		<object-name>NAV2_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[2]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV2</object-name>
+		<object-name>NAV2_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[2]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>NAV2</object-name>
+		<object-name>NAV2_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/nav[2]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>NAV3_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0.005</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>instrumentation/nav[3]/nav-id</property>
+		<font alias="../../params/nav/font" />
+		<character-size alias="../../params/nav/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV3</object-name>
+		<object-name>NAV3_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[3]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>NAV3</object-name>
+		<object-name>NAV3_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/nav[3]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>NAV3</object-name>
+		<object-name>NAV3_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/nav[3]/visible</property>
+		</condition>
+	</animation>
+
+	<!-- Route manager waypoints -->
+	<text>
+		<name>WP0_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>autopilot/route-manager/wp[0]/id</property>
+		<font alias="../../params/wp/font" />
+		<character-size alias="../../params/wp/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>WP0</object-name>
+		<object-name>WP0_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[0]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>WP0</object-name>
+		<object-name>WP0_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[0]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WP0</object-name>
+		<object-name>WP0_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/waypoint[0]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>WP1_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>autopilot/route-manager/wp[1]/id</property>
+		<font alias="../../params/wp/font" />
+		<character-size alias="../../params/wp/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>WP1</object-name>
+		<object-name>WP1_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[1]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>WP1</object-name>
+		<object-name>WP1_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[1]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WP1</object-name>
+		<object-name>WP1_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/waypoint[1]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>WP2_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>autopilot/route-manager/wp[2]/id</property>
+		<font alias="../../params/wp/font" />
+		<character-size alias="../../params/wp/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>WP2</object-name>
+		<object-name>WP2_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[2]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>WP2</object-name>
+		<object-name>WP2_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[2]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WP2</object-name>
+		<object-name>WP2_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/waypoint[2]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>WP3_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>autopilot/route-manager/wp[3]/id</property>
+		<font alias="../../params/wp/font" />
+		<character-size alias="../../params/wp/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>WP3</object-name>
+		<object-name>WP3_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[3]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>WP3</object-name>
+		<object-name>WP3_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[3]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WP3</object-name>
+		<object-name>WP3_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/waypoint[3]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>WP4_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>autopilot/route-manager/wp[4]/id</property>
+		<font alias="../../params/wp/font" />
+		<character-size alias="../../params/wp/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>WP4</object-name>
+		<object-name>WP4_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[4]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>WP4</object-name>
+		<object-name>WP4_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[4]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WP4</object-name>
+		<object-name>WP4_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/waypoint[4]/visible</property>
+		</condition>
+	</animation>
+	<text>
+		<name>WP5_text</name>
+		<offsets>
+			<x-m>0.007</x-m>
+			<y-m>0.011</y-m>
+			<z-m>0</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>autopilot/route-manager/wp[5]/id</property>
+		<font alias="../../params/wp/font" />
+		<character-size alias="../../params/wp/character-size" />
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<animation>
+		<type>translate</type>
+		<object-name>WP5</object-name>
+		<object-name>WP5_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[5]/pos-x-m</property>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>WP5</object-name>
+		<object-name>WP5_text</object-name>
+		<property>instrumentation/zkv1000/moving-map/waypoint[5]/pos-y-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WP5</object-name>
+		<object-name>WP5_text</object-name>
+		<condition>
+			<property>instrumentation/zkv1000/moving-map/waypoint[5]/visible</property>
+		</condition>
+	</animation>
+
+</PropertyList>

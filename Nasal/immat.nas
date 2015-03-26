@@ -19,8 +19,7 @@ var refresh_immat = func {
     }
 }
 
-var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/da42/status/dialog",
-				  "Aircraft/Diamond-Da42/Dialogs/immat.xml");
+var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/da42/status/dialog", getprop("/sim/aircraft-dir")~"/Dialogs/immat.xml");
 
 setlistener("/sim/signals/fdm-initialized", func {
   if (props.globals.getNode("/sim/model/immat") == nil) {
@@ -33,3 +32,8 @@ setlistener("/sim/signals/fdm-initialized", func {
   setlistener("sim/model/immat", refresh_immat, 0);
 },0);
 
+setlistener("/sim/multiplay/callsign", func {
+	if(props.globals.getNode("/sim/multiplay/callsign").getValue()!="callsign"){
+		props.globals.getNode("/sim/model/immat").setValue(props.globals.getNode("/sim/multiplay/callsign").getValue());
+	}
+},0);

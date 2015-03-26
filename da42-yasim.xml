@@ -19,11 +19,11 @@
   <!-- Approach configuration -->
   <approach speed="55" aoa="4" fuel="0.3">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture-fadec" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch-fadec" value="1"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
-    <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
-    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture-fadec" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch-fadec" value="1"/>
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
@@ -31,11 +31,11 @@
   <!-- Cruise configuration -->
   <cruise speed="160" alt="5000" fuel="1">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture-fadec" value="0.6"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch-fadec" value="1"/>
     <control-setting axis="/controls/engines/engine[1]/throttle" value="0.75"/>
-    <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
-    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture-fadec" value="0.6"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch-fadec" value="1"/>
     <control-setting axis="/controls/flight/flaps" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
@@ -63,10 +63,12 @@
         <flap0 start="0.05" end="0.68" lift="1.2" drag="1.2"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-
         <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
-
         <control-speed control="FLAP0" transition-time="5"/>
+		
+		<!--to simulate icing-->
+		<flap1 start="0" end="1" lift="-0.1" drag="0.1"/>
+		<control-input axis="/sim/icing/wings" control="FLAP1" />
   </mstab>
 
   <wing x="0.862" y="2.210" z="-0.234"
@@ -80,14 +82,16 @@
         <flap1 start="0.68" end="0.96" lift="1.2" drag="1.1"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0" />
-
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
     
         <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
-
         <control-speed control="FLAP0" transition-time="5"/>
+		
+		<!--to simulate wing destruction-->
+		<spoiler start="0.0" end="1.0" lift="-0.5" drag="-0.5"/>
+		<control-input axis="/controls/flight/wing_destroyed" side="right" control="SPOILER" split="true"/>
   </wing>
 
   <vstab x="0.755" y="6.590" z="0.162"
@@ -177,19 +181,21 @@
              cruise-alt="5000" 
              cruise-power="150"
              takeoff-power="170"
-             takeoff-rpm="2800">
+             takeoff-rpm="2800"
+			 manual-pitch="true">
              <piston-engine eng-rpm="2800" 
                             eng-power="170" 
                             displacement="121"
                             compression="8.7"
-                            gear-ratio="1.7"   
+                            gear-ratio="1.7"  
                             alt="0"/>
              <actionpt x="2.627" y="1.740" z="0.021"/>
-             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
+             <!--<control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>-->
+			<control-input axis="/controls/engines/engine[0]/propeller-pitch-fadec" control="PROPPITCH" src0="0" src1="1" dst0="-.15" dst1="0.55"/>
              <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
              <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
              <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
-             <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+             <control-input axis="/controls/engines/engine[0]/mixture-fadec" control="MIXTURE"/>
   </propeller>
 
   <propeller x="2.144" y="-1.740" z="0.021" 
@@ -201,8 +207,8 @@
              cruise-alt="5000" 
              cruise-power="150"
              takeoff-power="170" 
-            
-             takeoff-rpm="2800">
+             takeoff-rpm="2800"
+			 manual-pitch="true">
              <piston-engine eng-rpm="2800"                            
                             eng-power="170" 
                             displacement="121"
@@ -210,16 +216,17 @@
                             gear-ratio="1.7" 
                             alt="0"/>
              <actionpt x="2.627" y="-1.740" z="0.021"/>
-             <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>
+             <!--<control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>-->
+	     <control-input axis="/controls/engines/engine[1]/propeller-pitch-fadec" control="PROPPITCH" src0="0" src1="1" dst0="-.15" dst1="0.55"/>
              <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
              <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
              <control-input axis="/controls/engines/engine[1]/magnetos" control="MAGNETOS"/>
-             <control-input axis="/controls/engines/engine[1]/mixture" control="MIXTURE"/>
+             <control-input axis="/controls/engines/engine[1]/mixture-fadec" control="MIXTURE"/>
   </propeller>
 
   <gear x="2.578" y="0" z="-1.223" 
         compression="0.15" 
-        spring="0.6">
+        spring="0.6" sfric="1.0" dfric="1.0">
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
         <control-speed control="EXTEND" transition-time="7"/>
@@ -229,7 +236,7 @@
   <!-- 0.820 -->
   <gear x="1.147" y="1.358" z="-1.231" 
         compression="0.10" 
-        spring="0.6">
+        spring="0.6" sfric="1.0" dfric="1.0">
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -239,7 +246,7 @@
 
   <gear x="1.147" y="-1.358" z="-1.231" 
         compression="0.10" 
-        spring="0.6">
+        spring="0.6" sfric="1.0" dfric="1.0">
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -248,8 +255,8 @@
   </gear>
 
   <!-- Fuel  -->
-  <tank x="1.420" y=" 1.323" z="-0.272" capacity="150" />
-  <tank x="1.420" y="-1.323" z="-0.272" capacity="150" />
+  <tank x="1.420" y=" 1.323" z="-0.272" capacity="168" jet="true"/>
+  <tank x="1.420" y="-1.323" z="-0.272" capacity="168" jet="true"/>
 
   <weight x="1.68" y=" 0.18" z="-0.1750" mass-prop="/sim/weight[0]/weight-lb"/>
   <weight x="1.68" y="-0.18" z="-0.1750" mass-prop="/sim/weight[1]/weight-lb"/>
@@ -258,10 +265,19 @@
   <weight x="1.00" y="-0.18" z="-0.1750" mass-prop="/sim/weight[3]/weight-lb"/>
   <weight x="2.62" y=" 0.00" z="-0.1750" mass-prop="/sim/weight[4]/weight-lb"/>
   <weight x="0.55" y=" 0.00" z="-0.1750" mass-prop="/sim/weight[5]/weight-lb"/>
+  
+  <!--icing weight-->
+  <weight x="1.541" y="0" z="-0.272" mass-prop="/sim/icing/ice-weight/fuselage"/>
+  <weight x="0.862" y="0" z="-0.426" mass-prop="/sim/icing/ice-weight/wings"/>
 
   <!--   
   <ballast x=" 2" y="0" z="-3" mass=" 200"/>
   <ballast x="-2" y="0" z=" 3" mass="-200"/>
   -->
+  
+  <!--Push back -->
+  <thruster x="2.578" y="0" z="-1.223" vx="1" vy="0" vz="0" thrust="100">
+	<control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
  
 </airplane>

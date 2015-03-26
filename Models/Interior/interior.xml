@@ -30,6 +30,31 @@
     <object-name>intverriere</object-name>
     <object-name>intvitreporte</object-name>
   </animation>
+  
+  <animation>
+    <type>select</type>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+	<condition>
+		<property>/controls/shaders/intvitres</property>
+	</condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitreporte</object-name>
+	<condition>
+		<property>/controls/shaders/intvitreporte</property>
+	</condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intverriere</object-name>
+	<condition>
+		<property>/controls/shaders/intverriere</property>
+	</condition>
+  </animation>
 
   <animation>
     <type>noshadow</type>
@@ -37,7 +62,7 @@
     <object-name>intverriere</object-name>
     <object-name>intvitreporte</object-name>
   </animation>
-
+  
   <!-- Yoke -->
   <model>
     <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
@@ -58,6 +83,28 @@
       <z-m> -0.228 </z-m>
     </offsets>
   </model>
+  
+  <!-- Rudder -->
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/rudder/leftrudder.xml</path>
+    <name>LeftRudder</name>
+    <offsets>
+      <x-m> -2.139 </x-m>
+      <y-m> -0.276 </y-m>
+      <z-m> -0.126 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/rudder/rightrudder.xml</path>
+    <name>RighttRudder</name>
+    <offsets>
+      <x-m> -2.139 </x-m>
+      <y-m> 0.276 </y-m>
+      <z-m> -0.126 </z-m>
+    </offsets>
+  </model>
+  
   
   <!-- Les bagages -->
   <model>
@@ -227,5 +274,5 @@
 		</axis>
 	</animation>
 
-</PropertyList>
+	</PropertyList>
 

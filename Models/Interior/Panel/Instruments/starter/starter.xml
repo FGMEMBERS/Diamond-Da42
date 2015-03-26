@@ -5,6 +5,17 @@
 	<path>starter.ac</path>
 
 	<animation>
+		<name>Starter</name>
+		<object-name>base</object-name>
+		<object-name>starter</object-name>
+		<object-name>startersupport</object-name>
+		<object-name>key</object-name>
+		<object-name>ring</object-name>
+		<object-name>ring.tube</object-name>
+		<!--<object-name>ring.pastille</object-name>-->
+	</animation>
+	  
+	<animation>
 		<type>rotate</type>
 		<object-name>key</object-name>
 		<object-name>starter</object-name>
@@ -20,6 +31,9 @@
 	<animation>
 		<type>select</type>
 		<object-name>key</object-name>
+		<object-name>ring</object-name>
+		<object-name>ring.tube</object-name>
+		<object-name>ring.pastille</object-name>
 		<condition>
 			<property>/controls/switches/starterkey-insert</property>
 		</condition>
@@ -110,6 +124,58 @@
 		</action>
 	</animation>
 
+	<!-- effects inspired from i16 ... -->
+	<animation>
+		<type>rotate</type>
+		<object-name>ring</object-name>
+		<object-name>ring.tube</object-name>
+		<object-name>ring.pastille</object-name>
+		<property>/orientation/roll-deg</property>
+		<factor>1</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>ring</object-name>
+		<object-name>ring.tube</object-name>
+		<object-name>ring.pastille</object-name>
+		<property>/orientation/pitch-deg</property>
+		<interpolation>
+			<entry><ind> -180 </ind><dep> 12 </dep></entry>
+			<entry><ind> -12 </ind><dep> 12 </dep></entry>
+			<entry><ind> 0 </ind><dep> 0 </dep></entry>
+			<entry><ind> 12 </ind><dep> -12 </dep></entry>
+			<entry><ind> 180 </ind><dep> -180 </dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Starter</object-name>
+		<emission>
+			<red>   0.2 </red>
+			<green> 0.2 </green>
+			<blue>  0.2 </blue>
+			<factor-prop>/controls/switches/flood-lights-norm</factor-prop>
+		</emission>
+		<condition>
+			<greater-than>
+				<property>/controls/lighting/flood-lights</property>
+				<value>0</value>
+			</greater-than>	
+		</condition>
+	</animation>
+	
 </PropertyList>
 
 
