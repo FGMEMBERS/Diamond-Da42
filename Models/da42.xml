@@ -136,7 +136,7 @@
   </animation>
   
   <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <inherits-from>Aircraft/Diamond-Da42/Models/Effects/skin/skin-reflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>bagage.leftdoor</object-name>
     <object-name>bagage.rightdoor</object-name>
@@ -166,13 +166,17 @@
     <object-name>bagage.leftdoor</object-name>
     <object-name>bagage.rightdoor</object-name>
   </effect>
+
+  <effect>
+    <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Glass/glass-rain-outside</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>verriere</object-name>
+    <object-name>vitreporte</object-name>
+  </effect>
   
   <!-- working for Rembrandt -->
   <effect>
     <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Glass/glass</inherits-from>
-    <object-name>vitres</object-name>
-    <object-name>verriere</object-name>
-    <object-name>vitreporte</object-name>
     <object-name>lamperouge</object-name>
     <object-name>lampevert</object-name>
     <object-name>antiicelight</object-name>

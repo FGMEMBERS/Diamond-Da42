@@ -11,5 +11,11 @@
 
     <!-- Objets transparents -->
   </animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>tour</object-name>
+    <object-name>on-off</object-name>
+</effect>
+
 
 </PropertyList>

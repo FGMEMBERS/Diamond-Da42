@@ -11,6 +11,13 @@
     
     <object-name>vitre</object-name>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>support</object-name>
+    <object-name>Knob</object-name>
+    <object-name>Ring</object-name>
+</effect>
   
   <!-- working for Rembrandt -->
   <effect>

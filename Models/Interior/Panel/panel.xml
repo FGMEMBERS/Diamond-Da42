@@ -14,6 +14,14 @@
     
     <!-- Objets transparents -->
   </animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>panel</object-name>
+    <object-name>textes</object-name>
+    <object-name>pedestal</object-name>
+    <object-name>panelfront</object-name>
+    <object-name>registration</object-name>
+</effect>
   
   <!-- illumination du cockpit -->
   <animation>

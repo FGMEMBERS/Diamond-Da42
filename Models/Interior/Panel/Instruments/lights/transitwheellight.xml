@@ -8,7 +8,12 @@
     <object-name>support</object-name>
     <object-name>light</object-name>
   </animation>
-  
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>support</object-name>
+    <object-name>light</object-name>
+</effect>
+
   <animation>
     <type>material</type>
     <object-name>light</object-name>

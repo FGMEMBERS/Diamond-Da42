@@ -104,13 +104,109 @@
     <object-name>alt.tape</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>body.pfd</object-name>
+    <object-name>off.background</object-name>
+    
+    <object-name>knob.NAV.large</object-name>
+    <object-name>knob.NAV.small</object-name>
+    <object-name>knob.HDG</object-name>
+    <object-name>knob.ALT.large</object-name>
+    <object-name>knob.ALT.small</object-name>
+    <object-name>knob.COMM.large</object-name>
+    <object-name>knob.COMM.small</object-name>
+    <object-name>knob.BARO</object-name>
+    <object-name>knob.FMS.large</object-name>
+    <object-name>knob.FMS.small</object-name>
+    
+    <object-name>softkey.NAV.swap</object-name>
+    <object-name>softkey.COMM.swap</object-name>
+    <object-name>off.power</object-name>
+    <object-name>on.power</object-name>
+    <object-name>softkey.02</object-name>
+    <object-name>softkey.03</object-name>
+    <object-name>softkey.04</object-name>
+    <object-name>softkey.05</object-name>
+    <object-name>softkey.06</object-name>
+    <object-name>softkey.07</object-name>
+    <object-name>softkey.08</object-name>
+    <object-name>softkey.09</object-name>
+    <object-name>softkey.10</object-name>
+    <object-name>softkey.11</object-name>
+    <object-name>softkey.12</object-name>
+    <object-name>softkey.D</object-name>
+    <object-name>softkey.MENU</object-name>
+    <object-name>softkey.FPL</object-name>
+    <object-name>softkey.PROC</object-name>
+    <object-name>softkey.CLR</object-name>
+    <object-name>softkey.ENT</object-name>
+
+    <object-name>ai.background</object-name>
+    <object-name>ai.roll.ref</object-name>
+    <object-name>ai.roll.indicator</object-name>
+    <object-name>ai.cursor.L</object-name>
+    <object-name>ai.fd.bars</object-name>
+    <object-name>ai.cursor.C</object-name>
+    <object-name>ai.cursor.R</object-name>
+    
+    <object-name>hsi.hdg</object-name>
+    <object-name>hsi.bezel</object-name>
+    <object-name>hsi.compass</object-name>
+    <object-name>hsi.crs.pointer</object-name>
+    <object-name>hsi.crs.deflection</object-name>
+    <object-name>hsi.crs.deflect.ref</object-name>
+    <object-name>hsi.crs.plane</object-name>
+    <object-name>hsi.fond</object-name>
+    
+    <object-name>menu.main</object-name>
+    <object-name>menu.alerts</object-name>
+    <object-name>radios.main</object-name>
+    <object-name>infos.FLC</object-name>
+    <object-name>infos.ALT</object-name>
+    <object-name>infos.HDG</object-name>
+    <object-name>infos.CRS</object-name>
+    <object-name>infos.WIND</object-name>
+    <object-name>infos.DME</object-name>
+    <object-name>infos.BRG1</object-name>
+    <object-name>infos.BRG2</object-name>
+    <object-name>infos.OAT</object-name>
+    <object-name>infos.XPDR</object-name>
+    <object-name>infos.MUD</object-name>
+    
+    <object-name>asi.TAS</object-name>
+    <object-name>asi.cursor.001</object-name>
+    <object-name>asi.cursor.010</object-name>
+    <object-name>asi.cursor.100</object-name>
+    <object-name>asi.bug</object-name>
+    
+    <object-name>alt.baro</object-name>
+    <object-name>alt.vs.ref</object-name>
+    <object-name>alt.vs.ptr</object-name>
+    <object-name>alt.vs.bug</object-name>
+    <object-name>alt.cursor</object-name>
+    <object-name>alt.cursor.00011</object-name>
+    <object-name>alt.cursor.00100</object-name>
+    <object-name>alt.cursor.01000</object-name>
+    <object-name>alt.cursor.10000</object-name>
+    <object-name>alt.gs.bug</object-name>
+    <object-name>alt.bug</object-name>
+      
+    <object-name>knob.RANGE.up</object-name>
+    <object-name>knob.RANGE.down</object-name>
+    <object-name>knob.RANGE.left</object-name>
+    <object-name>knob.RANGE.right</object-name>
+    <object-name>knob.RANGE.push</object-name>
     <object-name>ai.pitch.indicator</object-name>
     <object-name>hsi.arc</object-name>
     <object-name>asi.tape</object-name>
     <object-name>alt.tape</object-name>
+</effect>
+
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
   </effect>
   
   <animation>

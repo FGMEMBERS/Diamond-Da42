@@ -11,16 +11,33 @@
     <config>
       <from-model type="bool">true</from-model>
       <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-       <x-offset-m archive="y">  0.200 </x-offset-m>	<!-- Right -->
+       <x-offset-m archive="y">  0.250 </x-offset-m>	<!-- Right -->
        <y-offset-m archive="y">  0.505 </y-offset-m>	<!-- Up    -->
        <z-offset-m archive="y"> -1.421 </z-offset-m>	<!-- Back  -->
       <pitch-offset-deg> -5 </pitch-offset-deg>
-      <default-field-of-view-deg> 80 </default-field-of-view-deg>
+      <default-field-of-view-deg> 85 </default-field-of-view-deg>
       <dynamic-view type="bool">true</dynamic-view>
     </config>
   </view>
 
   <view n="101">
+    <name>Rear Passanger Seat View</name>
+    <internal archive="y">true</internal>
+    <type>lookfrom</type>
+    <config>
+      <from-model type="bool">true</from-model>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+       <x-offset-m archive="y">  0.250 </x-offset-m>	<!-- Right -->
+       <y-offset-m archive="y">  0.505 </y-offset-m>	<!-- Up    -->
+       <z-offset-m archive="y"> -0.200 </z-offset-m>	<!-- Back  -->
+      <pitch-offset-deg> -5 </pitch-offset-deg>
+      <default-field-of-view-deg> 90 </default-field-of-view-deg>
+      <dynamic-view type="bool">true</dynamic-view>
+    </config>
+  </view>
+
+
+  <view n="102">
     <name>Tail Camera View</name>
     <type>lookfrom</type>
     <internal archive="y">true</internal>
@@ -39,11 +56,11 @@
   <view n="0">
     <internal archive="y">true</internal>
     <config>
-       <x-offset-m archive="y"> -0.200 </x-offset-m>	<!-- Right -->
+       <x-offset-m archive="y"> -0.220 </x-offset-m>	<!-- Right -->
        <y-offset-m archive="y">  0.505 </y-offset-m>	<!-- Up    -->
        <z-offset-m archive="y"> -1.421 </z-offset-m>	<!-- Back  -->
        <pitch-offset-deg> -5 </pitch-offset-deg>
-      <default-field-of-view-deg> 80 </default-field-of-view-deg>
+      <default-field-of-view-deg> 85 </default-field-of-view-deg>
     </config>
   </view>
 

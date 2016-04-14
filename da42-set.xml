@@ -4,9 +4,9 @@
   
   <sim>
     
-    <description>Diamond DA 42 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM) - OO ZVY (FDM) - Jeep (System)</author>
-    <aircraft-version>0.95</aircraft-version> <!-- du 07/12/2014 -->
+    <description>Diamond DA 42-VI (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM) - OO ZVY (FDM) - Jeep (System) - MrZac (VI)</author>
+    <aircraft-version>0.96</aircraft-version> <!-- du 04/04/2016 -->
     <status>Beta</status>
     
     <flight-model>yasim</flight-model>

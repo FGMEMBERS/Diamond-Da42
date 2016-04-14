@@ -11,6 +11,11 @@
     
     <!-- Objets transparents -->
   </animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>tour</object-name>
+    <object-name>on-off</object-name>
+</effect>
   
   <animation>
     <type>pick</type>
@@ -20,6 +25,10 @@
       <binding>
         <command>property-toggle</command>
         <property>/controls/lighting/landing-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
       </binding>
       <binding>
         <command>property-toggle</command>

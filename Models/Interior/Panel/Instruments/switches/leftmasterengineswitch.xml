@@ -8,7 +8,12 @@
     <object-name>base</object-name>
     <object-name>lever</object-name>
   </animation>
-  
+  <effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>lever</object-name>
+</effect>
+
   <animation>
     <type>rotate</type>
     <object-name>lever</object-name>

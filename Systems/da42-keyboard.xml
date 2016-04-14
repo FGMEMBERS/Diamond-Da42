@@ -71,6 +71,10 @@
         <command>property-toggle</command>
         <property>/controls/lighting/landing-lights</property>
       </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+      </binding>
     </key>
     
     <key n="76">

@@ -2,6 +2,17 @@
 
 <PropertyList>
 
+  <engines>
+   <engine n="0">
+      <boost type="double">1</boost>
+      <throttle type="double">0.00</throttle>
+    </engine>
+    <engine n="1">
+      <boost type="double">1</boost>
+      <throttle type="double">0.00</throttle>
+    </engine>
+  </engines>
+
   <gear>
     <brake-parking type="bool">1</brake-parking>
     <emergency type="bool">false</emergency>

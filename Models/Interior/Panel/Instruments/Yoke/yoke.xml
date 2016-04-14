@@ -11,6 +11,15 @@
     <object-name>buttonbase</object-name>
     <object-name>redbutton</object-name>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>tubeyoke</object-name>
+    <object-name>topyoke</object-name>
+    <object-name>buttons</object-name>
+    <object-name>buttonbase</object-name>
+    <object-name>redbutton</object-name>
+</effect>
   
   <animation>
     <name>yoke</name>

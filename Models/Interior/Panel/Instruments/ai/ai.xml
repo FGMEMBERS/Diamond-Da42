@@ -20,6 +20,23 @@
     
     <object-name>vitre</object-name>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>visses</object-name>
+    <object-name>knob</object-name>
+    <object-name>face</object-name>
+    <object-name>face-press</object-name>
+    <object-name>ring</object-name>
+    <object-name>needle</object-name>
+    <object-name>airplane</object-name>
+    <object-name>index</object-name>
+    <object-name>cache</object-name>
+    <object-name>bille</object-name>
+    <object-name>bille.support</object-name>
+</effect>
+
   
   <!-- working for Rembrandt -->
   <effect>

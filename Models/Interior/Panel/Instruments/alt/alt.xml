@@ -15,6 +15,17 @@
     
     <object-name>vitre</object-name>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>InhgKnob</object-name>
+    <object-name>face</object-name>
+    <object-name>inhg</object-name>
+    <object-name>needle100</object-name>
+    <object-name>needle1000</object-name>
+    <object-name>needle10000</object-name>
+</effect>
   
   <!-- working for Rembrandt -->
   <effect>

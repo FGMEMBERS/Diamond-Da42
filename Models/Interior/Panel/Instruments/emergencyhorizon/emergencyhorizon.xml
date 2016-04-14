@@ -11,6 +11,15 @@
     <object-name>emerhoriz.lever.base</object-name>
     <object-name>emerhoriz.lever.lever</object-name>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>emerhoriz.lock.base</object-name>
+    <object-name>emerhoriz.lock.lever</object-name>
+    <object-name>emerhoriz.lever.base</object-name>
+    <object-name>emerhoriz.lever.lever</object-name>
+</effect>
   
   <animation>
     <type>rotate</type>

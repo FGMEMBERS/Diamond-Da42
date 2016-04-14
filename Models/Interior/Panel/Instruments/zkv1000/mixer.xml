@@ -92,6 +92,59 @@
       <green> 0.2 </green>
     </emission>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>body.mixer</object-name>
+    <object-name>softkey.COM1MIC</object-name>
+    <object-name>softkey.COM2MIC</object-name>
+    <object-name>softkey.COM3MIC</object-name>
+    <object-name>softkey.COM12</object-name>
+    <object-name>softkey.PA</object-name>
+    <object-name>softkey.MKRMUTE</object-name>
+    <object-name>softkey.DME</object-name>
+    <object-name>softkey.ADF</object-name>
+    <object-name>softkey.AUX</object-name>
+    <object-name>softkey.MANSQ</object-name>
+    <object-name>softkey.PILOT</object-name>
+    <object-name>softkey.COM1</object-name>
+    <object-name>softkey.COM2</object-name>
+    <object-name>softkey.COM3</object-name>
+    <object-name>softkey.TEL</object-name>
+    <object-name>softkey.SPKR</object-name>
+    <object-name>softkey.HISENS</object-name>
+    <object-name>softkey.NAV1</object-name>
+    <object-name>softkey.NAV2</object-name>
+    <object-name>softkey.PLAY</object-name>
+    <object-name>softkey.COPLT</object-name>
+    
+    <object-name>led.COM1MIC</object-name>
+    <object-name>led.COM2MIC</object-name>
+    <object-name>led.COM3MIC</object-name>
+    <object-name>led.COM12</object-name>
+    <object-name>led.PA</object-name>
+    <object-name>led.MKRMUTE</object-name>
+    <object-name>led.DME</object-name>
+    <object-name>led.ADF</object-name>
+    <object-name>led.AUX</object-name>
+    <object-name>led.MANSQ</object-name>
+    <object-name>led.PILOT</object-name>
+    <object-name>led.COM1</object-name>
+    <object-name>led.COM2</object-name>
+    <object-name>led.COM3</object-name>
+    <object-name>led.TEL</object-name>
+    <object-name>led.SPKR</object-name>
+    <object-name>led.HISENS</object-name>
+    <object-name>led.NAV1</object-name>
+    <object-name>led.NAV2</object-name>
+    <object-name>led.PLAY</object-name>
+    <object-name>led.COPLT</object-name>
+    
+    <object-name>knob.Vol.large</object-name>
+    <object-name>knob.Vol.small</object-name>
+    <object-name>knob.RED</object-name>
+
+</effect>
   
   <animation>
     <type>pick</type>

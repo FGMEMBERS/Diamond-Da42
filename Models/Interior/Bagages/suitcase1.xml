@@ -7,5 +7,9 @@
   <animation>
     <object-name>suitcase</object-name>
   </animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+   <object-name>suitcase</object-name>
+</effect>
 
 </PropertyList>

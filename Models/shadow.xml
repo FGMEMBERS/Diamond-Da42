@@ -22,7 +22,7 @@
     <condition>
       <and>
         <not><property>sim/freeze/replay-state</property></not>
-        <not><property>sim/rendering/shadows/enabled</property></not>
+        <property>sim/rendering/shadows/enabled</property>
       </and>
     </condition>
   </animation>

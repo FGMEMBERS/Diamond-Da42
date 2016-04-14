@@ -8,6 +8,11 @@
     <object-name>TrimWheel</object-name>
     <object-name>trimind</object-name>
   </animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>TrimWheel</object-name>
+    <object-name>trimind</object-name>
+</effect>
   
   <animation>
     <type>rotate</type>

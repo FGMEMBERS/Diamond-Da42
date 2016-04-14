@@ -10,6 +10,13 @@
     <object-name>ELT.led</object-name>
     <object-name>ELT.switch</object-name>
   </animation>
+
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>support</object-name>
+    <object-name>ELT.led</object-name>
+    <object-name>ELT.switch</object-name>
+</effect>
   
   <animation>
     <type>material</type>

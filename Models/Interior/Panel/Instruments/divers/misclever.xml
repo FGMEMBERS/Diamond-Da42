@@ -9,6 +9,13 @@
     <object-name>defrostlever</object-name>
     <object-name>cabinheatlever</object-name>
   </animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>parkinglever</object-name>
+    <object-name>defrostlever</object-name>
+    <object-name>cabinheatlever</object-name>
+</effect>
+
   
   <animation>
     <type>translate</type>

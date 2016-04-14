@@ -4,10 +4,15 @@
   
   <path>cb_2.ac</path>
   
-  <animation>
+<animation>
     <object-name>support</object-name>
     <object-name>breaker</object-name>
-  </animation>
+</animation>
+<effect>
+   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
+    <object-name>support</object-name>
+    <object-name>breaker</object-name>
+</effect>
   
   <animation>
     <type>pick</type>
