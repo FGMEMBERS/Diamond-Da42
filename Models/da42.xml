@@ -9,20 +9,17 @@
       var livery_update = aircraft.livery_update.new("Aircraft/Diamond-Da42/Models/Liveries", 10);
       var self = cmdarg();
       
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      var float_3 = self.getNode("sim/multiplay/generic/float[3]", 1);
-      var float_4 = self.getNode("sim/multiplay/generic/float[4]", 1);
-      
       var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
       var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
       var leftbagage_door = self.getNode("sim/model/door-positions/leftbagage/position-norm", 1);
       var rightbagage_door = self.getNode("sim/model/door-positions/rightbagage/position-norm", 1);
+      var landing_light = self.getNode("controls/lighting/landing-light");
       
-      crew_door.alias(float_0);
-      passenger_door.alias(float_1);
-      leftbagage_door.alias(float_3);
-      rightbagage_door.alias(float_4);
+      crew_door       .alias(self.getNode ("sim/multiplay/generic/float[0]"));
+      passenger_door  .alias(self.getNode ("sim/multiplay/generic/float[1]"));
+      leftbagage_door .alias(self.getNode ("sim/multiplay/generic/float[4]"));
+      rightbagage_door.alias(self.getNode ("sim/multiplay/generic/float[5]"));
+      landing_light   .alias(self.getNode ("sim/multiplay/generic/int[10]"));
     </load>
     
     <unload>
@@ -763,7 +760,7 @@
   <animation>
     <type>translate</type>
     <object-name>RoueAvant</object-name>
-    <property>/gear/gear[0]/compression-norm</property>
+    <property>gear/gear[0]/compression-norm</property>
     <interpolation>
       <entry><ind> 0.00 </ind><dep>  0.02 </dep></entry>
       <entry><ind> 0.13 </ind><dep>  0.00 </dep></entry>
@@ -785,7 +782,7 @@
   <animation>
     <type>translate</type>
     <object-name>RoueGauche</object-name>
-    <property>/gear/gear[1]/compression-norm</property>
+    <property>gear/gear[1]/compression-norm</property>
     <interpolation>
       <entry><ind> 0.00 </ind><dep> -0.02 </dep></entry>
       <entry><ind> 0.13 </ind><dep>  0.00 </dep></entry>
@@ -807,7 +804,7 @@
   <animation>
     <type>translate</type>
     <object-name>RoueDroite</object-name>
-    <property>/gear/gear[2]/compression-norm</property>
+    <property>gear/gear[2]/compression-norm</property>
     <interpolation>
       <entry><ind> 0.00 </ind><dep> -0.02 </dep></entry>
       <entry><ind> 0.13 </ind><dep>  0.00 </dep></entry>
@@ -1055,11 +1052,11 @@
         <condition>
           <and>
             <equals>
-              <property>/controls/doors/door[2]/locks/lock[0]/locked</property>
+              <property>controls/doors/door[2]/locks/lock[0]/locked</property>
               <value>1</value>
             </equals>
             <equals>
-              <property>/controls/doors/door[2]/locks/lock[1]/locked</property>
+              <property>controls/doors/door[2]/locks/lock[1]/locked</property>
               <value>1</value>
             </equals>
           </and>
