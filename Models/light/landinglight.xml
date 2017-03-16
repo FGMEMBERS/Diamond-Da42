@@ -3,6 +3,7 @@
 <PropertyList>
   
   <path>landing-light-cone.ac</path>
+  <nopreview/>
   
   <animation>
     <object-name>Cone</object-name>

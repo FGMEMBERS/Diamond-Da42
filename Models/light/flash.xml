@@ -3,6 +3,7 @@
 <PropertyList>
 
   <path>flash.ac</path>
+  <nopreview/>
 
   <animation>
     <!-- Objets opaques -->
