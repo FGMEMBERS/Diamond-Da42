@@ -18,6 +18,20 @@
       <cockpit type="int"> 4 </cockpit>
       <model type="int">   4 </model>
     </rating>
+
+    <tags>
+      <tag>diamond</tag>
+      <tag>low-wing</tag>
+      <tag>tricycle</tag>
+      <tag>fixed-gear</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>ifr</tag>
+      <tag>ga</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+      <tag>2010s</tag>
+    </tags>
     
   </sim>
 
