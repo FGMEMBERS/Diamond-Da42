@@ -12,8 +12,8 @@
   <animation>
     <type>rotate</type>
     <object-name>lever</object-name>
-    <property>/controls/switches/right-master-engine-switch</property>
-    <factor> -30 </factor>
+    <property>controls/engines/engine[1]/magnetos</property>
+    <factor> -10 </factor>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -27,8 +27,10 @@
     <action>
       <button>0</button>
       <binding>
-        <command>property-toggle</command>
-        <property>/controls/switches/right-master-engine-switch</property>
+        <command>property-cycle</command>
+        <property>controls/engines/engine[1]/magnetos</property>
+        <value>0</value>
+        <value>3</value>
       </binding>
       <binding>
         <command>property-toggle</command>
