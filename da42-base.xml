@@ -4,12 +4,12 @@
 
   <sim include="Systems/views.xml">
 
-    <description>Diamond Da 42-VI (YASim)</description>
-    <author>BARANGER Emmanuel (3D/FDM) - OO ZVY (FDM) - Jeep (System) - MrZac (VI)</author>
-    <aircraft-version>0.96 - 04/04/2016</aircraft-version>
+    <description>Diamond Da 42 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM) - OO ZVY (FDM) - Jeep (System)</author>
+    <aircraft-version>0.95 - 07/12/2014</aircraft-version>
     <status>Beta</status>
    
-    <fuel-fraction>1.0</fuel-fraction>
+    <fuel-fraction>0.8</fuel-fraction>
   
     <startup>
       <splash-texture>Aircraft/Diamond-Da42/da42-splash.png</splash-texture>
@@ -63,6 +63,7 @@
         <int   n="7"  type="int"> 0</int>                                          <!-- 7 color -->
         <int   n="8"  alias="/systems/electrical/outputs/nav-lights">0</int>         <!-- 8 nav-lights -->
         <int   n="9"  alias="/sim/model/lights/beacon/state">false</int>             <!-- 9 strobe-lights -->
+        <int   n="10" alias="/controls/lighting/landing-light">0</int>
         <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
         <float n="2"  alias="/position/gear-agl-m">0</float>                       <!-- altitude for MP shadow -->
@@ -93,7 +94,7 @@
       <name type="string">Pilot</name>
       <min-lb type="double">120.0</min-lb>
       <max-lb type="double">300.0</max-lb>
-      <weight-lb type="double">180</weight-lb>
+      <weight-lb type="double">200</weight-lb>
     </weight>
     
     <weight n="1">
@@ -147,7 +148,7 @@
       <rpm type="float">0</rpm>
     </engine>
   </engines>
-
+  
   <nasal>
     <doors>
       <file>Aircraft/Diamond-Da42/Nasal/doors.nas</file>
@@ -156,7 +157,6 @@
       <file>Aircraft/Diamond-Da42/Nasal/liveries.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/light.nas</file>
       <file>Aircraft/Diamond-Da42/Nasal/immat.nas</file>
-      <file>Aircraft/Diamond-Da42/Nasal/rain.nas</file>
     </da42>
     <zkv1000>
       <file>Aircraft/Diamond-Da42/Models/Interior/Panel/Instruments/zkv1000/zkv1000.nas</file>

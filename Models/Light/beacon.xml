@@ -3,6 +3,7 @@
 <PropertyList>
 
   <path>RedLight.ac</path>
+  <nopreview/>
 
   <animation>
     <!-- Objets opaques -->
@@ -31,7 +32,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/sim/model/lights/beacon/state</property>
+      <property>sim/model/lights/beacon/state</property>
     </condition>
   </animation>
 
