@@ -15,7 +15,7 @@
   <animation>
     <type>rotate</type>
     <object-name>on-off</object-name>
-    <property>/controls/lighting/nav-lights</property>
+    <property>controls/lighting/nav-lights</property>
     <factor> -30 </factor>
     <axis>
       <x> 0 </x>
@@ -31,11 +31,11 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/lighting/nav-lights</property>
+        <property>controls/lighting/nav-lights</property>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>

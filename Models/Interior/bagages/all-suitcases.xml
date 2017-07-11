@@ -18,7 +18,7 @@
     <object-name>bagFront1</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[4]/weight-lb</property>
+        <property>sim/weight[4]/weight-lb</property>
         <value> 0 </value>
       </greater-than>
     </condition>
@@ -39,7 +39,7 @@
     <object-name>bagFront2</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[4]/weight-lb</property>
+        <property>sim/weight[4]/weight-lb</property>
         <value> 33 </value>
       </greater-than>
     </condition>
@@ -60,7 +60,7 @@
     <object-name>bagRear1</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[5]/weight-lb</property>
+        <property>sim/weight[5]/weight-lb</property>
         <value> 0 </value>
       </greater-than>
     </condition>
@@ -81,7 +81,7 @@
     <object-name>bagRear2</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[5]/weight-lb</property>
+        <property>sim/weight[5]/weight-lb</property>
         <value> 50 </value>
       </greater-than>
     </condition>

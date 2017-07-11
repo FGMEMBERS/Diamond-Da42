@@ -16,7 +16,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/alternateair</property>
+        <property>controls/switches/alternateair</property>
       </binding>
     </action>
   </animation>
@@ -24,7 +24,7 @@
   <animation>
     <type>rotate</type>
     <object-name>lever</object-name>
-    <property>/controls/switches/alternateair</property>
+    <property>controls/switches/alternateair</property>
     <factor> 90 </factor>
     <axis>
       <x>  0 </x>

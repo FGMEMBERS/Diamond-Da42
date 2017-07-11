@@ -20,30 +20,30 @@
     <condition>
       <and>
         <greater-than>
-          <property>/gear/gear[0]/position-norm</property>
+          <property>gear/gear[0]/position-norm</property>
           <value type="double">0</value>
         </greater-than> 
         <less-than>
-          <property>/gear/gear[0]/position-norm</property>
+          <property>gear/gear[0]/position-norm</property>
           <value type="double">1</value>
         </less-than>  
         <greater-than>
-          <property>/gear/gear[1]/position-norm</property>
+          <property>gear/gear[1]/position-norm</property>
           <value type="double">0</value>
         </greater-than> 
         <less-than>
-          <property>/gear/gear[1]/position-norm</property>
+          <property>gear/gear[1]/position-norm</property>
           <value type="double">1</value>
         </less-than>  
         <greater-than>
-          <property>/gear/gear[2]/position-norm</property>
+          <property>gear/gear[2]/position-norm</property>
           <value type="double">0</value>
         </greater-than> 
         <less-than>
-          <property>/gear/gear[2]/position-norm</property>
+          <property>gear/gear[2]/position-norm</property>
           <value type="double">1</value>
         </less-than>
-        <property>/controls/electric/battery-switch</property>
+        <property>controls/electric/battery-switch</property>
       </and>
     </condition>
   </animation>

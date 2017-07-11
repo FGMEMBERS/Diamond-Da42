@@ -18,7 +18,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/electric/circuitbreaker/rightecubus</property>
+        <property>controls/electric/circuitbreaker/rightecubus</property>
       </binding>
     </action>
   </animation>
@@ -26,7 +26,7 @@
   <animation>
     <type>translate</type>
     <object-name>breaker</object-name>
-    <property>/controls/electric/circuitbreaker/rightecubus</property>
+    <property>controls/electric/circuitbreaker/rightecubus</property>
     <factor> -0.007 </factor>
     <axis>
       <x> 1 </x>

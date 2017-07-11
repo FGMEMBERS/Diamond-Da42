@@ -58,7 +58,7 @@
     <object-name>low.light</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
@@ -71,7 +71,7 @@
   <animation>
     <type>translate</type>
     <object-name>max.button</object-name>
-    <property>/controls/switches/deice/max</property>
+    <property>controls/switches/deice/max</property>
     <factor> -0.003 </factor>
     <axis>
       <x> 1 </x>
@@ -87,12 +87,12 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/deice/max</property>
+        <property>controls/switches/deice/max</property>
       </binding>
       <mod-up>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/switches/deice/max</property>
+          <property>controls/switches/deice/max</property>
         </binding>
       </mod-up>
     </action>
@@ -101,7 +101,7 @@
   <animation>
     <type>translate</type>
     <object-name>windshield.button</object-name>
-    <property>/controls/switches/deice/windshield</property>
+    <property>controls/switches/deice/windshield</property>
     <factor>-0.003</factor>
     <axis>
       <x> 1 </x>
@@ -117,7 +117,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/deice/windshield</property>
+        <property>controls/switches/deice/windshield</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -126,7 +126,7 @@
       <mod-up>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/switches/deice/windshield</property>
+          <property>controls/switches/deice/windshield</property>
         </binding>
       </mod-up>
     </action>
@@ -135,7 +135,7 @@
   <animation>
     <type>rotate</type>
     <object-name>speed.lever</object-name>
-    <property>/controls/switches/deice/speed</property>
+    <property>controls/switches/deice/speed</property>
     <factor> -15 </factor>
     <center>
       <x-m>  0.0028 </x-m>
@@ -157,14 +157,14 @@
       <button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/deice/speed</property>
+        <property>controls/switches/deice/speed</property>
         <step> 1 </step>
         <min> -1 </min>
         <max>  1 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -177,14 +177,14 @@
       <button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/deice/speed</property>
+        <property>controls/switches/deice/speed</property>
         <step> -1 </step>
         <min>  -1 </min>
         <max>   1 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -192,7 +192,7 @@
   <animation>
     <type>rotate</type>
     <object-name>alternate.lock.lever</object-name>
-    <property>/controls/switches/deice/alternate-lock</property>
+    <property>controls/switches/deice/alternate-lock</property>
     <factor> -90 </factor>
     <center>
       <x-m> 0.0089 </x-m>
@@ -214,7 +214,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/deice/alternate-lock</property>
+        <property>controls/switches/deice/alternate-lock</property>
       </binding>
     </action>
   </animation>
@@ -222,7 +222,7 @@
   <animation>
     <type>rotate</type>
     <object-name>alternate.lever.lever</object-name>
-    <property>/controls/switches/deice/alternate-lever</property>
+    <property>controls/switches/deice/alternate-lever</property>
     <factor> 60 </factor>
     <center>
       <x-m> 0.0032 </x-m>
@@ -244,17 +244,17 @@
       <repeatable>false</repeatable>
       <binding>
         <condition>
-          <property>/controls/switches/deice/alternate-lock</property>
+          <property>controls/switches/deice/alternate-lock</property>
         </condition>
         <command>property-toggle</command>
-        <property>/controls/switches/deice/alternate-lever</property>
+        <property>controls/switches/deice/alternate-lever</property>
       </binding>
       <binding>
         <condition>
-          <property>/controls/switches/deice/alternate-lock</property>
+          <property>controls/switches/deice/alternate-lock</property>
         </condition>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -262,7 +262,7 @@
   <animation>
     <type>rotate</type>
     <object-name>pump.lever</object-name>
-    <property>/controls/switches/deice/pump</property>
+    <property>controls/switches/deice/pump</property>
     <factor> -30 </factor>
     <center>
       <x-m>  0.0032 </x-m>
@@ -284,11 +284,11 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/deice/pump</property>
+        <property>controls/switches/deice/pump</property>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -296,7 +296,7 @@
   <animation>
     <type>rotate</type>
     <object-name>icelight.lever</object-name>
-    <property>/controls/switches/deice/icelight</property>
+    <property>controls/switches/deice/icelight</property>
     <factor> -15 </factor>
     <center>
       <x-m>  0.0032 </x-m>
@@ -318,14 +318,14 @@
       <button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/deice/icelight</property>
+        <property>controls/switches/deice/icelight</property>
         <step> 1 </step>
         <min> -1 </min>
         <max>  1 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -338,22 +338,22 @@
       <button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/switches/deice/icelight</property>
+        <property>controls/switches/deice/icelight</property>
         <step> -1 </step>
         <min>  -1 </min>
         <max>   1 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
       <mod-up>
         <binding>
           <command>property-assign</command>
-          <property>/controls/switches/deice/icelight</property>
+          <property>controls/switches/deice/icelight</property>
           <value>0</value>
           <condition>
-            <property>/controls/switches/deice/icelight</property>
+            <property>controls/switches/deice/icelight</property>
             <value>-1</value>
           </condition>
         </binding>
@@ -372,16 +372,16 @@
     <condition>
       <and>
         <equals>
-          <property>/controls/electric/alimentation/deice</property>
+          <property>controls/electric/alimentation/deice</property>
           <value>1</value>
         </equals>
         <or>
           <equals>
-            <property>/controls/deice/mode</property>
+            <property>controls/deice/mode</property>
             <value>2</value>
           </equals>
           <equals>
-            <property>/controls/switches/deice/icelight</property>
+            <property>controls/switches/deice/icelight</property>
             <value>-1</value>
           </equals>
         </or>
@@ -400,16 +400,16 @@
     <condition>
       <and>
         <equals>
-          <property>/controls/electric/alimentation/deice</property>
+          <property>controls/electric/alimentation/deice</property>
           <value>1</value>
         </equals>
         <or>
           <equals>
-            <property>/controls/deice/mode</property>
+            <property>controls/deice/mode</property>
             <value>1</value>
           </equals>
           <equals>
-            <property>/controls/switches/deice/icelight</property>
+            <property>controls/switches/deice/icelight</property>
             <value>-1</value>
           </equals>
         </or>
@@ -428,16 +428,16 @@
     <condition>
       <and>
         <equals>
-          <property>/controls/electric/alimentation/deice</property>
+          <property>controls/electric/alimentation/deice</property>
           <value>1</value>
         </equals>
         <or>
           <equals>
-            <property>/controls/deice/mode</property>
+            <property>controls/deice/mode</property>
             <value>0</value>
           </equals>
           <equals>
-            <property>/controls/switches/deice/icelight</property>
+            <property>controls/switches/deice/icelight</property>
             <value>-1</value>
           </equals>
         </or>

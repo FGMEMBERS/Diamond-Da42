@@ -9,7 +9,7 @@
       <desc>Crew door</desc>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/doors/door[0]/locked</property>
+        <property>controls/doors/door[0]/locked</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -22,11 +22,11 @@
       <desc>Left bagage door</desc>
       <binding>
         <command>property-toogle</command>
-        <property>/controls/doors/door[2]/locks/lock[0]/locked</property>
+        <property>controls/doors/door[2]/locks/lock[0]/locked</property>
       </binding>
       <binding>
         <command>property-toogle</command>
-        <property>/controls/doors/door[2]/locks/lock[1]/locked</property>
+        <property>controls/doors/door[2]/locks/lock[1]/locked</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -39,7 +39,7 @@
       <desc>Passenger door</desc>
       <binding>
         <command>property-toogle</command>
-        <property>/controls/doors/door[1]/locked</property>
+        <property>controls/doors/door[1]/locked</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -52,11 +52,11 @@
       <desc>Right bagage door</desc>
       <binding>
         <command>property-toogle</command>
-        <property>/controls/doors/door[3]/locks/lock[0]/locked</property>
+        <property>controls/doors/door[3]/locks/lock[0]/locked</property>
       </binding>
       <binding>
         <command>property-toogle</command>
-        <property>/controls/doors/door[3]/locks/lock[1]/locked</property>
+        <property>controls/doors/door[3]/locks/lock[1]/locked</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -69,7 +69,7 @@
       <desc>Landing light</desc>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/lighting/landing-lights</property>
+        <property>controls/lighting/landing-lights</property>
       </binding>
     </key>
     
@@ -78,7 +78,7 @@
       <desc>Taxi light</desc>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/lighting/taxi-lights</property>
+        <property>controls/lighting/taxi-lights</property>
       </binding>
     </key>
     

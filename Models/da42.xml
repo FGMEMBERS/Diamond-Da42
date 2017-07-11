@@ -932,7 +932,7 @@
         <script>doors.crew.toggle();</script>
         <condition>
           <equals>
-            <property>/controls/doors/door[0]/locked</property>
+            <property>controls/doors/door[0]/locked</property>
             <value>1</value>
           </equals>
         </condition>
@@ -984,7 +984,7 @@
         <script>doors.passenger.toggle();</script>
         <condition>
           <equals>
-            <property>/controls/doors/door[1]/locked</property>
+            <property>controls/doors/door[1]/locked</property>
             <value>1</value>
           </equals>
         </condition>
@@ -1125,11 +1125,11 @@
         <condition>
           <and>
             <equals>
-              <property>/controls/doors/door[3]/locks/lock[0]/locked</property>
+              <property>controls/doors/door[3]/locks/lock[0]/locked</property>
               <value>1</value>
             </equals>
             <equals>
-              <property>/controls/doors/door[3]/locks/lock[1]/locked</property>
+              <property>controls/doors/door[3]/locks/lock[1]/locked</property>
               <value>1</value>
             </equals>
           </and>

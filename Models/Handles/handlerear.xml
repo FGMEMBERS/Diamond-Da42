@@ -18,7 +18,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/doors/door[1]/locked</property>
+        <property>controls/doors/door[1]/locked</property>
       </binding>
     </action>
   </animation>
@@ -26,7 +26,7 @@
   <animation>
     <type>rotate</type>
     <object-name>lock</object-name>
-    <property>/controls/doors/door[1]/locked</property>
+    <property>controls/doors/door[1]/locked</property>
     <factor> -90 </factor>
     <center>
       <x-m>  0.016630 </x-m>

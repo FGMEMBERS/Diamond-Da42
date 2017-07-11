@@ -12,7 +12,7 @@
   <animation>
     <type>translate</type>
     <object-name>button</object-name>
-    <property>/controls/switches/test-right-ecu-button</property>
+    <property>controls/switches/test-right-ecu-button</property>
     <factor> -0.003 </factor>
     <axis>
       <x> 1 </x>
@@ -28,7 +28,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/test-right-ecu-button</property>
+        <property>controls/switches/test-right-ecu-button</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -37,7 +37,7 @@
       <mod-up>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/switches/test-right-ecu-button</property>
+          <property>controls/switches/test-right-ecu-button</property>
         </binding>
       </mod-up>
     </action>

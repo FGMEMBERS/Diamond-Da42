@@ -20,10 +20,10 @@
     <condition>
       <and>
         <less-than>
-          <property>/surface-positions/flaps-pos-norm</property>
+          <property>surface-positions/flaps-pos-norm</property>
           <value type="double">0.25</value>
         </less-than>
-        <property>/controls/electric/battery-switch</property>
+        <property>controls/electric/battery-switch</property>
       </and>
     </condition>
   </animation>

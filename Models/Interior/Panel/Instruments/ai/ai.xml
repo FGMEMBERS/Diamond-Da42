@@ -35,7 +35,7 @@
     <object-name>needle</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/luminosite-lights</factor-prop>
@@ -53,7 +53,7 @@
     <object-name>bille.support</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/floods-lights</factor-prop>
@@ -66,7 +66,7 @@
   <animation>
     <type>translate</type>
     <object-name>needle</object-name>
-    <property>/instrumentation/attitude-indicator[1]/indicated-pitch-deg</property>
+    <property>instrumentation/attitude-indicator[1]/indicated-pitch-deg</property>
     <interpolation>
       <entry><ind>  25 </ind><dep> -0.015 </dep></entry>
       <entry><ind> -25 </ind><dep>  0.015 </dep></entry>
@@ -81,7 +81,7 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>/instrumentation/attitude-indicator[1]/indicated-roll-deg</property>
+    <property>instrumentation/attitude-indicator[1]/indicated-roll-deg</property>
     <factor>-1</factor>
     <axis>
       <x> -1 </x>
@@ -93,7 +93,7 @@
   <animation>
     <type>rotate</type>
     <object-name>ring</object-name>
-    <property>/instrumentation/attitude-indicator[1]/indicated-roll-deg</property>
+    <property>instrumentation/attitude-indicator[1]/indicated-roll-deg</property>
     <factor> -1 </factor>
     <axis>
       <x> -1 </x>
@@ -188,7 +188,7 @@
   <animation>
     <type>rotate</type>
     <object-name>bille</object-name>
-    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
     <interpolation>
       <entry><ind> -0.5 </ind><dep> -8 </dep></entry>
       <entry><ind>  0.5 </ind><dep>  8 </dep></entry>

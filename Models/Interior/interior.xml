@@ -87,7 +87,7 @@
     <object-name>copilot</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[1]/weight-lb</property>
+        <property>sim/weight[1]/weight-lb</property>
         <value>0.0</value>
       </greater-than>
     </condition>
@@ -98,7 +98,7 @@
     <object-name>passagerG</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[2]/weight-lb</property>
+        <property>sim/weight[2]/weight-lb</property>
         <value>0.0</value>
       </greater-than>
     </condition>
@@ -109,7 +109,7 @@
     <object-name>passagerD</object-name>
     <condition>
       <greater-than>
-        <property>/sim/weight[3]/weight-lb</property>
+        <property>sim/weight[3]/weight-lb</property>
         <value>0.0</value>
       </greater-than>
     </condition>

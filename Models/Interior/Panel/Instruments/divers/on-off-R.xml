@@ -15,7 +15,7 @@
   <animation>
     <type>rotate</type>
     <object-name>on-off</object-name>
-    <property>/controls/electric/engine/generator</property>
+    <property>controls/electric/engine/generator</property>
     <factor>  35 </factor>
     <min-deg>  0 </min-deg>
     <max-deg> 35 </max-deg>

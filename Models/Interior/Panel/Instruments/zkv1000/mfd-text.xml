@@ -19,7 +19,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -29,11 +29,11 @@
           <condition>
             <or>
               <greater-than>
-                <property>/velocities/vertical-speed-fps</property>
+                <property>velocities/vertical-speed-fps</property>
                 <value>0.0833</value>
               </greater-than>
               <less-than>
-                <property>/velocities/vertical-speed-fps</property>
+                <property>velocities/vertical-speed-fps</property>
                 <value>-0.0833</value>
               </less-than>
             </or>
@@ -49,7 +49,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/velocities/vertical-speed-fps</property>
+              <property>velocities/vertical-speed-fps</property>
               <scale>6</scale>
               <format>%.0f0</format>
             </chunk>
@@ -65,7 +65,7 @@
             </transformation>
             <transformation>
               <type>y-shift</type>
-              <property>/velocities/vertical-speed-fps</property>
+              <property>velocities/vertical-speed-fps</property>
               <scale>0.93</scale>
               <max>33.3333</max>
               <min>-33.3333</min>
@@ -87,7 +87,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -105,7 +105,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/orientation/heading-magnetic-deg</property>
+              <property>orientation/heading-magnetic-deg</property>
               <format>%03.0f</format>
             </chunk>
           </chunks>
@@ -124,7 +124,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/infos-heading</property>
+        <property>instrumentation/zkv1000/mfd/infos-heading</property>
       </condition>
       
       <layers>
@@ -156,7 +156,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/heading-bug-deg</property>
+              <property>instrumentation/zkv1000/mfd/afcs/heading-bug-deg</property>
               <format>%03.0f</format>
             </chunk>
           </chunks>
@@ -180,7 +180,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/infos-course</property>
+        <property>instrumentation/zkv1000/mfd/infos-course</property>
       </condition>
       
       <layers>
@@ -212,7 +212,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/zkv1000/mfd/cdi/course</property>
+              <property>instrumentation/zkv1000/mfd/cdi/course</property>
               <format>%03.0f</format>
             </chunk>
           </chunks>
@@ -238,7 +238,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -272,7 +272,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/infos-ktas</property>
+              <property>instrumentation/zkv1000/mfd/infos-ktas</property>
               <format>%.0f</format>
             </chunk>
           </chunks>
@@ -298,7 +298,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -316,7 +316,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/selected-alt-ft</property>
+              <property>instrumentation/zkv1000/mfd/afcs/selected-alt-ft</property>
               <format>%.0f</format>
             </chunk>
           </chunks>
@@ -336,7 +336,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -354,7 +354,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/altimeter/setting-inhg</property>
+              <property>instrumentation/altimeter/setting-inhg</property>
               <format>%.2fIN</format>
             </chunk>
           </chunks>
@@ -374,10 +374,10 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
-        <property>/instrumentation/zkv1000/mfd/wind-data</property>
+        <property>instrumentation/zkv1000/mfd/wind-data</property>
       </condition>
       
       <layers>
@@ -393,7 +393,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/infos/wind-line</property>
+              <property>instrumentation/zkv1000/mfd/infos/wind-line</property>
             </chunk>
           </chunks>
         </layer>
@@ -409,7 +409,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/infos/wind-line1</property>
+              <property>instrumentation/zkv1000/mfd/infos/wind-line1</property>
             </chunk>
           </chunks>
           <transformations>
@@ -434,7 +434,7 @@
     
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -452,7 +452,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine/rpm</property>
+              <property>engines/engine/rpm</property>
               <format>%.0f</format>
             </chunk>
           </chunks>
@@ -481,7 +481,7 @@
       
       <condition>
         <greater-than>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>0</value>
         </greater-than>
       </condition>
@@ -499,7 +499,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine[0]/thrust-lbs</property>
+              <property>engines/engine[0]/thrust-lbs</property>
               <format>%2.0f</format>
               <scale>0.4</scale>
             </chunk>
@@ -520,7 +520,7 @@
       
       <condition>
         <greater-than>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>0</value>
         </greater-than>
       </condition>
@@ -538,7 +538,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine[1]/thrust-lbs</property>
+              <property>engines/engine[1]/thrust-lbs</property>
               <format>%2.0f</format>
               <scale>0.4</scale>
             </chunk>
@@ -559,7 +559,7 @@
       
       <condition>
         <greater-than>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>0</value>
         </greater-than>
       </condition>
@@ -577,7 +577,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine[0]/rpm</property>
+              <property>engines/engine[0]/rpm</property>
               <format>%4.0f</format>
             </chunk>
           </chunks>
@@ -597,7 +597,7 @@
       
       <condition>
         <greater-than>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>0</value>
         </greater-than>
       </condition>
@@ -615,7 +615,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine[1]/rpm</property>
+              <property>engines/engine[1]/rpm</property>
               <format>%4.0f</format>
             </chunk>
           </chunks>
@@ -635,7 +635,7 @@
       
       <condition>
         <greater-than>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>0</value>
         </greater-than>
       </condition>
@@ -653,7 +653,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine[0]/fuel-flow-gph</property>
+              <property>engines/engine[0]/fuel-flow-gph</property>
               <format>%2.1f</format>
             </chunk>
           </chunks>
@@ -673,7 +673,7 @@
       
       <condition>
         <greater-than>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>0</value>
         </greater-than>
       </condition>
@@ -691,7 +691,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/engines/engine[1]/fuel-flow-gph</property>
+              <property>engines/engine[1]/fuel-flow-gph</property>
               <format>%2.1f</format>
             </chunk>
           </chunks>
@@ -711,7 +711,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -729,7 +729,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/environment/temperature-degc</property>
+              <property>environment/temperature-degc</property>
               <format>OAT %.1f</format>
             </chunk>
           </chunks>
@@ -749,7 +749,7 @@
       
       <condition>
         <equals>
-          <property>/instrumentation/zkv1000/mfd/power</property>
+          <property>instrumentation/zkv1000/mfd/power</property>
           <value>1</value>
         </equals>
       </condition>
@@ -783,7 +783,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/transponder/id-code</property>
+              <property>instrumentation/transponder/id-code</property>
             </chunk>
           </chunks>
           <transformations>
@@ -796,7 +796,7 @@
         <layer>
           <condition>
             <equals>
-              <property>/instrumentation/zkv1000/radios/xpdr-mode</property>
+              <property>instrumentation/zkv1000/radios/xpdr-mode</property>
               <value>STBY</value>
             </equals>
           </condition>
@@ -811,7 +811,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/transponder/id-code</property>
+              <property>instrumentation/transponder/id-code</property>
             </chunk>
           </chunks>
           <transformations>
@@ -833,7 +833,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/radios/xpdr-mode</property>
+              <property>instrumentation/zkv1000/radios/xpdr-mode</property>
             </chunk>
           </chunks>
           <transformations>
@@ -846,7 +846,7 @@
         <layer>
           <condition>
             <equals>
-              <property>/instrumentation/zkv1000/radios/xpdr-mode</property>
+              <property>instrumentation/zkv1000/radios/xpdr-mode</property>
               <value>STBY</value>
             </equals>
           </condition>
@@ -861,7 +861,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/radios/xpdr-mode</property>
+              <property>instrumentation/zkv1000/radios/xpdr-mode</property>
             </chunk>
           </chunks>
           <transformations>
@@ -883,7 +883,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/sim/time/gmt-string</property>
+              <property>sim/time/gmt-string</property>
               <format>LCL %s</format>
             </chunk>
           </chunks>
@@ -910,7 +910,7 @@
       <layers>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/power</property>
+            <property>instrumentation/zkv1000/mfd/power</property>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -923,7 +923,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/device[1]/menu-text</property>
+              <property>instrumentation/zkv1000/device[1]/menu-text</property>
               <format>%s</format>
             </chunk>
           </chunks>
@@ -931,10 +931,10 @@
         <layer>
           <condition>
             <equals>
-              <property>/instrumentation/zkv1000/mfd/power</property>
+              <property>instrumentation/zkv1000/mfd/power</property>
               <value>2</value>
             </equals>
-            <property>/instrumentation/zkv1000/device[1]/terrain</property>
+            <property>instrumentation/zkv1000/device[1]/terrain</property>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -971,7 +971,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -999,7 +999,7 @@
         </layer>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/alerts/menu-alert</property>
+            <property>instrumentation/zkv1000/alerts/menu-alert</property>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1036,7 +1036,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/mud/displayed</property>
+        <property>instrumentation/zkv1000/mfd/mud/displayed</property>
       </condition>
       
       <layers>
@@ -1303,7 +1303,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -1341,7 +1341,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/nav/frequencies/standby-mhz</property>
+              <property>instrumentation/nav/frequencies/standby-mhz</property>
               <format>%.2f</format>
             </chunk>
           </chunks>
@@ -1355,7 +1355,7 @@
         <layer>
           <condition>
             <not>
-              <property>/instrumentation/zkv1000/mfd/radios/nav-tune</property>
+              <property>instrumentation/zkv1000/mfd/radios/nav-tune</property>
             </not>
           </condition>
           <type>text</type>
@@ -1391,7 +1391,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/nav/frequencies/selected-mhz</property>
+              <property>instrumentation/nav/frequencies/selected-mhz</property>
               <format>%.2f</format>
             </chunk>
           </chunks>
@@ -1414,7 +1414,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/nav/nav-id</property>
+              <property>instrumentation/nav/nav-id</property>
               <format>%s</format>
             </chunk>
           </chunks>
@@ -1430,7 +1430,7 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/radios/nav1-selected</property>
+            <property>instrumentation/zkv1000/mfd/radios/nav1-selected</property>
           </condition>
           <color>
             <red>0</red>
@@ -1440,7 +1440,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/nav/frequencies/selected-mhz</property>
+              <property>instrumentation/nav/frequencies/selected-mhz</property>
               <format>%.2f</format>
             </chunk>
           </chunks>
@@ -1456,7 +1456,7 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/radios/nav1-selected</property>
+            <property>instrumentation/zkv1000/mfd/radios/nav1-selected</property>
           </condition>
           <color>
             <red>0</red>
@@ -1466,7 +1466,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/nav/nav-id</property>
+              <property>instrumentation/nav/nav-id</property>
               <format>%s</format>
             </chunk>
           </chunks>
@@ -1491,7 +1491,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -1529,7 +1529,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+              <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
               <format>%.2f</format>
             </chunk>
           </chunks>
@@ -1542,7 +1542,7 @@
         </layer>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/radios/nav-tune</property>
+            <property>instrumentation/zkv1000/mfd/radios/nav-tune</property>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1577,7 +1577,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+              <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
               <format>%.2f</format>
             </chunk>
           </chunks>
@@ -1600,7 +1600,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/nav[1]/nav-id</property>
+              <property>instrumentation/nav[1]/nav-id</property>
               <format>%s</format>
             </chunk>
           </chunks>
@@ -1616,7 +1616,7 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/radios/nav2-selected</property>
+            <property>instrumentation/zkv1000/mfd/radios/nav2-selected</property>
           </condition>
           <color>
             <red>0</red>
@@ -1626,7 +1626,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+              <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
               <format>%.2f</format>
             </chunk>
           </chunks>
@@ -1642,7 +1642,7 @@
           <font>condensed</font>
           <point-size>4</point-size>
           <condition>
-            <property>/instrumentation/zkv1000/radios/nav2-selected</property>
+            <property>instrumentation/zkv1000/radios/nav2-selected</property>
           </condition>
           <color>
             <red>0</red>
@@ -1652,7 +1652,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/nav[1]/nav-id</property>
+              <property>instrumentation/nav[1]/nav-id</property>
               <format>%s</format>
             </chunk>
           </chunks>
@@ -1677,7 +1677,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -1693,7 +1693,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/comm/frequencies/selected-mhz</property>
+              <property>instrumentation/comm/frequencies/selected-mhz</property>
               <format>%.3f</format>
             </chunk>
           </chunks>
@@ -1701,7 +1701,7 @@
         <layer>
           <condition>
             <not>
-              <property>/instrumentation/zkv1000/mfd/radios/comm-tune</property>
+              <property>instrumentation/zkv1000/mfd/radios/comm-tune</property>
             </not>
           </condition>
           <type>text</type>
@@ -1737,7 +1737,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/comm/frequencies/standby-mhz</property>
+              <property>instrumentation/comm/frequencies/standby-mhz</property>
               <format>%.3f</format>
             </chunk>
           </chunks>
@@ -1790,7 +1790,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -1806,14 +1806,14 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+              <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
               <format>%.3f</format>
             </chunk>
           </chunks>
         </layer>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/radios/comm-tune</property>
+            <property>instrumentation/zkv1000/mfd/radios/comm-tune</property>
           </condition>
           <type>text</type>
           <font>condensed</font>
@@ -1848,7 +1848,7 @@
           <chunks>
             <chunk>
               <type>number-value</type>
-              <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+              <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
               <format>%.3f</format>
             </chunk>
           </chunks>
@@ -1901,7 +1901,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -1917,7 +1917,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/roll-armed-mode-text</property>
+              <property>instrumentation/zkv1000/mfd/afcs/roll-armed-mode-text</property>
             </chunk>
           </chunks>
         </layer>
@@ -1933,7 +1933,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/roll-active-mode-text</property>
+              <property>instrumentation/zkv1000/mfd/afcs/roll-active-mode-text</property>
             </chunk>
           </chunks>
           <transformations>
@@ -1958,9 +1958,9 @@
       <layers>
         <layer>
           <condition>
-            <property>/instrumentation/zkv1000/mfd/power</property>
+            <property>instrumentation/zkv1000/mfd/power</property>
             <not>
-              <property>/autopilot/locks/passive-mode</property>
+              <property>autopilot/locks/passive-mode</property>
             </not>
           </condition>
           <type>text</type>
@@ -1992,7 +1992,7 @@
       <h-base>1024</h-base>
       
       <condition>
-        <property>/instrumentation/zkv1000/mfd/power</property>
+        <property>instrumentation/zkv1000/mfd/power</property>
       </condition>
       
       <layers>
@@ -2008,7 +2008,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/pit-active-mode-text</property>
+              <property>instrumentation/zkv1000/mfd/afcs/pit-active-mode-text</property>
             </chunk>
           </chunks>
         </layer>
@@ -2024,7 +2024,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/pit-armed-mode-text</property>
+              <property>instrumentation/zkv1000/mfd/afcs/pit-armed-mode-text</property>
             </chunk>
           </chunks>
           <transformations>
@@ -2046,7 +2046,7 @@
           <chunks>
             <chunk>
               <type>text-value</type>
-              <property>/instrumentation/zkv1000/mfd/afcs/pitch-armed-mode2-text</property>
+              <property>instrumentation/zkv1000/mfd/afcs/pitch-armed-mode2-text</property>
             </chunk>
           </chunks>
           <transformations>

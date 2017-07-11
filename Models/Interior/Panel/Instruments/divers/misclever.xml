@@ -13,7 +13,7 @@
   <animation>
     <type>translate</type>
     <object-name>parkinglever</object-name>
-    <property>/controls/gear/brake-parking</property>
+    <property>controls/gear/brake-parking</property>
     <factor> 0.06 </factor>
     <axis>
       <x> 1 </x>
@@ -30,7 +30,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/gear/brake-parking</property>
+        <property>controls/gear/brake-parking</property>
       </binding>
     </action>
   </animation>
@@ -38,7 +38,7 @@
   <animation>
     <type>translate</type>
     <object-name>defrostlever</object-name>
-    <property>/controls/switches/defrost-lever</property>
+    <property>controls/switches/defrost-lever</property>
     <factor> 0.06 </factor>
     <axis>
       <x> 1 </x>
@@ -55,7 +55,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/defrost-lever</property>
+        <property>controls/switches/defrost-lever</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -67,7 +67,7 @@
   <animation>
     <type>translate</type>
     <object-name>cabinheatlever</object-name>
-    <property>/controls/switches/cabinheat-lever</property>
+    <property>controls/switches/cabinheat-lever</property>
     <factor> 0.06 </factor>
     <axis>
       <x> 1 </x>
@@ -84,7 +84,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/cabinheat-lever</property>
+        <property>controls/switches/cabinheat-lever</property>
       </binding>
       <binding>
         <command>nasal</command>

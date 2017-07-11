@@ -23,7 +23,7 @@
     <object-name>Ring</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/luminosite-lights</factor-prop>
@@ -36,7 +36,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Ring</object-name>
-    <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
+    <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
     <axis>
       <x> 0 </x>
       <y> 0 </y>

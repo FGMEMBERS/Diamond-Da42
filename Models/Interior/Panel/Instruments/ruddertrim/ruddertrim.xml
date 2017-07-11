@@ -12,7 +12,7 @@
   <animation>
     <type>rotate</type>
     <object-name>trimwheel</object-name>
-    <property>/controls/flight/rudder-trim</property>
+    <property>controls/flight/rudder-trim</property>
     <factor> -180 </factor>
     <axis>
       <x> 1 </x>
@@ -24,7 +24,7 @@
   <animation>
     <type>rotate</type>
     <object-name>trimind</object-name>
-    <property>/controls/flight/rudder-trim</property>
+    <property>controls/flight/rudder-trim</property>
     <factor> -20 </factor>
     <axis>
       <x> 1 </x>
@@ -41,7 +41,7 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/flight/rudder-trim</property>
+        <property>controls/flight/rudder-trim</property>
         <step> 0.1 </step>
         <min> -1.0 </min>
         <max>  1.0 </max>
@@ -57,7 +57,7 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/flight/rudder-trim</property>
+        <property>controls/flight/rudder-trim</property>
         <step> -0.1 </step>
         <min>  -1.0 </min>
         <max>   1.0 </max>

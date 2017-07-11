@@ -12,7 +12,7 @@
   <animation>
     <type>rotate</type>
     <object-name>flaplever</object-name>
-    <property>/surface-positions/flaps-pos-norm</property>
+    <property>surface-positions/flaps-pos-norm</property>
     <factor> 30 </factor>
     <axis>
       <x> 0 </x>
@@ -29,14 +29,14 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/surface-positions/flaps-pos-norm</property>
+        <property>surface-positions/flaps-pos-norm</property>
         <step> -1 </step>
         <min>   0 </min>
         <max>   2 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -49,14 +49,14 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/surface-positions/flaps-pos-norm</property>
+        <property>surface-positions/flaps-pos-norm</property>
         <step> 1 </step>
         <min>  0 </min>
         <max>  2 </max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
