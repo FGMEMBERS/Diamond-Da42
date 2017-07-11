@@ -13,7 +13,7 @@
       var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
       var leftbagage_door = self.getNode("sim/model/door-positions/leftbagage/position-norm", 1);
       var rightbagage_door = self.getNode("sim/model/door-positions/rightbagage/position-norm", 1);
-      var landing_light = self.getNode("controls/lighting/landing-light");
+      var landing_light = self.getNode("controls/lighting/landing-light", 1);
       
       crew_door       .alias(self.getNode ("sim/multiplay/generic/float[0]"));
       passenger_door  .alias(self.getNode ("sim/multiplay/generic/float[1]"));
