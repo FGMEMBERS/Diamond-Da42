@@ -21,6 +21,7 @@
 
     <model>
       <path>Aircraft/Diamond-Da42/Models/da42.xml</path>
+      <fallback-model-index type="int">58</fallback-model-index>
       <livery>
         <file type="string">default</file>
       </livery>
@@ -52,7 +53,6 @@
     
     <multiplay>
       <chat_display>1</chat_display>
-      <fallback-model-index type="int">58</fallback-model-index>
       <generic> 
         <int   n="0"  type="int"> 0</int>                                          <!-- 0 immat -->
         <int   n="1"  type="int"> 0</int>                                          <!-- 1 immat -->
