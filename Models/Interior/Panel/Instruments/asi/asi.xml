@@ -11,13 +11,6 @@
     
     <object-name>vitre</object-name>
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>needle</object-name>
-</effect>
   
   <!-- working for Rembrandt -->
   <effect>
@@ -31,7 +24,7 @@
     <object-name>needle</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/luminosite-lights</factor-prop>
@@ -46,7 +39,7 @@
     <object-name>fond</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/floods-lights</factor-prop>

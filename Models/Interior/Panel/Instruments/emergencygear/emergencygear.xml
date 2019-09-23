@@ -7,15 +7,11 @@
   <animation>
     <object-name>lever</object-name>
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>lever</object-name>
-</effect>
   
   <animation>
     <type>rotate</type>
     <object-name>lever</object-name>
-    <property>/controls/switches/alternateair</property>
+    <property>controls/switches/alternateair</property>
     <factor> 90 </factor>
     <axis>
       <x>  0 </x>
@@ -32,7 +28,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/gear/emergency</property>
+        <property>controls/gear/emergency</property>
       </binding>
     </action>
   </animation>

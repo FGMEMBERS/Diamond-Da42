@@ -8,17 +8,11 @@
     <object-name>base</object-name>
     <object-name>lever</object-name>
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>base</object-name>
-    <object-name>lever</object-name>
-</effect>
-
   
   <animation>
     <type>rotate</type>
     <object-name>lever</object-name>
-    <property>/controls/switches/right-alt-switch</property>
+    <property>controls/switches/right-alt-switch</property>
     <factor> -30 </factor>
     <axis>
       <x> 0 </x>
@@ -34,11 +28,11 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/right-alt-switch</property>
+        <property>controls/switches/right-alt-switch</property>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>

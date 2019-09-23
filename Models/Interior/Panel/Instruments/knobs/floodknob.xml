@@ -8,16 +8,11 @@
     <object-name>support</object-name>
     <object-name>knob</object-name>
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>support</object-name>
-    <object-name>knob</object-name>
-</effect>
   
   <animation>
     <type>rotate</type>
     <object-name>knob</object-name>
-    <property>/controls/lighting/floods-lights</property>
+    <property>controls/lighting/floods-lights</property>
     <factor> -135 </factor>
     <axis>
       <x> 1 </x>
@@ -43,7 +38,7 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/lighting/floods-lights</property>
+        <property>controls/lighting/floods-lights</property>
         <step>0.1</step>
         <min>0</min>
         <max>2</max>
@@ -58,7 +53,7 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/lighting/floods-lights</property>
+        <property>controls/lighting/floods-lights</property>
         <step>-0.1</step>
         <min>0</min>
         <max>2</max>

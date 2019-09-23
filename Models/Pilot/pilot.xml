@@ -23,24 +23,6 @@
     
     <!-- Objets transparents -->
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>tete</object-name>
-    <object-name>visiere</object-name>
-    <object-name>corps</object-name>
-    <object-name>brasG</object-name>
-    <object-name>brasD</object-name>
-    <object-name>avantbrasG</object-name>
-    <object-name>avantbrasD</object-name>
-    <object-name>manche</object-name>
-    <object-name>cuisseG</object-name>
-    <object-name>cuisseD</object-name>
-    <object-name>jambeG</object-name>
-    <object-name>jambed</object-name>
-    <object-name>piedG</object-name>
-    <object-name>piedD</object-name>
-</effect>
   
   <animation>
     <name>AnimeTete</name>

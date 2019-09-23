@@ -12,16 +12,6 @@
     <object-name>rightfuellock</object-name>
     <object-name>rightfuellockpivot</object-name>
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>leftlever</object-name>
-    <object-name>rightlever</object-name>
-    <object-name>leftfuellock</object-name>
-    <object-name>leftfuellockpivot</object-name>
-    <object-name>rightfuellock</object-name>
-    <object-name>rightfuellockpivot</object-name>
-</effect>
   
   <animation>
     <name>leftlock</name>
@@ -38,7 +28,7 @@
   <animation>
     <type>rotate</type>
     <object-name>leftlock</object-name>
-    <property>/controls/fuel/tank[0]/lock</property>
+    <property>controls/fuel/tank[0]/lock</property>
     <factor> 90 </factor>
     <center>
       <x-m>  0.0156 </x-m>
@@ -62,12 +52,12 @@
       <binding>
         <condition>
           <greater-than>
-            <property>/controls/fuel/tank[0]/position</property>
+            <property>controls/fuel/tank[0]/position</property>
             <value type="double">0</value>
           </greater-than>
         </condition>
         <command>property-toggle</command>
-        <property>/controls/fuel/tank[0]/lock</property>
+        <property>controls/fuel/tank[0]/lock</property>
       </binding>
     </action>
   </animation>
@@ -75,7 +65,7 @@
   <animation>
     <type>translate</type>
     <object-name>leftlever</object-name>
-    <property>/controls/fuel/tank[0]/position</property>
+    <property>controls/fuel/tank[0]/position</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.013 </dep></entry>
@@ -96,14 +86,14 @@
       <button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/tank[0]/position</property>
+        <property>controls/fuel/tank[0]/position</property>
         <step>1</step>
         <min>0</min>
         <max>2</max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -118,23 +108,23 @@
         <condition>
           <or>
             <not>
-            <property>/controls/fuel/tank[0]/lock</property>
+            <property>controls/fuel/tank[0]/lock</property>
             </not>
             <greater-than>
-              <property>/controls/fuel/tank[0]/position</property>
+              <property>controls/fuel/tank[0]/position</property>
               <value type="double">1.0</value>
             </greater-than>
           </or>
         </condition>
         <command>property-adjust</command>
-        <property>/controls/fuel/tank[0]/position</property>
+        <property>controls/fuel/tank[0]/position</property>
         <step>-1</step>
         <min>0</min>
         <max>2</max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -142,7 +132,7 @@
   <animation>
     <type>rotate</type>
     <object-name>rightlock</object-name>
-    <property>/controls/fuel/tank[1]/lock</property>
+    <property>controls/fuel/tank[1]/lock</property>
     <factor> 90 </factor>
     <center>
       <x-m>  0.0156 </x-m>
@@ -166,12 +156,12 @@
       <binding>
         <condition>
           <greater-than>
-            <property>/controls/fuel/tank[1]/position</property>
+            <property>controls/fuel/tank[1]/position</property>
             <value type="double">0</value>
           </greater-than>
         </condition>
         <command>property-toggle</command>
-        <property>/controls/fuel/tank[1]/lock</property>
+        <property>controls/fuel/tank[1]/lock</property>
       </binding>
     </action>
   </animation>
@@ -179,7 +169,7 @@
   <animation>
     <type>translate</type>
     <object-name>rightlever</object-name>
-    <property>/controls/fuel/tank[1]/position</property>
+    <property>controls/fuel/tank[1]/position</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.014 </dep></entry>
@@ -200,14 +190,14 @@
       <button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/tank[1]/position</property>
+        <property>controls/fuel/tank[1]/position</property>
         <step>1</step>
         <min>0</min>
         <max>2</max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>
@@ -222,23 +212,23 @@
         <condition>
           <or>
             <not>
-              <property>/controls/fuel/tank[1]/lock</property>
+              <property>controls/fuel/tank[1]/lock</property>
             </not>
             <greater-than>
-              <property>/controls/fuel/tank[1]/position</property>
+              <property>controls/fuel/tank[1]/position</property>
               <value type="double">1</value>
             </greater-than>
           </or>
         </condition>
         <command>property-adjust</command>
-        <property>/controls/fuel/tank[1]/position</property>
+        <property>controls/fuel/tank[1]/position</property>
         <step>-1</step>
         <min>0</min>
         <max>2</max>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation> 

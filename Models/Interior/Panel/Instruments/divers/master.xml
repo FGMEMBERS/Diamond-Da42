@@ -11,12 +11,6 @@
     
     <!-- Objets transparents -->
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>tour</object-name>
-    <object-name>on-off</object-name>
-</effect>
-
   
   <animation>
     <type>pick</type>
@@ -29,7 +23,7 @@
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation> 

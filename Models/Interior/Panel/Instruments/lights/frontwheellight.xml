@@ -8,12 +8,6 @@
     <object-name>support</object-name>
     <object-name>light</object-name>
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>support</object-name>
-    <object-name>light</object-name>
-</effect>
-
   
   <animation>
     <type>material</type>
@@ -26,10 +20,10 @@
     <condition>
       <and>
         <equals>
-          <property>/gear/gear[0]/position-norm</property>
+          <property>gear/gear[0]/position-norm</property>
           <value type="double">1</value>
         </equals>
-        <property>/controls/electric/battery-switch</property>
+        <property>controls/electric/battery-switch</property>
       </and>
     </condition>
   </animation>

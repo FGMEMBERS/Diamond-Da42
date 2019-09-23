@@ -83,7 +83,7 @@
     <object-name>softkey.COM3</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/floods-lights</factor-prop>
@@ -92,59 +92,6 @@
       <green> 0.2 </green>
     </emission>
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>body.mixer</object-name>
-    <object-name>softkey.COM1MIC</object-name>
-    <object-name>softkey.COM2MIC</object-name>
-    <object-name>softkey.COM3MIC</object-name>
-    <object-name>softkey.COM12</object-name>
-    <object-name>softkey.PA</object-name>
-    <object-name>softkey.MKRMUTE</object-name>
-    <object-name>softkey.DME</object-name>
-    <object-name>softkey.ADF</object-name>
-    <object-name>softkey.AUX</object-name>
-    <object-name>softkey.MANSQ</object-name>
-    <object-name>softkey.PILOT</object-name>
-    <object-name>softkey.COM1</object-name>
-    <object-name>softkey.COM2</object-name>
-    <object-name>softkey.COM3</object-name>
-    <object-name>softkey.TEL</object-name>
-    <object-name>softkey.SPKR</object-name>
-    <object-name>softkey.HISENS</object-name>
-    <object-name>softkey.NAV1</object-name>
-    <object-name>softkey.NAV2</object-name>
-    <object-name>softkey.PLAY</object-name>
-    <object-name>softkey.COPLT</object-name>
-    
-    <object-name>led.COM1MIC</object-name>
-    <object-name>led.COM2MIC</object-name>
-    <object-name>led.COM3MIC</object-name>
-    <object-name>led.COM12</object-name>
-    <object-name>led.PA</object-name>
-    <object-name>led.MKRMUTE</object-name>
-    <object-name>led.DME</object-name>
-    <object-name>led.ADF</object-name>
-    <object-name>led.AUX</object-name>
-    <object-name>led.MANSQ</object-name>
-    <object-name>led.PILOT</object-name>
-    <object-name>led.COM1</object-name>
-    <object-name>led.COM2</object-name>
-    <object-name>led.COM3</object-name>
-    <object-name>led.TEL</object-name>
-    <object-name>led.SPKR</object-name>
-    <object-name>led.HISENS</object-name>
-    <object-name>led.NAV1</object-name>
-    <object-name>led.NAV2</object-name>
-    <object-name>led.PLAY</object-name>
-    <object-name>led.COPLT</object-name>
-    
-    <object-name>knob.Vol.large</object-name>
-    <object-name>knob.Vol.small</object-name>
-    <object-name>knob.RED</object-name>
-
-</effect>
   
   <animation>
     <type>pick</type>
@@ -154,7 +101,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com1mic</property>
+        <property>controls/switches/mixer/com1mic</property>
       </binding>
     </action>
   </animation>
@@ -179,7 +126,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com1</property>
+        <property>controls/switches/mixer/com1</property>
       </binding>
     </action>
   </animation>
@@ -203,7 +150,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com2mic</property>
+        <property>controls/switches/mixer/com2mic</property>
       </binding>
     </action>
   </animation>
@@ -227,7 +174,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com2</property>
+        <property>controls/switches/mixer/com2</property>
       </binding>
     </action>
   </animation>
@@ -251,7 +198,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com3mic</property>
+        <property>controls/switches/mixer/com3mic</property>
       </binding>
     </action>
   </animation>
@@ -275,7 +222,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com3</property>
+        <property>controls/switches/mixer/com3</property>
       </binding>
     </action>
   </animation>
@@ -299,7 +246,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/com12</property>
+        <property>controls/switches/mixer/com12</property>
       </binding>
     </action>
   </animation>
@@ -323,7 +270,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/tel</property>
+        <property>controls/switches/mixer/tel</property>
       </binding>
     </action>
   </animation>
@@ -347,7 +294,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/pa</property>
+        <property>controls/switches/mixer/pa</property>
       </binding>
     </action>
   </animation>
@@ -371,7 +318,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/spkr</property>
+        <property>controls/switches/mixer/spkr</property>
       </binding>
     </action>
   </animation>
@@ -395,7 +342,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/mkrmute</property>
+        <property>controls/switches/mixer/mkrmute</property>
       </binding>
     </action>
   </animation>
@@ -419,7 +366,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/hisens</property>
+        <property>controls/switches/mixer/hisens</property>
       </binding>
     </action>
   </animation>
@@ -443,7 +390,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/dme</property>
+        <property>controls/switches/mixer/dme</property>
       </binding>
     </action>
   </animation>
@@ -467,7 +414,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/nav1</property>
+        <property>controls/switches/mixer/nav1</property>
       </binding>
     </action>
   </animation>
@@ -491,7 +438,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/adf</property>
+        <property>controls/switches/mixer/adf</property>
       </binding>
     </action>
   </animation>
@@ -515,7 +462,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/nav2</property>
+        <property>controls/switches/mixer/nav2</property>
       </binding>
     </action>
   </animation>
@@ -539,7 +486,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/aux</property>
+        <property>controls/switches/mixer/aux</property>
       </binding>
     </action>
   </animation>
@@ -563,7 +510,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/mansq</property>
+        <property>controls/switches/mixer/mansq</property>
       </binding>
     </action>
   </animation>
@@ -587,7 +534,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/play</property>
+        <property>controls/switches/mixer/play</property>
       </binding>
     </action>
   </animation>
@@ -611,7 +558,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/pilot</property>
+        <property>controls/switches/mixer/pilot</property>
       </binding>
     </action>
   </animation>
@@ -635,7 +582,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/mixer/coplt</property>
+        <property>controls/switches/mixer/coplt</property>
       </binding>
     </action>
   </animation>

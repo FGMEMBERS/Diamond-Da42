@@ -11,17 +11,11 @@
     
     <!-- Objets transparents -->
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>tour</object-name>
-    <object-name>on-off</object-name>
-</effect>
-
   
   <animation>
     <type>rotate</type>
     <object-name>on-off</object-name>
-    <property>/controls/lighting/strobe-lights</property>
+    <property>controls/lighting/strobe-lights</property>
     <factor> -30 </factor>
     <axis>
       <x> 0 </x>
@@ -37,11 +31,11 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/lighting/strobe-lights</property>
+        <property>controls/lighting/strobe-lights</property>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>

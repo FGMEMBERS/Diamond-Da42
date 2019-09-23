@@ -12,7 +12,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>lock</object-name>
-		<property>/controls/doors/door[3]/locks/lock[1]/locked</property>
+		<property>controls/doors/door[3]/locks/lock[1]/locked</property>
 		<factor> -90 </factor>
 		<axis>
 			<x> 0 </x>
@@ -35,7 +35,7 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/doors/door[3]/locks/lock[1]/locked</property>
+				<property>controls/doors/door[3]/locks/lock[1]/locked</property>
 			</binding>
 		</action>
 	</animation>

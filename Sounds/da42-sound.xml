@@ -9,8 +9,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_ext1_part1.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/cranking</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[0]/cranking</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>
@@ -30,9 +30,9 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_int1_part1.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/cranking</property>
+          <property>engines/engine[0]/cranking</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
         </and>
       </condition>
@@ -54,10 +54,10 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_int1_part2.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/cranking</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[0]/cranking</property>
+          <property>sim/current-view/internal</property>
           <not>
-            <property>/engines/engine[0]/running</property>
+            <property>engines/engine[0]/running</property>
           </not>
         </and>
       </condition>
@@ -79,12 +79,12 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_ext1_part2.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/cranking</property>
+          <property>engines/engine[0]/cranking</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
           <not>
-            <property>/engines/engine[0]/running</property>
+            <property>engines/engine[0]/running</property>
           </not>
         </and>
       </condition>
@@ -103,7 +103,7 @@
     <crank>
       <name>coughLeft</name>
       <path>Sounds/coughing.wav</path>
-      <property>/engines/engine[0]/running</property>
+      <property>engines/engine[0]/running</property>
       <volume>
         <offset>0.3</offset>
       </volume>
@@ -121,11 +121,11 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_stop_ext1.wav</path>
       <condition>
         <not>
-          <property>/engines/engine[0]/running</property>
+          <property>engines/engine[0]/running</property>
         </not>
       </condition>
       <volume>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <factor>-1.0</factor>
         <offset>1.0</offset>
       </volume>
@@ -143,11 +143,11 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_stop_int1.wav</path>
       <condition>
         <not>
-          <property>/engines/engine[0]/running</property>
+          <property>engines/engine[0]/running</property>
         </not>
       </condition>
       <volume>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <factor>1.0</factor>
         <offset>0.0</offset>
       </volume>
@@ -166,9 +166,9 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_ext1_loop.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/running</property>
+          <property>engines/engine[0]/running</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
         </and>
       </condition>
@@ -179,7 +179,7 @@
         <max>2.0</max>
       </volume>
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <factor>0.00028</factor>
         <min>0.15</min>
         <max>2.0</max>
@@ -200,9 +200,9 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_ext3_slow.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/running</property>
+          <property>engines/engine[0]/running</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
         </and>
       </condition>
@@ -213,7 +213,7 @@
         <max>2.0</max>
       </volume>
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <factor>0.0005</factor>
         <min>0.35</min>
         <max>2.0</max>
@@ -234,8 +234,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_int_4430.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/running</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[0]/running</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>
@@ -246,18 +246,18 @@
       </volume>
       <!--
       <volume>
-        <property>/orientation/alpha-deg</property>
+        <property>orientation/alpha-deg</property>
         <type>log</type>
         <min>0.2</min>
         <max>1.0</max>
       </volume>
       <volume>
-      <property>/sim/current-view/internal</property>
+      <property>sim/current-view/internal</property>
         <factor>0.5</factor>
       </volume>
       -->
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <factor>0.000226</factor>
         <min>0.15</min>
         <max>4.0</max>
@@ -278,8 +278,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_int_1340.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[0]/running</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[0]/running</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>
@@ -290,18 +290,18 @@
       </volume>
       <!--
       <volume>
-        <property>/orientation/alpha-deg</property>
+        <property>orientation/alpha-deg</property>
         <type>log</type>
         <min>0.2</min>
         <max>1.0</max>
       </volume>
       <volume>
-      <property>/sim/current-view/internal</property>
+      <property>sim/current-view/internal</property>
         <factor>0.5</factor>
       </volume>
       -->
       <pitch>
-        <property>/engines/engine[0]/rpm</property>
+        <property>engines/engine[0]/rpm</property>
         <factor>0.0007462</factor>
         <min>0.5</min>
         <max>4.0</max>
@@ -322,8 +322,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_ext1_part1.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/cranking</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[1]/cranking</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>
@@ -343,9 +343,9 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_int1_part1.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/cranking</property>
+          <property>engines/engine[1]/cranking</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
         </and>
       </condition>
@@ -367,10 +367,10 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_int1_part2.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/cranking</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[1]/cranking</property>
+          <property>sim/current-view/internal</property>
           <not>
-            <property>/engines/engine[1]/running</property>
+            <property>engines/engine[1]/running</property>
           </not>
         </and>
       </condition>
@@ -392,12 +392,12 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_start_ext1_part2.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/cranking</property>
+          <property>engines/engine[1]/cranking</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
           <not>
-            <property>/engines/engine[1]/running</property>
+            <property>engines/engine[1]/running</property>
           </not>
         </and>
       </condition>
@@ -416,7 +416,7 @@
     <crank>
       <name>coughRight</name>
       <path>Sounds/coughing.wav</path>
-      <property>/engines/engine[1]/running</property>
+      <property>engines/engine[1]/running</property>
       <volume>
         <offset>0.3</offset>
       </volume>
@@ -434,11 +434,11 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_stop_ext1.wav</path>
       <condition>
         <not>
-          <property>/engines/engine[1]/running</property>
+          <property>engines/engine[1]/running</property>
         </not>
       </condition>
       <volume>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <factor>-1.0</factor>
         <offset>1.0</offset>
       </volume>
@@ -456,11 +456,11 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_stop_int1.wav</path>
       <condition>
         <not>
-          <property>/engines/engine[1]/running</property>
+          <property>engines/engine[1]/running</property>
         </not>
       </condition>
       <volume>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <factor>1.0</factor>
         <offset>0.0</offset>
       </volume>
@@ -479,9 +479,9 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_ext1_loop.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/running</property>
+          <property>engines/engine[1]/running</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
         </and>
       </condition>
@@ -492,7 +492,7 @@
         <max>2.0</max>
       </volume>
       <pitch>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <factor>0.00028</factor>
         <min>0.15</min>
         <max>2.0</max>
@@ -513,9 +513,9 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_ext3_slow.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/running</property>
+          <property>engines/engine[1]/running</property>
           <not>
-            <property>/sim/current-view/internal</property>
+            <property>sim/current-view/internal</property>
           </not>
         </and>
       </condition>
@@ -526,7 +526,7 @@
         <max>2.0</max>
       </volume>
       <pitch>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <factor>0.0005</factor>
         <min>0.35</min>
         <max>2.0</max>
@@ -547,8 +547,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_int_4430.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/running</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[1]/running</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>
@@ -559,18 +559,18 @@
       </volume>
       <!--
       <volume>
-        <property>/orientation/alpha-deg</property>
+        <property>orientation/alpha-deg</property>
         <type>log</type>
         <min>0.2</min>
         <max>1.0</max>
       </volume>
       <volume>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <factor>0.5</factor>
       </volume>
       -->
       <pitch>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <factor>0.000226</factor>
         <min>0.15</min>
         <max>4.0</max>
@@ -591,8 +591,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/eng_run_int_1340.wav</path>
       <condition>
         <and>
-          <property>/engines/engine[1]/running</property>
-          <property>/sim/current-view/internal</property>
+          <property>engines/engine[1]/running</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>
@@ -603,18 +603,18 @@
       </volume>
       <!--
       <volume>
-        <property>/orientation/alpha-deg</property>
+        <property>orientation/alpha-deg</property>
         <type>log</type>
         <min>0.2</min>
         <max>1.0</max>
       </volume>
       <volume>
-        <property>/sim/current-view/internal</property>
+        <property>sim/current-view/internal</property>
         <factor>0.5</factor>
       </volume>
       -->
       <pitch>
-        <property>/engines/engine[1]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <factor>0.0007462</factor>
         <min>0.5</min>
         <max>4.0</max>
@@ -636,14 +636,14 @@
       <path>Aircraft/Diamond-Da42/Sounds/rumble.wav</path>
       <condition>
         <or>
-          <property>/gear/gear[0]/wow</property>
-          <property>/gear/gear[1]/wow</property>
-          <property>/gear/gear[2]/wow</property>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
         </or>
-        <!-- <property>/sim/current-view/internal</property> -->
+        <!-- <property>sim/current-view/internal</property> -->
       </condition>
       <volume>
-        <property>/velocities/groundspeed-kt</property>
+        <property>velocities/groundspeed-kt</property>
         <!--type>log</type-->
         <factor>0.025</factor>
         <offset> -0.01</offset>
@@ -651,7 +651,7 @@
         <min>0.01</min>
       </volume>
       <pitch>
-        <property>/velocities/groundspeed-kt</property>
+        <property>velocities/groundspeed-kt</property>
         <factor>0.01</factor>
         <offset>0.85</offset>
       </pitch>
@@ -664,18 +664,18 @@
       <path>Aircraft/Diamond-Da42/Sounds/wow.wav</path>
       <condition>
         <or>
-          <property>/gear/gear[0]/wow</property>
-          <property>/gear/gear[1]/wow</property>
-          <property>/gear/gear[2]/wow</property>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
         </or>
       </condition>
       <volume>
-        <property>/velocities/speed-down-fps</property>
+        <property>velocities/speed-down-fps</property>
         <factor>0.5</factor>
         <max>1.0</max>
       </volume>
       <volume>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <factor>0.1</factor>
         <max>1.0</max>
       </volume>
@@ -685,7 +685,7 @@
         <max>1.0</max>
       </volume>
       <pitch>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <factor>0.0025</factor>
         <offset>1.0</offset>
       </pitch>
@@ -715,7 +715,7 @@
       <name>flaps</name>
       <mode>in-transit</mode>
       <path>Aircraft/Diamond-Da42/Sounds/flaps.wav</path>
-      <property>/surface-positions/flap-pos-norm</property>
+      <property>surface-positions/flap-pos-norm</property>
       <volume>
         <factor>0.8</factor>
       </volume>
@@ -728,22 +728,22 @@
       <name>wind</name>
       <mode>looped</mode>
       <path>Sounds/wind.wav</path>
-      <property>/velocities/airspeed-kt</property>
+      <property>velocities/airspeed-kt</property>
       <volume>
-        <property>/position/altitude-ft</property>
+        <property>position/altitude-ft</property>
         <factor>-0.000015</factor>
         <offset>1.0</offset>
         <min>0.0</min>
         <max>1.0</max>
       </volume>
       <volume>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <factor>0.0015</factor>
         <min>0.0</min>
         <max>0.25</max>
       </volume>
       <pitch>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <factor>0.0035</factor>
         <offset>1.25</offset>
       </pitch>
@@ -775,30 +775,30 @@
         <or>
           <and>
             <equals>
-              <property>/controls/lighting/gearwrn</property>
+              <property>controls/lighting/gearwrn</property>
               <value>1</value>
             </equals>
             <equals>
-              <property>/controls/switches/test-transit-button</property>
+              <property>controls/switches/test-transit-button</property>
               <value>1</value>
             </equals>
           </and>
           <and>
             <equals>
-              <property>/controls/lighting/gearwrn</property>
+              <property>controls/lighting/gearwrn</property>
               <value>1</value>
             </equals>
             <or>
               <less-than>
-                <property>/controls/engines/engine[0]/throttle</property>
+                <property>controls/engines/engine[0]/throttle</property>
                 <value>0.25</value>
               </less-than>
               <less-than>
-                <property>/controls/engines/engine[1]/throttle</property>
+                <property>controls/engines/engine[1]/throttle</property>
                 <value>0.25</value>
               </less-than>
               <equals>
-                <property>/controls/flight/flaps</property>
+                <property>controls/flight/flaps</property>
                 <value>1</value>
               </equals>
             </or>
@@ -970,11 +970,11 @@
       <mode>looped</mode>
       <path>Aircraft/Diamond-Da42/Sounds/stall.wav</path>
       <condition>
-        <property>/sim/alarms/stall-warning</property>
-        <property>/sim/current-view/internal</property>
+        <property>sim/alarms/stall-warning</property>
+        <property>sim/current-view/internal</property>
       </condition>
       <volume>
-        <property>/sim/alarms/stall-warning</property>
+        <property>sim/alarms/stall-warning</property>
         <max>1.0</max>
       </volume>
       <reference-dist>10.0</reference-dist>
@@ -987,8 +987,8 @@
       <path>Aircraft/Diamond-Da42/Sounds/click.wav</path>
       <condition>
         <and>
-          <property>/sim/sound/switch</property>
-          <property>/sim/current-view/internal</property>
+          <property>sim/sound/switch</property>
+          <property>sim/current-view/internal</property>
         </and>
       </condition>
       <volume>

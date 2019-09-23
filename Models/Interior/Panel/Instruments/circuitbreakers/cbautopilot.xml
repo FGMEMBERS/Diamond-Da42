@@ -4,15 +4,10 @@
   
   <path>cb_5.ac</path>
   
-<animation>
-    <object-name>support</object-name>
-    <object-name>breaker</object-name>
-</animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>support</object-name>
-    <object-name>breaker</object-name>
-</effect>
+    <animation>
+      <object-name>support</object-name>
+      <object-name>breaker</object-name>
+    </animation>
     
   <animation>
     <type>pick</type>
@@ -23,7 +18,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/electric/circuitbreaker/autopilot</property>
+        <property>controls/electric/circuitbreaker/autopilot</property>
       </binding>
     </action>
   </animation>
@@ -31,7 +26,7 @@
   <animation>
     <type>translate</type>
     <object-name>breaker</object-name>
-    <property>/controls/electric/circuitbreaker/autopilot</property>
+    <property>controls/electric/circuitbreaker/autopilot</property>
     <factor> -0.007 </factor>
     <axis>
       <x> 1 </x>

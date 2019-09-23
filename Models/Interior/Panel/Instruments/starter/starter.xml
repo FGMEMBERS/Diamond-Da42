@@ -12,22 +12,12 @@
     <object-name>turnleft</object-name>
     <object-name>turnright</object-name>
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>startersupport</object-name>
-    <object-name>starter</object-name>
-    <object-name>key</object-name>
-    
-    <object-name>turnleft</object-name>
-    <object-name>turnright</object-name>
-</effect>
   
   <animation>
     <type>rotate</type>
     <object-name>key</object-name>
     <object-name>starter</object-name>
-    <property>/controls/switches/starterkey</property>
+    <property>controls/switches/starterkey</property>
     <factor> -30 </factor>
     <axis>
       <x> 1 </x>
@@ -40,7 +30,7 @@
     <type>select</type>
     <object-name>key</object-name>
     <condition>
-      <property>/controls/switches/starterkey-insert</property>
+      <property>controls/switches/starterkey-insert</property>
     </condition>
   </animation>
   
@@ -52,7 +42,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/starterkey-insert</property>
+        <property>controls/switches/starterkey-insert</property>
       </binding>
     </action>
   </animation>
@@ -66,15 +56,15 @@
       <repeatable>true</repeatable>
       <binding>
         <condition>
-          <property>/controls/switches/starterkey-insert</property>
+          <property>controls/switches/starterkey-insert</property>
         </condition>
         <command>property-assign</command>
-        <property>/controls/switches/starterkey</property>
+        <property>controls/switches/starterkey</property>
         <value type="int">-1</value>
       </binding>
       <binding>
         <condition>
-          <property>/controls/switches/starterkey-insert</property>
+          <property>controls/switches/starterkey-insert</property>
         </condition>
         <command>nasal</command>
         <script>controls.startEngine(1,0)</script>
@@ -82,7 +72,7 @@
       <mod-up>
         <binding>
           <command>property-assign</command>
-          <property>/controls/switches/starterkey</property>
+          <property>controls/switches/starterkey</property>
           <value type="int">0</value>
         </binding>
         <binding>
@@ -102,15 +92,15 @@
       <repeatable>true</repeatable>
       <binding>
         <condition>
-          <property>/controls/switches/starterkey-insert</property>
+          <property>controls/switches/starterkey-insert</property>
         </condition>
         <command>property-assign</command>
-        <property>/controls/switches/starterkey</property>
+        <property>controls/switches/starterkey</property>
         <value type="int">1</value>
       </binding>
       <binding>
         <condition>
-          <property>/controls/switches/starterkey-insert</property>
+          <property>controls/switches/starterkey-insert</property>
         </condition>
         <command>nasal</command>
         <script>controls.startEngine(1,1)</script>
@@ -118,7 +108,7 @@
       <mod-up>
         <binding>
           <command>property-assign</command>
-          <property>/controls/switches/starterkey</property>
+          <property>controls/switches/starterkey</property>
           <value type="int">0</value>
         </binding>
         <binding>

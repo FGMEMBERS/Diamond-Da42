@@ -10,13 +10,6 @@
     <object-name>ELT.led</object-name>
     <object-name>ELT.switch</object-name>
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>support</object-name>
-    <object-name>ELT.led</object-name>
-    <object-name>ELT.switch</object-name>
-</effect>
   
   <animation>
     <type>material</type>
@@ -24,7 +17,7 @@
     <object-name>ELT.switch</object-name>
     <condition>
       <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
       <factor-prop>/controls/switches/flood-lights-norm</factor-prop>
@@ -37,7 +30,7 @@
   <animation>
     <type>rotate</type>
     <object-name>ELT.switch</object-name>
-    <property>/controls/switches/elt</property>
+    <property>controls/switches/elt</property>
     <factor> 30 </factor>
     <axis>
       <x>  0 </x>
@@ -54,15 +47,15 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/elt</property>
+        <property>controls/switches/elt</property>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/lighting/elt</property>
+        <property>controls/lighting/elt</property>
       </binding>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <property>sim/sound/switch</property>
       </binding>
     </action>
   </animation>  
@@ -78,13 +71,13 @@
     <condition>
       <or>
         <equals>
-          <property>/controls/lighting/elt</property>
+          <property>controls/lighting/elt</property>
           <value>0</value>
         </equals>
         <and>
-          <property>/sim/model/lights/elt/state</property>
+          <property>sim/model/lights/elt/state</property>
           <equals>
-            <property>/controls/lighting/elt</property>
+            <property>controls/lighting/elt</property>
             <value>1</value>
           </equals>
         </and>

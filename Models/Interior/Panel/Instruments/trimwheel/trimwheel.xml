@@ -8,16 +8,11 @@
     <object-name>TrimWheel</object-name>
     <object-name>trimind</object-name>
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>TrimWheel</object-name>
-    <object-name>trimind</object-name>
-</effect>
   
   <animation>
     <type>rotate</type>
     <object-name>TrimWheel</object-name>
-    <property>/controls/flight/elevator-trim</property>
+    <property>controls/flight/elevator-trim</property>
     <factor> -360 </factor>
     <axis>
       <x> 0 </x>
@@ -29,7 +24,7 @@
   <animation>
     <type>rotate</type>
     <object-name>trimind</object-name>
-    <property>/controls/flight/elevator-trim</property>
+    <property>controls/flight/elevator-trim</property>
     <factor> -40 </factor>
     <center>
       <x-m>  0.0000 </x-m>
@@ -51,7 +46,7 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/flight/elevator-trim</property>
+        <property>controls/flight/elevator-trim</property>
         <step> 0.1 </step>
         <min> -1.0 </min>
         <max>  1.0 </max>
@@ -67,7 +62,7 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/flight/elevator-trim</property>
+        <property>controls/flight/elevator-trim</property>
         <step> -0.1 </step>
         <min>  -1.0 </min>
         <max>   1.0 </max>

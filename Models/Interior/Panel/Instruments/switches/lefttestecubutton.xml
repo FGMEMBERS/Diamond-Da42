@@ -8,16 +8,11 @@
     <object-name>base</object-name>
     <object-name>button</object-name>
   </animation>
-  <effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>base</object-name>
-    <object-name>button</object-name>
-</effect>
-
+  
   <animation>
     <type>translate</type>
     <object-name>button</object-name>
-    <property>/controls/switches/test-left-ecu-button</property>
+    <property>controls/switches/test-left-ecu-button</property>
     <factor> -0.003 </factor>
     <axis>
       <x> 1 </x>
@@ -33,7 +28,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/switches/test-left-ecu-button</property>
+        <property>controls/switches/test-left-ecu-button</property>
       </binding>
       <binding>
         <command>nasal</command>
@@ -42,7 +37,7 @@
       <mod-up>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/switches/test-left-ecu-button</property>
+          <property>controls/switches/test-left-ecu-button</property>
         </binding>
       </mod-up>
     </action>

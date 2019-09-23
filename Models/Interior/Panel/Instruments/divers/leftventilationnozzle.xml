@@ -8,17 +8,11 @@
     <object-name>base</object-name>
     <object-name>nozzle</object-name>
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>base</object-name>
-    <object-name>nozzle</object-name>
-</effect>
-
   
   <animation>
     <type>rotate</type>
     <object-name>nozzle</object-name>
-    <property>/controls/nozzles/leftnozzle-x</property>
+    <property>controls/nozzles/leftnozzle-x</property>
     <factor> 20 </factor>
     <axis>
       <x> 0 </x>
@@ -30,7 +24,7 @@
   <animation>
     <type>rotate</type>
     <object-name>nozzle</object-name>
-    <property>/controls/nozzles/leftnozzle-y</property>
+    <property>controls/nozzles/leftnozzle-y</property>
     <factor> -20 </factor>
     <axis>
       <x> 0 </x>
@@ -46,14 +40,14 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/nozzles/leftnozzle-x</property>
+        <property>controls/nozzles/leftnozzle-x</property>
         <step> 0.1 </step>
         <min> -1.0 </min>
         <max>  1.0 </max>
       </binding>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/nozzles/leftnozzle-y</property>
+        <property>controls/nozzles/leftnozzle-y</property>
         <step> 0.1 </step>
         <min> -1.0 </min>
         <max>  1.0 </max>
@@ -68,14 +62,14 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/nozzles/leftnozzle-x</property>
+        <property>controls/nozzles/leftnozzle-x</property>
         <step> -0.1 </step>
         <min>  -1.0 </min>
         <max>   1.0 </max>
       </binding>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/nozzles/leftnozzle-y</property>
+        <property>controls/nozzles/leftnozzle-y</property>
         <step> -0.1 </step>
         <min>  -1.0 </min>
         <max>   1.0 </max>

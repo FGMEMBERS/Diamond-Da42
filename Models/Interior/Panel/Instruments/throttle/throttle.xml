@@ -8,17 +8,11 @@
     <object-name>leftthrottle</object-name>
     <object-name>rightthrottle</object-name>
   </animation>
-
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>leftthrottle</object-name>
-    <object-name>rightthrottle</object-name>
-</effect>
   
   <animation>
     <type>translate</type>
     <object-name>leftthrottle</object-name>
-    <property>/controls/engines/engine[0]/throttle</property>
+    <property>controls/engines/engine[0]/throttle</property>
     <factor> -0.13 </factor>
     <axis>
       <x> 1 </x>
@@ -35,7 +29,7 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/engines/engine[0]/throttle</property>
+        <property>controls/engines/engine[0]/throttle</property>
         <step> 0.1 </step>
         <min>  0.0 </min>
         <max>  1.0 </max>
@@ -51,7 +45,7 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/engines/engine[0]/throttle</property>
+        <property>controls/engines/engine[0]/throttle</property>
         <step> -0.1 </step>
         <min>   0.0 </min>
         <max>   1.0 </max>
@@ -62,7 +56,7 @@
   <animation>
     <type>translate</type>
     <object-name>rightthrottle</object-name>
-    <property>/controls/engines/engine[1]/throttle</property>
+    <property>controls/engines/engine[1]/throttle</property>
     <factor> -0.13 </factor>
     <axis>
       <x> 1 </x>
@@ -79,7 +73,7 @@
       <button>3</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/engines/engine[1]/throttle</property>
+        <property>controls/engines/engine[1]/throttle</property>
         <step> 0.1 </step>
         <min>  0.0 </min>
         <max>  1.0 </max>
@@ -95,7 +89,7 @@
       <button>4</button>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/engines/engine[1]/throttle</property>
+        <property>controls/engines/engine[1]/throttle</property>
         <step> -0.1 </step>
         <min>   0.0 </min>
         <max>   1.0 </max>

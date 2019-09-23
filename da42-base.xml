@@ -21,6 +21,7 @@
 
     <model>
       <path>Aircraft/Diamond-Da42/Models/da42.xml</path>
+      <fallback-model-index type="int">58</fallback-model-index>
       <livery>
         <file type="string">default</file>
       </livery>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <sim>
-
+    
     <model>
       <livery>
-        <name type="string">default</name>
+        <name type="string">Default</name>
         <texture>texture.png</texture>
         <specular>
           <red>   0.2 </red>
@@ -17,5 +17,5 @@
     </model>
     
   </sim>
-
+  
 </PropertyList>

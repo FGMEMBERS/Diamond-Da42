@@ -11,17 +11,11 @@
     
     <!-- Objets transparents -->
   </animation>
-<effect>
-   <inherits-from>Aircraft/Diamond-Da42/Models/Effects/Interior/interior</inherits-from>
-    <object-name>tour</object-name>
-    <object-name>on-off</object-name>
-</effect>
-
   
   <animation>
     <type>rotate</type>
     <object-name>on-off</object-name>
-    <property>/controls/electric/engine/generator</property>
+    <property>controls/electric/engine/generator</property>
     <factor>  35 </factor>
     <min-deg>  0 </min-deg>
     <max-deg> 35 </max-deg>

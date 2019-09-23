@@ -10,108 +10,108 @@
         <label>Autostart</label>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electric/battery-switch</property>
+          <property>controls/electric/battery-switch</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electric/engine/generator</property>
+          <property>controls/electric/engine/generator</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/lighting/instrument-lights</property>
+          <property>controls/lighting/instrument-lights</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/lighting/nav-lights</property>
+          <property>controls/lighting/nav-lights</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/lighting/strobe-lights</property>
+          <property>controls/lighting/strobe-lights</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/switches/starterkey-insert</property>
+          <property>controls/switches/starterkey-insert</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/engines/engine[0]/fuel-pump</property>
+          <property>controls/engines/engine[0]/fuel-pump</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/engines/engine[1]/fuel-pump</property>
+          <property>controls/engines/engine[1]/fuel-pump</property>
         </binding>
         <!-- Magnetos -->
         <binding>
           <condition>
-            <property>/controls/switches/starterkey-insert</property>
+            <property>controls/switches/starterkey-insert</property>
           </condition>
           <command>property-assign</command>
-          <property>/controls/engines/engine[0]/magnetos</property>
+          <property>controls/engines/engine[0]/magnetos</property>
           <value>3</value>
         </binding>
         <binding>
           <condition>
-            <property>/controls/switches/starterkey-insert</property>
+            <property>controls/switches/starterkey-insert</property>
           </condition>
           <command>property-assign</command>
-          <property>/controls/engines/engine[1]/magnetos</property>
+          <property>controls/engines/engine[1]/magnetos</property>
           <value>3</value>
         </binding>
         <binding>
           <condition>
             <not>
-              <property>/controls/switches/starterkey-insert</property>
+              <property>controls/switches/starterkey-insert</property>
             </not>
           </condition>
           <command>property-assign</command>
-          <property>/controls/engines/engine[0]/magnetos</property>
+          <property>controls/engines/engine[0]/magnetos</property>
           <value>0</value>
         </binding>
         <binding>
           <condition>
             <not>
-              <property>/controls/switches/starterkey-insert</property>
+              <property>controls/switches/starterkey-insert</property>
             </not>
           </condition>
           <command>property-assign</command>
-          <property>/controls/engines/engine[1]/magnetos</property>
+          <property>controls/engines/engine[1]/magnetos</property>
           <value>0</value>
         </binding>
         <!-- PFD / MFD -->
         <binding>
           <condition>
-            <property>/controls/switches/starterkey-insert</property>
+            <property>controls/switches/starterkey-insert</property>
           </condition>
           <command>property-assign</command>
-          <property>/instrumentation/zkv1000/pfd/status</property>
+          <property>instrumentation/zkv1000/pfd/status</property>
           <value>1</value>
         </binding>
         <binding>
           <condition>
-            <property>/controls/switches/starterkey-insert</property>
+            <property>controls/switches/starterkey-insert</property>
           </condition>
           <command>property-assign</command>
-          <property>/instrumentation/zkv1000/mfd/status</property>
+          <property>instrumentation/zkv1000/mfd/status</property>
           <value>2</value>
         </binding>
         <binding>
           <condition>
             <not>
-              <property>/controls/switches/starterkey-insert</property>
+              <property>controls/switches/starterkey-insert</property>
             </not>
           </condition>
           <command>property-assign</command>
-          <property>/instrumentation/zkv1000/pfd/status</property>
+          <property>instrumentation/zkv1000/pfd/status</property>
           <value>0</value>
         </binding>
         <binding>
           <condition>
             <not>
-              <property>/controls/switches/starterkey-insert</property>
+              <property>controls/switches/starterkey-insert</property>
             </not>
           </condition>
           <command>property-assign</command>
-          <property>/instrumentation/zkv1000/mfd/status</property>
+          <property>instrumentation/zkv1000/mfd/status</property>
           <value>0</value>
         </binding>
         <binding>
@@ -120,7 +120,7 @@
         </binding>
         <binding>
           <condition>
-            <property>/controls/switches/starterkey-insert</property>
+            <property>controls/switches/starterkey-insert</property>
           </condition>
           <command>nasal</command>
           <script>gui.popupTip("Press 's' to start")</script>
